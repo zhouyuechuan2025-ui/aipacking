@@ -5,6 +5,8 @@ description: Use when packaging center-presenter talking-head video plus SRT int
 
 # Package Talking-Head Video
 
+For the aipacking 2.4 workflow with a HyperFrames storyboard, chapter progress and Remotion preview approval, use [`aipacking`](skills/aipacking/SKILL.md) and its [setup guide](docs/AIPACKING.md). The instructions below apply to the root `package-video` CLI.
+
 Package new jobs with three basic layouts (`title`, `card`, `flow`) and two public styles (`dark`, `paper`). Keep one style per video. Composite jobs default to one continuous presenter moving between full-frame and a single editorial window. Preserve caption accuracy, face safety, original voice, and output checks.
 
 ## Required workflow
@@ -28,7 +30,7 @@ npm run package-video -- --video INPUT.mp4 --srt INPUT.srt --out RUN --output-mo
 npm run package-video -- --video INPUT.mp4 --srt INPUT.srt --out RUN --output-mode composite --captions burned-in --style dark --approve-gate-a --approve-gate-b --approve-gate-c --approve-gate-d --render
 ```
 
-Use `--style paper` for the other style. Match inputs, style, direction and camera settings at every gate. `--presenter-layout single` is the composite default: frame-driven movement of one persistent video into left/right editorial windows, then back to full framing. `original` keeps the earlier side-card renderer. `--presenter-motion subtle` adds bounded 1.06× focus in full-frame emphasis. The continuous original video owns the only audio track. Single-window mode crops the source caption reserve and redraws captions once from the supplied SRT. `generated` and `none` remain explicit caption choices.
+Use `--style paper` for the other style. Match inputs, style, direction and camera settings at every gate. `--presenter-layout single` is the composite default: frame-driven movement of one persistent video into left/right editorial windows, then back to full framing. `original` keeps the earlier side-card renderer. `--presenter-motion` defaults to `off` for steady framing. Use `--presenter-motion subtle` only when full-frame emphasis needs a light push up to 1.06×. The continuous original video owns the only audio track. Single-window mode crops the source caption reserve and redraws captions once from the supplied SRT. `generated` and `none` remain explicit caption choices.
 
 Public-lite currently supports 16:9 horizontal input only. SRT-only `--output-mode overlay` outputs transparent MOV after the same gates; lock a 16:9 canvas width, height and fps. It cannot inspect actual face position or move a source video it does not contain.
 

@@ -15,6 +15,14 @@ describe('public repository verifier', () => {
     expect(findings.join('\n')).toContain('source-media');
   });
 
+  it('allows the bundled UI prop while still flagging unfinished copy', () => {
+    const path = 'skills/aipacking/assets/remotion-host-2.0/src/pages/more3.tsx';
+    const uiProp = 'p.place' + 'holder';
+    expect(scanEntries([{path, size: 100, text: uiProp + ' || "Write a sentence"'}])).toEqual([]);
+    expect(scanEntries([{path, size: 100, text: uiProp + ' || "TO' + 'DO"'}])).toHaveLength(1);
+    expect(scanEntries([{path: 'note.md', size: 100, text: uiProp}])).toHaveLength(1);
+  });
+
   it('allows generic source, synthetic SRT fixtures, and approved preview images', () => {
     expect(scanEntries([
       {path: 'SKILL.md', size: 100, text: 'Use when packaging video.'},

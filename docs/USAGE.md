@@ -1,4 +1,6 @@
-# Usage
+# Usage · Basic CLI
+
+This guide covers the root `package-video` CLI. For aipacking 2.4, see the [installation guide and two-review workflow](AIPACKING.md).
 
 ## Install
 

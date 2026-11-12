@@ -1,0 +1,4 @@
+interface:
+  display_name: "aipacking · 分镜与风格双审"
+  short_description: "先审 HyperFrames 分镜，再审 Remotion 实际预览，确认后用原模板出片"
+  default_prompt: "用 $aipacking 包装我的 MP4 和 SRT，先给我完整分镜。"
