@@ -48,5 +48,5 @@ for file in files:
     path = source / file
     shutil.copyfile(path, target / file)
     manifest["assets"].append({"file": file, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
-(target / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+(target / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")
 print(f"Verified visible frame changes for {len(report)} effects and full decode for both videos")
