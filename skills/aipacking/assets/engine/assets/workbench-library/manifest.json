@@ -1,0 +1,14 @@
+{
+  "version": "4.0.0",
+  "note": "Derived from original source; excluded dispatch and unreachable source removed.",
+  "files": [
+    {
+      "path": "WorkbenchNative.js",
+      "sha256": "096647e45fd4f1fc884a5eb7e8a5ee26fcdb9fefecde26a490420c8e8c094ec5"
+    },
+    {
+      "path": "catalog.json",
+      "sha256": "5b0332f8c3e87dd94a61fbfe6a744978bf4b500ae48feb3a0bfa4e7c20f26be6"
+    }
+  ]
+}

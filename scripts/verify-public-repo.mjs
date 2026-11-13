@@ -14,10 +14,12 @@ const syntheticDemos = new Set([
   'docs/assets/native-templates-3.2/overlay-cards.mp4',
   'docs/assets/native-templates-3.2/motion-native-scenes.mp4',
   'docs/assets/native-templates-3.3/scene-reel.mp4',
+  'docs/assets/aipacking-demo/preview.mp4',
 ]);
 const templateSource = 'skills/aipacking/assets/remotion-host-2.0/';
 const uiPlaceholderPaths = new Set([
   'docs/NATIVE-TEMPLATES.md', templateSource + 'docs/catalog.json', templateSource + 'src/motion/native-scenes.json',
+  'skills/aipacking/assets/engine/assets/workbench-library/WorkbenchNative.css',
   ...[
     'agent/before-after/BeforeAfter.tsx', 'agent/image-carousel/ImageCarousel.tsx',
     'snap/click-type/index.tsx', 'snap/input/index.tsx', 'snap/laptop-frame/index.tsx',

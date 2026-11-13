@@ -1,44 +1,14 @@
 ---
 name: aipacking
-description: 用 HyperFrames 为真人 MP4、同版 SRT 和可选 B-roll 做口播分镜，再用 Remotion 渲染侧边动效、图解和证据预览；两次确认后交付全片。
+description: 用 Motion Studio 和 Remotion 为真人口播视频及同版 SRT 设计分镜、制作动效预览并交付 MP4。全程显示章节时间轴。
 metadata:
-  version: "3.3.0"
+  version: "4.0.0"
 ---
 
-# aipacking · 分镜与风格双审版
+# aipacking
 
-在原 2.0 工作台上新增真人推拉、分批侧边动效与全程顶部章节轴。包内含原版工作台源码，没工作台可自动创建作业副本；有兼容工作台就只操作其独立副本。运行还需要 Node.js、FFmpeg、npm 依赖和 HyperFrames CLI；缺依赖时准确说明，不用另一套模板替代。运行前读 [工作流与命令](references/review-workflow.md)。
+在独立作业里运行。用 `node scripts/create-workbench.mjs <新作业绝对路径>` 创建并安装工作台，再到作业目录执行 `npm ci`。将 MP4 和 SRT 放入 `public/input/`，用 `npm run prepare-input -- "视频.mp4" "视频.srt"` 整理输入。运行依赖为 Node.js 22+、FFmpeg、ffprobe 和 npm 依赖。
 
-## 动效编排
+先读完整字幕，查看参考帧，按台词确定每段的视觉焦点、人物安全区、真实证据与动作落点。用 [aipacking 原版规则](assets/engine/references/density-diversity.md) 和 [模板目录](assets/engine/assets/workbench-library/catalog.json) 选择构图和组件。随包有 27 个工作台模板、7 个 Tech 组件及连续参考库。全程用统一章节时间轴。普通口播保持稳定，推拉用在少数关键落点。人物、字幕与资料都须实渲检查。
 
-先读 [模板与本期接入](references/native-templates.md)，按语义选组件、绑定本期参数并用实际运行结果审片。侧边优先用适合小窗阅读的列表、短词、数值或步骤，章节内换结构，复杂证据留独立画面。公开介绍和样片按镜头用途描述，组件署名及许可见随包许可证目录。
-
-普通口播保持稳定构图。新分镜用 motionVersion 3，选出少数关键落点，编排可见的轻推、停留和回位；收窗单独记录。侧边元素、资料状态和图解按原词推进。每镜安排与内容相关的可见动作。先查 [3.0 新动效及用法](references/motion-expanded.md) 和 [历版模板和动效用法](references/motion-library.md) 再决定组件。顶部章节轴贯穿真人和全屏画面。编导时读取 [动效密度、推拉与章节轴](references/motion-direction.md)。
-
-用 [语义动效选型](references/semantic-motion.md) 细化已确认的镜头。根据台词安排汇流、签到和接力，保留原分镜的镜号、布局、时钟和人物位置。
-
-## 视觉方向
-
-默认采用更丰富的科技艺术表达：一个主色、一个辅助色、一个少量使用的点睛色，加有层次的背景与面板。优先根据语义选择版式与动效，颜色和装饰不能抢走内容的注意力。
-
-读取 [设计规则](references/design-system.md) 选择方向；需要新参考时读取 [来源与研究方法](references/design-references.md)。四套预设在 `assets/tech-presets.ts`：`violet-tech`、`cyan-data`、`warm-tech`、`gallery-light`。一条视频保持一套主方向，可按章节改变辅助色和构图。用户明确提出其他风格时优先满足用户。
-
-## 工作流
-
-1. **准备**：核对 MP4、SRT、可选实拍、截图、录屏与参考片；读原工作台 AGENTS、director、visual-rules 和 QA，明确当前宿主真实支持的画幅。准备字幕与四张原片帧，逐句写 `plan/analysis.md`，把语义、强度、关键词、证据和选型理由绑定到时间轴。在副本预检并安装原版 Tech 包及双审入口。
-2. **第一关：确认完整分镜。** 输出逐镜 `plan/storyboard.json`，用真实 HyperFrames CLI 检查并读取时间轴，给用户看可读的 `plan/storyboard.md`。每镜说明 A-roll 是保留、收窗还是离场；哪些段落插 B-roll、用哪个真实组件、动效如何入场、要解释什么、是否缺素材。新分镜填写 motionVersion 3、章节轴、运镜意图和每镜原词动作点。只有安排轻推或收窗的镜头需要运镜关键帧。发分镜后停止，等用户明确确认这一版；未确认前不出风格图或成片。修改后生成新版。
-3. **第二关：确认实际风格。** 按已批分镜写 `plan/design.md` 和可运行的 `plan/plan.json`，沿用原工作台模板。用同一个 Remotion `Final` 合成抽 3–5 张真实样式图（开头、人物与动效同屏、核心 B-roll/证据、典型段落），同时给能看见新增动作与完整运镜的短样。不把 HyperFrames 草图或生图当成成片预览。可用用户的新参考片调整，用户确认当前预览前不渲染全片。风格调色/字重/安全区改动重审第二关；改时间、选型、人物结构、B-roll 或内容则回第一关。
-4. **制作交付**：两关都匹配当前版本后，由原 Remotion 入口出全片。继续执行原 validate、增强模板校验和 QA；保留原声原速、原素材与版本化输出，MOV 只在明确要求时另出。检查关键转场、运镜完整动态、锚点与阅读停留，核对 ffprobe、完整 FFmpeg 解码和正常速度播放；如未做人工视觉验收要明说。
-
-不得替用户确认。开头发来的「开始」「直接做」只启动第一关；批注、上传参考片、仅同意分镜都不等于同意渲染。两次确认绑定各自产物的版本指纹。用户如果明确要求不要确认，只能另行使用用户认可的旧流程，不可擅自跳过本 Skill 的双审。
-
-## 渲染可靠性
-
-- 使用项目依赖及随包中文字体，动画完全由帧号驱动；网页交互动画必须转换为帧时间，不能直接以鼠标/滚动或 `requestAnimationFrame` 驱动视频。
-- HEVC 遇到 compositor/proxy 资源问题时，保留原片，制作 H.264/yuv420p/30fps 工作副本并指向它，concurrency 2。
-- 本机软件合成 `gl: 'swangle'` 已用于检查；复用一个 QA 浏览器并结束后关闭。更换合成方式需抽帧验证文字，不能以渲染完成替代视觉检查。
-- 必须等实际完成日志再交付，85% 或 90% 不算完成。
-
-## 不能弱化的底线
-
-事实、数字与结论来自原稿；示意图标“示意”，截图/录屏来源可追溯。原片保持原色。避开脸和底部150px字幕区。不要用多彩遮挡、低幼气泡或光速隧道堆砌“科技感”。不要批量改未测试的157个旧模板。
+按用户当前要求执行分镜、样片和成片审阅。使用 `node scripts/preview-workbench.mjs <3–5 个秒点> --clip <开始秒> <结束秒>` 输出实际预览，可多次传 `--clip`。渲染整片前执行工作台的 validate、渲染前检查和 QA。证据使用当前真实截图或录屏，保留原声原速，检查成片解码、音画同步和完整章节轴。使用规则见 [aipacking 指南](references/workflow.md)。

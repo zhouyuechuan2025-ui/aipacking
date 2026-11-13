@@ -1,4 +1,4 @@
-// out/workbench-native.js
+// out/native-pruned.js
 import selectionPolicy from "./selection-policy.json";
 import { useRef as useRef12 } from "react";
 import { AbsoluteFill as AbsoluteFill37, Img as Img13, staticFile as staticFile11, useCurrentFrame as useCurrentFrame69, useVideoConfig as useVideoConfig25 } from "remotion";
@@ -3803,7 +3803,7 @@ function MotionRenderer({
   if (id === "actions") return jsx97(ToolActionBoard, {
     settings
   });
-  throw new Error("Template unavailable in aipacking");
+  throw new Error("Template unavailable in this release");
 }
 var catalog_default = [{
   id: "prompt",

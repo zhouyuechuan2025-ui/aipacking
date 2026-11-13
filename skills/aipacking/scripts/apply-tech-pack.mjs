@@ -9,7 +9,7 @@ const target=fs.realpathSync(targetArg),skill=path.resolve(path.dirname(fileURLT
 const read=p=>fs.readFileSync(path.join(target,p),'utf8');
 const registry=read('src/custom/index.ts'),catalog=JSON.parse(read('docs/catalog.json'));
 if(!Array.isArray(catalog)||!registry.includes('export const CUSTOM')||!registry.includes('CoverGrid'))throw new Error('Unsupported custom registry; do not patch automatically');
-if(args.includes('--check')){console.log('Compatible aipacking workbench: '+target);process.exit(0);}
+if(args.includes('--check')){console.log('Compatible workbench: '+target);process.exit(0);}
 const techNames=['TechHero','TechBento','TechFlow'];
 const imports="import { TechHero, TechBento, TechFlow } from './TechVisuals';";
 let next=registry;

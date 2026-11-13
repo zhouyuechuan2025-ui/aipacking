@@ -6,21 +6,31 @@
 
 你不需要自己写代码或逐个调整动画：在 Codex 或支持本地文件、终端操作的 AI Agent 里安装好项目，把 **MP4 视频和对应的 SRT 字幕**交给它，用大白话描述需求即可。AI 先给你看方案，确认后再制作、检查和导出。
 
-## aipacking 3.3 · 原版模板
+## aipacking
 
-适合给 **16:9 真人口播** 加章节进度、侧边动效和语义图解。3.3 提供 **135 个可换文案、数据或素材的模板**，包括标题、步骤清单、证据展示、图解、媒体墙和人物收窗。
+面向 16:9 真人口播。使用原版工作台的 27 个模板、7 个 Tech 组件及连续动效，按台词编排人物、图解和真实资料。顶部章节轴贯穿全片。
 
-先用 HyperFrames 交逐段分镜，经你确认后，再从实际 Remotion 合成里抽 3–5 张预览，并审能看见新增动效和完整运镜的动态短样。你确认预览后，才用同一套分镜和组件导出完整 MP4，保留原声原速。
+[下载 aipacking ZIP](downloads/aipacking.zip?raw=true) · [安装与使用](docs/AIPACKING.md) · [aipacking 模板](docs/TEMPLATES.md) · [3.3 历史模板与样片](docs/NATIVE-TEMPLATES.md)
 
-[下载 3.3 ZIP](downloads/aipacking-3.3.zip?raw=true) · [安装与使用说明](docs/AIPACKING.md) · [135 项模板与实渲染](docs/NATIVE-TEMPLATES.md)
+### aipacking 实渲染示例
 
-### 原版模板实渲染
+以下是合成演示素材的实际渲染。
 
-![媒体拼墙、卡片与图解实渲染](docs/assets/native-templates-3.2/media-and-diagrams.jpg)
+| 开场与章节轴 | 投入到结果 |
+| --- | --- |
+| ![开场与章节轴](docs/assets/aipacking-demo/opening.jpg) | ![流程图](docs/assets/aipacking-demo/flow.jpg) |
 
-[新增 13 镜实渲染](docs/assets/native-templates-3.3/scene-reel.mp4?raw=true) · [媒体与图解](docs/assets/native-templates-3.2/motion-native-scenes.mp4?raw=true) · [八镜合辑](docs/assets/native-templates-3.2/scene-reel.mp4?raw=true) · [两侧包装与章节轴](docs/assets/native-templates-3.2/side-reel.mp4?raw=true) · [人物收窗与回位](docs/assets/native-templates-3.2/overlay-focus.mp4?raw=true)
+| 资料窗口 | 人物收窗 |
+| --- | --- |
+| ![资料窗口](docs/assets/aipacking-demo/evidence.jpg) | ![人物收窗](docs/assets/aipacking-demo/presenter.jpg) |
 
-### 辅助动效与流程案例
+[播放收窗与回位](docs/assets/aipacking-demo/preview.mp4?raw=true)
+
+
+<details>
+<summary>3.0 历史合成案例</summary>
+
+### 历史案例
 
 案例使用公开可复现的合成人物和示例字幕，由 aipacking 3.0 实际渲染。
 
@@ -33,6 +43,8 @@
 | ![从分镜分流到预览与整片](docs/assets/aipacking-3/branch.png) | ![原声和字幕汇到时间轴](docs/assets/aipacking-3/merge.png) |
 
 [播放 3.0 辅助动效案例](docs/assets/aipacking-3/case-demo.mp4?raw=true) · [辅助动效图鉴](docs/assets/aipacking-3/motion-gallery.mp4?raw=true) · [辅助预设索引](docs/MOTION-INDEX.md)
+
+</details>
 
 ## 能帮你做什么
 
@@ -67,7 +79,7 @@ https://github.com/zhouyuechuan2025-ui/aipacking
 
 ```text
 请用 $aipacking 处理我提供的真人口播 MP4 和同版 SRT。
-先用 HyperFrames 给我看逐段分镜，标明时间、台词、模板、动效触发词和缺失素材。
+先给我看逐段分镜，标明时间、台词、模板、动效触发词和缺失素材。
 普通口播稳镜头，只在关键落点轻推。用侧边对象变化、真实资料和图解带节奏，顶部显示章节进度。
 分镜确认后，给我看 3–5 张实际 Remotion 预览和完整运镜的动态短样。预览确认后再出全片。
 保留原声原速，避开脸和字幕，示意图与真实截图分清。
@@ -76,11 +88,11 @@ https://github.com/zhouyuechuan2025-ui/aipacking
 
 你也可以补充一句：“用浅色风格”“这段重点展示流程”或“动效少一点，优先保证看得清楚”。不满意的地方直接在对话里提出，继续调整即可。
 
-**交素材 → 确认分镜 → 看实际预览 → 确认后导出。** [查看完整启动提示词](skills/aipacking/references/start-prompt.md)。
+**交素材 → 确认分镜 → 看实际预览 → 确认后导出。** [查看完整启动提示词](docs/AIPACKING.md)。
 
 ## 基础 CLI 版 v0.6
 
-以下说明适用于仓库根目录的基础版。用 `npm run package-video` 完成基础包装或从 SRT 生成透明 MOV。aipacking 3.2 的动效工作流通过独立作业目录运行，命令见 [使用说明](docs/AIPACKING.md)。
+以下说明适用于仓库根目录的基础版。用 `npm run package-video` 完成基础包装或从 SRT 生成透明 MOV。aipacking 的动效工作流通过独立作业目录运行，命令见 [使用说明](docs/AIPACKING.md)。
 
 ## 前期素材准备
 
