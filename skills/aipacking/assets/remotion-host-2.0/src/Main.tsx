@@ -10,7 +10,7 @@ import { CUSTOM } from './custom';
 import { MOTION_LIBRARY_PAGES, MOTION_LIBRARY_OVERLAYS } from './custom/MotionLibrary';
 import { MotionElements, type MotionElement } from './pages/MotionElements';
 import { SEMANTIC_LANES, SEMANTIC_PAGES } from './motion/semantic-scene';
-import { NATIVE_SCENES, NATIVE_SCENE_LANES, NativeOverlayLayer, NativeRenderedClip } from './motion/NativeScenes';
+import { NATIVE_SCENES, NATIVE_SCENE_LANES, NATIVE_EXTERNAL_FULL, NATIVE_EXTERNAL_OVERLAYS, NativeOverlayLayer, NativeRenderedClip } from './motion/NativeScenes';
 import { REPORT_PAGES, REPORT_OVERLAYS } from './pages/report';
 import { REPORT2_PAGES } from './pages/report2';
 import { REPORT3_PAGES } from './pages/report3';
@@ -18,7 +18,7 @@ import { EDITORIAL_PAGES } from './pages/editorial';
 import { EDITORIAL2_PAGES } from './pages/editorial2';
 import { EDITORIAL3_PAGES, EDITORIAL3_OVERLAYS } from './pages/editorial3';
 import { EDITORIAL4_OVERLAYS } from './pages/editorial4';
-export const FULL_PAGES: Record<string, any> = { ...BASE, ...MORE1, ...MORE2, ...MORE3, ...MORE4, ...M5_PAGES, ...REPORT_PAGES, ...REPORT2_PAGES, ...REPORT3_PAGES, ...EDITORIAL_PAGES, ...EDITORIAL2_PAGES, ...EDITORIAL3_PAGES, ...CUSTOM, ...MOTION_LIBRARY_PAGES, ...SEMANTIC_PAGES, ...NATIVE_SCENES, NativeRenderedClip };
+export const FULL_PAGES: Record<string, any> = { ...BASE, ...MORE1, ...MORE2, ...MORE3, ...MORE4, ...M5_PAGES, ...REPORT_PAGES, ...REPORT2_PAGES, ...REPORT3_PAGES, ...EDITORIAL_PAGES, ...EDITORIAL2_PAGES, ...EDITORIAL3_PAGES, ...CUSTOM, ...MOTION_LIBRARY_PAGES, ...SEMANTIC_PAGES, ...NATIVE_SCENES, ...NATIVE_EXTERNAL_FULL, NativeRenderedClip };
 import { OVERLAYS as OV0, ProgressNav } from './pages/overlay';
 import { SideBeats } from './pages/SideBeats';
 import { cameraValue, type Camera } from './lib/camera';
@@ -42,7 +42,7 @@ export type Plan = {
   scenes: Scene[];
 };
 type Sub = [number, number, string];
-const OVERLAYS: Record<string, any> = { ...OV0, ...REPORT_OVERLAYS, ...EDITORIAL3_OVERLAYS, ...EDITORIAL4_OVERLAYS, SideBeats, ...MOTION_LIBRARY_OVERLAYS, ...SEMANTIC_LANES, ...NATIVE_SCENE_LANES, NativeOverlayLayer };
+const OVERLAYS: Record<string, any> = { ...OV0, ...REPORT_OVERLAYS, ...EDITORIAL3_OVERLAYS, ...EDITORIAL4_OVERLAYS, SideBeats, ...MOTION_LIBRARY_OVERLAYS, ...SEMANTIC_LANES, ...NATIVE_SCENE_LANES, ...NATIVE_EXTERNAL_OVERLAYS, NativeOverlayLayer };
 const TR = 9; // transition frames
 const CYCLE = ['zoom', 'push', 'flip', 'wipe'];
 
@@ -97,6 +97,7 @@ export const Main: React.FC<{ plan: Plan; subs: Sub[]; transparent?: boolean; pr
   const chapterAt = (s: number) => { let i = 0; chapters.forEach((c, j) => { if (s >= c.start - 0.01) i = j; }); return chapters.length ? { index: i + 1, total: chapters.length, title: chapters[i].title, en: chapters[i].en, cn: chapters[i].title, color: chapters[i].color, brand: (plan as any).brand } : undefined; };
   const styleAt = (sc: Scene) => { let st = plan.style; chapters.forEach(c => { if (sc.start >= c.start - 0.01 && c.style) st = c.style; }); return sc.style || st; };
   const activeFull = full.find(s => t >= s.start && t < s.end);
+  const activeOverlay = (type: string) => scenes.some(s => s.type === type && t >= s.start && t < s.end);
   const fx = scenes.filter(s => s.personFx && t >= s.start && t < s.end).map(s => s.personFx);
   const fxK = (() => { const s = scenes.find(s => s.personFx && t >= s.start && t < s.end); if (!s) return 0; return Math.min(clamp((t - s.start) / 0.25), clamp((s.end - t) / 0.3)); })();
   const camera = scenes.find(s => s.camera && frame >= Math.round(s.start * fps) && frame < Math.round(s.end * fps))?.camera;
@@ -114,7 +115,7 @@ export const Main: React.FC<{ plan: Plan; subs: Sub[]; transparent?: boolean; pr
   const sub = subs.find(s => t >= s[0] && t < s[1])
     ?? subs.find(s => t >= s[0] - 0.05 && t < s[1] + 0.06);
   const mode = plan.subtitles?.mode ?? (plan.meta.burnedSubtitles === false ? 'always' : 'covered');
-  const showSub = sub && (mode === 'always' || (mode === 'covered' && !!activeFull));
+  const showSub = sub && !activeOverlay('Overlay_caption-track') && (mode === 'always' || (mode === 'covered' && !!activeFull));
   const motionProps = (s:Scene) => ({_elements:s.elements ?? [],_accent:plan.palette?.main});
 
   return (
@@ -146,7 +147,7 @@ export const Main: React.FC<{ plan: Plan; subs: Sub[]; transparent?: boolean; pr
         );
       })}
       {scenes.map(s => s.elements?.length && !SEMANTIC_LANES[s.type] && !SEMANTIC_PAGES[s.type] ? <Sequence key={s.id+'-elements'} from={Math.round(s.start*fps)} durationInFrames={Math.round(s.end*fps)-Math.round(s.start*fps)} layout="none"><MotionElements elements={s.elements} start={s.start} accent={plan.palette?.main}/></Sequence> : null)}
-      {plan.chapterTimeline?.length ? <ProgressNav start={0} dur={Math.round(plan.meta.duration * fps)}
+      {plan.chapterTimeline?.length && !activeOverlay('Overlay_chapter-bar') ? <ProgressNav start={0} dur={Math.round(plan.meta.duration * fps)}
         p={{ compact: true, _chapters: plan.chapterTimeline, _duration: plan.meta.duration, color: plan.palette?.main }} /> : null}
       {setTheme(plan.style) && null}{showSub && <Subtitle text={sub![2]} />}
       {probe && <Probe tag={probe} />}

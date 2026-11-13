@@ -1,0 +1,17 @@
+[
+  {
+    "id": "ShotCraft_ListReveal",
+    "start": 0,
+    "end": 3
+  },
+  {
+    "id": "AgentMotion_AnimatedCounter",
+    "start": 3,
+    "end": 6
+  },
+  {
+    "id": "Overlay_checklist",
+    "start": 6,
+    "end": 8.5
+  }
+]

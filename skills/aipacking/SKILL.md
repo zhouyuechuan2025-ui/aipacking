@@ -2,7 +2,7 @@
 name: aipacking
 description: 用 HyperFrames 为真人 MP4、同版 SRT 和可选 B-roll 做口播分镜，再用 Remotion 渲染侧边动效、图解和证据预览；两次确认后交付全片。
 metadata:
-  version: "3.1.0"
+  version: "3.2.0"
 ---
 
 # aipacking · 分镜与风格双审版
@@ -11,7 +11,7 @@ metadata:
 
 ## 动效编排
 
-用户指定 .Motion、MotionAgent、Overlay、ShotCraft 或 SnapCN 时，先读 [原版模板与本期接入](references/native-templates.md)，以原工程镜头、原版组件和实际素材参数为准。审片展示实际原版运行结果。
+用户指定 .Motion、MotionAgent、Overlay、ShotCraft 或 SnapCN 时，先读 [原版模板与本期接入](references/native-templates.md)，按语义选真实组件、绑定本期参数并用实际运行结果审片。ShotCraft 扩展批按旧项目原 ID 追溯。侧边优先用适合小窗阅读的原版列表、短词、数值或步骤，章节内换结构，复杂证据留独立画面。
 
 普通口播保持稳定构图。新分镜用 motionVersion 3，选出少数关键落点，编排可见的轻推、停留和回位；收窗单独记录。侧边元素、资料状态和图解按原词推进。每镜安排与内容相关的可见动作。先查 [3.0 新动效及用法](references/motion-expanded.md) 和 [历版模板和动效用法](references/motion-library.md) 再决定组件。顶部章节轴贯穿真人和全屏画面。编导时读取 [动效密度、推拉与章节轴](references/motion-direction.md)。
 

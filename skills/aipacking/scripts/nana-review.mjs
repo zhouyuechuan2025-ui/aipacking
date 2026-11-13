@@ -42,6 +42,14 @@ const text = (s) => typeof s === 'string' && s.trim().length > 0;
 const number = Number.isFinite;
 const equal = (a,b) => number(a) && number(b) && Math.abs(a-b) < 1e-6;
 const renderData = name => json('src/motion/' + name + '.json');
+const nativeContracts = name => {
+  const file = 'src/motion/' + name + '.json';
+  return new Map((fs.existsSync(at(file)) ? json(file) : []).map(entry => [entry.id, entry]));
+};
+const externalLegacyTypes = new Set(['NativeRenderedClip', 'NativeOverlayLayer']);
+const hasInput = value => typeof value === 'string' ? text(value)
+  : Array.isArray(value) ? value.length > 0 : value !== null && value !== undefined;
+const nativeAssetPattern = /(?:^|[\s|>])(native\/[\w./%-]+\.(?:png|jpe?g|webp|svg|mp4|webm|mov))(?=$|[\s|>])/gi;
 export const hasNativeScene = (shot) => shot.native != null;
 const note = (s) => String(s).replace(/\|/g, '｜').replace(/\r?\n/g, ' ');
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -202,8 +210,8 @@ function checkMotionBoard(board, shots, fps) {
 function readBoard() {
   const {meta,files} = sources(), b = json('plan/storyboard.json'), seen = new Set();
   const catalog = new Map(json('docs/catalog.json').map((item) => [item.type, item]));
-  const nativeFile = 'src/motion/native-scenes.json';
-  const native = new Map((fs.existsSync(at(nativeFile)) ? json(nativeFile) : []).map(entry => [entry.id,entry]));
+  const native = nativeContracts('native-scenes');
+  const external = nativeContracts('external-native-scenes');
   need(equal(b.duration, meta.duration) && Array.isArray(b.shots) && b.shots.length, '分镜必须对应完整源片时长并至少包含一镜。');
   let cursor = 0;
   const shots = [...b.shots].sort((a,b) => a.start - b.start);
@@ -215,16 +223,23 @@ function readBoard() {
     need(catalog.has(s.type), s.id + ' 未登记实际模板：' + s.type);
     const contract = native.get(s.type);
     if (contract) need(['full','left','right'].includes(s.layout) && s.native && typeof s.native === 'object' && !Array.isArray(s.native)
-      && contract.required.every(key => s.native[key] !== undefined && s.native[key] !== null && s.native[key] !== ''
-        && (!Array.isArray(s.native[key]) || s.native[key].length > 0)),
+      && contract.required.every(key => hasInput(s.native[key]))
+      && Object.entries(contract.fieldLengths || {}).every(([key, size]) => Array.isArray(s.native[key]) && s.native[key].length === size),
       s.id + ' 原版模板须绑定本期参数：' + contract.required.join('、'));
-    if (['NativeRenderedClip','NativeOverlayLayer'].includes(s.type)) {
+    const externalContract = external.get(s.type);
+    if (externalContract) need(s.layout === externalContract.layout && s.native?.sourceProject === externalContract.source
+      && s.native.sourceRevision === externalContract.revision && s.native.templateId === externalContract.templateId
+      && text(s.native.media) && externalContract.required.every(key => hasInput(s.native.input?.[key])),
+      s.id + ' 须登记原工程版本、本期替换内容及对应的原生渲染文件。');
+    if (s.type === 'Overlay_focus-card') need(text(s.cameraReason) && !s.camera,
+      s.id + ' 原版收窗须标明关键落点和人物回位，使用这一层的原生运镜。');
+    if (externalLegacyTypes.has(s.type)) {
       const overlay = s.type === 'NativeOverlayLayer';
       need((overlay ? s.layout === 'overlay' : s.layout === 'full') && s.native &&
         (overlay ? ['Overlay Studio','OverlayMotion'] : ['.Motion','Overlay Studio','OverlayMotion']).includes(s.native.sourceProject)
         && ['media','templateId','sourceRevision'].every(key => text(s.native[key])), s.id + ' 须记录原工程、模板、版本和待渲染媒体路径。');
     }
-    need(!hasNativeScene(s) || contract || ['NativeRenderedClip','NativeOverlayLayer'].includes(s.type),
+    need(!hasNativeScene(s) || contract || externalContract || externalLegacyTypes.has(s.type),
       s.id + ' 的原版模板未登记。');
     need(Array.isArray(s.assets) && s.assets.every((x) => text(x)), s.id + ' assets 必须为字符串清单，没素材写 []。');
   }
@@ -279,13 +294,15 @@ export function requireBoard() {
 export function productionCheck() {
   requireBoard();
   const {b,shots,meta} = readBoard(), p = json('plan/plan.json');
+  const native = nativeContracts('native-scenes');
+  const external = nativeContracts('external-native-scenes');
   if ([1,2,3].includes(b.motionVersion)) need(isDeepStrictEqual(p.chapterTimeline, b.chapterTimeline), '章节时间轴与已审分镜不同。');
   need(p.meta?.video === meta.video && equal(p.meta?.duration,meta.duration) && equal(p.meta?.fps,meta.fps), '成片主轨不是已审分镜的原 MP4 / 时钟。');
   need(Array.isArray(p.scenes) && p.scenes.length === shots.length, '实际分镜镜数与已确认版本不同。');
   for (const s of shots) {
     const scene = p.scenes.find((x) => x.id === s.id);
     need(scene && s.type === scene.type && s.layout === scene.layout && equal(s.start,scene.start) && equal(s.end,scene.end), '成片分镜偏离已审时间、布局或模板：' + s.id);
-    if (s.native) need(isDeepStrictEqual(s.native, ['NativeRenderedClip','NativeOverlayLayer'].includes(s.type) ? scene.props : scene.props?.native),
+    if (s.native) need(isDeepStrictEqual(s.native, external.has(s.type) || externalLegacyTypes.has(s.type) ? scene.props : scene.props?.native),
       '原版模板参数与已审分镜不同：' + s.id);
     if ([1,2,3].includes(b.motionVersion)) {
       need(isDeepStrictEqual(scene.camera, s.camera), '运镜与已审分镜不同：' + s.id);
@@ -301,10 +318,19 @@ export function productionCheck() {
   for (const scene of p.scenes) {
     const props = scene.props || {};
     const template = scene.type;
-    if (template === 'NativeRenderedClip') need(media(props.media) && /\.mp4$/i.test(props.media),
+    const externalContract = external.get(template);
+    const internalContract = native.get(template);
+    if (template === 'NativeRenderedClip' || externalContract?.layout === 'full') need(media(props.media) && /\.mp4$/i.test(props.media),
       '外部原生模板须绑定原工程生成的本期本地 MP4：' + scene.id);
-    if (template === 'NativeOverlayLayer') need(media(props.media) && /\.mov$/i.test(props.media),
+    if (template === 'NativeOverlayLayer' || externalContract?.layout === 'overlay') need(media(props.media) && /\.mov$/i.test(props.media),
       '原版叠加层须绑定本期透明 ProRes MOV：' + scene.id);
+    for (const field of internalContract?.mediaFields ?? []) {
+      const value = props.native?.[field];
+      const files = internalContract.embeddedMediaFields?.includes(field) && typeof value === 'string'
+        ? [...value.matchAll(nativeAssetPattern)].map(match => match[1]) : Array.isArray(value) ? value : [value];
+      need(files.length && files.every(file => typeof file === 'string' && file.startsWith('native/') && media(file)),
+        scene.id + ' 原版模板缺本期素材：' + field);
+    }
     const images = (min,max) => Array.isArray(props.images) && props.images.length >= min && props.images.length <= max && props.images.every(media);
     if (template === 'ShotcraftMosaic') need(images(2,12), '拼墙须绑定 2–12 张当前素材：' + scene.id);
     if (template === 'SnapLogoAssemble') need(images(4,12) && media(props.logoSrc) && text(props.brandName)
@@ -342,7 +368,7 @@ function readyStyle() {
   const ready = json('review/preview-ready.json');
   need(ready.production === styleHash() && Array.isArray(ready.images) && ready.images.length >= 3 && ready.images.length <= 5 && new Set(ready.images).size === ready.images.length && ready.images.every((x) => /^review\/previews\/[a-z0-9-]+\/frame-\d+\.png$/.test(x)), '风格预览缺失、参数已改，或当前版本未预览。');
   const b = json('plan/storyboard.json');
-  const moving = b.motionVersion >= 2 && b.shots.some(s => s.camera?.keys || s.camera?.windowKeys);
+  const moving = b.motionVersion >= 2 && b.shots.some(s => s.camera?.keys || s.camera?.windowKeys || s.type === 'Overlay_focus-card');
   const clips = ready.clips ?? (ready.clip ? [ready.clip] : []);
   need(Array.isArray(clips) && (!moving || clips.length > 0) && clips.every(
     clip => /^review\/previews\/[a-z0-9-]+\/motion(?:-\d+)?\.mp4$/.test(clip) && ready.images.every(image => path.posix.dirname(image) === path.posix.dirname(clip))),

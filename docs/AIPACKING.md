@@ -1,10 +1,10 @@
-# aipacking 3.1
+# aipacking 3.2
 
 适用于已剪好的 **16:9 真人口播 MP4 和同版 UTF-8 SRT**。可以附上获准使用的截图、录屏、实拍 B-roll 和仅供参考的片子。成片沿用原声原速和人物质感。
 
 ## 安装
 
-从 [3.1 ZIP](../downloads/aipacking-3.1.zip?raw=true) 解压，或从仓库获取 [完整 Skill 目录](../skills/aipacking/)。把整个 `aipacking` 目录放进 Agent 的 Skills 目录，在对话中调用 `$aipacking`。如果 Agent 没有 Skill 安装入口，可以请它读取目录里的 [SKILL.md](../skills/aipacking/SKILL.md) 并按其中流程执行。
+从 [3.2 ZIP](../downloads/aipacking-3.2.zip?raw=true) 解压，或从仓库获取 [完整 Skill 目录](../skills/aipacking/)。把整个 `aipacking` 目录放进 Agent 的 Skills 目录，在对话中调用 `$aipacking`。如果 Agent 没有 Skill 安装入口，可以请它读取目录里的 [SKILL.md](../skills/aipacking/SKILL.md) 并按其中流程执行。
 
 运行环境需要 Node.js 22+、npm、PATH 上的 FFmpeg 和 ffprobe，以及可访问 npm 依赖的网络。ZIP 含原版 Remotion 模板源码与双审脚本，依赖和字体通过 npm 安装。
 
@@ -37,9 +37,9 @@ npm run prepare-input -- "口播.mp4" "口播.srt"
 
 ## 动效规则
 
-[原版模板、来源与样片](NATIVE-TEMPLATES.md)
+[115 个原版模板、来源与样片](NATIVE-TEMPLATES.md)
 
-[139 项新增动效索引与实际图鉴](MOTION-INDEX.md) · [分镜参数及使用条件](../skills/aipacking/references/motion-expanded.md)
+[辅助动效索引与图鉴](MOTION-INDEX.md) · [分镜参数及使用条件](../skills/aipacking/references/motion-expanded.md)
 
 - 普通口播保持原构图。默认在开场重音或关键结论安排少数可见轻推并回位。新稿用 motionVersion 3，把原词、动作与发生时间写进分镜。有独立信息区时按需收窗。
 - 每段安排与台词有关的可见动作。侧边用标签、要点划线、步骤或状态变化分批出现，图解随台词逐步建立，给观众留出阅读时间。

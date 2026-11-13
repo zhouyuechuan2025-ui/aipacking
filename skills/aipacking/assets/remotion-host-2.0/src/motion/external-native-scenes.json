@@ -1,0 +1,456 @@
+[
+  {
+    "id": "Motion_KineticTech_B1",
+    "name": "Kinetic Tech B1",
+    "source": ".Motion",
+    "revision": "0.2.7-open-beta",
+    "templateId": "kinetic-tech/B1",
+    "layout": "full",
+    "required": [
+      "keyword",
+      "explanation"
+    ],
+    "demo": {
+      "keyword": "证据",
+      "explanation": "先亮出来源\n再让观众读清重点"
+    }
+  },
+  {
+    "id": "Motion_KineticTech_B2",
+    "name": "Kinetic Tech B2",
+    "source": ".Motion",
+    "revision": "0.2.7-open-beta",
+    "templateId": "kinetic-tech/B2",
+    "layout": "full",
+    "required": [
+      "heading",
+      "points"
+    ],
+    "demo": {
+      "heading": "核对原文",
+      "points": [
+        "确认出处",
+        "标记日期",
+        "对照正文"
+      ]
+    }
+  },
+  {
+    "id": "Motion_KineticTech_B3",
+    "name": "Kinetic Tech B3",
+    "source": ".Motion",
+    "revision": "0.2.7-open-beta",
+    "templateId": "kinetic-tech/B3",
+    "layout": "full",
+    "required": [
+      "heading",
+      "left",
+      "right",
+      "conclusion"
+    ],
+    "demo": {
+      "heading": "核对原文",
+      "left": "摘要只有判断",
+      "right": "原文附有数据",
+      "conclusion": "先打开原文"
+    }
+  },
+  {
+    "id": "Motion_KineticTech_B4",
+    "name": "Kinetic Tech B4",
+    "source": ".Motion",
+    "revision": "0.2.7-open-beta",
+    "templateId": "kinetic-tech/B4",
+    "layout": "full",
+    "required": [
+      "summary",
+      "action"
+    ],
+    "demo": {
+      "summary": "保留证据链",
+      "action": "记录来源链接"
+    }
+  },
+  {
+    "id": "Overlay_blur-text",
+    "name": "blur-text",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "blur-text",
+    "layout": "overlay",
+    "required": [
+      "text"
+    ],
+    "demo": {
+      "text": "查阅原始材料|确认出处|再做判断"
+    }
+  },
+  {
+    "id": "Overlay_caption-track",
+    "name": "caption-track",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "caption-track",
+    "layout": "overlay",
+    "required": [
+      "lines"
+    ],
+    "demo": {
+      "lines": "2.5|5.0|查阅原始材料|Open the source"
+    }
+  },
+  {
+    "id": "Overlay_chapter-bar",
+    "name": "chapter-bar",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "chapter-bar",
+    "layout": "overlay",
+    "required": [
+      "chapters"
+    ],
+    "demo": {
+      "chapters": "查资料 0 | 看证据 1.5"
+    }
+  },
+  {
+    "id": "Overlay_checklist",
+    "name": "checklist",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "checklist",
+    "layout": "overlay",
+    "required": [
+      "title",
+      "items",
+      "checked"
+    ],
+    "demo": {
+      "title": "交付复核",
+      "items": "核对来源|检查画面|保留原声",
+      "checked": 3
+    }
+  },
+  {
+    "id": "Overlay_entity-chips",
+    "name": "entity-chips",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "entity-chips",
+    "layout": "overlay",
+    "required": [
+      "chips",
+      "note"
+    ],
+    "demo": {
+      "chips": "light|原始材料|发布机构\ndark|整理记录|核对小组",
+      "note": "来源|本期材料"
+    }
+  },
+  {
+    "id": "Overlay_growth-curve",
+    "name": "growth-curve",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "growth-curve",
+    "layout": "overlay",
+    "required": [
+      "kicker",
+      "kickerZh",
+      "points",
+      "unit",
+      "caption"
+    ],
+    "demo": {
+      "kicker": "DOCUMENTS",
+      "kickerZh": "文件数量",
+      "points": "初查 2|整理 4|复核 7",
+      "unit": "份",
+      "caption": "合成样例"
+    }
+  },
+  {
+    "id": "Overlay_odometer",
+    "name": "odometer",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "odometer",
+    "layout": "overlay",
+    "required": [
+      "kicker",
+      "value",
+      "unit",
+      "label"
+    ],
+    "demo": {
+      "kicker": "已核对",
+      "value": 28,
+      "unit": "份",
+      "label": "本期文档"
+    }
+  },
+  {
+    "id": "Overlay_pin-board",
+    "name": "pin-board",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "pin-board",
+    "layout": "overlay",
+    "required": [
+      "title",
+      "subtitle",
+      "items",
+      "stepMs"
+    ],
+    "demo": {
+      "title": "核对出处",
+      "subtitle": "资料索引",
+      "items": "网页原文|发布记录|版本信息",
+      "stepMs": 420
+    }
+  },
+  {
+    "id": "Overlay_punch-pill",
+    "name": "punch-pill",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "punch-pill",
+    "layout": "overlay",
+    "required": [
+      "text"
+    ],
+    "demo": {
+      "text": "先看原始材料"
+    }
+  },
+  {
+    "id": "Overlay_rank-bars",
+    "name": "rank-bars",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "rank-bars",
+    "layout": "overlay",
+    "required": [
+      "title",
+      "rows",
+      "suffix"
+    ],
+    "demo": {
+      "title": "案例分布",
+      "rows": "原文,8|记录,5|截图,3",
+      "suffix": "份"
+    }
+  },
+  {
+    "id": "Overlay_ring-metric",
+    "name": "ring-metric",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "ring-metric",
+    "layout": "overlay",
+    "required": [
+      "kicker",
+      "value",
+      "max",
+      "label"
+    ],
+    "demo": {
+      "kicker": "完成比例",
+      "value": 63,
+      "max": 100,
+      "label": "审核进度"
+    }
+  },
+  {
+    "id": "Overlay_stat-proof",
+    "name": "stat-proof",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "stat-proof",
+    "layout": "overlay",
+    "required": [
+      "kicker",
+      "kickerZh",
+      "value",
+      "suffix",
+      "footEn",
+      "footZh"
+    ],
+    "demo": {
+      "kicker": "REVIEW",
+      "kickerZh": "复核数量",
+      "value": 28,
+      "suffix": "份",
+      "footEn": "SYNTHETIC DATA",
+      "footZh": "合成样例"
+    }
+  },
+  {
+    "id": "Overlay_step-timeline",
+    "name": "step-timeline",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "step-timeline",
+    "layout": "overlay",
+    "required": [
+      "title",
+      "steps",
+      "tagZh",
+      "nowZh"
+    ],
+    "demo": {
+      "title": "核对流程",
+      "steps": "打开来源|找到正文|标记结论",
+      "tagZh": "工作步骤",
+      "nowZh": "当前"
+    }
+  },
+  {
+    "id": "Overlay_term-card",
+    "name": "term-card",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "term-card",
+    "layout": "overlay",
+    "required": [
+      "term",
+      "def",
+      "en"
+    ],
+    "demo": {
+      "term": "原始材料",
+      "def": "信息最初的发布文件。",
+      "en": "PRIMARY SOURCE"
+    }
+  },
+  {
+    "id": "Overlay_terminal-3d",
+    "name": "terminal-3d",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "terminal-3d",
+    "layout": "overlay",
+    "required": [
+      "file",
+      "lines"
+    ],
+    "demo": {
+      "file": "review.log",
+      "lines": "$ check sources|source verified"
+    }
+  },
+  {
+    "id": "Overlay_type-shift",
+    "name": "type-shift",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "type-shift",
+    "layout": "overlay",
+    "required": [
+      "lines",
+      "draftTag"
+    ],
+    "demo": {
+      "lines": "先查发布页|接着核对日期|*记录真实出处",
+      "draftTag": "REVIEW"
+    }
+  },
+  {
+    "id": "Overlay_ui-callout",
+    "name": "ui-callout",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "ui-callout",
+    "layout": "overlay",
+    "required": [
+      "label",
+      "hlWords"
+    ],
+    "demo": {
+      "label": "原文定位",
+      "hlWords": "核对出处"
+    }
+  },
+  {
+    "id": "Overlay_versus-card",
+    "name": "versus-card",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "versus-card",
+    "layout": "overlay",
+    "required": [
+      "aKicker",
+      "aTitle",
+      "aSub",
+      "bKicker",
+      "bTitle",
+      "bSub",
+      "winner"
+    ],
+    "demo": {
+      "aKicker": "材料一",
+      "aTitle": "原始文件",
+      "aSub": "有正式署名",
+      "bKicker": "材料二",
+      "bTitle": "二次摘录",
+      "bSub": "待核对原文",
+      "winner": "a"
+    }
+  },
+  {
+    "id": "Overlay_quote-lockup",
+    "name": "quote-lockup",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "quote-lockup",
+    "layout": "overlay",
+    "required": [
+      "quote",
+      "author"
+    ],
+    "demo": {
+      "quote": "打开原文|查清发布日期",
+      "author": "本期复核笔记"
+    }
+  },
+  {
+    "id": "Overlay_focus-card",
+    "name": "focus-card",
+    "source": "Overlay Studio",
+    "revision": "1.1.1",
+    "commit": "e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8",
+    "templateId": "focus-card",
+    "layout": "full",
+    "required": [
+      "camSrc",
+      "camSize",
+      "eyebrow",
+      "items"
+    ],
+    "demo": {
+      "camSrc": "native/aipacking-test-camera.mp4",
+      "camSize": 100,
+      "eyebrow": "资料核对",
+      "items": "打开原文|核对日期|记录出处"
+    }
+  }
+]

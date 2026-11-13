@@ -9,6 +9,18 @@ const syntheticDemos = new Set([
   'docs/assets/aipacking-3/case-demo.mp4', 'docs/assets/aipacking-3/motion-gallery.mp4',
   'docs/assets/native-templates/native-showcase.mp4', 'docs/assets/native-templates/motiongit-native-demo.mp4',
   'docs/assets/native-templates/overlay-native-demo.mp4',
+  'docs/assets/native-templates-3.2/scene-reel.mp4', 'docs/assets/native-templates-3.2/side-reel.mp4',
+  'docs/assets/native-templates-3.2/overlay-focus.mp4', 'docs/assets/native-templates-3.2/motion-kinetic.mp4',
+  'docs/assets/native-templates-3.2/overlay-cards.mp4',
+]);
+const templateSource = 'skills/aipacking/assets/remotion-host-2.0/';
+const uiPlaceholderPaths = new Set([
+  'docs/NATIVE-TEMPLATES.md', templateSource + 'docs/catalog.json', templateSource + 'src/motion/native-scenes.json',
+  ...[
+    'agent/before-after/BeforeAfter.tsx', 'agent/image-carousel/ImageCarousel.tsx',
+    'snap/click-type/index.tsx', 'snap/input/index.tsx', 'snap/laptop-frame/index.tsx',
+    'snap/phone-frame/index.tsx', 'snap/prompt-send/index.tsx', 'snap/prompt-zoom/index.tsx',
+  ].map(file => templateSource + 'external/native-scenes/' + file),
 ]);
 const directDPath = new RegExp(`\\b${['D', ':', '\\\\'].join('')}`, 'i');
 const userPath = new RegExp(`[A-Z]:${['\\\\', 'Users', '\\\\', '[^\\\\]+', '\\\\'].join('')}`, 'i');
@@ -32,9 +44,10 @@ export const scanEntries = (entries) => {
       if (nonPublicTerms.some((pattern) => pattern.test(entry.text))) findings.push(`${normalized}: non-public-term`);
       if (secretPatterns.some((pattern) => pattern.test(entry.text))) findings.push(`${normalized}: possible-secret`);
       const marker = new RegExp(`\\b(?:${['TO' + 'DO', 'T' + 'BD', 'FIX' + 'ME', 'PLACE' + 'HOLDER'].join('|')})\\b`, 'i');
-      const markerText = normalized === 'skills/aipacking/assets/remotion-host-2.0/src/pages/more3.tsx'
+      let markerText = normalized === 'skills/aipacking/assets/remotion-host-2.0/src/pages/more3.tsx'
         ? entry.text.replaceAll('p.place' + 'holder', '')
         : entry.text;
+      if (uiPlaceholderPaths.has(normalized)) markerText = markerText.replace(/\bplaceholder\b/gi, '');
       if (marker.test(markerText)) findings.push(`${normalized}: ${'place' + 'holder'}`);
     }
   }

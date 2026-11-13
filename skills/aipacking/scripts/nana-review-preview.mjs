@@ -28,7 +28,7 @@ try {
     || clipTimes[1] > plan.meta.duration || clipTimes[1]-clipTimes[0] < 1 || clipTimes[1]-clipTimes[0] > 8
     || clipTimes[1]-clipTimes[0] >= plan.meta.duration - 1/fps)) fail('动态预览区间须为片内 1–8 秒。');
   const board = read('plan/storyboard.json');
-  const hasCamera = s => s.camera?.keys || s.camera?.windowKeys;
+  const hasCamera = s => s.camera?.keys || s.camera?.windowKeys || s.type === 'Overlay_focus-card';
   if (board.motionVersion >= 2 && board.shots.filter(hasCamera).some(
     s => !ranges.some(([from,to]) => from <= s.start+.25 && to >= s.end-.25))) {
     fail('请用 --clip 开始秒 结束秒 覆盖每处完整运镜。');

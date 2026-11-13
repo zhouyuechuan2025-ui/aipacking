@@ -4773,6 +4773,34 @@
     "props": {}
   },
   {
+    "type": "NativeRenderedClip",
+    "ctx": "外部原生模板",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "使用原工程渲染的本期 MP4，按来源和版本登记。",
+    "props": {
+      "media": "native/scene.mp4",
+      "sourceProject": ".Motion",
+      "templateId": "kinetic-tech/B1",
+      "sourceRevision": "0.2.7-open-beta"
+    }
+  },
+  {
+    "type": "NativeOverlayLayer",
+    "ctx": "外部原生模板",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 1,
+    "use": "叠入 Overlay Studio 或 OverlayMotion 的原版透明 MOV。",
+    "props": {
+      "media": "native/overlay.mov",
+      "sourceProject": "Overlay Studio",
+      "templateId": "versus-card",
+      "sourceRevision": "1.1.1"
+    }
+  },
+  {
     "type": "AgentMotion_AnimatedCounter",
     "ctx": "Agent Motion",
     "layout": "full|left|right",
@@ -5216,7 +5244,7 @@
   },
   {
     "type": "ShotCraftExt_ResearchCardStackScroll",
-    "ctx": "ShotCraft 扩展批",
+    "ctx": "ShotCraft",
     "layout": "full|left|right",
     "family": "generic",
     "minDur": 1.5,
@@ -5228,31 +5256,1288 @@
     }
   },
   {
-    "type": "NativeRenderedClip",
-    "ctx": "外部原生模板",
-    "layout": "full",
+    "type": "SnapCN_AnswerStream",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
     "family": "generic",
-    "minDur": 1,
-    "use": "使用原工程渲染的本期 MP4，按来源和版本登记。",
+    "minDur": 1.5,
+    "use": "AnswerStream，props.native 绑定本期内容。",
     "props": {
-      "media": "native/scene.mp4",
-      "sourceProject": ".Motion",
-      "templateId": "kinetic-tech/B1",
-      "sourceRevision": "0.2.7-open-beta"
+      "native": {
+        "question": null,
+        "answer": null,
+        "headline": null,
+        "model": null
+      }
     }
   },
   {
-    "type": "NativeOverlayLayer",
-    "ctx": "外部原生模板",
+    "type": "SnapCN_BlockWordmark",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "BlockWordmark，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "text": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_BloomLockup",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "BloomLockup，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "wordmark": null,
+        "tagline": null,
+        "images": null,
+        "logo": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_BrandWheel",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "BrandWheel，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "lead": null,
+        "items": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_ButtonPress",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "ButtonPress，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "label": null,
+        "pending": null,
+        "done": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_CaptureReveal",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "CaptureReveal，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "headline": null,
+        "capturing": null,
+        "copied": null,
+        "src": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_CardRail",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "CardRail，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "heading": null,
+        "cards": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_ChannelThread",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "ChannelThread，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "messages": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_ClickType",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "ClickType，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "placeholder": null,
+        "prompt": null,
+        "hint": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_FontShuffle",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "FontShuffle，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "lead": null,
+        "subject": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_GatherLockup",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "GatherLockup，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "wordmark": null,
+        "lines": null,
+        "images": null,
+        "captions": null,
+        "logo": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_HelloZoom",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "HelloZoom，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "lead": null,
+        "rest": null,
+        "nextWord": null,
+        "words": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_KaraokeCaptions",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "KaraokeCaptions，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "text": null,
+        "emphasize": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_LaptopFrame",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "LaptopFrame，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "screenSrc": null,
+        "notchLabel": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_LogoCollapse",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "LogoCollapse，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "images": null,
+        "mark": null,
+        "wordmark": null,
+        "background": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_LogoDrift",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "LogoDrift，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "headline": null,
+        "tiles": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_LogoFlicker",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "LogoFlicker，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "brandName": null,
+        "logoSrc": null,
+        "images": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_MoodboardReveal",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "MoodboardReveal，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "leadIn": null,
+        "emphasis": null,
+        "tailIn": null,
+        "images": null,
+        "heroImage": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_OrbSwarm",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "OrbSwarm，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "script": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_OrbitGallery",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "OrbitGallery，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "title": null,
+        "subtitle": null,
+        "buttonLabel": null,
+        "images": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_PhoneFrame",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "PhoneFrame，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "screenSrc": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_PhoneStack",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "PhoneStack，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "videos": null,
+        "time": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_PortalIntro",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "PortalIntro，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "lead": null,
+        "trail": null,
+        "title": null,
+        "brand": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_PromptSend",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "PromptSend，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "text": null,
+        "placeholder": null,
+        "chips": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_PromptZoom",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "PromptZoom，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "greeting": null,
+        "text": null,
+        "placeholder": null,
+        "model": null,
+        "effort": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_PunchLines",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "PunchLines，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "script": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_ReelCollage",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "ReelCollage，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "topLine": null,
+        "bottomLine": null,
+        "swapTop": null,
+        "swapBottom": null,
+        "slides": null,
+        "collage": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_ReelWall",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "ReelWall，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "videos": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_RosterGrant",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "RosterGrant，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "label": null,
+        "rows": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_ScreenRecording",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "ScreenRecording，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "src": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_SearchTyping",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "SearchTyping，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "text": null,
+        "seed": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_SkyLockup",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "SkyLockup，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "before": null,
+        "after": null,
+        "wordmark": null,
+        "logo": null,
+        "sky": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_StatusCycle",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "StatusCycle，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "prefix": null,
+        "statuses": null,
+        "chips": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_TextReveal",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "TextReveal，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "text": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_TextSwell",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "TextSwell，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "text": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_TypeMorph",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "TypeMorph，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "lead": null,
+        "emphasis": null,
+        "morphTo": null,
+        "finally_": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_WordCaptions",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "WordCaptions，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "srt": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_WordmarkCut",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "WordmarkCut，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "word": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_WordTypewriter",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Word Typewriter，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "text": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_BeforeAfter",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Before / After，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "images": null,
+        "labels": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_BrowserSpotlight",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Browser Spotlight，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "src": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_DeviceMockup",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Device Mockup，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "src": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_ImageCarousel",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Image Carousel，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "images": null,
+        "labels": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_LogoReveal",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Logo Reveal，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "logoSrc": null,
+        "brand": null,
+        "tagline": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_CursorTour",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Cursor Tour，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "xPositions": null,
+        "yPositions": null,
+        "src": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraftExt_CardStack",
+    "ctx": "ShotCraft 扩展批",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "CardStack，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "imageUrls": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraftExt_MosaicReframe",
+    "ctx": "ShotCraft 扩展批",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "MosaicReframe，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "imageUrls": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraftExt_FlyingWords",
+    "ctx": "ShotCraft 扩展批",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "FlyingWords，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "words": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraftExt_CounterConfetti",
+    "ctx": "ShotCraft 扩展批",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "CounterConfetti，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "value": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraftExt_Fracture",
+    "ctx": "ShotCraft 扩展批",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Fracture，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "text": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraftExt_HatchDepth",
+    "ctx": "ShotCraft 扩展批",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "HatchDepth，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "rows": null,
+        "heading": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraftExt_CubeNavigation",
+    "ctx": "ShotCraft 扩展批",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "CubeNavigation，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "labels": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraftExt_Carousel3D",
+    "ctx": "ShotCraft 扩展批",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Carousel3D，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "labels": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraftExt_DiagramCascadeBuild",
+    "ctx": "ShotCraft 扩展批",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "DiagramCascadeBuild，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "prompt": null,
+        "labels": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraftExt_GlassPillDictationTyping",
+    "ctx": "ShotCraft 扩展批",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "GlassPillDictationTyping，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "text": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraftExt_ChipGridSingleSelectBlackout",
+    "ctx": "ShotCraft 扩展批",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "ChipGridSingleSelectBlackout，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "labels": null,
+        "caption": null
+      }
+    }
+  },
+  {
+    "type": "Motion_KineticTech_B1",
+    "ctx": ".Motion",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 2,
+    "use": "Kinetic Tech B1，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": ".Motion",
+      "sourceRevision": "0.2.7-open-beta",
+      "templateId": "kinetic-tech/B1",
+      "media": "native/scene.mp4",
+      "input": {
+        "keyword": null,
+        "explanation": null
+      }
+    }
+  },
+  {
+    "type": "Motion_KineticTech_B2",
+    "ctx": ".Motion",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 2,
+    "use": "Kinetic Tech B2，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": ".Motion",
+      "sourceRevision": "0.2.7-open-beta",
+      "templateId": "kinetic-tech/B2",
+      "media": "native/scene.mp4",
+      "input": {
+        "heading": null,
+        "points": null
+      }
+    }
+  },
+  {
+    "type": "Motion_KineticTech_B3",
+    "ctx": ".Motion",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 2,
+    "use": "Kinetic Tech B3，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": ".Motion",
+      "sourceRevision": "0.2.7-open-beta",
+      "templateId": "kinetic-tech/B3",
+      "media": "native/scene.mp4",
+      "input": {
+        "heading": null,
+        "left": null,
+        "right": null,
+        "conclusion": null
+      }
+    }
+  },
+  {
+    "type": "Motion_KineticTech_B4",
+    "ctx": ".Motion",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 2,
+    "use": "Kinetic Tech B4，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": ".Motion",
+      "sourceRevision": "0.2.7-open-beta",
+      "templateId": "kinetic-tech/B4",
+      "media": "native/scene.mp4",
+      "input": {
+        "summary": null,
+        "action": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_blur-text",
+    "ctx": "Overlay Studio",
     "layout": "overlay",
     "family": "generic",
-    "minDur": 1,
-    "use": "叠入 Overlay Studio 或 OverlayMotion 的原版透明 MOV。",
+    "minDur": 2,
+    "use": "blur-text，原工程渲染本期内容后接入。",
     "props": {
-      "media": "native/overlay.mov",
       "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "blur-text",
+      "media": "native/scene.mov",
+      "input": {
+        "text": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_caption-track",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "caption-track，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "caption-track",
+      "media": "native/scene.mov",
+      "input": {
+        "lines": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_chapter-bar",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "chapter-bar，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "chapter-bar",
+      "media": "native/scene.mov",
+      "input": {
+        "chapters": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_checklist",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "checklist，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "checklist",
+      "media": "native/scene.mov",
+      "input": {
+        "title": null,
+        "items": null,
+        "checked": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_entity-chips",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "entity-chips，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "entity-chips",
+      "media": "native/scene.mov",
+      "input": {
+        "chips": null,
+        "note": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_growth-curve",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "growth-curve，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "growth-curve",
+      "media": "native/scene.mov",
+      "input": {
+        "kicker": null,
+        "kickerZh": null,
+        "points": null,
+        "unit": null,
+        "caption": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_odometer",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "odometer，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "odometer",
+      "media": "native/scene.mov",
+      "input": {
+        "kicker": null,
+        "value": null,
+        "unit": null,
+        "label": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_pin-board",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "pin-board，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "pin-board",
+      "media": "native/scene.mov",
+      "input": {
+        "title": null,
+        "subtitle": null,
+        "items": null,
+        "stepMs": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_punch-pill",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "punch-pill，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "punch-pill",
+      "media": "native/scene.mov",
+      "input": {
+        "text": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_rank-bars",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "rank-bars，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "rank-bars",
+      "media": "native/scene.mov",
+      "input": {
+        "title": null,
+        "rows": null,
+        "suffix": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_ring-metric",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "ring-metric，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "ring-metric",
+      "media": "native/scene.mov",
+      "input": {
+        "kicker": null,
+        "value": null,
+        "max": null,
+        "label": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_stat-proof",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "stat-proof，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "stat-proof",
+      "media": "native/scene.mov",
+      "input": {
+        "kicker": null,
+        "kickerZh": null,
+        "value": null,
+        "suffix": null,
+        "footEn": null,
+        "footZh": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_step-timeline",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "step-timeline，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "step-timeline",
+      "media": "native/scene.mov",
+      "input": {
+        "title": null,
+        "steps": null,
+        "tagZh": null,
+        "nowZh": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_term-card",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "term-card，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "term-card",
+      "media": "native/scene.mov",
+      "input": {
+        "term": null,
+        "def": null,
+        "en": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_terminal-3d",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "terminal-3d，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "terminal-3d",
+      "media": "native/scene.mov",
+      "input": {
+        "file": null,
+        "lines": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_type-shift",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "type-shift，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "type-shift",
+      "media": "native/scene.mov",
+      "input": {
+        "lines": null,
+        "draftTag": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_ui-callout",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "ui-callout，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "ui-callout",
+      "media": "native/scene.mov",
+      "input": {
+        "label": null,
+        "hlWords": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_versus-card",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "versus-card，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
       "templateId": "versus-card",
-      "sourceRevision": "1.1.1"
+      "media": "native/scene.mov",
+      "input": {
+        "aKicker": null,
+        "aTitle": null,
+        "aSub": null,
+        "bKicker": null,
+        "bTitle": null,
+        "bSub": null,
+        "winner": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_quote-lockup",
+    "ctx": "Overlay Studio",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 2,
+    "use": "quote-lockup，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "quote-lockup",
+      "media": "native/scene.mov",
+      "input": {
+        "quote": null,
+        "author": null
+      }
+    }
+  },
+  {
+    "type": "Overlay_focus-card",
+    "ctx": "Overlay Studio",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 2,
+    "use": "focus-card，原工程渲染本期内容后接入。",
+    "props": {
+      "sourceProject": "Overlay Studio",
+      "sourceRevision": "1.1.1",
+      "templateId": "focus-card",
+      "media": "native/scene.mp4",
+      "input": {
+        "camSrc": null,
+        "camSize": null,
+        "eyebrow": null,
+        "items": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraftExt_TapeScrollFixedPointer",
+    "ctx": "ShotCraft 扩展批",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "TapeScrollFixedPointer，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "title": null,
+        "from": null,
+        "to": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraftExt_RadialRipplePhoneChips",
+    "ctx": "ShotCraft 扩展批",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "RadialRipplePhoneChips，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "imageUrls": null,
+        "labels": null
+      }
     }
   }
 ]

@@ -1,0 +1,97 @@
+[
+  {
+    "id": "blur-text",
+    "start": 0.0,
+    "end": 2.5
+  },
+  {
+    "id": "caption-track",
+    "start": 2.5,
+    "end": 5.0
+  },
+  {
+    "id": "chapter-bar",
+    "start": 5.0,
+    "end": 7.5
+  },
+  {
+    "id": "checklist",
+    "start": 7.5,
+    "end": 10.0
+  },
+  {
+    "id": "entity-chips",
+    "start": 10.0,
+    "end": 12.5
+  },
+  {
+    "id": "growth-curve",
+    "start": 12.5,
+    "end": 15.0
+  },
+  {
+    "id": "odometer",
+    "start": 15.0,
+    "end": 17.5
+  },
+  {
+    "id": "pin-board",
+    "start": 17.5,
+    "end": 20.0
+  },
+  {
+    "id": "punch-pill",
+    "start": 20.0,
+    "end": 22.5
+  },
+  {
+    "id": "rank-bars",
+    "start": 22.5,
+    "end": 25.0
+  },
+  {
+    "id": "ring-metric",
+    "start": 25.0,
+    "end": 27.5
+  },
+  {
+    "id": "stat-proof",
+    "start": 27.5,
+    "end": 30.0
+  },
+  {
+    "id": "step-timeline",
+    "start": 30.0,
+    "end": 32.5
+  },
+  {
+    "id": "term-card",
+    "start": 32.5,
+    "end": 35.0
+  },
+  {
+    "id": "terminal-3d",
+    "start": 35.0,
+    "end": 37.5
+  },
+  {
+    "id": "type-shift",
+    "start": 37.5,
+    "end": 40.0
+  },
+  {
+    "id": "ui-callout",
+    "start": 40.0,
+    "end": 42.5
+  },
+  {
+    "id": "versus-card",
+    "start": 42.5,
+    "end": 45.0
+  },
+  {
+    "id": "quote-lockup",
+    "start": 45.0,
+    "end": 47.5
+  }
+]
