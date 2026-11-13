@@ -6,13 +6,13 @@
 
 你不需要自己写代码或逐个调整动画：在 Codex 或支持本地文件、终端操作的 AI Agent 里安装好项目，把 **MP4 视频和对应的 SRT 字幕**交给它，用大白话描述需求即可。AI 先给你看方案，确认后再制作、检查和导出。
 
-## aipacking 2.4 · 稳镜头与分镜、风格双审
+## aipacking 2.5 · 历版动效模板与分镜、风格双审
 
-适合要给 **16:9 真人口播** 加章节进度、侧边动效和语义图解的项目。普通口播保持稳定构图，只有关键落点才轻推。每段用跟随台词的可见动作讲清内容，顶部章节轴贯穿全片。
+适合要给 **16:9 真人口播** 加章节进度、侧边动效和语义图解的项目。普通口播稳住构图，在少数关键落点做看得见的轻推和回位。侧边信息、真实证据与图解按台词变化，顶部章节轴贯穿全片。汇入随包 原生组件、3.x 连续动作链、Nana 5.0 开场及 RenderComp 字组模板。
 
-先用 HyperFrames 交逐段分镜，经你确认后，再从实际 Remotion 合成里抽 3–5 张预览。你确认预览后，才用同一套分镜和组件导出完整 MP4，保留原声原速。
+先用 HyperFrames 交逐段分镜，经你确认后，再从实际 Remotion 合成里抽 3–5 张预览，有运镜时同时审一段动态短样。你确认预览后，才用同一套分镜和组件导出完整 MP4，保留原声原速。
 
-[下载 2.4 ZIP](downloads/aipacking-2.4.zip?raw=true) · [安装与使用说明](docs/AIPACKING.md) · [aipacking源码](skills/aipacking/SKILL.md)
+[下载 2.5 ZIP](downloads/aipacking-2.5.zip?raw=true) · [安装与使用说明](docs/AIPACKING.md) · [aipacking源码](skills/aipacking/SKILL.md)
 
 ## 能帮你做什么
 
@@ -48,8 +48,8 @@ https://github.com/zhouyuechuan2025-ui/aipacking
 ```text
 请用 $aipacking 处理我提供的真人口播 MP4 和同版 SRT。
 先用 HyperFrames 给我看逐段分镜，标明时间、台词、模板、动效触发词和缺失素材。
-普通口播稳镜头，只在关键落点轻推。节奏由侧边信息和图解带动，顶部显示章节进度。
-分镜确认后，给我看 3–5 张实际 Remotion 预览。预览确认后再出全片。
+普通口播稳镜头，只在关键落点轻推。用侧边对象变化、真实资料和图解带节奏，顶部显示章节进度。
+分镜确认后，给我看 3–5 张实际 Remotion 预览和完整运镜的动态短样。预览确认后再出全片。
 保留原声原速，避开脸和字幕，示意图与真实截图分清。
 最终需要一个带包装的 MP4，不要覆盖我的原视频。
 ```
@@ -60,7 +60,7 @@ https://github.com/zhouyuechuan2025-ui/aipacking
 
 ## 基础 CLI 版 v0.6
 
-以下说明适用于仓库根目录的基础版。用 `npm run package-video` 完成基础包装或从 SRT 生成透明 MOV。aipacking 2.4 通过独立作业目录运行，命令见 [aipacking使用说明](docs/AIPACKING.md)。
+以下说明适用于仓库根目录的基础版。用 `npm run package-video` 完成基础包装或从 SRT 生成透明 MOV。aipacking 2.5 通过独立作业目录运行，命令见 [aipacking使用说明](docs/AIPACKING.md)。
 
 ## 前期素材准备
 

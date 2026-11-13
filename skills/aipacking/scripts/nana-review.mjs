@@ -52,7 +52,8 @@ function sources() {
 }
 function checkMotionBoard(board, shots, fps) {
   if (board.motionVersion === undefined) return;
-  need(board.motionVersion === 1, '未知的 motionVersion。');
+  need([1,2].includes(board.motionVersion), '未知的 motionVersion。');
+  const rich = board.motionVersion === 2;
   const chapters = board.chapterTimeline;
   need(Array.isArray(chapters) && chapters.length >= 1 && chapters.length <= 7 && chapters[0].start === 0,
     '章节时间轴需要 1–7 段，并从 0 秒开始。');
@@ -66,7 +67,26 @@ function checkMotionBoard(board, shots, fps) {
     need(equal(s.start, before?.end ?? 0) && (next || equal(s.end, board.duration)), '新版动效分镜须连续覆盖全片：' + s.id);
     need(Array.isArray(s.beats) && s.beats.length && s.beats.every(b => inShot(b.at) && text(b.label)), '每镜需要有时点的有效视觉动作：' + s.id);
     const points = [s.start, ...s.beats.map(b => b.at).sort((a,b) => a-b), s.end];
-    need(points.slice(1).every((p,k) => p - points[k] <= 3.25), '相邻视觉动作超过 3.25 秒：' + s.id);
+    need(rich && text(s.readingHold) || points.slice(1).every((p,k) => p - points[k] <= 3.25),
+      '相邻视觉动作超过 3.25 秒：' + s.id);
+    if (rich) {
+      need(s.beats.every(b => text(b.word) && s.quote.includes(b.word) && ['entry','update','structure','hold'].includes(b.role)),
+        '新版动作点须绑定本镜原词和动作类型：' + s.id);
+      const actionTimes = [s.start, ...s.beats.filter(b => b.role !== 'hold').map(b => b.at).sort((a,b) => a-b), s.end];
+      need(actionTimes.slice(1).every((t,k) => t-actionTimes[k] <= 2.6 || text(s.readingHold)),
+        '超过 2.6 秒未发生内容变化，需补动作或注明阅读停留：' + s.id);
+      need(s.elements == null || Array.isArray(s.elements) && s.elements.length <= 8, '每镜附加动效元素须为数组：' + s.id);
+      for (const e of s.elements || []) {
+        need(['trace','tabs','stamp','split','focus','shine','snap','flash'].includes(e.kind)
+          && inShot(e.at) && number(e.duration) && e.duration >= .22 && e.at + e.duration <= s.end + 1e-6
+          && [e.x,e.y,e.width,e.height].every(number) && e.x >= 0 && e.y >= 70
+          && e.width >= 48 && e.height >= 20 && e.x + e.width <= 1920 && e.y + e.height <= 910
+          && s.beats.some(b => Math.abs(b.at - e.at) <= 1 / fps)
+          && (!['tabs','split'].includes(e.kind) || Array.isArray(e.items) && e.items.length >= 2 && e.items.length <= (e.kind === 'split' ? 2 : 4) && e.items.every(item => text(item) && item.length <= 10))
+          && (!['stamp','snap'].includes(e.kind) || text(e.text) && e.text.length <= 18),
+          '附加动效须绑定动作点，且避开顶部章节和底部字幕：' + s.id);
+      }
+    }
     if (s.camera) {
       const {keys, focusY, windowKeys} = s.camera;
       need(s.layout !== 'full' && (keys !== undefined || windowKeys !== undefined)
@@ -107,6 +127,28 @@ function checkMotionBoard(board, shots, fps) {
     }
   }
   const human = shots.filter(s => s.layout !== 'full');
+  if (rich) {
+    const pushes = human.filter(s => s.camera?.keys?.some(([,zoom]) => zoom > 1));
+    const humanSeconds = human.reduce((total,s) => total+s.end-s.start,0);
+    need(board.cameraIntent === 'steady' ? text(board.cameraReason) && !pushes.length : board.cameraIntent === 'accent',
+      '请选择 accent 运镜，或用 steady 并说明素材与创作原因。');
+    if (board.cameraIntent === 'accent' && humanSeconds >= 10) {
+      need(pushes.length >= 1 && pushes.length <= Math.max(2,Math.ceil(humanSeconds / 20)),
+        '普通口播稳住，关键落点须安排可见推近和回位。全片通常 1–3 次。');
+    }
+    for (const s of pushes) {
+      const keys = s.camera.keys;
+      const peak = Math.max(...keys.map(([,zoom]) => zoom));
+      need(keys[0][1] === 1 && keys.at(-1)[1] === 1 && peak >= 1.04 && peak <= 1.10 && text(s.cameraReason),
+        '关键推近从原幅进入并回位，峰值在 1.04–1.10，需写原因：' + s.id);
+    }
+    const identity = s => s.type === 'SideBeats' ? s.type + '/' + s.side.variant : s.type;
+    const structures = new Set(shots.map(identity));
+    need(board.duration < 30 || structures.size >= Math.min(10,Math.ceil(board.duration / 6)),
+      '新版分镜须使用多种实际构图和动效结构。');
+    need(shots.every((s,i) => i === 0 || identity(shots[i-1]) !== identity(s) || text(s.continuityReason)),
+      '相邻镜头避免重复实际模板。若同一对象连续变化，说明交接。');
+  }
   if (human.length > 1) {
     const kits = new Set(human.map(s => s.type === 'SideBeats' ? s.type + '/' + s.side.variant : s.type));
     need(kits.size >= 2, '至少两种侧边动效结构，保持编排变化。');
@@ -160,7 +202,8 @@ function compileBoard(cli) {
   put('plan/storyboard.md', '# 口播包装完整分镜（非风格图）\n\n' +
     (b.chapterTimeline?.length ? '顶部章节轴 · ' + b.chapterTimeline.map(c => c.start.toFixed(3) + ' 秒 ' + c.title).join(' → ') + '。从开头贯穿到片尾。\n\n' : '') +
     '| 镜号 / 秒 | 台词和画面目的 | A-roll | B-roll / 素材 | 原模板 / 布局 | 动效与触发点 |\n|---|---|---|---|---|---|\n' +
-    shots.map((s) => '| ' + [s.id + ' / ' + s.start + '–' + s.end, s.quote + '；' + s.purpose, s.aRoll, s.bRoll + (s.assets.length ? '；' + s.assets.join('、') : ''), s.type + ' / ' + s.layout, s.motion + '。' + s.cue + (s.beats ? '　动作点：' + s.beats.map(b => b.at.toFixed(2) + '秒 ' + b.label).join('、') : '') +
+    shots.map((s) => '| ' + [s.id + ' / ' + s.start + '–' + s.end, s.quote + '；' + s.purpose, s.aRoll, s.bRoll + (s.assets.length ? '；' + s.assets.join('、') : ''), s.type + ' / ' + s.layout, s.motion.replace(/。$/, '') + '。' + s.cue + (s.beats ? '　动作点：' + s.beats.map(b => b.at.toFixed(2) + '秒 ' + b.label + (b.word ? '（' + b.word + '）' : '')).join('、') : '') +
+      (s.elements?.length ? '　叠加元素：' + s.elements.map(e => e.kind + ' ' + e.at.toFixed(2) + '秒').join('、') : '') +
       (s.camera?.keys ? '　真人缩放：' + s.camera.keys.map(([t,z]) => t.toFixed(2) + '秒 ' + Math.round(z*100) + '%').join(' → ') : '') +
       (s.camera?.windowKeys ? '　收窗进度：' + s.camera.windowKeys.map(([t,k]) => t.toFixed(2) + '秒 ' + Math.round(k*100) + '%').join(' → ') : '')].map(note).join(' | ') + ' |').join('\n') + '\n');
   put('review/board-ready.json', {fingerprint:boardHash()});
@@ -177,22 +220,55 @@ export function requireBoard() {
 export function productionCheck() {
   requireBoard();
   const {b,shots,meta} = readBoard(), p = json('plan/plan.json');
-  if (b.motionVersion === 1) need(isDeepStrictEqual(p.chapterTimeline, b.chapterTimeline), '章节时间轴与已审分镜不同。');
+  if ([1,2].includes(b.motionVersion)) need(isDeepStrictEqual(p.chapterTimeline, b.chapterTimeline), '章节时间轴与已审分镜不同。');
   need(p.meta?.video === meta.video && equal(p.meta?.duration,meta.duration) && equal(p.meta?.fps,meta.fps), '成片主轨不是已审分镜的原 MP4 / 时钟。');
   need(Array.isArray(p.scenes) && p.scenes.length === shots.length, '实际分镜镜数与已确认版本不同。');
   for (const s of shots) {
     const scene = p.scenes.find((x) => x.id === s.id);
     need(scene && s.type === scene.type && s.layout === scene.layout && equal(s.start,scene.start) && equal(s.end,scene.end), '成片分镜偏离已审时间、布局或模板：' + s.id);
-    if (b.motionVersion === 1) {
+    if ([1,2].includes(b.motionVersion)) {
       need(isDeepStrictEqual(scene.camera, s.camera), '运镜与已审分镜不同：' + s.id);
       if (s.type === 'SideBeats') need(isDeepStrictEqual(scene.props, s.side), '侧边编排与已审分镜不同：' + s.id);
+      if (b.motionVersion === 2) {
+        need(isDeepStrictEqual(scene.elements ?? [], s.elements ?? []), '附加动效与已审分镜不同：' + s.id);
+        need(scene.motionDetail === s.motionDetail, '侧边动作分支与已审分镜不同：' + s.id);
+      }
     }
+  }
+  const media = value => typeof value === 'string' && !/^[a-z]+:|^[/\\]|(?:^|[/\\])\.\.(?:[/\\]|$)/i.test(value)
+    && fs.existsSync(at('public',value)) && fs.statSync(at('public',value)).isFile();
+  for (const scene of p.scenes) {
+    const props = scene.props || {};
+    const template = scene.type;
+    const images = (min,max) => Array.isArray(props.images) && props.images.length >= min && props.images.length <= max && props.images.every(media);
+    if (template === 'ShotcraftMosaic') need(images(2,12), '拼墙须绑定 2–12 张当前素材：' + scene.id);
+    if (template === 'SnapLogoAssemble') need(images(4,12) && media(props.logoSrc) && text(props.brandName)
+      && (!props.centerSrc || media(props.centerSrc)), '标志聚合须绑定当前来源、中心素材和标志：' + scene.id);
+    if (template === 'ShotcraftTiltReveal') need(media(props.image) && text(props.credit), '证据翻入须绑定真实本地截图和署名：' + scene.id);
+    if (template === 'SnapHeroLaunch') need(images(2,2), '双窗口须绑定两张当前素材：' + scene.id);
+    if (template === 'SnapAnnounceTitle') need(text(props.title) && text(props.eyebrow), '章节标题须绑定当前文字：' + scene.id);
+    if (template === 'MaskTitle' || template === 'WordStack') {
+      const labels = template === 'MaskTitle' ? props.lines : props.words;
+      need(Array.isArray(labels) && labels.length >= 2 && labels.length <= 4 && labels.every(label => text(label) && label.length <= 16),
+        '动态标题须绑定 2–4 个短词或短句：' + scene.id);
+    }
+    if (template.startsWith('Native_')) {
+      need(props.contentVerified === true && Array.isArray(props.sourceCueIds) && props.sourceCueIds.length
+        && text(props.settings?.sourceText) && !props.study && !props.studyBackground && (!props.media || media(props.media)),
+        '原生模板须绑定当前台词与本地媒体：' + scene.id);
+      if (['Native_remotionSkillChapter','Native_generativeMediaShowcase','Native_seedanceStoryboard'].includes(template)) {
+        need(media(props.settings.image), '原生证据模板须绑定当前实图 settings.image：' + scene.id);
+      }
+    }
+  }
+  if (p.scenes.some(scene => ['ContinuityPage','ContinuityOverlay'].includes(scene.type))) {
+    process.stdout.write(run(['scripts/check-continuity.mjs',root]));
   }
   process.stdout.write(run(['scripts/validate.mjs']));
   process.stdout.write(run(['scripts/nana-review-check-tech.mjs',root]));
 }
 export function styleHash() {
-  const files = ['plan/design.md','plan/plan.json','package.json','docs/catalog.json','scripts/render.mjs','scripts/nana-review-preview.mjs',...filesIn('src'),...filesIn('public')];
+  const files = ['plan/design.md','plan/plan.json','package.json','docs/catalog.json','scripts/render.mjs','scripts/nana-review-preview.mjs',...filesIn('src'),...filesIn('public'),...['external','fonts'].filter(dir => fs.existsSync(at(dir))).flatMap(filesIn),...['opening-templates.mjs'].filter(file => fs.existsSync(at(file)))];
   if (fs.existsSync(at('package-lock.json'))) files.push('package-lock.json');
   return createHash('sha256').update(requireBoard() + hash(files)).digest('hex');
 }
@@ -200,7 +276,12 @@ function readyStyle() {
   need(fs.existsSync(at('review/preview-ready.json')), '第二关风格预览还未生成：先用 Remotion 生成并展示 3–5 张实帧。');
   const ready = json('review/preview-ready.json');
   need(ready.production === styleHash() && Array.isArray(ready.images) && ready.images.length >= 3 && ready.images.length <= 5 && new Set(ready.images).size === ready.images.length && ready.images.every((x) => /^review\/previews\/[a-z0-9-]+\/frame-\d+\.png$/.test(x)), '风格预览缺失、参数已改，或当前版本未预览。');
-  return createHash('sha256').update(ready.production + hash(ready.images)).digest('hex');
+  const b = json('plan/storyboard.json');
+  const moving = b.motionVersion === 2 && b.shots.some(s => s.camera?.keys || s.camera?.windowKeys);
+  const clip = ready.clip;
+  need(!moving || (clip && /^review\/previews\/[a-z0-9-]+\/motion\.mp4$/.test(clip) && ready.images.every(image => path.posix.dirname(image) === path.posix.dirname(clip))),
+    '新版含运镜时须附同一合成的动态短样。');
+  return createHash('sha256').update(ready.production + hash(clip ? [...ready.images,clip] : ready.images)).digest('hex');
 }
 export function requireStyle() {
   const digest = readyStyle();

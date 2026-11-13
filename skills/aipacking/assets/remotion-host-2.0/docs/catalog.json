@@ -3820,5 +3820,632 @@
       "title": 18,
       "maxItems": 4
     }
+  },
+  {
+    "type": "Native_prompt",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/提示词卡",
+    "use": "可复制 / 操作指令",
+    "props": {
+      "settings": {
+        "title": "提示词卡",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_skillSixGrid",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/六项 Skill 总览",
+    "use": "仅用于明确的六项能力集合",
+    "props": {
+      "settings": {
+        "title": "六项 Skill 总览",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_seedanceStoryboard",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/创意到视频简笔画",
+    "use": "视频创意 → 15秒分镜与提示词 → 生成视频",
+    "props": {
+      "settings": {
+        "title": "创意到视频简笔画",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_recordWorkforceShift",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/重复岗位自动化接管",
+    "use": "岗位任务 → 自动化资产",
+    "props": {
+      "settings": {
+        "title": "重复岗位自动化接管",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_recordRpaFragility",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/传统 RPA 脆弱链",
+    "use": "依赖项 → 环境变化 → 失效",
+    "props": {
+      "settings": {
+        "title": "传统 RPA 脆弱链",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_recordReplayDifference",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/Record 路径差异",
+    "use": "脚本/Prompt 与示范/整理对比",
+    "props": {
+      "settings": {
+        "title": "Record 路径差异",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_recordWorkflowCapture",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/六任务观察与封装",
+    "use": "六类任务 → 观察 → Skill",
+    "props": {
+      "settings": {
+        "title": "六任务观察与封装",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_recordReplacementBoundary",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/重复劳动替代边界",
+    "use": "四类重复行为明确收束",
+    "props": {
+      "settings": {
+        "title": "重复劳动替代边界",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_egoPainGrid",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/传统自动化六项痛点",
+    "use": "ego 专属内容 · 禁止跨项目默认值",
+    "props": {
+      "settings": {
+        "title": "传统自动化六项痛点",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_egoTokenDrain",
+    "layout": "overlay",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": true,
+    "ctx": "随包 原生库/点击调用与 Token 消耗",
+    "use": "可视化因果链 · 中间人物留空",
+    "props": {
+      "settings": {
+        "title": "点击调用与 Token 消耗",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_egoSpaceParallel",
+    "layout": "overlay",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": true,
+    "ctx": "随包 原生库/Space 双工作区并行",
+    "use": "AI 与用户各用各的页面 · 中间人物留空",
+    "props": {
+      "settings": {
+        "title": "Space 双工作区并行",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_egoResourceCompare",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/6任务资源对比",
+    "use": "条件 → 两组数据 → 架构结论",
+    "props": {
+      "settings": {
+        "title": "6任务资源对比",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_egoManualWorkflow",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/人工生成五步流程",
+    "use": "打开 → 创建 → 输入 → 等待 → 下载",
+    "props": {
+      "settings": {
+        "title": "人工生成五步流程",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_egoParallelTimeline",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/AI与用户双轨时间线",
+    "use": "AI持续执行 · 用户继续工作",
+    "props": {
+      "settings": {
+        "title": "AI与用户双轨时间线",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_egoAutomationAsset",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/重复劳动转自动化资产",
+    "use": "操作 → 脚本 / Skill → 长期复用",
+    "props": {
+      "settings": {
+        "title": "重复劳动转自动化资产",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_egoCommentCapture",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/商品评论采集流程",
+    "use": "商品链接 → 最新100条评论 → CSV",
+    "props": {
+      "settings": {
+        "title": "商品评论采集流程",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_remotionSkillChapter",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/Remotion 六章封面",
+    "use": "统一组件 · 六套数据 · 真实截图",
+    "props": {
+      "settings": {
+        "title": "Remotion 六章封面",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_codexTransformation",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/Codex 身份升级",
+    "use": "写代码工具 → 视频生产系统",
+    "props": {
+      "settings": {
+        "title": "Codex 身份升级",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_videoWorkflowPipeline",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/自适应流程图",
+    "use": "仅按当前文案的实际步骤生成",
+    "props": {
+      "settings": {
+        "title": "自适应流程图",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_generativeMediaShowcase",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/多模态官方能力墙",
+    "use": "官方项目证据 + 图片 / 视频 / 音频能力",
+    "props": {
+      "settings": {
+        "title": "多模态官方能力墙",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_dashboard",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/数据仪表盘",
+    "use": "真实表格 + 图表 + 结论",
+    "props": {
+      "settings": {
+        "title": "数据仪表盘",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_dashboardRank",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/指标排名看板",
+    "use": "分类排名 + 横向比较",
+    "props": {
+      "settings": {
+        "title": "指标排名看板",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_dashboardKpi",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/KPI 指标总览",
+    "use": "多项指标 + 规模结论",
+    "props": {
+      "settings": {
+        "title": "KPI 指标总览",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_stage",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/纵深证据舞台",
+    "use": "主证据 + 辅助证据",
+    "props": {
+      "settings": {
+        "title": "纵深证据舞台",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_actions",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/工具操作看板",
+    "use": "能力清单 + UI 动作",
+    "props": {
+      "settings": {
+        "title": "工具操作看板",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_ribbon",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/横带切割大字",
+    "use": "原有模板 · 大字底层 + 重点词横带",
+    "props": {
+      "settings": {
+        "title": "横带切割大字",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "Native_punctuation",
+    "layout": "full",
+    "minDur": 2.8,
+    "family": "nana-native",
+    "showsPerson": false,
+    "ctx": "随包 原生库/标点收束标题",
+    "use": "问题 / 悬念 / CTA",
+    "props": {
+      "settings": {
+        "title": "标点收束标题",
+        "sourceText": "当前原句"
+      },
+      "sourceCueIds": [
+        1
+      ],
+      "contentVerified": true
+    }
+  },
+  {
+    "type": "ShotcraftMosaic",
+    "layout": "full",
+    "minDur": 1.6,
+    "family": "generic",
+    "ctx": "开场与证据/素材拼墙",
+    "use": "真实素材重排，主证据从矩阵中浮出",
+    "props": {
+      "images": [
+        "media/a.png",
+        "media/b.png"
+      ]
+    }
+  },
+  {
+    "type": "SnapLogoAssemble",
+    "layout": "full",
+    "minDur": 1.6,
+    "family": "generic",
+    "ctx": "开场与证据/标志聚合",
+    "use": "来源汇聚成真实标志或入口",
+    "props": {
+      "images": [
+        "media/a.png",
+        "media/b.png",
+        "media/c.png",
+        "media/d.png"
+      ],
+      "logoSrc": "media/logo.png",
+      "brandName": "项目名称"
+    }
+  },
+  {
+    "type": "ShotcraftTiltReveal",
+    "layout": "full",
+    "minDur": 1.6,
+    "family": "generic",
+    "ctx": "开场与证据/证据翻入",
+    "use": "真实网页从俯角转正，随后读内容",
+    "props": {
+      "image": "media/actual.png"
+    }
+  },
+  {
+    "type": "SnapHeroLaunch",
+    "layout": "full",
+    "minDur": 1.6,
+    "family": "generic",
+    "ctx": "开场与证据/双窗口交接",
+    "use": "两张实际资料以 Y 轴转动交接",
+    "props": {
+      "images": [
+        "media/a.png",
+        "media/b.png"
+      ],
+      "title": "两份资料"
+    }
+  },
+  {
+    "type": "SnapAnnounceTitle",
+    "layout": "full",
+    "minDur": 1.6,
+    "family": "generic",
+    "ctx": "开场与证据/章节字卡",
+    "use": "首词落下后接标题与短说明",
+    "props": {
+      "eyebrow": "章节",
+      "title": "标题"
+    }
+  },
+  {
+    "type": "MaskTitle",
+    "layout": "full",
+    "minDur": 1.6,
+    "family": "generic",
+    "ctx": "开场与证据/色块揭字",
+    "use": "色块推进并离开，逐行揭出标题",
+    "props": {
+      "lines": [
+        "第一行",
+        "第二行"
+      ]
+    }
+  },
+  {
+    "type": "WordStack",
+    "layout": "full",
+    "minDur": 1.6,
+    "family": "generic",
+    "ctx": "开场与证据/关键词叠落",
+    "use": "两至四个词逐拍弹性落位",
+    "props": {
+      "words": [
+        "第一项",
+        "第二项"
+      ]
+    }
+  },
+  {
+    "type": "ContinuityPage",
+    "layout": "full",
+    "minDur": 2.2,
+    "family": "nana-continuity",
+    "ctx": "使用者 3.x 连续动效/同一组人物、证据和图解按原阶段连续交接，绑定当前素材和源片时钟",
+    "use": "同一组人物、证据和图解按原阶段连续交接，绑定当前素材和源片时钟"
+  },
+  {
+    "type": "ContinuityOverlay",
+    "layout": "overlay",
+    "minDur": 2.2,
+    "family": "nana-continuity",
+    "ctx": "使用者 3.x 连续动效/沿用原动作阶段，在当前真人底片上叠资料对象或图形",
+    "use": "沿用原动作阶段，在当前真人底片上叠资料对象或图形"
   }
 ]

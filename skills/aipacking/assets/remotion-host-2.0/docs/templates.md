@@ -1,4 +1,4 @@
-# 模板目录（161 个）
+# 模板目录（197 个）
 
 > 由 `npm run catalog` 从 docs/catalog.json 自动生成，不要手改。props 里的 `at`/`xxxAt` 用来让元素卡在某个词说出口的瞬间：**写原句里的关键词**（如 `"at": "绝望"`），脚本自动换算成秒；示例里省略了 at，元素会按默认节奏依次出现。每页的时长不能短于「最短时长」，否则校验报错。视觉硬规则见 docs/visual-rules.md。
 
@@ -4278,5 +4278,755 @@
 {
  "type": "TechFlow",
  "layout": "full"
+}
+```
+
+## 随包 原生库
+
+### Native_prompt  `full`
+- 语境：随包 原生库/提示词卡
+- 何时用：可复制 / 操作指令
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_prompt",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "提示词卡",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_skillSixGrid  `full`
+- 语境：随包 原生库/六项 Skill 总览
+- 何时用：仅用于明确的六项能力集合
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_skillSixGrid",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "六项 Skill 总览",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_seedanceStoryboard  `full`
+- 语境：随包 原生库/创意到视频简笔画
+- 何时用：视频创意 → 15秒分镜与提示词 → 生成视频
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_seedanceStoryboard",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "创意到视频简笔画",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_recordWorkforceShift  `full`
+- 语境：随包 原生库/重复岗位自动化接管
+- 何时用：岗位任务 → 自动化资产
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_recordWorkforceShift",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "重复岗位自动化接管",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_recordRpaFragility  `full`
+- 语境：随包 原生库/传统 RPA 脆弱链
+- 何时用：依赖项 → 环境变化 → 失效
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_recordRpaFragility",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "传统 RPA 脆弱链",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_recordReplayDifference  `full`
+- 语境：随包 原生库/Record 路径差异
+- 何时用：脚本/Prompt 与示范/整理对比
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_recordReplayDifference",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "Record 路径差异",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_recordWorkflowCapture  `full`
+- 语境：随包 原生库/六任务观察与封装
+- 何时用：六类任务 → 观察 → Skill
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_recordWorkflowCapture",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "六任务观察与封装",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_recordReplacementBoundary  `full`
+- 语境：随包 原生库/重复劳动替代边界
+- 何时用：四类重复行为明确收束
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_recordReplacementBoundary",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "重复劳动替代边界",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_egoPainGrid  `full`
+- 语境：随包 原生库/传统自动化六项痛点
+- 何时用：ego 专属内容 · 禁止跨项目默认值
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_egoPainGrid",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "传统自动化六项痛点",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_egoTokenDrain  `overlay`
+- 语境：随包 原生库/点击调用与 Token 消耗
+- 何时用：可视化因果链 · 中间人物留空
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_egoTokenDrain",
+ "layout": "overlay",
+ "props": {
+  "settings": {
+   "title": "点击调用与 Token 消耗",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_egoSpaceParallel  `overlay`
+- 语境：随包 原生库/Space 双工作区并行
+- 何时用：AI 与用户各用各的页面 · 中间人物留空
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_egoSpaceParallel",
+ "layout": "overlay",
+ "props": {
+  "settings": {
+   "title": "Space 双工作区并行",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_egoResourceCompare  `full`
+- 语境：随包 原生库/6任务资源对比
+- 何时用：条件 → 两组数据 → 架构结论
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_egoResourceCompare",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "6任务资源对比",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_egoManualWorkflow  `full`
+- 语境：随包 原生库/人工生成五步流程
+- 何时用：打开 → 创建 → 输入 → 等待 → 下载
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_egoManualWorkflow",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "人工生成五步流程",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_egoParallelTimeline  `full`
+- 语境：随包 原生库/AI与用户双轨时间线
+- 何时用：AI持续执行 · 用户继续工作
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_egoParallelTimeline",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "AI与用户双轨时间线",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_egoAutomationAsset  `full`
+- 语境：随包 原生库/重复劳动转自动化资产
+- 何时用：操作 → 脚本 / Skill → 长期复用
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_egoAutomationAsset",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "重复劳动转自动化资产",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_egoCommentCapture  `full`
+- 语境：随包 原生库/商品评论采集流程
+- 何时用：商品链接 → 最新100条评论 → CSV
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_egoCommentCapture",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "商品评论采集流程",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_remotionSkillChapter  `full`
+- 语境：随包 原生库/Remotion 六章封面
+- 何时用：统一组件 · 六套数据 · 真实截图
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_remotionSkillChapter",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "Remotion 六章封面",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_codexTransformation  `full`
+- 语境：随包 原生库/Codex 身份升级
+- 何时用：写代码工具 → 视频生产系统
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_codexTransformation",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "Codex 身份升级",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_videoWorkflowPipeline  `full`
+- 语境：随包 原生库/自适应流程图
+- 何时用：仅按当前文案的实际步骤生成
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_videoWorkflowPipeline",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "自适应流程图",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_generativeMediaShowcase  `full`
+- 语境：随包 原生库/多模态官方能力墙
+- 何时用：官方项目证据 + 图片 / 视频 / 音频能力
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_generativeMediaShowcase",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "多模态官方能力墙",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_dashboard  `full`
+- 语境：随包 原生库/数据仪表盘
+- 何时用：真实表格 + 图表 + 结论
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_dashboard",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "数据仪表盘",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_dashboardRank  `full`
+- 语境：随包 原生库/指标排名看板
+- 何时用：分类排名 + 横向比较
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_dashboardRank",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "指标排名看板",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_dashboardKpi  `full`
+- 语境：随包 原生库/KPI 指标总览
+- 何时用：多项指标 + 规模结论
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_dashboardKpi",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "KPI 指标总览",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_stage  `full`
+- 语境：随包 原生库/纵深证据舞台
+- 何时用：主证据 + 辅助证据
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_stage",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "纵深证据舞台",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_actions  `full`
+- 语境：随包 原生库/工具操作看板
+- 何时用：能力清单 + UI 动作
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_actions",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "工具操作看板",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_ribbon  `full`
+- 语境：随包 原生库/横带切割大字
+- 何时用：原有模板 · 大字底层 + 重点词横带
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_ribbon",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "横带切割大字",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+### Native_punctuation  `full`
+- 语境：随包 原生库/标点收束标题
+- 何时用：问题 / 悬念 / CTA
+- 最短时长：2.8 秒
+- 示例：
+```json
+{
+ "type": "Native_punctuation",
+ "layout": "full",
+ "props": {
+  "settings": {
+   "title": "标点收束标题",
+   "sourceText": "当前原句"
+  },
+  "sourceCueIds": [
+   1
+  ],
+  "contentVerified": true
+ }
+}
+```
+
+## 开场与证据
+
+### ShotcraftMosaic  `full`
+- 语境：开场与证据/素材拼墙
+- 何时用：真实素材重排，主证据从矩阵中浮出
+- 最短时长：1.6 秒
+- 示例：
+```json
+{
+ "type": "ShotcraftMosaic",
+ "layout": "full",
+ "props": {
+  "images": [
+   "media/a.png",
+   "media/b.png"
+  ]
+ }
+}
+```
+
+### SnapLogoAssemble  `full`
+- 语境：开场与证据/标志聚合
+- 何时用：来源汇聚成真实标志或入口
+- 最短时长：1.6 秒
+- 示例：
+```json
+{
+ "type": "SnapLogoAssemble",
+ "layout": "full",
+ "props": {
+  "images": [
+   "media/a.png",
+   "media/b.png",
+   "media/c.png",
+   "media/d.png"
+  ],
+  "logoSrc": "media/logo.png",
+  "brandName": "项目名称"
+ }
+}
+```
+
+### ShotcraftTiltReveal  `full`
+- 语境：开场与证据/证据翻入
+- 何时用：真实网页从俯角转正，随后读内容
+- 最短时长：1.6 秒
+- 示例：
+```json
+{
+ "type": "ShotcraftTiltReveal",
+ "layout": "full",
+ "props": {
+  "image": "media/actual.png"
+ }
+}
+```
+
+### SnapHeroLaunch  `full`
+- 语境：开场与证据/双窗口交接
+- 何时用：两张实际资料以 Y 轴转动交接
+- 最短时长：1.6 秒
+- 示例：
+```json
+{
+ "type": "SnapHeroLaunch",
+ "layout": "full",
+ "props": {
+  "images": [
+   "media/a.png",
+   "media/b.png"
+  ],
+  "title": "两份资料"
+ }
+}
+```
+
+### SnapAnnounceTitle  `full`
+- 语境：开场与证据/章节字卡
+- 何时用：首词落下后接标题与短说明
+- 最短时长：1.6 秒
+- 示例：
+```json
+{
+ "type": "SnapAnnounceTitle",
+ "layout": "full",
+ "props": {
+  "eyebrow": "章节",
+  "title": "标题"
+ }
+}
+```
+
+### MaskTitle  `full`
+- 语境：开场与证据/色块揭字
+- 何时用：色块推进并离开，逐行揭出标题
+- 最短时长：1.6 秒
+- 示例：
+```json
+{
+ "type": "MaskTitle",
+ "layout": "full",
+ "props": {
+  "lines": [
+   "第一行",
+   "第二行"
+  ]
+ }
+}
+```
+
+### WordStack  `full`
+- 语境：开场与证据/关键词叠落
+- 何时用：两至四个词逐拍弹性落位
+- 最短时长：1.6 秒
+- 示例：
+```json
+{
+ "type": "WordStack",
+ "layout": "full",
+ "props": {
+  "words": [
+   "第一项",
+   "第二项"
+  ]
+ }
+}
+```
+
+## 使用者 3.x 连续动效
+
+### ContinuityPage  `full`
+- 语境：使用者 3.x 连续动效/同一组人物、证据和图解按原阶段连续交接，绑定当前素材和源片时钟
+- 何时用：同一组人物、证据和图解按原阶段连续交接，绑定当前素材和源片时钟
+- 最短时长：2.2 秒
+- 示例：
+```json
+{
+ "type": "ContinuityPage",
+ "layout": "full"
+}
+```
+
+### ContinuityOverlay  `overlay`
+- 语境：使用者 3.x 连续动效/沿用原动作阶段，在当前真人底片上叠资料对象或图形
+- 何时用：沿用原动作阶段，在当前真人底片上叠资料对象或图形
+- 最短时长：2.2 秒
+- 示例：
+```json
+{
+ "type": "ContinuityOverlay",
+ "layout": "overlay"
 }
 ```

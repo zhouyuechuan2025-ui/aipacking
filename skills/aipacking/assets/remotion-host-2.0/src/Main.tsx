@@ -7,6 +7,8 @@ import { MORE3 } from './pages/more3';
 import { MORE4 } from './pages/more4';
 import { M5_PAGES } from './m5';
 import { CUSTOM } from './custom';
+import { MOTION_LIBRARY_PAGES, MOTION_LIBRARY_OVERLAYS } from './custom/MotionLibrary';
+import { MotionElements, type MotionElement } from './pages/MotionElements';
 import { REPORT_PAGES, REPORT_OVERLAYS } from './pages/report';
 import { REPORT2_PAGES } from './pages/report2';
 import { REPORT3_PAGES } from './pages/report3';
@@ -14,7 +16,7 @@ import { EDITORIAL_PAGES } from './pages/editorial';
 import { EDITORIAL2_PAGES } from './pages/editorial2';
 import { EDITORIAL3_PAGES, EDITORIAL3_OVERLAYS } from './pages/editorial3';
 import { EDITORIAL4_OVERLAYS } from './pages/editorial4';
-export const FULL_PAGES: Record<string, any> = { ...BASE, ...MORE1, ...MORE2, ...MORE3, ...MORE4, ...M5_PAGES, ...REPORT_PAGES, ...REPORT2_PAGES, ...REPORT3_PAGES, ...EDITORIAL_PAGES, ...EDITORIAL2_PAGES, ...EDITORIAL3_PAGES, ...CUSTOM };
+export const FULL_PAGES: Record<string, any> = { ...BASE, ...MORE1, ...MORE2, ...MORE3, ...MORE4, ...M5_PAGES, ...REPORT_PAGES, ...REPORT2_PAGES, ...REPORT3_PAGES, ...EDITORIAL_PAGES, ...EDITORIAL2_PAGES, ...EDITORIAL3_PAGES, ...CUSTOM, ...MOTION_LIBRARY_PAGES };
 import { OVERLAYS as OV0, ProgressNav } from './pages/overlay';
 import { SideBeats } from './pages/SideBeats';
 import { cameraValue, type Camera } from './lib/camera';
@@ -27,7 +29,7 @@ import { clamp } from './lib/anim';
 import { textEm, fitLines } from './lib/fit';
 import { Probe } from './lib/probe';
 
-export type Scene = { id: string; type: string; start: number; end: number; layout?: 'full' | 'left' | 'right' | 'top' | 'overlay'; bg?: any; props?: any; transition?: string; camera?: Camera; motionDetail?: string; motionNote?: string; personFx?: 'mono' | 'zoom' | 'blur'; style?: string };
+export type Scene = { id: string; type: string; start: number; end: number; layout?: 'full' | 'left' | 'right' | 'top' | 'overlay'; bg?: any; props?: any; transition?: string; camera?: Camera; motionDetail?: string; motionNote?: string; elements?: MotionElement[]; personFx?: 'mono' | 'zoom' | 'blur'; style?: string };
 export type Plan = {
   meta: { fps: number; width: number; height: number; duration: number; video: string; burnedSubtitles?: boolean };
   style?: string;
@@ -38,7 +40,7 @@ export type Plan = {
   scenes: Scene[];
 };
 type Sub = [number, number, string];
-const OVERLAYS: Record<string, any> = { ...OV0, ...REPORT_OVERLAYS, ...EDITORIAL3_OVERLAYS, ...EDITORIAL4_OVERLAYS, SideBeats };
+const OVERLAYS: Record<string, any> = { ...OV0, ...REPORT_OVERLAYS, ...EDITORIAL3_OVERLAYS, ...EDITORIAL4_OVERLAYS, SideBeats, ...MOTION_LIBRARY_OVERLAYS };
 const TR = 9; // transition frames
 const CYCLE = ['zoom', 'push', 'flip', 'wipe'];
 
@@ -119,7 +121,7 @@ export const Main: React.FC<{ plan: Plan; subs: Sub[]; transparent?: boolean; pr
       {/* overlays next to the presenter */}
       {scenes.filter(s => !isFull(s)).map(s => {
         const C = OVERLAYS[s.type]; if (!C) return null;
-        const from = Math.round(s.start * fps), d = Math.max(1, Math.round((s.end - s.start) * fps));
+        const from = Math.round(s.start * fps), d = Math.max(1, Math.round(s.end * fps) - from);
         return <Sequence key={s.id} from={from} durationInFrames={d} layout="none"><ThemeScope id={styleAt(s)}><C p={{ ...(s.props || {}), _chapters: chapters, _duration: plan.meta.duration, _motionDetail: s.motionDetail, _motionNote: s.motionNote }} start={s.start} dur={d} side={(s.layout === 'right' ? 'right' : s.layout === 'left' ? 'left' : s.props?.side) as any} /></ThemeScope></Sequence>;
       })}
       {/* full-screen pages, chained with transitions */}
@@ -128,7 +130,7 @@ export const Main: React.FC<{ plan: Plan; subs: Sub[]; transparent?: boolean; pr
         const prev = full[i - 1], next = full[i + 1];
         const fromPage = !!prev && Math.abs(prev.start + (prev.end - prev.start) - s.start) < 0.15;
         const toPage = !!next && Math.abs(next.start - s.end) < 0.15;
-        const from = Math.round(s.start * fps), d = Math.max(1, Math.round((s.end - s.start) * fps));
+        const from = Math.round(s.start * fps), d = Math.max(1, Math.round(s.end * fps) - from);
         const self = !!(C as any).selfTrans;
         const edges = { fromPerson: !fromPage && s.start >= 0.05, toPerson: !toPage };
         const kind = self ? 'none' : s.transition || (String(styleAt(s)).startsWith('report') && s.start >= 0.05 ? 'soft' : null) || (s.start < 0.05 ? 'none' : fromPage ? CYCLE[i % CYCLE.length] : 'circle');
@@ -140,6 +142,7 @@ export const Main: React.FC<{ plan: Plan; subs: Sub[]; transparent?: boolean; pr
           </Sequence>
         );
       })}
+      {scenes.map(s => s.elements?.length ? <Sequence key={s.id+'-elements'} from={Math.round(s.start*fps)} durationInFrames={Math.round(s.end*fps)-Math.round(s.start*fps)} layout="none"><MotionElements elements={s.elements} start={s.start} accent={plan.palette?.main}/></Sequence> : null)}
       {plan.chapterTimeline?.length ? <ProgressNav start={0} dur={Math.round(plan.meta.duration * fps)}
         p={{ compact: true, _chapters: plan.chapterTimeline, _duration: plan.meta.duration, color: plan.palette?.main }} /> : null}
       {setTheme(plan.style) && null}{showSub && <Subtitle text={sub![2]} />}

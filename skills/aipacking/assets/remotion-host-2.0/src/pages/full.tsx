@@ -377,7 +377,7 @@ export const Showcase: React.FC<PageProps> = ({ p, start, dur, chapter, bg, vide
   const media = p.media === 'self' && !video ? <LightField variant="prism" /> : p.media === 'self' ? <OffthreadVideo src={staticFile(video!)} muted startFrom={Math.round(start * fps)} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
     : p.media && /\.(mp4|mov|webm)$/i.test(p.media) ? <OffthreadVideo src={staticFile(p.media)} muted style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
     : p.media ? <Img src={staticFile(p.media)} style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <LightField variant="prism" />;
-  const pr = p.prompt || ''; const n = Math.floor(pr.length * prog(f, 10, 10 + pr.length * 1.4, (t: number) => t));
+  const pr = p.prompt || ''; const n = pr ? Math.floor(pr.length * prog(f, 10, 10 + pr.length * 1.4, (t: number) => t)) : 0;
   return (
     <Stage bg={bg || { variant: 'grid' }} chapter={chapter} color={col}>
       <AbsoluteFill style={{ perspective: 2000 }}>
