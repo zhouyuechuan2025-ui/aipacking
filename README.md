@@ -6,19 +6,19 @@
 
 你不需要自己写代码或逐个调整动画：在 Codex 或支持本地文件、终端操作的 AI Agent 里安装好项目，把 **MP4 视频和对应的 SRT 字幕**交给它，用大白话描述需求即可。AI 先给你看方案，确认后再制作、检查和导出。
 
-## aipacking 3.2 · 原版模板
+## aipacking 3.2.1 · 原版模板
 
-适合给 **16:9 真人口播** 加章节进度、侧边动效和语义图解。3.2 接入 **115 个可换文案、数据或素材的原版镜头**，覆盖 .Motion、Agent Motion、Overlay Studio、ShotCraft、历史 ShotCraft 扩展批和 SnapCN。逐镜按台词选型，替换本期内容，并审入场、停留和交接。
+适合给 **16:9 真人口播** 加章节进度、侧边动效和语义图解。3.2.1 接入 **122 个可换文案、数据或素材的原版镜头**，覆盖 .Motion、Agent Motion、Overlay Studio、ShotCraft、历史 ShotCraft 扩展批和 SnapCN。.Motion 的「酷炫科技风」工程现有 11 个已验证镜头，包括媒体墙、卡点蒙太奇、流程卡和路径图。
 
 先用 HyperFrames 交逐段分镜，经你确认后，再从实际 Remotion 合成里抽 3–5 张预览，并审能看见新增动效和完整运镜的动态短样。你确认预览后，才用同一套分镜和组件导出完整 MP4，保留原声原速。
 
-[下载 3.2 ZIP](downloads/aipacking-3.2.zip?raw=true) · [安装与使用说明](docs/AIPACKING.md) · [115 项模板、来源与参数](docs/NATIVE-TEMPLATES.md)
+[下载 3.2.1 ZIP](downloads/aipacking-3.2.1.zip?raw=true) · [安装与使用说明](docs/AIPACKING.md) · [122 项模板、来源与参数](docs/NATIVE-TEMPLATES.md)
 
 ### 原版模板实渲染
 
 ![ShotCraft 历史扩展批原镜头](docs/assets/native-templates-3.2/shotcraft-expanded.jpg)
 
-[ShotCraft 扩展批、Agent Motion 与 SnapCN 合辑](docs/assets/native-templates-3.2/scene-reel.mp4?raw=true) · [两侧包装与章节轴](docs/assets/native-templates-3.2/side-reel.mp4?raw=true) · [.Motion B1–B4](docs/assets/native-templates-3.2/motion-kinetic.mp4?raw=true) · [Overlay 原版人物收窗](docs/assets/native-templates-3.2/overlay-focus.mp4?raw=true)
+[.Motion 原版媒体和图解镜头](docs/assets/native-templates-3.2/motion-native-scenes.mp4?raw=true) · [ShotCraft 扩展批、Agent Motion 与 SnapCN 合辑](docs/assets/native-templates-3.2/scene-reel.mp4?raw=true) · [两侧包装与章节轴](docs/assets/native-templates-3.2/side-reel.mp4?raw=true) · [Overlay 原版人物收窗](docs/assets/native-templates-3.2/overlay-focus.mp4?raw=true)
 
 ### 辅助动效与流程案例
 

@@ -12,6 +12,7 @@ const syntheticDemos = new Set([
   'docs/assets/native-templates-3.2/scene-reel.mp4', 'docs/assets/native-templates-3.2/side-reel.mp4',
   'docs/assets/native-templates-3.2/overlay-focus.mp4', 'docs/assets/native-templates-3.2/motion-kinetic.mp4',
   'docs/assets/native-templates-3.2/overlay-cards.mp4',
+  'docs/assets/native-templates-3.2/motion-native-scenes.mp4',
 ]);
 const templateSource = 'skills/aipacking/assets/remotion-host-2.0/';
 const uiPlaceholderPaths = new Set([

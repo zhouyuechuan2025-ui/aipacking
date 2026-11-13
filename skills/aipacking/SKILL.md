@@ -2,7 +2,7 @@
 name: aipacking
 description: 用 HyperFrames 为真人 MP4、同版 SRT 和可选 B-roll 做口播分镜，再用 Remotion 渲染侧边动效、图解和证据预览；两次确认后交付全片。
 metadata:
-  version: "3.2.0"
+  version: "3.2.1"
 ---
 
 # aipacking · 分镜与风格双审版

@@ -231,6 +231,17 @@ function readBoard() {
       && s.native.sourceRevision === externalContract.revision && s.native.templateId === externalContract.templateId
       && text(s.native.media) && externalContract.required.every(key => hasInput(s.native.input?.[key])),
       s.id + ' 须登记原工程版本、本期替换内容及对应的原生渲染文件。');
+    if (externalContract?.contentFields) {
+      const {content,media} = s.native.input;
+      need(Math.abs(s.end-s.start-externalContract.duration) <= 1/meta.fps
+        && externalContract.contentFields.every(key => text(content?.[key]))
+        && externalContract.mediaRoles.every(key => {
+          const count = externalContract.mediaRoleLengths[key];
+          const entry = media?.[key];
+          const valid = item => ['image','video'].includes(item?.mode) && text(item.file);
+          return count ? Array.isArray(entry) && entry.length === count && entry.every(valid) : valid(entry);
+        }), s.id + ' 须按 .Motion 原镜头时长与素材清单绑定完整输入。');
+    }
     if (s.type === 'Overlay_focus-card') need(text(s.cameraReason) && !s.camera,
       s.id + ' 原版收窗须标明关键落点和人物回位，使用这一层的原生运镜。');
     if (externalLegacyTypes.has(s.type)) {
@@ -322,6 +333,11 @@ export function productionCheck() {
     const internalContract = native.get(template);
     if (template === 'NativeRenderedClip' || externalContract?.layout === 'full') need(media(props.media) && /\.mp4$/i.test(props.media),
       '外部原生模板须绑定原工程生成的本期本地 MP4：' + scene.id);
+    for (const role of externalContract?.mediaRoles ?? []) {
+      const binding = props.input?.media?.[role];
+      const assets = Array.isArray(binding) ? binding : [binding];
+      need(assets.every(asset => media(asset?.file)), scene.id + ' .Motion 原工程素材不存在：' + role);
+    }
     if (template === 'NativeOverlayLayer' || externalContract?.layout === 'overlay') need(media(props.media) && /\.mov$/i.test(props.media),
       '原版叠加层须绑定本期透明 ProRes MOV：' + scene.id);
     for (const field of internalContract?.mediaFields ?? []) {

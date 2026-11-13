@@ -6539,5 +6539,137 @@
         "labels": null
       }
     }
+  },
+  {
+    "type": "Motion_KineticTech_A",
+    "ctx": ".Motion",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 6.13,
+    "use": "三维资料墙，以原工程固定时长导出本期内容。",
+    "props": {
+      "sourceProject": ".Motion",
+      "sourceRevision": "0.2.7-open-beta",
+      "templateId": "kinetic-tech/A",
+      "media": "native/scene.mp4",
+      "input": {
+        "title": null,
+        "content": null,
+        "media": null
+      }
+    }
+  },
+  {
+    "type": "Motion_KineticTech_B",
+    "ctx": ".Motion",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 4.92,
+    "use": "资料卡点蒙太奇，以原工程固定时长导出本期内容。",
+    "props": {
+      "sourceProject": ".Motion",
+      "sourceRevision": "0.2.7-open-beta",
+      "templateId": "kinetic-tech/B",
+      "media": "native/scene.mp4",
+      "input": {
+        "title": null,
+        "content": null,
+        "media": null
+      }
+    }
+  },
+  {
+    "type": "Motion_KineticTech_C",
+    "ctx": ".Motion",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 4.92,
+    "use": "加速媒体网格，以原工程固定时长导出本期内容。",
+    "props": {
+      "sourceProject": ".Motion",
+      "sourceRevision": "0.2.7-open-beta",
+      "templateId": "kinetic-tech/C",
+      "media": "native/scene.mp4",
+      "input": {
+        "title": null,
+        "content": null,
+        "media": null
+      }
+    }
+  },
+  {
+    "type": "Motion_KineticTech_D",
+    "ctx": ".Motion",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 4.3,
+    "use": "流程卡片与消散，以原工程固定时长导出本期内容。",
+    "props": {
+      "sourceProject": ".Motion",
+      "sourceRevision": "0.2.7-open-beta",
+      "templateId": "kinetic-tech/D",
+      "media": "native/scene.mp4",
+      "input": {
+        "title": null,
+        "content": null,
+        "media": null
+      }
+    }
+  },
+  {
+    "type": "Motion_KineticTech_F",
+    "ctx": ".Motion",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 4.92,
+    "use": "双媒体展示，以原工程固定时长导出本期内容。",
+    "props": {
+      "sourceProject": ".Motion",
+      "sourceRevision": "0.2.7-open-beta",
+      "templateId": "kinetic-tech/F",
+      "media": "native/scene.mp4",
+      "input": {
+        "title": null,
+        "content": null,
+        "media": null
+      }
+    }
+  },
+  {
+    "type": "Motion_KineticTech_S10",
+    "ctx": ".Motion",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 9.17,
+    "use": "路径对比，以原工程固定时长导出本期内容。",
+    "props": {
+      "sourceProject": ".Motion",
+      "sourceRevision": "0.2.7-open-beta",
+      "templateId": "kinetic-tech/S10",
+      "media": "native/scene.mp4",
+      "input": {
+        "title": null,
+        "content": null
+      }
+    }
+  },
+  {
+    "type": "Motion_KineticTech_S11",
+    "ctx": ".Motion",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 10.03,
+    "use": "环形关系图，以原工程固定时长导出本期内容。",
+    "props": {
+      "sourceProject": ".Motion",
+      "sourceRevision": "0.2.7-open-beta",
+      "templateId": "kinetic-tech/S11",
+      "media": "native/scene.mp4",
+      "input": {
+        "title": null,
+        "content": null,
+        "media": null
+      }
+    }
   }
 ]

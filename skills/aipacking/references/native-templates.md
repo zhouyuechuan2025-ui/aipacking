@@ -16,7 +16,8 @@
 
 读取 `src/motion/external-native-scenes.json`。分镜使用该条目的 `id` 和 `layout`，`native` 记录 `sourceProject`、`sourceRevision`、`templateId`、`media` 与填有本期参数的 `input`。成片的 `props` 原样照录。媒体放入 `public/native/`。
 
-- **.Motion**。从 [MotionGit](https://github.com/motiontemplates/all) 获取酷炫科技风 0.2.7-open-beta，用本期 `basic` 分别编排 B1 关键词、B2 清单、B3 对比与 B4 行动。按包内说明执行 prepare、preview、render，使用对应原生 MP4，时长以原工程为准。视频层静音，主轨保留原声。
+- **.Motion**。使用酷炫科技风 0.2.7-open-beta 的原版入口。B1–B4 使用 `basic` 字段。媒体墙、卡点蒙太奇、加速网格、流程卡、双媒体展示、路径对比和环形关系图使用各自的 `contentFields`、`mediaRoles` 和 `duration`。目录记录了同一时间窗重叠场景需要的字段和素材。C 加速网格的动态计数由原工程固定驱动，仅用于装饰性资料拼贴。
+- **.Motion 渲染输入**。在原包的 `user-media` 输入选中同一个原场景 ID，填本期内容和媒体。分镜记录以 `public/` 为基准的素材路径，交给原包时转换为可读路径。依次执行包内 prepare、preview、render，镜头边界按原时长对齐到项目帧。用原生 MP4 接回宿主。视频层静音，主轨保留原声。取包入口见 [MotionGit 官方目录](https://github.com/motiontemplates/all)。
 - **Overlay Studio**。使用 [原项目](https://github.com/jeszhou/overlay-studio) 的 OverlayDoc、原卡与导出。普通卡导出透明 ProRes 4444 MOV 后使用 `overlay` 布局。字幕卡和章节卡与已有相同图层协调，只显示一套；保留章节导航及字幕可读性。若使用这些替代图层，先在实际合成里确认位置和时钟。
 - **Overlay FocusCard**。把同一段口播按已审镜头边界切出等时长工作副本，保留原画幅并用原版卡导出含人物的画面。用 `Overlay_focus-card` 放回 `full` 轨，原声仍走主轨。只在关键落点使用，覆盖原幅、收窗、条目入场及回位的动态预览。若原片有烧录字幕，核对收窗里字幕与宿主重绘的关系。
 - **编排**。按原词入场，给后续条目、数据状态或图解连线留时。普通真人镜头保持稳定。固定演示、包装层上的替换贴字和 CSS 关键帧不计入原版镜头清单。

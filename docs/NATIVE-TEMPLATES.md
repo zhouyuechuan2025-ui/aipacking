@@ -1,10 +1,10 @@
-# aipacking 3.2 原版模板
+# aipacking 3.2.1 原版模板
 
-**115 项**使用可编辑的原镜头结构，逐项绑定新文字、数据或媒体并核对实帧。91 项随包在 Remotion 运行，24 项由原工程渲染后按独立 ID 接回 aipacking。计数排除 CSS 预设、固定演示及同一镜头的重复入口。
+**122 项**使用可编辑的原镜头结构，逐项绑定新文字、数据或媒体并核对实帧。91 项随包在 Remotion 运行，31 项由原工程渲染后按独立 ID 接回 aipacking。计数排除 CSS 预设、固定演示及同一镜头的重复入口。
 
 | 来源 | 项数 | 接入方式 |
 | --- | ---: | --- |
-| .Motion | 4 | 原工程渲染后接入 |
+| .Motion | 11 | 一个原工程的 11 个可编辑场景，渲染后接入 |
 | Agent Motion | 25 | 随包渲染 |
 | Overlay Studio | 20 | 原工程渲染后接入 |
 | ShotCraft | 2 | 随包渲染 |
@@ -13,7 +13,7 @@
 
 ## 实际渲染
 
-[八镜原版动态合辑](assets/native-templates-3.2/scene-reel.mp4?raw=true) · [两侧包装与章节轴](assets/native-templates-3.2/side-reel.mp4?raw=true) · [Overlay FocusCard 完整收窗回位](assets/native-templates-3.2/overlay-focus.mp4?raw=true) · [.Motion B1–B4](assets/native-templates-3.2/motion-kinetic.mp4?raw=true) · [Overlay 19 张动效卡](assets/native-templates-3.2/overlay-cards.mp4?raw=true)
+[.Motion 新增七镜实渲染](assets/native-templates-3.2/motion-native-scenes.mp4?raw=true) · [八镜原版动态合辑](assets/native-templates-3.2/scene-reel.mp4?raw=true) · [两侧包装与章节轴](assets/native-templates-3.2/side-reel.mp4?raw=true) · [Overlay FocusCard 完整收窗回位](assets/native-templates-3.2/overlay-focus.mp4?raw=true) · [.Motion B1–B4](assets/native-templates-3.2/motion-kinetic.mp4?raw=true) · [Overlay 19 张动效卡](assets/native-templates-3.2/overlay-cards.mp4?raw=true)
 
 ![ShotCraft 扩展批 · 拼墙、立方体、级联图解等 13 项实渲染](assets/native-templates-3.2/shotcraft-expanded.jpg)
 
@@ -38,9 +38,11 @@
 
 [随包模板、样例输入和原文件哈希](../skills/aipacking/assets/remotion-host-2.0/src/motion/native-scenes.json) · [原工程模板与样例参数](../skills/aipacking/assets/remotion-host-2.0/src/motion/external-native-scenes.json) · [生产参数与编排规则](../skills/aipacking/references/native-templates.md)
 
-## .Motion · 4 项
+## .Motion · 11 个场景
 
-[MotionGit 酷炫科技风](https://github.com/motiontemplates/385712)
+11 个场景均出自「酷炫科技风」0.2.7-open-beta 的横屏公开工程。MotionGit 目录中的其他风格是独立项目，各有下载入口。现代图文和纸面透视的 .motion 包可在登录官网后获取。
+
+[MotionGit 酷炫科技风](https://github.com/motiontemplates/385712) · [上游总目录](https://github.com/motiontemplates/all) · [现代图文](https://motiongit.com/@adunext/template-01-integrated) · [纸面透视](https://motiongit.com/@adunext/template-02-expanded)
 
 | aipacking 模板 ID | 本期必填字段 | 版本或原卡 ID |
 | --- | --- | --- |
@@ -48,6 +50,13 @@
 | `Motion_KineticTech_B2` | `heading`、`points` | `kinetic-tech/B2` |
 | `Motion_KineticTech_B3` | `heading`、`left`、`right`、`conclusion` | `kinetic-tech/B3` |
 | `Motion_KineticTech_B4` | `summary`、`action` | `kinetic-tech/B4` |
+| `Motion_KineticTech_A` | 3D 媒体墙，场景文案和 62 个媒体位 | `kinetic-tech/A` |
+| `Motion_KineticTech_B` | 卡点蒙太奇，字幕和素材卡 | `kinetic-tech/B` |
+| `Motion_KineticTech_C` | 加速媒体网格，替换媒体和标签，原镜头自带的计数只作动效 | `kinetic-tech/C` |
+| `Motion_KineticTech_D` | 流程卡片与消散，步骤和两路素材 | `kinetic-tech/D` |
+| `Motion_KineticTech_F` | 双媒体切换，标签和两路素材 | `kinetic-tech/F` |
+| `Motion_KineticTech_S10` | 路径对比，弯路与直达的说明 | `kinetic-tech/S10` |
+| `Motion_KineticTech_S11` | 四节点环形关系，节点文案和缩略图 | `kinetic-tech/S11` |
 
 ## Agent Motion · 25 项
 
