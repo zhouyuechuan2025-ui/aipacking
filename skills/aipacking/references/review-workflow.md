@@ -6,7 +6,7 @@
 
 命令在独立作业副本根目录运行。SKILL、WORK 分别是本 Skill 和作业的绝对目录；HF_CLI 是已安装 HyperFrames npm 包的 package.json 内 bin.hyperframes 对应 JS 入口绝对路径，测试版为 0.8.214。找不到 CLI 时只能先做待校验草稿，不能冒称已调用。
 
-1. **使用 3.0 动效版：** 在新版随包宿主创建独立作业副本。运行 `node "<SKILL>/scripts/new-workbench.mjs" "<WORK>"`，进入新目录执行 `npm ci`。需要 HyperFrames CLI 时，可在该作业单独装 `npm install --prefix review-tools --no-save hyperframes@0.8.214`，JS 入口位于 `review-tools/node_modules/hyperframes/bin/hyperframes.mjs`。两边需要 Node.js 22+；依赖和缓存放在作业盘。已有旧作业升级时同样创建独立新版副本，再复制原片、SRT 和所需真实素材。
+1. **创建工作台副本。** 运行 `node "<SKILL>/scripts/new-workbench.mjs" "<WORK>"`，进入新目录执行 `npm ci`。需要 HyperFrames CLI 时，可在该作业单独装 `npm install --prefix review-tools --no-save hyperframes@0.8.214`，JS 入口位于 `review-tools/node_modules/hyperframes/bin/hyperframes.mjs`。两边需要 Node.js 22+，依赖和缓存放在作业盘。已有旧作业升级时同样创建独立新版副本，再复制原片、SRT 和所需真实素材。
 2. 把源文件放进 `public/input/`，用 `npm run prepare-input -- "口播.mp4" "口播.srt"`。检查四张原片帧、字幕与比例，写 `plan/analysis.md`。已冻结可用素材放进 public，不用会变的外链；参考片默认只分析，不擅自剪入。
 
 ## 第一关：分镜

@@ -11,6 +11,10 @@
 - **媒体**。必填的 `mediaFields` 指向作业目录 `public/native/` 中的当前文件。写相对路径，例如 `native/current-report.png`。根据 `fieldLengths` 提供原布局所需的槽位数。带媒体和文案的组合字段沿用条目给出的格式。
 - **版式**。支持 `full`、`left`、`right`。侧边用短词、单值和少量要点。完整网页、复杂数据图和多镜头画廊优先全屏。实际运行时检查内容可读、人物未被遮挡。
 
+- **波形和重标图**。波形用 `samples` 输入本期采样。重标图输入 12 个 `values` 和对应的 `labels`，用最后一项展示峰值，检查标题、单位和数据口径。
+- **文档逐块揭字**。在 `src` 绑定 1920×1080 的本期页面图。用 `blocks` 标出实际文字区域，坐标为页面像素，最多 20 个区域。当前页小标题用 `kicker`，历史条目用 `weeks`，最多 6 项。
+- **网页光标巡游与陡角横移**。先用本期截图预览原镜头路径，检查推近后正好露出关键内容。扫描镜头的 `heading` 是两行独立短句，核对长文案缩小后的可读性。
+
 ## 原工程渲染后接入
 
 读取 `src/motion/external-native-scenes.json`。分镜使用该条目的 `id` 和 `layout`，`native` 记录 `sourceProject`、`sourceRevision`、`templateId`、`media` 与填有本期参数的 `input`。成片的 `props` 原样照录。媒体放入 `public/native/`。

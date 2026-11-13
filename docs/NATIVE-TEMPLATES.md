@@ -1,14 +1,32 @@
 # aipacking 模板与实渲染
 
-共 **122 个模板**。按台词选择镜头，填入本期文案、数据或素材。91 项随包渲染，31 项接入预先渲染的镜头。
+共 **135 个模板**。按台词选择镜头，填入本期文案、数据或素材。104 项随包渲染，31 项接入预先渲染的镜头。
 
 ## 实际渲染
+
+[新增 13 镜实渲染](assets/native-templates-3.3/scene-reel.mp4?raw=true)
 
 [八镜合辑](assets/native-templates-3.2/scene-reel.mp4?raw=true) · [媒体与图解](assets/native-templates-3.2/motion-native-scenes.mp4?raw=true) · [两侧包装与章节轴](assets/native-templates-3.2/side-reel.mp4?raw=true) · [人物收窗与回位](assets/native-templates-3.2/overlay-focus.mp4?raw=true) · [关键词、清单、对比与总结](assets/native-templates-3.2/motion-kinetic.mp4?raw=true) · [叠加动效](assets/native-templates-3.2/overlay-cards.mp4?raw=true)
 
 ![媒体拼墙、卡片与图解实渲染](assets/native-templates-3.2/media-and-diagrams.jpg)
 
 样片用合成素材、示例文案和演示数字展示镜头效果。
+
+| 新增合辑时间 | 模板 |
+| --- | --- |
+| 00:00.0 | 流动波形与刹停 |
+| 00:05.0 | 峰值突破与坐标重标 |
+| 00:10.0 | 网格标签展开 |
+| 00:15.0 | 协作光标聚拢 |
+| 00:19.6 | 网页光标巡游 |
+| 00:25.6 | 面板辉光与浮窗 |
+| 00:27.6 | 文档让位与条目发牌 |
+| 00:33.4 | 文档逐块揭字 |
+| 00:37.1 | 双面中枢与节点汇入 |
+| 00:42.1 | 四宫格并行动作 |
+| 00:44.2 | 扫描与局部标注 |
+| 00:48.8 | 扫描与模块飞入 |
+| 00:53.4 | 陡角页面横移 |
 
 | 八镜合辑时间 | 模板 | 换入内容 |
 | --- | --- | --- |
@@ -64,6 +82,8 @@
 
 | 模板 | 本期必填参数 |
 | --- | --- |
+| 网格标签展开 | `labels`、`name`、`caption` |
+| 协作光标聚拢 | `names`、`text` |
 | 路线节点 | `points`、`links` |
 | 架构关系图 | `nodes`、`connections` |
 | 逐项聚焦列表 | `label`、`items` |
@@ -97,6 +117,8 @@
 
 | 模板 | 本期必填参数 |
 | --- | --- |
+| 流动波形与刹停 | `title`、`metric`、`context`、`unit`、`samples` |
+| 峰值突破与坐标重标 | `title`、`metric`、`context`、`unit`、`values`、`labels` |
 | 数字滚入 | `value`、`label` |
 | 面积图 | `items` |
 | 柱状图 | `values`、`labels` |
@@ -117,6 +139,13 @@
 
 | 模板 | 本期必填参数 |
 | --- | --- |
+| 网页光标巡游 | `src`、`address` |
+| 面板辉光与浮窗 | `src`、`intro`、`title`、`description`、`options`、`action` |
+| 扫描与局部标注 | `src`、`address`、`brand`、`heading`、`buttons`、`footer`、`handle`、`scanLabel`、`doneLabel`、`labels` |
+| 扫描与模块飞入 | `src`、`address`、`brand`、`heading`、`buttons`、`footer`、`handle`、`scanLabel`、`doneLabel` |
+| 陡角页面横移 | `src`、`labels`、`tasks` |
+| 文档让位与条目发牌 | `src`、`labels`、`captions` |
+| 文档逐块揭字 | `src`、`kicker`、`weeks`、`blocks` |
 | 对话消息 | `contact`、`messages` |
 | 代码编辑器 | `code` |
 | 终端操作 | `commands`、`outputs` |
@@ -145,6 +174,8 @@
 
 | 模板 | 本期必填参数 |
 | --- | --- |
+| 双面中枢与节点汇入 | `screens`、`icons` |
+| 四宫格并行动作 | `tabs`、`lines`、`words`、`author`、`comment`、`prompt` |
 | 图片轮播 | `images`、`labels` |
 | 标志揭示 | `logoSrc`、`brand`、`tagline` |
 | 图像铺开与标志 | `wordmark`、`tagline`、`images`、`logo` |

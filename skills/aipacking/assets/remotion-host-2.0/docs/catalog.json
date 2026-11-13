@@ -6671,5 +6671,222 @@
         "media": null
       }
     }
+  },
+  {
+    "type": "Scene_OscilloscopeStreamV2",
+    "ctx": "可编辑模板",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 2,
+    "use": "流动波形与刹停",
+    "props": {
+      "native": {
+        "title": null,
+        "metric": null,
+        "context": null,
+        "unit": null,
+        "samples": null
+      }
+    }
+  },
+  {
+    "type": "Scene_AxisRescaleShockV2",
+    "ctx": "可编辑模板",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 2,
+    "use": "峰值突破与坐标重标",
+    "props": {
+      "native": {
+        "title": null,
+        "metric": null,
+        "context": null,
+        "unit": null,
+        "values": null,
+        "labels": null
+      }
+    }
+  },
+  {
+    "type": "Scene_ChipLiftToUserPill",
+    "ctx": "可编辑模板",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 2,
+    "use": "网格标签展开",
+    "props": {
+      "native": {
+        "labels": null,
+        "name": null,
+        "caption": null
+      }
+    }
+  },
+  {
+    "type": "Scene_CursorCastEnsemble",
+    "ctx": "可编辑模板",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 2,
+    "use": "协作光标聚拢",
+    "props": {
+      "native": {
+        "names": null,
+        "text": null
+      }
+    }
+  },
+  {
+    "type": "Scene_CursorFlyover",
+    "ctx": "可编辑模板",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 2,
+    "use": "网页光标巡游",
+    "props": {
+      "native": {
+        "src": null,
+        "address": null
+      }
+    }
+  },
+  {
+    "type": "Scene_DashboardGlowHighlightPill",
+    "ctx": "可编辑模板",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 2,
+    "use": "面板辉光与浮窗",
+    "props": {
+      "native": {
+        "src": null,
+        "intro": null,
+        "title": null,
+        "description": null,
+        "options": null,
+        "action": null
+      }
+    }
+  },
+  {
+    "type": "Scene_DocParkLeftPillDeal",
+    "ctx": "可编辑模板",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 2,
+    "use": "文档让位与条目发牌",
+    "props": {
+      "native": {
+        "src": null,
+        "labels": null,
+        "captions": null
+      }
+    }
+  },
+  {
+    "type": "Scene_SceneWbr",
+    "ctx": "可编辑模板",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 2,
+    "use": "文档逐块揭字",
+    "props": {
+      "native": {
+        "src": null,
+        "kicker": null,
+        "weeks": null,
+        "blocks": null
+      }
+    }
+  },
+  {
+    "type": "Scene_IntegrationHubMap",
+    "ctx": "可编辑模板",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 2,
+    "use": "双面中枢与节点汇入",
+    "props": {
+      "native": {
+        "screens": null,
+        "icons": null
+      }
+    }
+  },
+  {
+    "type": "Scene_QuadSplitParallelScenes",
+    "ctx": "可编辑模板",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 2,
+    "use": "四宫格并行动作",
+    "props": {
+      "native": {
+        "tabs": null,
+        "lines": null,
+        "words": null,
+        "author": null,
+        "comment": null,
+        "prompt": null
+      }
+    }
+  },
+  {
+    "type": "Scene_ScanlineAnnotateFocus",
+    "ctx": "可编辑模板",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 2,
+    "use": "扫描与局部标注",
+    "props": {
+      "native": {
+        "src": null,
+        "address": null,
+        "brand": null,
+        "heading": null,
+        "buttons": null,
+        "footer": null,
+        "handle": null,
+        "scanLabel": null,
+        "doneLabel": null,
+        "labels": null
+      }
+    }
+  },
+  {
+    "type": "Scene_ScanlineAssembleFlyin",
+    "ctx": "可编辑模板",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 2,
+    "use": "扫描与模块飞入",
+    "props": {
+      "native": {
+        "src": null,
+        "address": null,
+        "brand": null,
+        "heading": null,
+        "buttons": null,
+        "footer": null,
+        "handle": null,
+        "scanLabel": null,
+        "doneLabel": null
+      }
+    }
+  },
+  {
+    "type": "Scene_SteepTiltGlide",
+    "ctx": "可编辑模板",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 2,
+    "use": "陡角页面横移",
+    "props": {
+      "native": {
+        "src": null,
+        "labels": null,
+        "tasks": null
+      }
+    }
   }
 ]

@@ -26,6 +26,8 @@ const fps = 30;
 const stillsOnly = process.env.AIPACKING_STILLS_ONLY === '1';
 const scale = Number(process.env.AIPACKING_SHOWCASE_SCALE ?? 2/3);
 const sampleRatio = Number(process.env.AIPACKING_STILL_AT ?? .57);
+const concurrency = Number(process.env.AIPACKING_SHOWCASE_CONCURRENCY ?? 4);
+if (!Number.isInteger(concurrency) || concurrency < 1) throw new Error('Expected a positive showcase render concurrency');
 const duration = selected.reduce((total,row)=>total+row.frames,0)/fps;
 let frame = 0;
 const scenes = selected.map(row => {
@@ -63,7 +65,7 @@ try {
   }
   if (stillsOnly) fs.writeFileSync(path.join(out,'failures.json'),JSON.stringify(failed,null,2)+'\n');
   if (!stillsOnly) await renderMedia({...common,composition,frameRange:[0,Math.round(duration*fps)-1],codec:'h264',muted:true,
-    scale,concurrency:4,crf:20,outputLocation:path.join(out,'native-showcase.mp4')});
+    scale,concurrency,crf:20,outputLocation:path.join(out,'native-showcase.mp4')});
   fs.writeFileSync(path.join(out,'chapters.json'),JSON.stringify(scenes.map(({id,start,end})=>({id,start,end})),null,2)+'\n');
 } finally {
   await browser.close({silent:true});

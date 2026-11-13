@@ -224,7 +224,15 @@ function readBoard() {
     const contract = native.get(s.type);
     if (contract) need(['full','left','right'].includes(s.layout) && s.native && typeof s.native === 'object' && !Array.isArray(s.native)
       && contract.required.every(key => hasInput(s.native[key]))
-      && Object.entries(contract.fieldLengths || {}).every(([key, size]) => Array.isArray(s.native[key]) && s.native[key].length === size),
+      && Object.entries(contract.fieldLengths || {}).every(([key, size]) => Array.isArray(s.native[key]) && s.native[key].length === size)
+      && Object.entries(contract.numericArrays || {}).every(([key, min]) => Array.isArray(s.native[key])
+        && s.native[key].length >= min && s.native[key].every(number))
+      && (!contract.documentRegions || Array.isArray(s.native.blocks) && s.native.blocks.length <= 20
+        && s.native.blocks.every(block => block && ['x','y','w','h'].every(key => number(block[key]))
+          && block.x >= 0 && block.y >= 0 && block.w > 0 && block.h > 0
+          && block.x + block.w <= 1920 && block.y + block.h <= 1080 && text(block.tag))
+        && Array.isArray(s.native.weeks) && s.native.weeks.length <= 6
+        && s.native.weeks.every(week => week && ['week','date','title'].every(key => text(week[key])))),
       s.id + ' 原版模板须绑定本期参数：' + contract.required.join('、'));
     const externalContract = external.get(s.type);
     if (externalContract) need(s.layout === externalContract.layout && s.native?.sourceProject === externalContract.source

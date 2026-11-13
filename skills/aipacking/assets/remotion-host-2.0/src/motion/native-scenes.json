@@ -2165,15 +2165,13 @@
     "demo": {
       "logo": "",
       "logoSize": 300,
-      "brand": "NORTH/STAR",
-      "tagline": "Make the signal visible.",
+      "brand": "AIPACKING",
+      "tagline": "Source Review",
       "accent": "#edff5b",
       "backgroundColor": "#11110f",
       "textColor": "#f6f5ef",
       "mutedColor": "#92958c",
-      "logoSrc": "native/sample-a.png",
-      "brand": "AIPACKING",
-      "tagline": "Source Review"
+      "logoSrc": "native/sample-a.png"
     },
     "mediaFields": [
       "logoSrc"
@@ -2589,6 +2587,668 @@
     ],
     "fieldLengths": {
       "labels": 2
+    }
+  },
+  {
+    "id": "Scene_OscilloscopeStreamV2",
+    "name": "流动波形与刹停",
+    "source": "可编辑模板",
+    "revision": "1",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "title",
+      "metric",
+      "context",
+      "unit",
+      "samples"
+    ],
+    "demo": {
+      "title": "LIVE SAMPLE TRACE",
+      "metric": "Signal samples",
+      "context": "Bench input",
+      "unit": "units",
+      "samples": [
+        15,
+        24,
+        18,
+        12,
+        32,
+        48,
+        81,
+        28,
+        17,
+        36,
+        52,
+        22,
+        18,
+        66,
+        91,
+        27,
+        35,
+        48
+      ]
+    },
+    "numericArrays": {
+      "samples": 2
+    }
+  },
+  {
+    "id": "Scene_AxisRescaleShockV2",
+    "name": "峰值突破与坐标重标",
+    "source": "可编辑模板",
+    "revision": "1",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "title",
+      "metric",
+      "context",
+      "unit",
+      "values",
+      "labels"
+    ],
+    "demo": {
+      "title": "CAPACITY CHECK",
+      "metric": "Archive imports",
+      "context": "Synthetic batch history",
+      "unit": "files",
+      "values": [
+        3,
+        4,
+        4,
+        5,
+        4,
+        6,
+        6,
+        7,
+        8,
+        8,
+        9,
+        27
+      ],
+      "labels": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ]
+    },
+    "fieldLengths": {
+      "values": 12,
+      "labels": 12
+    },
+    "numericArrays": {
+      "values": 12
+    }
+  },
+  {
+    "id": "Scene_ChipLiftToUserPill",
+    "name": "网格标签展开",
+    "source": "可编辑模板",
+    "revision": "1",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "labels",
+      "name",
+      "caption"
+    ],
+    "demo": {
+      "labels": [
+        "AA",
+        "AB",
+        "AC",
+        "AD",
+        "BA",
+        "BE",
+        "BC",
+        "BD",
+        "CA",
+        "CB",
+        "CC",
+        "CD"
+      ],
+      "name": "Archive Desk",
+      "caption": "Open the archive"
+    },
+    "fieldLengths": {
+      "labels": 12
+    }
+  },
+  {
+    "id": "Scene_CursorCastEnsemble",
+    "name": "协作光标聚拢",
+    "source": "可编辑模板",
+    "revision": "1",
+    "frames": 140,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "names",
+      "text"
+    ],
+    "demo": {
+      "names": [
+        "Review",
+        "Design",
+        "Archive",
+        "Ops",
+        "Editor"
+      ],
+      "text": "Publish the verified draft"
+    },
+    "fieldLengths": {
+      "names": 5
+    }
+  },
+  {
+    "id": "Scene_CursorFlyover",
+    "name": "网页光标巡游",
+    "source": "可编辑模板",
+    "revision": "1",
+    "frames": 180,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "src",
+      "address"
+    ],
+    "demo": {
+      "src": "native/sample-a.png",
+      "address": "Review / archive"
+    },
+    "mediaFields": [
+      "src"
+    ]
+  },
+  {
+    "id": "Scene_DashboardGlowHighlightPill",
+    "name": "面板辉光与浮窗",
+    "source": "可编辑模板",
+    "revision": "1",
+    "frames": 60,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "src",
+      "intro",
+      "title",
+      "description",
+      "options",
+      "action"
+    ],
+    "demo": {
+      "src": "native/sample-b.png",
+      "intro": "Review ready",
+      "title": "Evidence review",
+      "description": "Choose what to retain in the final archive.",
+      "options": [
+        "Keep the report",
+        "Mark for follow-up"
+      ],
+      "action": "Save review"
+    },
+    "mediaFields": [
+      "src"
+    ],
+    "fieldLengths": {
+      "options": 2
+    }
+  },
+  {
+    "id": "Scene_DocParkLeftPillDeal",
+    "name": "文档让位与条目发牌",
+    "source": "可编辑模板",
+    "revision": "1",
+    "frames": 174,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "src",
+      "labels",
+      "captions"
+    ],
+    "demo": {
+      "src": "native/sample-c.png",
+      "labels": [
+        "Source",
+        "Date",
+        "Outcome"
+      ],
+      "captions": [
+        "Open the source",
+        "Verify the date",
+        "Save the outcome"
+      ]
+    },
+    "mediaFields": [
+      "src"
+    ],
+    "fieldLengths": {
+      "labels": 3,
+      "captions": 3
+    }
+  },
+  {
+    "id": "Scene_SceneWbr",
+    "name": "文档逐块揭字",
+    "source": "可编辑模板",
+    "revision": "1",
+    "frames": 110,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "src",
+      "kicker",
+      "weeks",
+      "blocks"
+    ],
+    "demo": {
+      "src": "native/review-page-a.png",
+      "kicker": "EDITORIAL REVIEW",
+      "weeks": [
+        {
+          "week": "Round 1",
+          "date": "Nov 1",
+          "title": "Archive log"
+        },
+        {
+          "week": "Round 2",
+          "date": "Nov 2",
+          "title": "Archive log"
+        },
+        {
+          "week": "Round 3",
+          "date": "Nov 3",
+          "title": "Archive log"
+        },
+        {
+          "week": "Round 4",
+          "date": "Nov 4",
+          "title": "Archive log"
+        }
+      ],
+      "blocks": [
+        {
+          "x": 576,
+          "y": 189,
+          "w": 401.203125,
+          "h": 28,
+          "tag": "h1"
+        },
+        {
+          "x": 576,
+          "y": 242.1875,
+          "w": 167,
+          "h": 23,
+          "tag": "h2"
+        },
+        {
+          "x": 598.390625,
+          "y": 277.21875,
+          "w": 665.609375,
+          "h": 54.375,
+          "tag": "li"
+        },
+        {
+          "x": 598.390625,
+          "y": 337.984375,
+          "w": 665.609375,
+          "h": 27.1875,
+          "tag": "li"
+        },
+        {
+          "x": 576,
+          "y": 383.5625,
+          "w": 26.609375,
+          "h": 23,
+          "tag": "h2"
+        },
+        {
+          "x": 598.390625,
+          "y": 418.59375,
+          "w": 665.609375,
+          "h": 54.375,
+          "tag": "li"
+        },
+        {
+          "x": 598.390625,
+          "y": 479.359375,
+          "w": 665.609375,
+          "h": 27.1875,
+          "tag": "li"
+        },
+        {
+          "x": 598.390625,
+          "y": 512.9375,
+          "w": 665.609375,
+          "h": 27.1875,
+          "tag": "li"
+        },
+        {
+          "x": 576,
+          "y": 558.515625,
+          "w": 55.96875,
+          "h": 23,
+          "tag": "h2"
+        },
+        {
+          "x": 598.390625,
+          "y": 593.546875,
+          "w": 665.609375,
+          "h": 27.1875,
+          "tag": "li"
+        },
+        {
+          "x": 598.390625,
+          "y": 627.125,
+          "w": 665.609375,
+          "h": 27.1875,
+          "tag": "li"
+        },
+        {
+          "x": 598.390625,
+          "y": 660.703125,
+          "w": 665.609375,
+          "h": 27.1875,
+          "tag": "li"
+        },
+        {
+          "x": 576,
+          "y": 706.28125,
+          "w": 38.125,
+          "h": 23,
+          "tag": "h2"
+        },
+        {
+          "x": 598.390625,
+          "y": 741.3125,
+          "w": 665.609375,
+          "h": 27.1875,
+          "tag": "li"
+        },
+        {
+          "x": 598.390625,
+          "y": 774.890625,
+          "w": 665.609375,
+          "h": 27.1875,
+          "tag": "li"
+        },
+        {
+          "x": 598.390625,
+          "y": 808.46875,
+          "w": 665.609375,
+          "h": 27.1875,
+          "tag": "li"
+        },
+        {
+          "x": 576,
+          "y": 854.046875,
+          "w": 44.953125,
+          "h": 23,
+          "tag": "h2"
+        },
+        {
+          "x": 598.390625,
+          "y": 889.078125,
+          "w": 665.609375,
+          "h": 27.1875,
+          "tag": "li"
+        },
+        {
+          "x": 598.390625,
+          "y": 922.65625,
+          "w": 665.609375,
+          "h": 27.1875,
+          "tag": "li"
+        },
+        {
+          "x": 598.390625,
+          "y": 956.234375,
+          "w": 665.609375,
+          "h": 27.1875,
+          "tag": "li"
+        }
+      ]
+    },
+    "mediaFields": [
+      "src"
+    ],
+    "documentRegions": true
+  },
+  {
+    "id": "Scene_IntegrationHubMap",
+    "name": "双面中枢与节点汇入",
+    "source": "可编辑模板",
+    "revision": "1",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "screens",
+      "icons"
+    ],
+    "demo": {
+      "screens": [
+        "native/sample-a.png",
+        "native/sample-b.png"
+      ],
+      "icons": [
+        "native/sample-c.png",
+        "native/sample-a.png",
+        "native/sample-b.png",
+        "native/sample-c.png",
+        "native/sample-a.png"
+      ]
+    },
+    "mediaFields": [
+      "screens",
+      "icons"
+    ],
+    "fieldLengths": {
+      "screens": 2,
+      "icons": 5
+    }
+  },
+  {
+    "id": "Scene_QuadSplitParallelScenes",
+    "name": "四宫格并行动作",
+    "source": "可编辑模板",
+    "revision": "1",
+    "frames": 63,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "tabs",
+      "lines",
+      "words",
+      "author",
+      "comment",
+      "prompt"
+    ],
+    "demo": {
+      "tabs": [
+        "Notes",
+        "Review",
+        "Archive",
+        "Files",
+        "Draft",
+        "Final"
+      ],
+      "lines": [
+        "Trace the source",
+        "Keep the evidence"
+      ],
+      "words": [
+        "Read",
+        "Check",
+        "Save"
+      ],
+      "author": "Editor",
+      "comment": "Verified!",
+      "prompt": "Add a review…"
+    },
+    "fieldLengths": {
+      "tabs": 6,
+      "lines": 2,
+      "words": 3
+    }
+  },
+  {
+    "id": "Scene_ScanlineAnnotateFocus",
+    "name": "扫描与局部标注",
+    "source": "可编辑模板",
+    "revision": "1",
+    "frames": 138,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "src",
+      "address",
+      "brand",
+      "heading",
+      "buttons",
+      "footer",
+      "handle",
+      "scanLabel",
+      "doneLabel",
+      "labels"
+    ],
+    "demo": {
+      "src": "native/sample-a.png",
+      "address": "Review / source",
+      "brand": "Archive Desk",
+      "heading": [
+        "Check the original",
+        "Record the source"
+      ],
+      "buttons": [
+        "OPEN",
+        "SAVE"
+      ],
+      "footer": "EDITORIAL CHECK",
+      "handle": "@REVIEW",
+      "scanLabel": "REVIEW",
+      "doneLabel": "REVIEW COMPLETE",
+      "labels": [
+        "BRAND",
+        "EVIDENCE",
+        "HEADLINE",
+        "ACTIONS",
+        "NOTES",
+        "CONTACT"
+      ]
+    },
+    "mediaFields": [
+      "src"
+    ],
+    "fieldLengths": {
+      "heading": 2,
+      "buttons": 2,
+      "labels": 6
+    }
+  },
+  {
+    "id": "Scene_ScanlineAssembleFlyin",
+    "name": "扫描与模块飞入",
+    "source": "可编辑模板",
+    "revision": "1",
+    "frames": 138,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "src",
+      "address",
+      "brand",
+      "heading",
+      "buttons",
+      "footer",
+      "handle",
+      "scanLabel",
+      "doneLabel"
+    ],
+    "demo": {
+      "src": "native/sample-b.png",
+      "address": "Review / notes",
+      "brand": "Review Desk",
+      "heading": [
+        "Build the record",
+        "Use the original"
+      ],
+      "buttons": [
+        "OPEN",
+        "SAVE"
+      ],
+      "footer": "ARCHIVE RECORD",
+      "handle": "@EDITOR",
+      "scanLabel": "BUILD",
+      "doneLabel": "RECORD READY"
+    },
+    "mediaFields": [
+      "src"
+    ],
+    "fieldLengths": {
+      "heading": 2,
+      "buttons": 2
+    }
+  },
+  {
+    "id": "Scene_SteepTiltGlide",
+    "name": "陡角页面横移",
+    "source": "可编辑模板",
+    "revision": "1",
+    "frames": 120,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "src",
+      "labels",
+      "tasks"
+    ],
+    "demo": {
+      "src": "native/sample-c.png",
+      "labels": [
+        "Source review",
+        "Archive Desk",
+        "Editorial",
+        "Sources",
+        "Review",
+        "Record overview",
+        "List",
+        "Board",
+        "IN REVIEW",
+        "ENTRY",
+        "Archive notes",
+        "Sources",
+        "Review",
+        "Notes",
+        "Dashboard"
+      ],
+      "tasks": [
+        "Open source",
+        "Check date",
+        "Record result",
+        "Publish notes"
+      ]
+    },
+    "mediaFields": [
+      "src"
+    ],
+    "fieldLengths": {
+      "labels": 15,
+      "tasks": 4
     }
   }
 ]
