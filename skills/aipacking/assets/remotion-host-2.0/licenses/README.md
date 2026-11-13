@@ -12,3 +12,8 @@
 - The mask title and kinetic word stack are from RenderComp's MIT template library at commit f648980e528defb7594e24c6447055f0540f340b. Their wrapper sets the project palette and uses the composition's frame clock. [RenderComp source](https://github.com/RenderComp/free-remotion-templates/tree/f648980e528defb7594e24c6447055f0540f340b) · [MIT license](rendercomp.txt).
 - The Nana 5.0 port also includes adapted FlashCut and CornerSpotlightReveal from Video ShotCraft under the Apache license above.
 - The 3.0 frame-seekable overlay adapter uses 97 keyframes from [Animate.css v4.1.1](https://github.com/animate-css/animate.css/tree/4aa415199dd4ed7d877d10343e745e8bbb4b7a0c) and 24 keyframes from [Magic CSS](https://github.com/miniMAC/magic/tree/f26d3c3beaf3017c90fb27ac6f67168fac26de06). [Animate.css MIT license](animate-keyframes.txt) · [Magic CSS MIT license](magic-keyframes.txt).
+
+## External rendering dependencies
+
+- Kinetic Tech 0.2.7-open-beta runs as a separate template package. Its code and third-party assets follow the notices included with the package. [Upstream distribution and notices](https://github.com/motiontemplates/385712).
+- Overlay Studio 1.1.1 renders clips as a separate application. [Upstream distribution and license](https://github.com/jeszhou/overlay-studio/tree/e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8).

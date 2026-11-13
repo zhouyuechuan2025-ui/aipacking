@@ -4,7 +4,7 @@
 
 - **18 项内容动效**使用 kind 为 semantic 和 preset 为目录 ID。清单可选 rail、checklist，文字可选 ribbon、word-mask、type-line，关系可选 compare、swap、verdict，流程可选 flow、merge、branch、timeline，数据可选 bars、count，证据可选 focus-box、scan-line、pin，资料组可选 stack-fan。
 - 内容动效可独立选为 MotionLane_<ID> 或 MotionPage_<ID>，也可叠在已有镜头上。独立模板的 elements 须包含匹配的 semantic 元素，Lane 用 left 或 right，Page 用 full。两种布局复用同一动效，计数仍是 18 项。
-- **97 项 Animate.css、24 项 Magic CSS**使用 animation 字段，可给独立的 kind: motion 标签添加文字，也可应用于既有叠加元素。入场按 at 开始，离场在元素寿命末尾发生。animationDuration 默认 0.45 秒。带 restricted 标识的动作需填 motionReason。动效裁在元素矩形内，侧边使用时离脸、字幕和顶栏留空。
+- **121 项关键帧动效**使用 animation 字段，可给独立的 kind: motion 标签添加文字，也可应用于既有叠加元素。入场按 at 开始，离场在元素寿命末尾发生。animationDuration 默认 0.45 秒。带 restricted 标识的动作需填 motionReason。动效裁在元素矩形内，侧边使用时离脸、字幕和顶栏留空。
 - 两份完整目录在宿主的 src/motion/semantic.json 和 src/motion/keyframes.json。可读版见 [公开动效索引](https://github.com/zhouyuechuan2025-ui/aipacking/blob/main/docs/MOTION-INDEX.md)。npm run studio 选 MotionGallery，可预览全部新增效果。
 
 以下是镜头内的 elements，时间是绝对秒。每个 at 与分镜的可见 beats 对齐。itemsData 每项分别绑定台词，最后一项留出至少 0.28 秒。证据类动效圈出已授权真实截图上的位置。数值类只用原稿能证实的数据，bars 接受非负值。

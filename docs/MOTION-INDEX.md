@@ -27,9 +27,9 @@
 | `stack-fan` | 多卡铺开 | 把并列材料或示例分层铺开 | 2–3 |
 | `pin` | 引线批注 | 用引线把一个词与对象局部关联 | 1–1 |
 
-## Animate.css · 97 项
+## 常用入场、强调与离场 · 97 项
 
-[源代码和 MIT 许可](https://github.com/animate-css/animate.css/tree/4aa415199dd4ed7d877d10343e745e8bbb4b7a0c)。用 animation 填写 ID。强动作须在分镜写 motionReason，并在实样中检查。
+用 animation 填写 ID。强动作须在分镜写 motionReason，并在实样中检查。
 
 | ID | 时机 | 强动作 |
 | --- | --- | --- |
@@ -131,9 +131,9 @@
 | `animate-slideOutRight` | 离场 | 否 |
 | `animate-slideOutUp` | 离场 | 否 |
 
-## Magic CSS · 24 项
+## 空间变形与过渡 · 24 项
 
-[源代码和 MIT 许可](https://github.com/miniMAC/magic/tree/f26d3c3beaf3017c90fb27ac6f67168fac26de06)。用 animation 填写 ID。强动作须在分镜写 motionReason，并在实样中检查。
+用 animation 填写 ID。强动作须在分镜写 motionReason，并在实样中检查。
 
 | ID | 时机 | 强动作 |
 | --- | --- | --- |

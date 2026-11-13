@@ -1,205 +1,171 @@
-# aipacking 3.2.1 原版模板
+# aipacking 模板与实渲染
 
-**122 项**使用可编辑的原镜头结构，逐项绑定新文字、数据或媒体并核对实帧。91 项随包在 Remotion 运行，31 项由原工程渲染后按独立 ID 接回 aipacking。计数排除 CSS 预设、固定演示及同一镜头的重复入口。
-
-| 来源 | 项数 | 接入方式 |
-| --- | ---: | --- |
-| .Motion | 11 | 一个原工程的 11 个可编辑场景，渲染后接入 |
-| Agent Motion | 25 | 随包渲染 |
-| Overlay Studio | 20 | 原工程渲染后接入 |
-| ShotCraft | 2 | 随包渲染 |
-| ShotCraft 扩展批 | 13 | 随包渲染 |
-| SnapCN | 51 | 随包渲染 |
+共 **122 个模板**。按台词选择镜头，填入本期文案、数据或素材。91 项随包渲染，31 项接入预先渲染的镜头。
 
 ## 实际渲染
 
-[.Motion 新增七镜实渲染](assets/native-templates-3.2/motion-native-scenes.mp4?raw=true) · [八镜原版动态合辑](assets/native-templates-3.2/scene-reel.mp4?raw=true) · [两侧包装与章节轴](assets/native-templates-3.2/side-reel.mp4?raw=true) · [Overlay FocusCard 完整收窗回位](assets/native-templates-3.2/overlay-focus.mp4?raw=true) · [.Motion B1–B4](assets/native-templates-3.2/motion-kinetic.mp4?raw=true) · [Overlay 19 张动效卡](assets/native-templates-3.2/overlay-cards.mp4?raw=true)
+[八镜合辑](assets/native-templates-3.2/scene-reel.mp4?raw=true) · [媒体与图解](assets/native-templates-3.2/motion-native-scenes.mp4?raw=true) · [两侧包装与章节轴](assets/native-templates-3.2/side-reel.mp4?raw=true) · [人物收窗与回位](assets/native-templates-3.2/overlay-focus.mp4?raw=true) · [关键词、清单、对比与总结](assets/native-templates-3.2/motion-kinetic.mp4?raw=true) · [叠加动效](assets/native-templates-3.2/overlay-cards.mp4?raw=true)
 
-![ShotCraft 扩展批 · 拼墙、立方体、级联图解等 13 项实渲染](assets/native-templates-3.2/shotcraft-expanded.jpg)
+![媒体拼墙、卡片与图解实渲染](assets/native-templates-3.2/media-and-diagrams.jpg)
 
-公开样片用合成素材、示例文案和演示数字验证替换与动作。生产项目的证据画面绑定真实出处。
+样片用合成素材、示例文案和演示数字展示镜头效果。
 
 | 八镜合辑时间 | 模板 | 换入内容 |
 | --- | --- | --- |
-| 00:00 | ShotCraft 扩展批 · Mosaic Reframe | 三种资料画面 |
-| 00:06 | ShotCraft 扩展批 · Diagram Cascade Build | 检索指令、资料节点 |
-| 00:11.3 | ShotCraft 扩展批 · Cube Navigation | 六个资料分类 |
-| 00:17.3 | ShotCraft 扩展批 · Chip Grid Single Select Blackout | 五个选项与当前结果 |
-| 00:22.3 | Agent Motion · Browser Spotlight | 原始报告画面 |
-| 00:27.3 | Agent Motion · Before After | 原始报告与复核记录 |
-| 00:32.3 | SnapCN · Capture Reveal | 页面截图和状态文案 |
-| 00:36.7 | SnapCN · Card Rail | 三张资料卡和各自标题 |
+| 00:00 | 媒体拼墙重构 | 三种资料画面 |
+| 00:06 | 级联节点图 | 检索指令、资料节点 |
+| 00:11.3 | 立方体导航 | 六个资料分类 |
+| 00:17.3 | 选项网格聚焦 | 五个选项与当前结果 |
+| 00:22.3 | 网页聚焦 | 报告画面 |
+| 00:27.3 | 前后图像对比 | 报告与复核记录 |
+| 00:32.3 | 截图揭示 | 页面截图和状态文案 |
+| 00:36.7 | 资料卡横移 | 三张资料卡和各自标题 |
 
-## ShotCraft 扩展批的出处
+[模板参数与编排方法](../skills/aipacking/references/native-templates.md)
 
-旧版导出包的 assets/fusion-source-registry.json 将 “Video ShotCraft扩展批” 指向旧工程 src/shotcraft-expanded-originals.tsx。实查该文件的 SHA-256 为 35d75b34113e16b8c5da22ce06dc5c3b084687d0990b2d7f04be9630d2ffa8d3，与导出包登记一致。旧工程登记 26 个原 ID，本次 13 个已接入原镜头素材或文案字段，保留各自的旧 ID 和锁定源文件校验值。
+## 文字、标题与字幕
 
-尚未计入的 13 个旧 ID 为 shotOscilloscopeStreamV2、shotAxisRescaleShock、shotChipLiftUserPill、shotCursorCastEnsemble、shotCursorFlyover、shotDashboardGlowPill、shotDocParkPillDeal、shotDocumentTypewriterSource、shotIntegrationHubMap、shotQuadSplit、shotScanlineAnnotate、shotScanlineAssemble、shotSteepTiltGlide。
+| 模板 | 本期必填参数 |
+| --- | --- |
+| 描边文字回声 | `text` |
+| 引语逐段高亮 | `items` |
+| 逐字打字 | `text` |
+| 文字逐段建立 | `text` |
+| 重点文字划亮 | `highlight` |
+| 文案保留与改写 | `headline`、`keep`、`append` |
+| 选择关键文字 | `headline` |
+| 前后文案替换 | `fromText`、`toText` |
+| 词组汇聚 | `text` |
+| 重点词轮换 | `headline`、`words` |
+| 标题扫入 | `titles` |
+| 字块拼合 | `text` |
+| 字形轮换 | `lead`、`subject` |
+| 开场短词推近 | `lead`、`rest`、`nextWord`、`words` |
+| 跟读式字幕 | `text`、`emphasize` |
+| 短句逐拍强调 | `script` |
+| 文字揭示 | `text` |
+| 文字放大强调 | `text` |
+| 文字变形 | `lead`、`emphasis`、`morphTo`、`finally_` |
+| 逐词字幕 | `srt` |
+| 字标切入 | `word` |
+| 飞入关键词 | `words` |
+| 碎片聚合标题 | `text` |
+| 胶囊输入框 | `text` |
+| 关键词与解释 | `keyword`、`explanation` |
+| 总结与行动 | `summary`、`action` |
+| 模糊字转清晰 | `text` |
+| 字幕轨 | `lines` |
+| 重点语句标签 | `text` |
+| 术语解释卡 | `term`、`def`、`en` |
+| 文字切换 | `lines`、`draftTag` |
+| 引语与署名 | `quote`、`author` |
 
-[随包模板、样例输入和原文件哈希](../skills/aipacking/assets/remotion-host-2.0/src/motion/native-scenes.json) · [原工程模板与样例参数](../skills/aipacking/assets/remotion-host-2.0/src/motion/external-native-scenes.json) · [生产参数与编排规则](../skills/aipacking/references/native-templates.md)
+## 步骤、对比与关系
 
-## .Motion · 11 个场景
+| 模板 | 本期必填参数 |
+| --- | --- |
+| 路线节点 | `points`、`links` |
+| 架构关系图 | `nodes`、`connections` |
+| 逐项聚焦列表 | `label`、`items` |
+| 行动号召卡 | `items` |
+| 特性清单 | `title`、`features` |
+| 产品时间线 | `title`、`milestones` |
+| 评价卡 | `items` |
+| 前后图像对比 | `images`、`labels` |
+| 任务步骤与结果 | `query`、`steps`、`result` |
+| 逐项核对 | `headline`、`words` |
+| 成员与角色卡 | `label`、`rows` |
+| 状态轮换 | `prefix`、`statuses`、`chips` |
+| 列表逐项展开 | `title`、`subtitle`、`items`、`kicker` |
+| 资料卡片滚动 | `items` |
+| 级联节点图 | `prompt`、`labels` |
+| 选项网格聚焦 | `labels`、`caption` |
+| 要点清单 | `heading`、`points` |
+| 双边对比与结论 | `heading`、`left`、`right`、`conclusion` |
+| 流程卡片与消散 | `title`、`content`、`media` |
+| 路径对比 | `title`、`content` |
+| 环形关系图 | `title`、`content`、`media` |
+| 章节进度 | `chapters` |
+| 逐项勾选 | `title`、`items`、`checked` |
+| 对象标签 | `chips`、`note` |
+| 图钉板 | `title`、`subtitle`、`items`、`stepMs` |
+| 步骤时间轴 | `title`、`steps`、`tagZh`、`nowZh` |
+| 双卡对照 | `aKicker`、`aTitle`、`aSub`、`bKicker`、`bTitle`、`bSub`、`winner` |
+| 人物收窗与回位 | `camSrc`、`camSize`、`eyebrow`、`items` |
 
-11 个场景均出自「酷炫科技风」0.2.7-open-beta 的横屏公开工程。MotionGit 目录中的其他风格是独立项目，各有下载入口。现代图文和纸面透视的 .motion 包可在登录官网后获取。
+## 数据与图表
 
-[MotionGit 酷炫科技风](https://github.com/motiontemplates/385712) · [上游总目录](https://github.com/motiontemplates/all) · [现代图文](https://motiongit.com/@adunext/template-01-integrated) · [纸面透视](https://motiongit.com/@adunext/template-02-expanded)
+| 模板 | 本期必填参数 |
+| --- | --- |
+| 数字滚入 | `value`、`label` |
+| 面积图 | `items` |
+| 柱状图 | `values`、`labels` |
+| 数据表 | `columns`、`tableData` |
+| 环形图 | `items` |
+| 圆环进度 | `value`、`label` |
+| 数字网格 | `from`、`to`、`noun` |
+| 数字落定与彩屑 | `value` |
+| 条纹深度对照 | `rows`、`heading` |
+| 滚动刻度 | `title`、`from`、`to` |
+| 增长曲线 | `kicker`、`kickerZh`、`points`、`unit`、`caption` |
+| 滚动数字 | `kicker`、`value`、`unit`、`label` |
+| 排名条 | `title`、`rows`、`suffix` |
+| 环形指标 | `kicker`、`value`、`max`、`label` |
+| 数字证据卡 | `kicker`、`kickerZh`、`value`、`suffix`、`footEn`、`footZh` |
 
-| aipacking 模板 ID | 本期必填字段 | 版本或原卡 ID |
-| --- | --- | --- |
-| `Motion_KineticTech_B1` | `keyword`、`explanation` | `kinetic-tech/B1` |
-| `Motion_KineticTech_B2` | `heading`、`points` | `kinetic-tech/B2` |
-| `Motion_KineticTech_B3` | `heading`、`left`、`right`、`conclusion` | `kinetic-tech/B3` |
-| `Motion_KineticTech_B4` | `summary`、`action` | `kinetic-tech/B4` |
-| `Motion_KineticTech_A` | 3D 媒体墙，场景文案和 62 个媒体位 | `kinetic-tech/A` |
-| `Motion_KineticTech_B` | 卡点蒙太奇，字幕和素材卡 | `kinetic-tech/B` |
-| `Motion_KineticTech_C` | 加速媒体网格，替换媒体和标签，原镜头自带的计数只作动效 | `kinetic-tech/C` |
-| `Motion_KineticTech_D` | 流程卡片与消散，步骤和两路素材 | `kinetic-tech/D` |
-| `Motion_KineticTech_F` | 双媒体切换，标签和两路素材 | `kinetic-tech/F` |
-| `Motion_KineticTech_S10` | 路径对比，弯路与直达的说明 | `kinetic-tech/S10` |
-| `Motion_KineticTech_S11` | 四节点环形关系，节点文案和缩略图 | `kinetic-tech/S11` |
+## 界面操作与证据
 
-## Agent Motion · 25 项
+| 模板 | 本期必填参数 |
+| --- | --- |
+| 对话消息 | `contact`、`messages` |
+| 代码编辑器 | `code` |
+| 终端操作 | `commands`、`outputs` |
+| 网页聚焦 | `src` |
+| 设备画框 | `src` |
+| 光标巡览 | `xPositions`、`yPositions`、`src` |
+| 答案高亮 | `question`、`answer`、`statement`、`word` |
+| 终端命令演示 | `lines` |
+| 逐段显示回答 | `question`、`answer`、`headline`、`model` |
+| 按钮与完成状态 | `label`、`pending`、`done` |
+| 截图揭示 | `headline`、`capturing`、`copied`、`src` |
+| 对话串 | `messages` |
+| 点击后输入 | `placeholder`、`prompt`、`hint` |
+| 电脑画框 | `screenSrc`、`notchLabel` |
+| 手机画框 | `screenSrc` |
+| 指令发送 | `text`、`placeholder`、`chips` |
+| 输入区聚焦 | `greeting`、`text`、`placeholder`、`model`、`effort` |
+| 录屏展示 | `src` |
+| 搜索输入 | `text`、`seed` |
+| 立方体导航 | `labels` |
+| 手机画面与径向扩散 | `imageUrls`、`labels` |
+| 立体终端 | `file`、`lines` |
+| 界面标注 | `label`、`hlWords` |
 
-[Agent Motion 组件目录](https://agent-motion.com/)
+## 多素材展示与标志
 
-| aipacking 模板 ID | 本期必填字段 | 版本或原卡 ID |
-| --- | --- | --- |
-| `AgentMotion_AnimatedCounter` | `value`、`label` | `0.3.0` |
-| `AgentMotion_AnimatedRouteMap` | `points`、`links` | `0.3.0` |
-| `AgentMotion_ArchitectureDiagram` | `nodes`、`connections` | `0.2.0` |
-| `AgentMotion_AreaChart` | `items` | `0.2.0` |
-| `AgentMotion_BarChart` | `values`、`labels` | `0.2.0` |
-| `AgentMotion_BlurFocusList` | `label`、`items` | `0.2.0` |
-| `AgentMotion_ChatConversation` | `contact`、`messages` | `0.9.0` |
-| `AgentMotion_CodeEditor` | `code` | `0.1.0` |
-| `AgentMotion_CtaCard` | `items` | `0.3.0` |
-| `AgentMotion_DataTable` | `columns`、`tableData` | `0.3.1` |
-| `AgentMotion_DonutChart` | `items` | `0.3.0` |
-| `AgentMotion_FeatureList` | `title`、`features` | `0.2.0` |
-| `AgentMotion_OutlineTextEcho` | `text` | `0.13.0` |
-| `AgentMotion_ProductTimeline` | `title`、`milestones` | `0.1.1` |
-| `AgentMotion_ProgressRing` | `value`、`label` | `0.2.0` |
-| `AgentMotion_QuoteHighlight` | `items` | `0.1.0` |
-| `AgentMotion_TerminalSession` | `commands`、`outputs` | `0.2.0` |
-| `AgentMotion_TestimonialCard` | `items` | `0.1.0` |
-| `AgentMotion_WordTypewriter` | `text` | `0.5.1` |
-| `AgentMotion_BeforeAfter` | `images`、`labels` | `0.3.0` |
-| `AgentMotion_BrowserSpotlight` | `src` | `0.10.0` |
-| `AgentMotion_DeviceMockup` | `src` | `0.1.0` |
-| `AgentMotion_ImageCarousel` | `images`、`labels` | `0.1.0` |
-| `AgentMotion_LogoReveal` | `logoSrc`、`brand`、`tagline` | `0.2.0` |
-| `AgentMotion_CursorTour` | `xPositions`、`yPositions`、`src` | `0.2.0` |
-
-## Overlay Studio · 20 项
-
-[Overlay Studio 1.1.1](https://github.com/jeszhou/overlay-studio/tree/e35e1aff9dae3b3addc21f68f3bcd51f95bdc1a8)
-
-| aipacking 模板 ID | 本期必填字段 | 版本或原卡 ID |
-| --- | --- | --- |
-| `Overlay_blur-text` | `text` | `blur-text` |
-| `Overlay_caption-track` | `lines` | `caption-track` |
-| `Overlay_chapter-bar` | `chapters` | `chapter-bar` |
-| `Overlay_checklist` | `title`、`items`、`checked` | `checklist` |
-| `Overlay_entity-chips` | `chips`、`note` | `entity-chips` |
-| `Overlay_growth-curve` | `kicker`、`kickerZh`、`points`、`unit`、`caption` | `growth-curve` |
-| `Overlay_odometer` | `kicker`、`value`、`unit`、`label` | `odometer` |
-| `Overlay_pin-board` | `title`、`subtitle`、`items`、`stepMs` | `pin-board` |
-| `Overlay_punch-pill` | `text` | `punch-pill` |
-| `Overlay_rank-bars` | `title`、`rows`、`suffix` | `rank-bars` |
-| `Overlay_ring-metric` | `kicker`、`value`、`max`、`label` | `ring-metric` |
-| `Overlay_stat-proof` | `kicker`、`kickerZh`、`value`、`suffix`、`footEn`、`footZh` | `stat-proof` |
-| `Overlay_step-timeline` | `title`、`steps`、`tagZh`、`nowZh` | `step-timeline` |
-| `Overlay_term-card` | `term`、`def`、`en` | `term-card` |
-| `Overlay_terminal-3d` | `file`、`lines` | `terminal-3d` |
-| `Overlay_type-shift` | `lines`、`draftTag` | `type-shift` |
-| `Overlay_ui-callout` | `label`、`hlWords` | `ui-callout` |
-| `Overlay_versus-card` | `aKicker`、`aTitle`、`aSub`、`bKicker`、`bTitle`、`bSub`、`winner` | `versus-card` |
-| `Overlay_quote-lockup` | `quote`、`author` | `quote-lockup` |
-| `Overlay_focus-card` | `camSrc`、`camSize`、`eyebrow`、`items` | `focus-card` |
-
-## ShotCraft · 2 项
-
-[ShotCraft 上游源码](https://github.com/Vincentwei1021/video-shotcraft/tree/6700db2ba80572ebc777b99d72049679fed9840c)
-
-| aipacking 模板 ID | 本期必填字段 | 版本或原卡 ID |
-| --- | --- | --- |
-| `ShotCraft_ListReveal` | `title`、`subtitle`、`items`、`kicker` | `6700db2ba805` |
-| `ShotCraftExt_ResearchCardStackScroll` | `items` | `6700db2ba805` |
-
-## ShotCraft 扩展批 · 13 项
-
-[历史包锁定的 ShotCraft 源码](https://github.com/Vincentwei1021/video-shotcraft/tree/986427ee909a14dfaa96f6fa6cd7cfaa69b55881)
-
-| aipacking 模板 ID | 本期必填字段 | 旧 ID |
-| --- | --- | --- |
-| `ShotCraftExt_CardStack` | `imageUrls` | `shotCardStack` |
-| `ShotCraftExt_MosaicReframe` | `imageUrls` | `shotMosaicReframe` |
-| `ShotCraftExt_FlyingWords` | `words` | `shotFlyingWords` |
-| `ShotCraftExt_CounterConfetti` | `value` | `shotCounterConfetti` |
-| `ShotCraftExt_Fracture` | `text` | `shotFracture` |
-| `ShotCraftExt_HatchDepth` | `rows`、`heading` | `shotHatchDepth` |
-| `ShotCraftExt_CubeNavigation` | `labels` | `shotCubeNavigation` |
-| `ShotCraftExt_Carousel3D` | `labels` | `shotCarousel3D` |
-| `ShotCraftExt_DiagramCascadeBuild` | `prompt`、`labels` | `shotDiagramCascade` |
-| `ShotCraftExt_GlassPillDictationTyping` | `text` | `shotGlassDictation` |
-| `ShotCraftExt_ChipGridSingleSelectBlackout` | `labels`、`caption` | `shotChipBlackout` |
-| `ShotCraftExt_TapeScrollFixedPointer` | `title`、`from`、`to` | `shotTapeScrollPointer` |
-| `ShotCraftExt_RadialRipplePhoneChips` | `imageUrls`、`labels` | `shotRadialRipplePhone` |
-
-## SnapCN · 51 项
-
-[SnapCN 原版注册表](https://github.com/shadcn-labs/snapcn/tree/18b973d7592adf2099a4d5cc2d8970862a4e1172)
-
-| aipacking 模板 ID | 本期必填字段 | 版本或原卡 ID |
-| --- | --- | --- |
-| `SnapCN_AgentSteps` | `query`、`steps`、`result` | `18b973d7592a` |
-| `SnapCN_AnswerHighlight` | `question`、`answer`、`statement`、`word` | `18b973d7592a` |
-| `SnapCN_TextBuild` | `text` | `18b973d7592a` |
-| `SnapCN_TextHighlight` | `highlight` | `18b973d7592a` |
-| `SnapCN_TextRewrite` | `headline`、`keep`、`append` | `18b973d7592a` |
-| `SnapCN_TextSelect` | `headline` | `18b973d7592a` |
-| `SnapCN_TextSwap` | `fromText`、`toText` | `18b973d7592a` |
-| `SnapCN_WordGather` | `text` | `18b973d7592a` |
-| `SnapCN_WordWheel` | `headline`、`words` | `18b973d7592a` |
-| `SnapCN_TitleSweep` | `titles` | `18b973d7592a` |
-| `SnapCN_CheckCycle` | `headline`、`words` | `18b973d7592a` |
-| `SnapCN_CountGrid` | `from`、`to`、`noun` | `18b973d7592a` |
-| `SnapCN_TerminalSimulator` | `lines` | `18b973d7592a` |
-| `SnapCN_AnswerStream` | `question`、`answer`、`headline`、`model` | `18b973d7592a` |
-| `SnapCN_BlockWordmark` | `text` | `18b973d7592a` |
-| `SnapCN_BloomLockup` | `wordmark`、`tagline`、`images`、`logo` | `18b973d7592a` |
-| `SnapCN_BrandWheel` | `lead`、`items` | `18b973d7592a` |
-| `SnapCN_ButtonPress` | `label`、`pending`、`done` | `18b973d7592a` |
-| `SnapCN_CaptureReveal` | `headline`、`capturing`、`copied`、`src` | `18b973d7592a` |
-| `SnapCN_CardRail` | `heading`、`cards` | `18b973d7592a` |
-| `SnapCN_ChannelThread` | `messages` | `18b973d7592a` |
-| `SnapCN_ClickType` | `placeholder`、`prompt`、`hint` | `18b973d7592a` |
-| `SnapCN_FontShuffle` | `lead`、`subject` | `18b973d7592a` |
-| `SnapCN_GatherLockup` | `wordmark`、`lines`、`images`、`captions`、`logo` | `18b973d7592a` |
-| `SnapCN_HelloZoom` | `lead`、`rest`、`nextWord`、`words` | `18b973d7592a` |
-| `SnapCN_KaraokeCaptions` | `text`、`emphasize` | `18b973d7592a` |
-| `SnapCN_LaptopFrame` | `screenSrc`、`notchLabel` | `18b973d7592a` |
-| `SnapCN_LogoCollapse` | `images`、`mark`、`wordmark`、`background` | `18b973d7592a` |
-| `SnapCN_LogoDrift` | `headline`、`tiles` | `18b973d7592a` |
-| `SnapCN_LogoFlicker` | `brandName`、`logoSrc`、`images` | `18b973d7592a` |
-| `SnapCN_MoodboardReveal` | `leadIn`、`emphasis`、`tailIn`、`images`、`heroImage` | `18b973d7592a` |
-| `SnapCN_OrbSwarm` | `script` | `18b973d7592a` |
-| `SnapCN_OrbitGallery` | `title`、`subtitle`、`buttonLabel`、`images` | `18b973d7592a` |
-| `SnapCN_PhoneFrame` | `screenSrc` | `18b973d7592a` |
-| `SnapCN_PhoneStack` | `videos`、`time` | `18b973d7592a` |
-| `SnapCN_PortalIntro` | `lead`、`trail`、`title`、`brand` | `18b973d7592a` |
-| `SnapCN_PromptSend` | `text`、`placeholder`、`chips` | `18b973d7592a` |
-| `SnapCN_PromptZoom` | `greeting`、`text`、`placeholder`、`model`、`effort` | `18b973d7592a` |
-| `SnapCN_PunchLines` | `script` | `18b973d7592a` |
-| `SnapCN_ReelCollage` | `topLine`、`bottomLine`、`swapTop`、`swapBottom`、`slides`、`collage` | `18b973d7592a` |
-| `SnapCN_ReelWall` | `videos` | `18b973d7592a` |
-| `SnapCN_RosterGrant` | `label`、`rows` | `18b973d7592a` |
-| `SnapCN_ScreenRecording` | `src` | `18b973d7592a` |
-| `SnapCN_SearchTyping` | `text`、`seed` | `18b973d7592a` |
-| `SnapCN_SkyLockup` | `before`、`after`、`wordmark`、`logo`、`sky` | `18b973d7592a` |
-| `SnapCN_StatusCycle` | `prefix`、`statuses`、`chips` | `18b973d7592a` |
-| `SnapCN_TextReveal` | `text` | `18b973d7592a` |
-| `SnapCN_TextSwell` | `text` | `18b973d7592a` |
-| `SnapCN_TypeMorph` | `lead`、`emphasis`、`morphTo`、`finally_` | `18b973d7592a` |
-| `SnapCN_WordCaptions` | `srt` | `18b973d7592a` |
-| `SnapCN_WordmarkCut` | `word` | `18b973d7592a` |
+| 模板 | 本期必填参数 |
+| --- | --- |
+| 图片轮播 | `images`、`labels` |
+| 标志揭示 | `logoSrc`、`brand`、`tagline` |
+| 图像铺开与标志 | `wordmark`、`tagline`、`images`、`logo` |
+| 品牌轮播 | `lead`、`items` |
+| 资料卡横移 | `heading`、`cards` |
+| 多图汇聚与标志 | `wordmark`、`lines`、`images`、`captions`、`logo` |
+| 标志收合 | `images`、`mark`、`wordmark`、`background` |
+| 标志漂移 | `headline`、`tiles` |
+| 标志闪切 | `brandName`、`logoSrc`、`images` |
+| 参考图板揭示 | `leadIn`、`emphasis`、`tailIn`、`images`、`heroImage` |
+| 球体群聚 | `script` |
+| 环绕画廊 | `title`、`subtitle`、`buttonLabel`、`images` |
+| 多手机叠放 | `videos`、`time` |
+| 开场门框 | `lead`、`trail`、`title`、`brand` |
+| 影像拼贴 | `topLine`、`bottomLine`、`swapTop`、`swapBottom`、`slides`、`collage` |
+| 影像墙 | `videos` |
+| 背景与标志组合 | `before`、`after`、`wordmark`、`logo`、`sky` |
+| 卡片叠堆 | `imageUrls` |
+| 媒体拼墙重构 | `imageUrls` |
+| 立体轮播 | `labels` |
+| 三维媒体墙 | `title`、`content`、`media` |
+| 卡点蒙太奇 | `title`、`content`、`media` |
+| 加速媒体网格 | `title`、`content`、`media` |
+| 双媒体切换 | `title`、`content`、`media` |

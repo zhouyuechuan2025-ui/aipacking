@@ -37,7 +37,7 @@ npm run prepare-input -- "口播.mp4" "口播.srt"
 
 ## 动效规则
 
-[122 个原版模板、来源与样片](NATIVE-TEMPLATES.md)
+[122 个模板与实渲染样片](NATIVE-TEMPLATES.md)
 
 [辅助动效索引与图鉴](MOTION-INDEX.md) · [分镜参数及使用条件](../skills/aipacking/references/motion-expanded.md)
 

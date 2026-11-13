@@ -5511,10 +5511,10 @@
 }
 ```
 
-## Agent Motion
+## 可编辑模板
 
 ### AgentMotion_AnimatedCounter  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Animated Counter，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5532,7 +5532,7 @@
 ```
 
 ### AgentMotion_AnimatedRouteMap  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Animated Route Map，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5550,7 +5550,7 @@
 ```
 
 ### AgentMotion_ArchitectureDiagram  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Architecture Diagram，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5568,7 +5568,7 @@
 ```
 
 ### AgentMotion_AreaChart  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Area Chart，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5585,7 +5585,7 @@
 ```
 
 ### AgentMotion_BarChart  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Bar Chart，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5603,7 +5603,7 @@
 ```
 
 ### AgentMotion_BlurFocusList  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Blur Focus List，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5621,7 +5621,7 @@
 ```
 
 ### AgentMotion_ChatConversation  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Chat Conversation，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5639,7 +5639,7 @@
 ```
 
 ### AgentMotion_CodeEditor  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Code Editor，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5656,7 +5656,7 @@
 ```
 
 ### AgentMotion_CtaCard  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：CTA Card，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5673,7 +5673,7 @@
 ```
 
 ### AgentMotion_DataTable  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Data Table，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5691,7 +5691,7 @@
 ```
 
 ### AgentMotion_DonutChart  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Donut Chart，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5708,7 +5708,7 @@
 ```
 
 ### AgentMotion_FeatureList  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Feature List，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5726,7 +5726,7 @@
 ```
 
 ### AgentMotion_OutlineTextEcho  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Outline Text Echo，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5743,7 +5743,7 @@
 ```
 
 ### AgentMotion_ProductTimeline  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Product Timeline，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5761,7 +5761,7 @@
 ```
 
 ### AgentMotion_ProgressRing  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Progress Ring，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5779,7 +5779,7 @@
 ```
 
 ### AgentMotion_QuoteHighlight  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Quote Highlight，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5796,7 +5796,7 @@
 ```
 
 ### AgentMotion_TerminalSession  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Terminal Session，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5814,7 +5814,7 @@
 ```
 
 ### AgentMotion_TestimonialCard  `full|left|right`
-- 语境：Agent Motion
+- 语境：可编辑模板
 - 何时用：Testimonial Card，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5830,10 +5830,8 @@
 }
 ```
 
-## SnapCN
-
 ### SnapCN_AgentSteps  `full|left|right`
-- 语境：SnapCN
+- 语境：可编辑模板
 - 何时用：AgentSteps，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5852,7 +5850,7 @@
 ```
 
 ### SnapCN_AnswerHighlight  `full|left|right`
-- 语境：SnapCN
+- 语境：可编辑模板
 - 何时用：AnswerHighlight，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5872,7 +5870,7 @@
 ```
 
 ### SnapCN_TextBuild  `full|left|right`
-- 语境：SnapCN
+- 语境：可编辑模板
 - 何时用：TextBuild，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5889,7 +5887,7 @@
 ```
 
 ### SnapCN_TextHighlight  `full|left|right`
-- 语境：SnapCN
+- 语境：可编辑模板
 - 何时用：TextHighlight，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5906,7 +5904,7 @@
 ```
 
 ### SnapCN_TextRewrite  `full|left|right`
-- 语境：SnapCN
+- 语境：可编辑模板
 - 何时用：TextRewrite，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5925,7 +5923,7 @@
 ```
 
 ### SnapCN_TextSelect  `full|left|right`
-- 语境：SnapCN
+- 语境：可编辑模板
 - 何时用：TextSelect，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5942,7 +5940,7 @@
 ```
 
 ### SnapCN_TextSwap  `full|left|right`
-- 语境：SnapCN
+- 语境：可编辑模板
 - 何时用：TextSwap，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5960,7 +5958,7 @@
 ```
 
 ### SnapCN_WordGather  `full|left|right`
-- 语境：SnapCN
+- 语境：可编辑模板
 - 何时用：WordGather，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5977,7 +5975,7 @@
 ```
 
 ### SnapCN_WordWheel  `full|left|right`
-- 语境：SnapCN
+- 语境：可编辑模板
 - 何时用：WordWheel，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -5995,7 +5993,7 @@
 ```
 
 ### SnapCN_TitleSweep  `full|left|right`
-- 语境：SnapCN
+- 语境：可编辑模板
 - 何时用：TitleSweep，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -6012,7 +6010,7 @@
 ```
 
 ### SnapCN_CheckCycle  `full|left|right`
-- 语境：SnapCN
+- 语境：可编辑模板
 - 何时用：CheckCycle，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -6030,7 +6028,7 @@
 ```
 
 ### SnapCN_CountGrid  `full|left|right`
-- 语境：SnapCN
+- 语境：可编辑模板
 - 何时用：CountGrid，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -6049,7 +6047,7 @@
 ```
 
 ### SnapCN_TerminalSimulator  `full|left|right`
-- 语境：SnapCN
+- 语境：可编辑模板
 - 何时用：TerminalSimulator，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -6065,10 +6063,8 @@
 }
 ```
 
-## ShotCraft
-
 ### ShotCraft_ListReveal  `full|left|right`
-- 语境：ShotCraft
+- 语境：可编辑模板
 - 何时用：List Reveal，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -6087,10 +6083,8 @@
 }
 ```
 
-## ShotCraft 扩展批
-
 ### ShotCraftExt_ResearchCardStackScroll  `full|left|right`
-- 语境：ShotCraft 扩展批
+- 语境：可编辑模板
 - 何时用：Research Card Stack Scroll，props.native 绑定本期内容。
 - 最短时长：1.5 秒
 - 示例：
@@ -6128,7 +6122,7 @@
 
 ### NativeOverlayLayer  `overlay`
 - 语境：外部原生模板
-- 何时用：叠入 Overlay Studio 或 OverlayMotion 的原版透明 MOV。
+- 何时用：叠入本期预渲染的透明 MOV。
 - 最短时长：1 秒
 - 示例：
 ```json
