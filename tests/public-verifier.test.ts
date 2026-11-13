@@ -28,6 +28,7 @@ describe('public repository verifier', () => {
       {path: 'SKILL.md', size: 100, text: 'Use when packaging video.'},
       {path: 'tests/fixtures/basic.srt', size: 100, text: '1\n00:00:00,000 --> 00:00:01,000\nTest'},
       {path: 'docs/assets/previews/example.png', size: 1000, text: null},
+      {path: 'docs/assets/aipacking-3/case-demo.mp4', size: 1000, text: null},
     ])).toEqual([]);
   });
 });

@@ -9,6 +9,7 @@ import { M5_PAGES } from './m5';
 import { CUSTOM } from './custom';
 import { MOTION_LIBRARY_PAGES, MOTION_LIBRARY_OVERLAYS } from './custom/MotionLibrary';
 import { MotionElements, type MotionElement } from './pages/MotionElements';
+import { SEMANTIC_LANES, SEMANTIC_PAGES } from './motion/semantic-scene';
 import { REPORT_PAGES, REPORT_OVERLAYS } from './pages/report';
 import { REPORT2_PAGES } from './pages/report2';
 import { REPORT3_PAGES } from './pages/report3';
@@ -16,7 +17,7 @@ import { EDITORIAL_PAGES } from './pages/editorial';
 import { EDITORIAL2_PAGES } from './pages/editorial2';
 import { EDITORIAL3_PAGES, EDITORIAL3_OVERLAYS } from './pages/editorial3';
 import { EDITORIAL4_OVERLAYS } from './pages/editorial4';
-export const FULL_PAGES: Record<string, any> = { ...BASE, ...MORE1, ...MORE2, ...MORE3, ...MORE4, ...M5_PAGES, ...REPORT_PAGES, ...REPORT2_PAGES, ...REPORT3_PAGES, ...EDITORIAL_PAGES, ...EDITORIAL2_PAGES, ...EDITORIAL3_PAGES, ...CUSTOM, ...MOTION_LIBRARY_PAGES };
+export const FULL_PAGES: Record<string, any> = { ...BASE, ...MORE1, ...MORE2, ...MORE3, ...MORE4, ...M5_PAGES, ...REPORT_PAGES, ...REPORT2_PAGES, ...REPORT3_PAGES, ...EDITORIAL_PAGES, ...EDITORIAL2_PAGES, ...EDITORIAL3_PAGES, ...CUSTOM, ...MOTION_LIBRARY_PAGES, ...SEMANTIC_PAGES };
 import { OVERLAYS as OV0, ProgressNav } from './pages/overlay';
 import { SideBeats } from './pages/SideBeats';
 import { cameraValue, type Camera } from './lib/camera';
@@ -40,7 +41,7 @@ export type Plan = {
   scenes: Scene[];
 };
 type Sub = [number, number, string];
-const OVERLAYS: Record<string, any> = { ...OV0, ...REPORT_OVERLAYS, ...EDITORIAL3_OVERLAYS, ...EDITORIAL4_OVERLAYS, SideBeats, ...MOTION_LIBRARY_OVERLAYS };
+const OVERLAYS: Record<string, any> = { ...OV0, ...REPORT_OVERLAYS, ...EDITORIAL3_OVERLAYS, ...EDITORIAL4_OVERLAYS, SideBeats, ...MOTION_LIBRARY_OVERLAYS, ...SEMANTIC_LANES };
 const TR = 9; // transition frames
 const CYCLE = ['zoom', 'push', 'flip', 'wipe'];
 
@@ -113,6 +114,7 @@ export const Main: React.FC<{ plan: Plan; subs: Sub[]; transparent?: boolean; pr
     ?? subs.find(s => t >= s[0] - 0.05 && t < s[1] + 0.06);
   const mode = plan.subtitles?.mode ?? (plan.meta.burnedSubtitles === false ? 'always' : 'covered');
   const showSub = sub && (mode === 'always' || (mode === 'covered' && !!activeFull));
+  const motionProps = (s:Scene) => ({_elements:s.elements ?? [],_accent:plan.palette?.main});
 
   return (
     <AbsoluteFill style={{ backgroundColor: transparent ? 'transparent' : windowK ? '#171424' : '#000', ...(probe ? { width: 1920, height: 1080, right: 'auto', bottom: 'auto' } : {}) }}>
@@ -122,7 +124,7 @@ export const Main: React.FC<{ plan: Plan; subs: Sub[]; transparent?: boolean; pr
       {scenes.filter(s => !isFull(s)).map(s => {
         const C = OVERLAYS[s.type]; if (!C) return null;
         const from = Math.round(s.start * fps), d = Math.max(1, Math.round(s.end * fps) - from);
-        return <Sequence key={s.id} from={from} durationInFrames={d} layout="none"><ThemeScope id={styleAt(s)}><C p={{ ...(s.props || {}), _chapters: chapters, _duration: plan.meta.duration, _motionDetail: s.motionDetail, _motionNote: s.motionNote }} start={s.start} dur={d} side={(s.layout === 'right' ? 'right' : s.layout === 'left' ? 'left' : s.props?.side) as any} /></ThemeScope></Sequence>;
+        return <Sequence key={s.id} from={from} durationInFrames={d} layout="none"><ThemeScope id={styleAt(s)}><C p={{ ...(s.props || {}), ...motionProps(s), _chapters: chapters, _duration: plan.meta.duration, _motionDetail: s.motionDetail, _motionNote: s.motionNote }} start={s.start} dur={d} side={(s.layout === 'right' ? 'right' : s.layout === 'left' ? 'left' : s.props?.side) as any} /></ThemeScope></Sequence>;
       })}
       {/* full-screen pages, chained with transitions */}
       {full.map((s, i) => {
@@ -137,12 +139,12 @@ export const Main: React.FC<{ plan: Plan; subs: Sub[]; transparent?: boolean; pr
         return (
           <Sequence key={s.id} from={from} durationInFrames={d + (toPage ? TR : 0)}>
             <ThemeScope id={styleAt(s)}><Exit dur={d} toPerson={!toPage && !self && s.transition !== 'none'} soft={kind === 'soft' || kind === 'none' && String(styleAt(s)).startsWith('report')}>
-              <Enter kind={kind}><C p={{ ...(s.props || {}), _motionDetail: s.motionDetail, _motionNote: s.motionNote }} start={s.start} dur={d} chapter={chapterAt(s.start)} bg={s.bg} video={plan.meta.video} {...({ edges } as any)} /></Enter>
+              <Enter kind={kind}><C p={{ ...(s.props || {}), ...motionProps(s), _motionDetail: s.motionDetail, _motionNote: s.motionNote }} start={s.start} dur={d} chapter={chapterAt(s.start)} bg={s.bg} video={plan.meta.video} {...({ edges } as any)} /></Enter>
             </Exit></ThemeScope>
           </Sequence>
         );
       })}
-      {scenes.map(s => s.elements?.length ? <Sequence key={s.id+'-elements'} from={Math.round(s.start*fps)} durationInFrames={Math.round(s.end*fps)-Math.round(s.start*fps)} layout="none"><MotionElements elements={s.elements} start={s.start} accent={plan.palette?.main}/></Sequence> : null)}
+      {scenes.map(s => s.elements?.length && !SEMANTIC_LANES[s.type] && !SEMANTIC_PAGES[s.type] ? <Sequence key={s.id+'-elements'} from={Math.round(s.start*fps)} durationInFrames={Math.round(s.end*fps)-Math.round(s.start*fps)} layout="none"><MotionElements elements={s.elements} start={s.start} accent={plan.palette?.main}/></Sequence> : null)}
       {plan.chapterTimeline?.length ? <ProgressNav start={0} dur={Math.round(plan.meta.duration * fps)}
         p={{ compact: true, _chapters: plan.chapterTimeline, _duration: plan.meta.duration, color: plan.palette?.main }} /> : null}
       {setTheme(plan.style) && null}{showSub && <Subtitle text={sub![2]} />}

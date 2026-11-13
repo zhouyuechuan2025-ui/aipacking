@@ -13,7 +13,7 @@ describe('public Skill contract', () => {
   });
 
   it('keeps the trigger-only frontmatter concise', () => {
-    expect(skill).toMatch(/^---\nname: package-talking-head-video\ndescription: Use when /);
+    expect(skill).toMatch(/^---\nname: aipacking\ndescription: Use when /);
   });
 
   it('teaches the multicolor center-presenter layout and approval contract', () => {

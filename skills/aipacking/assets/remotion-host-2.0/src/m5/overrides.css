@@ -1,4 +1,4 @@
-/* 上一版模板包模板的可读性修补（手工维护；scripts/build-m5.mjs 重新打包不会覆盖这个文件）
+/* 上一版包模板的可读性修补（手工维护；scripts/build-m5.mjs 重新打包不会覆盖这个文件）
    原则：不改原设计的配色和位置，只让压在装饰色块上的小字看得清（docs/visual-rules.md 第 1 条） */
 
 /* TokenVelocityRelay：金色令牌上的「TASK」——金底配深字 */

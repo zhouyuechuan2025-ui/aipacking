@@ -111,7 +111,7 @@ export const CountUp: React.FC<{ from?: number; to: number; start: number; dur?:
 
 /** Page chrome for full-screen pages: chapter label + brand + progress */
 export const Chrome: React.FC<{ chapter?: string; index?: number; total?: number; brand?: string; color?: string }> = ({ chapter, index = 1, total = 6, brand, color = 'cyan' }) => {
-  // 右上角品牌字样：默认不显示（以前写死成原作者的 AI CREATION），使用者要加自己的品牌在分镜顶层写 "brand"
+  // 右上角品牌字样：默认不显示（以前写死成原作者的 AI CREATION），要加自己的品牌在分镜顶层写 "brand"
   const c = accent(color);
   return (
     <AbsoluteFill style={{ pointerEvents: 'none' }}>

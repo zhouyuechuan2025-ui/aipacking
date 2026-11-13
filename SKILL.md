@@ -1,11 +1,11 @@
 ---
-name: package-talking-head-video
+name: aipacking
 description: Use when packaging center-presenter talking-head video plus SRT into an MP4, or SRT into a transparent overlay, with source-based copy and verified delivery.
 ---
 
 # Package Talking-Head Video
 
-For the aipacking 2.5 workflow with a HyperFrames storyboard, chapter progress and Remotion preview approval, use [`aipacking`](skills/aipacking/SKILL.md) and its [setup guide](docs/AIPACKING.md). The instructions below apply to the root `package-video` CLI.
+Use the [aipacking 3.0 workflow](skills/aipacking/SKILL.md) for video packaging, semantic motion, chapters, HyperFrames storyboards and Remotion preview approval. See the [setup guide](docs/AIPACKING.md). Use the instructions below when the user explicitly selects the basic `package-video` CLI or a basic SRT-only transparent overlay.
 
 Package new jobs with three basic layouts (`title`, `card`, `flow`) and two public styles (`dark`, `paper`). Keep one style per video. Composite jobs default to one continuous presenter moving between full-frame and a single editorial window. Preserve caption accuracy, face safety, original voice, and output checks.
 

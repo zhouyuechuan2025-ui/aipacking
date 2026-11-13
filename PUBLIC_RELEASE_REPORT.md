@@ -1,4 +1,12 @@
-# Version 0.6.0 verification
+# aipacking release verification
+
+## 3.0 motion library
+
+- The public case uses the Final composition and synthetic input. The gallery uses the same MotionElements renderer as production. The manifest records each of the 139 effect IDs, its time in the gallery and measured image changes.
+- The 18 content effects can run as side panels, full-screen pages or overlays on existing layouts. The 121 imported keyframes are motion presets, including directional variations.
+- [Reproduction and checks](examples/aipacking-demo/README.md) · [Demo manifest](docs/assets/aipacking-3/manifest.json)
+
+## Version 0.6.0 verification
 
 ## Current refinements
 

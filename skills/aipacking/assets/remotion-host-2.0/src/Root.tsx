@@ -5,6 +5,7 @@ import plan from '../plan/plan.json';
 import subs from '../plan/subs.json';
 import { preloadFonts } from './lib/fonts';
 import { resolvePlan } from './lib/anchors';
+import { MotionGallery, motionIds, pageFrames, perPage } from './motion/MotionGallery';
 
 preloadFonts(plan, subs);
 
@@ -20,5 +21,7 @@ export const Root: React.FC = () => (
     {/* 透明包装层：导出 ProRes 4444 MOV，叠在原视频上继续剪 */}
     <Composition id="Overlay" component={Main as any} durationInFrames={dur} fps={P.meta.fps} width={1920} height={1080}
       defaultProps={{ plan: P, subs: subs as any, transparent: true }} />
+    <Composition id="MotionGallery" component={MotionGallery} durationInFrames={Math.ceil(motionIds.length/perPage)*pageFrames}
+      fps={30} width={1920} height={1080} />
   </>
 );

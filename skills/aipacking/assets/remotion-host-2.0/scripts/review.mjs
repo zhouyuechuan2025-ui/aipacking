@@ -29,8 +29,8 @@ const styleStrip = type => {
   execFileSync('ffmpeg', ['-v', 'error', '-y', ...ins, '-filter_complex', `${lab};${tiles.map((_, i) => `[v${i}]`).join('')}hstack=inputs=${tiles.length}[o]`, '-map', '[o]', '-q:v', '7', out]);
   return { img: 'data:image/jpeg;base64,' + fs.readFileSync(out).toString('base64'), grades: tiles.map(([st, name]) => ({ name, grade: styleRep[st].get(type).grade, issues: styleRep[st].get(type).hard.concat(styleRep[st].get(type).soft).slice(0, 3) })) };
 };
-const family = r => r.ctx.startsWith('模板包54') ? 'm5' : r.ctx.startsWith('编辑') ? 'editorial' : r.style.startsWith('report') ? 'report' : 'tech';
-const FAM = { m5: '上一版模板包（54）', editorial: '编辑排版', report: '报告风', tech: '通用（可换风格）' };
+const family = r => r.ctx.startsWith('包54') ? 'm5' : r.ctx.startsWith('编辑') ? 'editorial' : r.style.startsWith('report') ? 'report' : 'tech';
+const FAM = { m5: '上一版包（54）', editorial: '编辑排版', report: '报告风', tech: '通用（可换风格）' };
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 const items = rows.sort((a, b) => a.grade.localeCompare(b.grade) || a.type.localeCompare(b.type)).map(r => ({

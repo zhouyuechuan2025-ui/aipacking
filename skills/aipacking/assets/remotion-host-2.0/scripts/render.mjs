@@ -1,7 +1,7 @@
 // 出片：每次生成一个新版本 out/<视频名>/final_vN.mp4，旧版本全部保留
 //   node scripts/render.mjs            自动判断：第一次/全局改动/src 代码改动 → 整条渲染；只改了几页 → 只重渲染这几页再拼回上一版
 //   node scripts/render.mjs --full     强制整条重新渲染
-//   node scripts/render.mjs --mov      另外导出透明包装层 out/overlay_vN.mov（很大，使用者要了才出）
+//   node scripts/render.mjs --mov      另外导出透明包装层 out/overlay_vN.mov（很大，要了才出）
 //   node scripts/render.mjs --back     回到上一版：把上一版的分镜恢复到 plan/plan.json（不重新渲染）
 import fs from 'fs';
 import path from 'path';

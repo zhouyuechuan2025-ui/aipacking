@@ -14,14 +14,16 @@
 
 | 来源 | 组件和调用条件 |
 | --- | --- |
-| 使用者 2.0 / 2.4 | 161 项原目录仍可选。人物侧用 SideBlocks、SideCard、SideBeats、FactPanel、标注等。论点用对照和流程结构，证据用带真实媒体输入的 Showcase。 |
-| 随包 原生批次 | 27 个 Native_ 前缀，分别绑定各自的旧组件。记录当前字幕序号 sourceCueIds、原稿 settings.sourceText 和实际检查结论 contentVerified。完整列表见目录。两个人物模板沿用原双侧区域；其他按目录使用全屏。含固定示例数据、旧截图或固定话题的模板，只用于主题匹配并逐项换成本期输入的项目。章节截图、生成能力和 Seedance 三个原生模板用 settings.image 绑定本期真实素材。检查所有旧示例文案、数值和截图均已替换后再出预览。 |
-| 使用者 3.x 连续批次 | ContinuityPage 和 ContinuityOverlay 调用随包原组件。六条连续链、41 个阶段用于原对象保持、重排、证据接手和人物回归。30 fps，按原链 stageMap 绑定当前内容、sourceCueIds 与 sourceStart/sourceFrames。原示例台词和媒体由本片输入替换。 |
+| 2.0 / 2.4 | 161 项原目录仍可选。人物侧用 SideBlocks、SideCard、SideBeats、FactPanel、标注等。论点用对照和流程结构，证据用带真实媒体输入的 Showcase。 |
+| 4.0.1 原生批次 | 27 个 Native_ 前缀，分别绑定各自的旧组件。记录当前字幕序号 sourceCueIds、原稿 settings.sourceText 和实际检查结论 contentVerified。完整列表见目录。两个人物模板沿用原双侧区域；其他按目录使用全屏。含固定示例数据、旧截图或固定话题的模板，只用于主题匹配并逐项换成本期输入的项目。章节截图、生成能力和 Seedance 三个原生模板用 settings.image 绑定本期真实素材。检查所有旧示例文案、数值和截图均已替换后再出预览。 |
+| 3.x 连续批次 | ContinuityPage 和 ContinuityOverlay 调用随包原组件。六条连续链、41 个阶段用于原对象保持、重排、证据接手和人物回归。30 fps，按原链 stageMap 绑定当前内容、sourceCueIds 与 sourceStart/sourceFrames。原示例台词和媒体由本片输入替换。 |
 | Nana 5.0 开场批次 | ShotcraftMosaic 用 2–12 张实际资料做重排。SnapLogoAssemble 用 4–12 张实图和实际终态标志。ShotcraftTiltReveal 把单张真实证据从俯角翻入。SnapHeroLaunch 用两张实图做 Y 轴窗口交接。SnapAnnounceTitle 用章节、标题和副标落字。props 可填 sourceFrames 选择原组件起止帧。 |
 | Nana 5.0 语义联动 | HubFlow/merge 做来源汇入；SideBeats/checkin 做执行与结果落位；TechFlow/relay 让同一对象交接。普通话题可选其他结构。设 motionDetail 时写入已审分镜和生产计划。 |
 | RenderComp | MaskTitle 用色块逐行揭字；WordStack 用弹性错拍堆叠 2–4 个短词。文字较长时先缩短文案并审最终实帧。 |
 
 ## 叠加元素
+
+3.0 新增内容动效和关键帧，见 [3.0 新动效及用法](motion-expanded.md)。
 
 elements 写在各镜头，逐项指定 kind、at、duration、x、y、width、height。时间用原片绝对秒，坐标基于 1920×1080。需要文字时填 text 或 items。常用尺寸为宽 260–480 px。动作与 beats 中的原词对齐，并为每次出现安排可读时间。
 
@@ -40,7 +42,7 @@ elements 写在各镜头，逐项指定 kind、at、duration、x、y、width、h
 
 ## 其他研究批次
 
-Nana 5.0 的 01–10 与使用者 3.x 的连续动作适合按以下结构取用。当前项目的台词、媒体、颜色、布局与真实证据都要重绑定。以同一个对象的状态变化为主。
+Nana 5.0 的 01–10 与3.x 的连续动作适合按以下结构取用。当前项目的台词、媒体、颜色、布局与真实证据都要重绑定。以同一个对象的状态变化为主。
 
 - 01 真人稳镜头与轻标签。02 真人让位、证据接管。03 抠像遮挡大字，先核验前景遮罩和逐帧同源。
 - 04 真实录屏局部聚焦。05 多份证据逐一到阅读位，停稳后读字。06 电脑与手机做同一任务的焦点交接。

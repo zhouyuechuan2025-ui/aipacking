@@ -8,7 +8,7 @@ const dir = fs.realpathSync(target);
 const here = path.dirname(fileURLToPath(import.meta.url));
 const read = (f) => fs.readFileSync(path.join(dir, f), 'utf8');
 const pkg = JSON.parse(read('package.json'));
-if (pkg.scripts?.render !== 'node scripts/render.mjs' || !pkg.dependencies?.['@remotion/renderer']) throw new Error('不是已知的使用者 Remotion 入口，停止，不覆盖其他宿主。');
+if (pkg.scripts?.render !== 'node scripts/render.mjs' || !pkg.dependencies?.['@remotion/renderer']) throw new Error('不是已知的 Remotion 入口，停止，不覆盖其他宿主。');
 for (const f of ['scripts/prepare.mjs', 'scripts/validate.mjs', 'src/index.ts', 'src/lib/anchors.ts', 'src/custom/index.ts', 'docs/catalog.json', 'AGENTS.md']) read(f);
 const render = read('scripts/render.mjs');
 const guide = read('AGENTS.md');

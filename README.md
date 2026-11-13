@@ -1,4 +1,4 @@
-# AI Self-Media Video Packaging Skill
+# aipacking
 
 **把口播视频和字幕交给 AI，让它帮你完成画面包装。**
 
@@ -6,13 +6,27 @@
 
 你不需要自己写代码或逐个调整动画：在 Codex 或支持本地文件、终端操作的 AI Agent 里安装好项目，把 **MP4 视频和对应的 SRT 字幕**交给它，用大白话描述需求即可。AI 先给你看方案，确认后再制作、检查和导出。
 
-## aipacking 2.5 · 历版动效模板与分镜、风格双审
+## aipacking 3.0
 
-适合要给 **16:9 真人口播** 加章节进度、侧边动效和语义图解的项目。普通口播稳住构图，在少数关键落点做看得见的轻推和回位。侧边信息、真实证据与图解按台词变化，顶部章节轴贯穿全片。汇入随包 原生组件、3.x 连续动作链、Nana 5.0 开场及 RenderComp 字组模板。
+适合给 **16:9 真人口播** 加章节进度、侧边动效和语义图解。3.0 新增 **139 项可调用动效**，包括 Animate.css 的 97 项关键帧、Magic CSS 的 24 项关键帧和 18 项内容动效。侧边标签可以错拍出现，清单可以逐项确认，图解可以分流、汇流，真实证据可用角框和扫线标出阅读位置。
 
-先用 HyperFrames 交逐段分镜，经你确认后，再从实际 Remotion 合成里抽 3–5 张预览，有运镜时同时审一段动态短样。你确认预览后，才用同一套分镜和组件导出完整 MP4，保留原声原速。
+先用 HyperFrames 交逐段分镜，经你确认后，再从实际 Remotion 合成里抽 3–5 张预览，并审能看见新增动效和完整运镜的动态短样。你确认预览后，才用同一套分镜和组件导出完整 MP4，保留原声原速。
 
-[下载 2.5 ZIP](downloads/aipacking-2.5.zip?raw=true) · [安装与使用说明](docs/AIPACKING.md) · [aipacking源码](skills/aipacking/SKILL.md)
+[下载 3.0 ZIP](downloads/aipacking-3.0.zip?raw=true) · [安装与使用说明](docs/AIPACKING.md) · [完整版源码](skills/aipacking/SKILL.md)
+
+### 最新案例与动效图鉴
+
+案例使用公开可复现的合成人物和示例字幕，由 aipacking 3.0 实际渲染。
+
+| 开场侧边入场 | 真人同屏逐项勾选 |
+| --- | --- |
+| ![开场侧边标签和逐字输入](docs/assets/aipacking-3/opening.png) | ![同屏核对清单](docs/assets/aipacking-3/side-checklist.png) |
+
+| 全屏分流图 | 同屏汇流 |
+| --- | --- |
+| ![从分镜分流到预览与整片](docs/assets/aipacking-3/branch.png) | ![原声和字幕汇到时间轴](docs/assets/aipacking-3/merge.png) |
+
+[播放新版案例 MP4](docs/assets/aipacking-3/case-demo.mp4?raw=true) · [播放全部 139 项动效图鉴 MP4](docs/assets/aipacking-3/motion-gallery.mp4?raw=true) · [按来源查看每项 ID 和使用条件](docs/MOTION-INDEX.md)
 
 ## 能帮你做什么
 
@@ -56,11 +70,11 @@ https://github.com/zhouyuechuan2025-ui/aipacking
 
 你也可以补充一句：“用浅色风格”“这段重点展示流程”或“动效少一点，优先保证看得清楚”。不满意的地方直接在对话里提出，继续调整即可。
 
-**交素材 → 确认分镜 → 看实际预览 → 确认后导出。** [查看完整启动提示词](skills/aipacking/references/starter-prompt.md)。
+**交素材 → 确认分镜 → 看实际预览 → 确认后导出。** [查看完整启动提示词](skills/aipacking/references/start-prompt.md)。
 
 ## 基础 CLI 版 v0.6
 
-以下说明适用于仓库根目录的基础版。用 `npm run package-video` 完成基础包装或从 SRT 生成透明 MOV。aipacking 2.5 通过独立作业目录运行，命令见 [aipacking使用说明](docs/AIPACKING.md)。
+以下说明适用于仓库根目录的基础版。用 `npm run package-video` 完成基础包装或从 SRT 生成透明 MOV。aipacking 3.0 的动效工作流通过独立作业目录运行，命令见 [使用说明](docs/AIPACKING.md)。
 
 ## 前期素材准备
 
@@ -136,26 +150,6 @@ npm run verify:public
 详细规则：[功能与限制](references/public-lite.md)、[审核阶段](references/gates.md)、[画面检查](references/visual-quality-gates.md)。
 
 </details>
-
-## 基础版示例：三版式与两种配色
-
-以下截图由本项目当前渲染器生成，使用可复现的合成测试画面与示例文案，不是真人口播案例，也不作为外部事实的证据。
-
-![开场标题](docs/assets/current-demo/title.png)
-
-![侧边信息卡](docs/assets/current-demo/card.png)
-
-![原稿条目展示](docs/assets/current-demo/flow.png)
-
-![paper浅色风格](docs/assets/current-demo/paper.png)
-
-示例字幕与生成方法见 [示例目录](examples/current-demo/README.md)。
-
-## 基础版简笔画示例
-
-![手机与电脑镜像简笔画示意](docs/assets/current-demo/doodle.png)
-
-此图由当前代码与示例文案生成。首页不再使用旧V2案例截图；真人素材与试看片留在本地，上面的公开示例明确使用合成画面。
 
 ## 视频做好了，生意才刚开始
 

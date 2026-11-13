@@ -17,13 +17,23 @@ describe('public README evidence', () => {
   });
 
   it('maps every preview to the verified output and matching file hash', () => {
-    const manifest = JSON.parse(read('examples/current-demo/preview-manifest.json').toString('utf8'));
-    expect(manifest.kind).toBe('synthetic-renderer-example');
-    expect(manifest.version).toBe(JSON.parse(read('package.json').toString('utf8')).version);
-    for (const frame of manifest.images) {
-      const path = resolve(root, frame.file);
+    const dir = 'docs/assets/aipacking-3/';
+    const manifest = JSON.parse(read(dir+'manifest.json').toString('utf8'));
+    expect(manifest.kind).toBe('aipacking-synthetic-demo');
+    expect(manifest.version).toBe('3.0.0');
+    const motion = 'skills/aipacking/assets/remotion-host-2.0/src/motion/';
+    const ids = ['semantic.json','keyframes.json'].flatMap(file => Object.keys(JSON.parse(read(motion+file).toString('utf8'))));
+    expect(ids.length).toBe(139);
+    expect(manifest.motion.map((entry: {id:string})=>entry.id)).toEqual(ids);
+    expect(manifest.motion.every((entry: {changedArea:number})=>entry.changedArea >= .001)).toBe(true);
+    for (const frame of manifest.assets) {
+      const path = resolve(root, dir+frame.file);
       expect(existsSync(path)).toBe(true);
       expect(sha256(readFileSync(path))).toBe(frame.sha256.toUpperCase());
+    }
+    const home = read('README.md').toString('utf8');
+    for (const file of ['opening.png','side-checklist.png','branch.png','merge.png','case-demo.mp4','motion-gallery.mp4']) {
+      expect(home).toContain(dir+file);
     }
   });
 

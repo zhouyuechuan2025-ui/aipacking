@@ -62,7 +62,7 @@
 
 每类语境在四个风格家族里的可选模板（详细参数见 `docs/templates.md`）。**先在主风格家族里选，主家族没有合适的再看「通用」**。叠加类（强度 1）标了 ⓘ。
 
-| 语境 | 编辑排版 | 通用（可换风格） | 报告风 | 上一版模板包 |
+| 语境 | 编辑排版 | 通用（可换风格） | 报告风 | 上一版包 |
 |---|---|---|---|---|
 | 1 钩子（抛结论/痛点） | SplitHero, MaskWord | HookTitle, HookGlitch | TypeHero | SplitFlapFlip, BackdropHeadline, TitleHero |
 | 2 提问/悬念 | — | HookQuestion, Mystery, QAReveal | TypeHero | ImpactQuestionGlitch |
@@ -112,11 +112,11 @@
 | **编辑排版**（`style: "editorial"`） | 黑白灰 + 一个强调色，大字网格，真人画面参与排版 | 观点类、知识类口播（默认推荐） |
 | **通用（可换风格）** | 随 `style` 变：`keynote` 暗色发布会、`report-light` 报告浅色、`report` 报告深色、`swiss` 瑞士排版、`dataviz` 数据叙事、`whiteboard` 白板、`tech-dark` 科技暗黑 | 补充主家族没有的语境 |
 | **报告风** | 苹果发布会式浅色卡片 / 玻璃 / 人物虚化背景 | 数据、产品、工具测评 |
-| **上一版模板包** | 两种固定配色：深蓝底金色强调，或浅色画布深橙强调 | 教程、操作演示、流程讲解 |
+| **上一版包** | 两种固定配色：深蓝底金色强调，或浅色画布深橙强调 | 教程、操作演示、流程讲解 |
 
 **搭配规则（防止「风格混杂」）**：
 1. **全片选一个主家族**，至少 70% 的页面来自主家族。
-2. **通用模板的 `style` 跟主家族对齐**：主家族是编辑排版就用 `editorial`，报告风就用 `report-light` / `report-glass`，模板包就用 `keynote`（深色）或 `report-light`（浅色）。整条视频写在顶层 `"style"`，不要逐页换。
+2. **通用模板的 `style` 跟主家族对齐**：主家族是编辑排版就用 `editorial`，报告风就用 `report-light` / `report-glass`，包就用 `keynote`（深色）或 `report-light`（浅色）。整条视频写在顶层 `"style"`，不要逐页换。
 3. **一章之内不换家族**；换家族只能发生在章节切换处。
 4. 深色页面和浅色页面不要来回交替（同一章内统一深或浅）。
 5. 全片强调色一处设定（4.1 节的 `palette`），同一章只用 1~2 个强调色。

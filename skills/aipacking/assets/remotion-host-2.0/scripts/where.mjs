@@ -1,4 +1,4 @@
-// 使用者说「第几秒怎么改」时，查那一刻是哪一页、在说哪句话
+// 说「第几秒怎么改」时，查那一刻是哪一页、在说哪句话
 // 用法：node scripts/where.mjs 23  1:05  01:12.5  "1分12秒"
 import fs from 'fs';
 import { resolvePlan } from '../src/lib/anchors.ts';

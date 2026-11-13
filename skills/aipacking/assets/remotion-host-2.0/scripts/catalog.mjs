@@ -7,4 +7,4 @@ for (const [g, xs] of Object.entries(groups)) {
   md += `## ${g}\n\n`;
   for (const x of xs) md += `### ${x.type}  \`${x.layout}\`\n- 语境：${x.ctx ?? x.context}\n- 何时用：${x.use ?? x.description}\n- 最短时长：${x.minDur ?? 1.5} 秒\n- 示例：\n\`\`\`json\n${JSON.stringify({ type: x.type, layout: x.layout.split('|')[0], ...(x.bg ? { bg: x.bg } : {}), props: x.props }, null, 1)}\n\`\`\`\n\n`;
 }
-fs.writeFileSync('docs/templates.md', md); console.log('✓ docs/templates.md');
+fs.writeFileSync('docs/templates.md', md.trimEnd() + '\n'); console.log('✓ docs/templates.md');

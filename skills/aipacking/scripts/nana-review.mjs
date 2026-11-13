@@ -41,6 +41,7 @@ const run = (args, cwd = root) => {
 const text = (s) => typeof s === 'string' && s.trim().length > 0;
 const number = Number.isFinite;
 const equal = (a,b) => number(a) && number(b) && Math.abs(a-b) < 1e-6;
+const renderData = name => json('src/motion/' + name + '.json');
 const note = (s) => String(s).replace(/\|/g, '｜').replace(/\r?\n/g, ' ');
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
@@ -52,8 +53,11 @@ function sources() {
 }
 function checkMotionBoard(board, shots, fps) {
   if (board.motionVersion === undefined) return;
-  need([1,2].includes(board.motionVersion), '未知的 motionVersion。');
-  const rich = board.motionVersion === 2;
+  need([1,2,3].includes(board.motionVersion), '未知的 motionVersion。');
+  const expanded = board.motionVersion === 3;
+  const rich = board.motionVersion >= 2;
+  const keyframes = expanded ? renderData('keyframes') : {};
+  const semantic = expanded ? renderData('semantic') : {};
   const chapters = board.chapterTimeline;
   need(Array.isArray(chapters) && chapters.length >= 1 && chapters.length <= 7 && chapters[0].start === 0,
     '章节时间轴需要 1–7 段，并从 0 秒开始。');
@@ -77,7 +81,8 @@ function checkMotionBoard(board, shots, fps) {
         '超过 2.6 秒未发生内容变化，需补动作或注明阅读停留：' + s.id);
       need(s.elements == null || Array.isArray(s.elements) && s.elements.length <= 8, '每镜附加动效元素须为数组：' + s.id);
       for (const e of s.elements || []) {
-        need(['trace','tabs','stamp','split','focus','shine','snap','flash'].includes(e.kind)
+        need((['trace','tabs','stamp','split','focus','shine','snap','flash'].includes(e.kind)
+          || expanded && ['motion','semantic'].includes(e.kind))
           && inShot(e.at) && number(e.duration) && e.duration >= .22 && e.at + e.duration <= s.end + 1e-6
           && [e.x,e.y,e.width,e.height].every(number) && e.x >= 0 && e.y >= 70
           && e.width >= 48 && e.height >= 20 && e.x + e.width <= 1920 && e.y + e.height <= 910
@@ -85,7 +90,32 @@ function checkMotionBoard(board, shots, fps) {
           && (!['tabs','split'].includes(e.kind) || Array.isArray(e.items) && e.items.length >= 2 && e.items.length <= (e.kind === 'split' ? 2 : 4) && e.items.every(item => text(item) && item.length <= 10))
           && (!['stamp','snap'].includes(e.kind) || text(e.text) && e.text.length <= 18),
           '附加动效须绑定动作点，且避开顶部章节和底部字幕：' + s.id);
+        if (!expanded) continue;
+        const bound = at => inShot(at) && s.beats.some(b => b.role !== 'hold' && Math.abs(b.at-at) <= 1/fps);
+        need(bound(e.at), '实际元素要对齐可见动作点：' + s.id);
+        need(e.color == null || /^#[a-f\d]{6}$/i.test(e.color), '动效色值使用六位十六进制：' + s.id);
+        if (e.animation || e.kind === 'motion') {
+          const effect = Object.hasOwn(keyframes,e.animation) ? keyframes[e.animation] : null;
+          need(effect && (e.animationDuration == null || number(e.animationDuration) && e.animationDuration >= .15 && e.animationDuration <= e.duration)
+            && (!effect.restricted || text(e.motionReason)) && (e.kind !== 'motion' || text(e.text) && e.text.length <= 18),
+            '动画须使用动效目录 ID；强动效需说明理由，单标签需给短文案：' + s.id);
+          need(!(e.kind === 'semantic' && effect.category === 'exit'), '语义元素用自身状态交接，出场预设用于单一标签：' + s.id);
+        }
+        if (e.kind === 'semantic') {
+          const preset = Object.hasOwn(semantic,e.preset) ? semantic[e.preset] : null;
+          const items = e.itemsData;
+          need(preset && Array.isArray(items) && items.length >= preset.min && items.length <= preset.max
+            && items.every((item,i) => text(item.text) && item.text.length <= 18 && bound(item.at)
+              && item.at >= e.at-1e-6 && item.at <= e.at+e.duration-.28 && (i===0 || item.at > items[i-1].at)
+              && (!preset.values || number(item.value) && Math.abs(item.value) <= 1e9 && (e.preset !== 'bars' || item.value >= 0)
+                && (item.unit == null || typeof item.unit === 'string' && item.unit.length <= 6))),
+            '语义动效须逐项绑定当前台词、状态顺序及有效数据：' + s.id);
+        }
       }
+      const layout = /^Motion(Lane|Page)_(.+)$/.exec(s.type);
+      if (layout) need(expanded && (layout[1] === 'Page' ? s.layout === 'full' : ['left','right'].includes(s.layout))
+        && s.elements?.some(e => e.kind === 'semantic' && e.preset === layout[2]),
+        '内容模板须绑定匹配的语义动效，版式为真人侧边或全屏：' + s.id);
     }
     if (s.camera) {
       const {keys, focusY, windowKeys} = s.camera;
@@ -148,6 +178,16 @@ function checkMotionBoard(board, shots, fps) {
       '新版分镜须使用多种实际构图和动效结构。');
     need(shots.every((s,i) => i === 0 || identity(shots[i-1]) !== identity(s) || text(s.continuityReason)),
       '相邻镜头避免重复实际模板。若同一对象连续变化，说明交接。');
+    if (expanded) {
+      const used = shots.flatMap(s => s.elements ?? []).filter(e => e.kind === 'semantic' || e.kind === 'motion' || e.animation);
+      const families = new Set(used.map(e => e.kind === 'semantic' ? semantic[e.preset].family : keyframes[e.animation].family));
+      need(used.length > 0 && families.size >= (board.duration >= 30 ? 3 : 1),
+        '新版须实际使用扩展动效；30 秒以上至少三类不同动作。');
+      const sideShots = human.filter(s => !text(s.readingHold));
+      const upgraded = sideShots.filter(s => s.elements?.some(e => e.kind === 'semantic' || e.kind === 'motion' || e.animation));
+      need(!sideShots.length || upgraded.length >= Math.ceil(sideShots.length / 2),
+        '至少一半的普通真人镜头须实际安排新动效元素。');
+    }
   }
   if (human.length > 1) {
     const kits = new Set(human.map(s => s.type === 'SideBeats' ? s.type + '/' + s.side.variant : s.type));
@@ -203,7 +243,7 @@ function compileBoard(cli) {
     (b.chapterTimeline?.length ? '顶部章节轴 · ' + b.chapterTimeline.map(c => c.start.toFixed(3) + ' 秒 ' + c.title).join(' → ') + '。从开头贯穿到片尾。\n\n' : '') +
     '| 镜号 / 秒 | 台词和画面目的 | A-roll | B-roll / 素材 | 原模板 / 布局 | 动效与触发点 |\n|---|---|---|---|---|---|\n' +
     shots.map((s) => '| ' + [s.id + ' / ' + s.start + '–' + s.end, s.quote + '；' + s.purpose, s.aRoll, s.bRoll + (s.assets.length ? '；' + s.assets.join('、') : ''), s.type + ' / ' + s.layout, s.motion.replace(/。$/, '') + '。' + s.cue + (s.beats ? '　动作点：' + s.beats.map(b => b.at.toFixed(2) + '秒 ' + b.label + (b.word ? '（' + b.word + '）' : '')).join('、') : '') +
-      (s.elements?.length ? '　叠加元素：' + s.elements.map(e => e.kind + ' ' + e.at.toFixed(2) + '秒').join('、') : '') +
+      (s.elements?.length ? '　叠加元素：' + s.elements.map(e => [e.kind,e.preset,e.animation].filter(Boolean).join('/') + ' ' + e.at.toFixed(2) + '秒').join('、') : '') +
       (s.camera?.keys ? '　真人缩放：' + s.camera.keys.map(([t,z]) => t.toFixed(2) + '秒 ' + Math.round(z*100) + '%').join(' → ') : '') +
       (s.camera?.windowKeys ? '　收窗进度：' + s.camera.windowKeys.map(([t,k]) => t.toFixed(2) + '秒 ' + Math.round(k*100) + '%').join(' → ') : '')].map(note).join(' | ') + ' |').join('\n') + '\n');
   put('review/board-ready.json', {fingerprint:boardHash()});
@@ -220,16 +260,16 @@ export function requireBoard() {
 export function productionCheck() {
   requireBoard();
   const {b,shots,meta} = readBoard(), p = json('plan/plan.json');
-  if ([1,2].includes(b.motionVersion)) need(isDeepStrictEqual(p.chapterTimeline, b.chapterTimeline), '章节时间轴与已审分镜不同。');
+  if ([1,2,3].includes(b.motionVersion)) need(isDeepStrictEqual(p.chapterTimeline, b.chapterTimeline), '章节时间轴与已审分镜不同。');
   need(p.meta?.video === meta.video && equal(p.meta?.duration,meta.duration) && equal(p.meta?.fps,meta.fps), '成片主轨不是已审分镜的原 MP4 / 时钟。');
   need(Array.isArray(p.scenes) && p.scenes.length === shots.length, '实际分镜镜数与已确认版本不同。');
   for (const s of shots) {
     const scene = p.scenes.find((x) => x.id === s.id);
     need(scene && s.type === scene.type && s.layout === scene.layout && equal(s.start,scene.start) && equal(s.end,scene.end), '成片分镜偏离已审时间、布局或模板：' + s.id);
-    if ([1,2].includes(b.motionVersion)) {
+    if ([1,2,3].includes(b.motionVersion)) {
       need(isDeepStrictEqual(scene.camera, s.camera), '运镜与已审分镜不同：' + s.id);
       if (s.type === 'SideBeats') need(isDeepStrictEqual(scene.props, s.side), '侧边编排与已审分镜不同：' + s.id);
-      if (b.motionVersion === 2) {
+      if (b.motionVersion >= 2) {
         need(isDeepStrictEqual(scene.elements ?? [], s.elements ?? []), '附加动效与已审分镜不同：' + s.id);
         need(scene.motionDetail === s.motionDetail, '侧边动作分支与已审分镜不同：' + s.id);
       }
@@ -277,11 +317,16 @@ function readyStyle() {
   const ready = json('review/preview-ready.json');
   need(ready.production === styleHash() && Array.isArray(ready.images) && ready.images.length >= 3 && ready.images.length <= 5 && new Set(ready.images).size === ready.images.length && ready.images.every((x) => /^review\/previews\/[a-z0-9-]+\/frame-\d+\.png$/.test(x)), '风格预览缺失、参数已改，或当前版本未预览。');
   const b = json('plan/storyboard.json');
-  const moving = b.motionVersion === 2 && b.shots.some(s => s.camera?.keys || s.camera?.windowKeys);
-  const clip = ready.clip;
-  need(!moving || (clip && /^review\/previews\/[a-z0-9-]+\/motion\.mp4$/.test(clip) && ready.images.every(image => path.posix.dirname(image) === path.posix.dirname(clip))),
+  const moving = b.motionVersion >= 2 && b.shots.some(s => s.camera?.keys || s.camera?.windowKeys);
+  const clips = ready.clips ?? (ready.clip ? [ready.clip] : []);
+  need(Array.isArray(clips) && (!moving || clips.length > 0) && clips.every(
+    clip => /^review\/previews\/[a-z0-9-]+\/motion(?:-\d+)?\.mp4$/.test(clip) && ready.images.every(image => path.posix.dirname(image) === path.posix.dirname(clip))),
     '新版含运镜时须附同一合成的动态短样。');
-  return createHash('sha256').update(ready.production + hash(clip ? [...ready.images,clip] : ready.images)).digest('hex');
+  if (b.motionVersion === 3) need(clips.length && Array.isArray(ready.ranges) && ready.ranges.length === clips.length
+    && b.shots.some(s => s.elements?.some(e => (e.kind === 'motion' || e.kind === 'semantic' || e.animation) &&
+      ready.ranges.some(([from,to]) => from <= e.at + 1e-6 && to >= e.at + e.duration - 1e-6))),
+    '3.0 风格审片至少一段动态短样须看得到完整新增动效。');
+  return createHash('sha256').update(ready.production + (ready.ranges ? JSON.stringify(ready.ranges) : '') + hash([...ready.images,...clips])).digest('hex');
 }
 export function requireStyle() {
   const digest = readyStyle();

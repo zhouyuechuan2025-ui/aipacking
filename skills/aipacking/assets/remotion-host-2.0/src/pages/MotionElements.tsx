@@ -6,8 +6,11 @@ import {ShineBorder} from '../lib/ShineBorder';
 import {TextReveal} from '../visuals/SnapTextReveal';
 import {FlashCut} from '../visuals/InkPressFlash';
 import {SpotlightReveal} from '../visuals/SpotlightReveal';
+import {KeyframeMotion} from '../motion/KeyframeMotion';
+import {SemanticMotion} from '../motion/SemanticMotion';
+import keyframes from '../motion/keyframes.json';
 
-export type ElementKind = 'trace' | 'tabs' | 'stamp' | 'split' | 'focus' | 'shine' | 'snap' | 'flash';
+export type ElementKind = 'trace' | 'tabs' | 'stamp' | 'split' | 'focus' | 'shine' | 'snap' | 'flash' | 'motion' | 'semantic';
 export type MotionElement = {
   kind: ElementKind;
   at: number;
@@ -20,11 +23,16 @@ export type MotionElement = {
   items?: string[];
   direction?: 'left' | 'right';
   color?: string;
+  preset?: string;
+  animation?: string;
+  animationDuration?: number;
+  itemsData?: {text:string; at?:number; value?:number; unit?:string}[];
+  motionReason?: string;
 };
 
 const font = '"Inter Tight", "Noto Sans SC", sans-serif';
 
-function Element({e,frames,color}: {e: MotionElement; frames: number; color: string}) {
+function Element({e,frames,color,startFrame}: {e: MotionElement; frames: number; color: string; startFrame:number}) {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const reveal = Math.min(frames - 1,Math.max(2,Math.round(fps*.32)));
@@ -40,6 +48,11 @@ function Element({e,frames,color}: {e: MotionElement; frames: number; color: str
   const title = <div style={{fontSize:size,whiteSpace:'nowrap',fontWeight:850}}>{text}</div>;
 
   switch (e.kind) {
+    case 'motion':
+      return <AbsoluteFill style={{display:'grid',placeItems:'center',border:'1px solid #fff5e957',borderLeft:'5px solid '+color,
+        borderRadius:12,background:'#201b2a',textAlign:'center'}}>{title}</AbsoluteFill>;
+    case 'semantic':
+      return <SemanticMotion id={e.preset!} items={e.itemsData ?? []} width={width} height={height} color={color} startFrame={startFrame}/>;
     case 'trace':
       return <AbsoluteFill style={{opacity:out,display:'flex',justifyContent:'flex-end'}}>
         <div style={{position:'absolute',bottom:2,width:width*k,height:4,background:color,left:reverse?undefined:0,right:reverse?0:undefined}}/>
@@ -89,9 +102,18 @@ export function MotionElements({elements,start,accent}: {elements: MotionElement
     {elements.map((e,i) => {
       const from=Math.round(e.at*fps)-Math.round(start*fps);
       const frames=Math.max(2,Math.round(e.duration*fps));
+      const animFrames=Math.min(frames,Math.max(2,Math.round((e.animationDuration ?? .45)*fps)));
+      const isExit = e.animation && keyframes[e.animation as keyof typeof keyframes]?.category === 'exit';
       return <Sequence key={i} from={from} durationInFrames={frames} layout="none">
         <div style={{position:'absolute',left:e.x,top:e.y,width:e.width,height:e.height,overflow:'hidden'}}>
-          <Element e={e} frames={frames} color={e.color || accent || '#ad6b53'}/>
+          <Sequence from={isExit ? frames-animFrames : 0} layout="none" durationInFrames={isExit ? animFrames : frames}>
+            <KeyframeMotion id={e.animation} frames={animFrames}>
+              <Element e={e} frames={frames} color={e.color || accent || '#ad6b53'} startFrame={Math.round(e.at*fps)}/>
+            </KeyframeMotion>
+          </Sequence>
+          {isExit && frames>animFrames && <Sequence layout="none" durationInFrames={frames-animFrames}>
+            <Element e={e} frames={frames} color={e.color || accent || '#ad6b53'} startFrame={Math.round(e.at*fps)}/>
+          </Sequence>}
         </div>
       </Sequence>;
     })}

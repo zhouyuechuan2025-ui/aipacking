@@ -1,7 +1,7 @@
-// 上一版模板包（M5 使用者视频工作台）的 54 个模板，接成本工作台的全屏页面
+// 上一版包（M5 视频工作台）的 54 个模板，接成本工作台的全屏页面
 // 组件本身由 scripts/build-m5.mjs 从原项目打包而来（templates.generated.js），这里只做两件事：
 //   1. 时间换算：原模板按 150 帧（5 秒）设计，用 <Freeze> 把「本页进度」换算成它们认识的第 0~149 帧，页面长短都能完整播完
-//   2. 参数整理：分镜里写 title / subtitle / items / metric（和原模板包的字段一致），缺的按原规则补默认值
+//   2. 参数整理：分镜里写 title / subtitle / items / metric（和原包的字段一致），缺的按原规则补默认值
 import React from 'react';
 import { AbsoluteFill, Freeze, useCurrentFrame } from 'remotion';
 import type { PageProps } from '../pages/full';
@@ -19,12 +19,12 @@ export const M5_REGISTRY = registry as M5Entry[];
 export const m5Type = (key: string) => key[0].toUpperCase() + key.slice(1);
 
 // 两套默认配色，分镜里可以用 palette 覆盖：
-// - 原工作台的组件：深蓝底 + 金色强调（原模板包的配色）
+// - 原工作台的组件：深蓝底 + 金色强调（原包的配色）
 // - video-shotcraft 开源组件：它们本来按浅色画布设计（文字固定深灰 #2f2f2f），配深色底会看不清，所以回到浅色画布，强调色用浅底上看得清的深橙
 const PALETTE = { canvas: '#07101b', panel: '#13213a', card: '#1c2e4d', accent: '#f2c66c', line: '#8ca2bd' };
 const SHOTCRAFT = { canvas: '#ececea', panel: '#f7f7f6', card: '#ffffff', accent: '#C2410C', line: '#c2c2c0' };
 // video-shotcraft 的组件并不统一：有的按浅色画布设计，有的按深色，还有「深底浅卡」「浅底深卡」的混合设计。
-// 按两轮体检（全深色 / 全浅色）的对比度结果逐个指定；没列出的保持原模板包的深色配色。
+// 按两轮体检（全深色 / 全浅色）的对比度结果逐个指定；没列出的保持原包的深色配色。
 const MIX_LIGHT_CANVAS = { canvas: '#ececea', panel: '#13213a', card: '#1c2e4d', accent: '#C2410C', line: '#8ca2bd' };
 const MIX_DARK_CANVAS = { canvas: '#07101b', panel: '#f7f7f6', card: '#ffffff', accent: '#f2c66c', line: '#8ca2bd' };
 const PALETTE_OF: Record<string, typeof PALETTE> = {

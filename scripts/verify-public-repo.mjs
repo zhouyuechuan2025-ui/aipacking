@@ -5,6 +5,7 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 
 const textExtensions = new Set(['', '.md', '.txt', '.json', '.yaml', '.yml', '.ts', '.tsx', '.js', '.mjs', '.css', '.html', '.gitignore', '.npmrc']);
 const sourceMedia = new Set(['.mp4', '.mov', '.mkv', '.avi', '.webm', '.wav', '.mp3', '.m4a']);
+const syntheticDemos = new Set(['docs/assets/aipacking-3/case-demo.mp4', 'docs/assets/aipacking-3/motion-gallery.mp4']);
 const directDPath = new RegExp(`\\b${['D', ':', '\\\\'].join('')}`, 'i');
 const userPath = new RegExp(`[A-Z]:${['\\\\', 'Users', '\\\\', '[^\\\\]+', '\\\\'].join('')}`, 'i');
 const nonPublicTerms = [new RegExp(['motion', 'playground'].join('\\s*'), 'i'), new RegExp(['动效', '工作台'].join('\\s*'), 'i')];
@@ -20,7 +21,7 @@ export const scanEntries = (entries) => {
     const normalized = entry.path.replaceAll('\\', '/');
     const extension = extname(normalized).toLowerCase();
     if (/(^|\/)\.env(?:\.|$)/i.test(normalized) || /\.(?:pem|key|p12|pfx)$/i.test(normalized)) findings.push(`${normalized}: forbidden-file`);
-    if (sourceMedia.has(extension)) findings.push(`${normalized}: source-media`);
+    if (sourceMedia.has(extension) && !syntheticDemos.has(normalized)) findings.push(`${normalized}: source-media`);
     if (entry.size > 20 * 1024 * 1024) findings.push(`${normalized}: file-over-20mb`);
     if (entry.text !== null) {
       if (directDPath.test(entry.text) || userPath.test(entry.text)) findings.push(`${normalized}: absolute-local-path`);

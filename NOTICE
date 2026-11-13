@@ -11,8 +11,9 @@ HyperFrames is used for aipacking storyboards and is available
 through the basic CLI's optional adapter. It remains subject to its
 upstream license.
 
-aipacking includes adapted Video ShotCraft demos under the
-Apache License 2.0 and adapted Magic UI effects, Snapcn components and RenderComp title components under the MIT License.
+aipacking includes adapted Video ShotCraft demos under the Apache License 2.0
+and Magic UI effects, Snapcn components, RenderComp titles, Animate.css
+keyframes and Magic CSS keyframes under the MIT License.
 See skills/aipacking/assets/remotion-host-2.0/licenses/
 for attribution and license texts.
 

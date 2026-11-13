@@ -1276,7 +1276,7 @@
     "layout": "full",
     "use": "多个案例、截图、作品轮播（3D 封面流）",
     "props": {
-      "title": "使用者作品",
+      "title": "作品",
       "items": [
         {
           "src": "self",
@@ -2534,9 +2534,9 @@
   },
   {
     "type": "ImpactQuestionGlitch",
-    "ctx": "模板包54·标题、Hook、章节与收束/冲击问题故障开场",
+    "ctx": "包54·标题、Hook、章节与收束/冲击问题故障开场",
     "layout": "full",
-    "use": "冲击问题故障开场（上一版模板包第 1 号模板）：短问题砸入、矛盾副句滑入",
+    "use": "冲击问题故障开场（上一版包第 1 号模板）：短问题砸入、矛盾副句滑入",
     "props": {
       "title": "一句话生成成片",
       "subtitle": "在强模型面前，剪辑技巧像小儿科",
@@ -2557,9 +2557,9 @@
   },
   {
     "type": "TokenVelocityRelay",
-    "ctx": "模板包54·流程、时间线与因果/令牌高速接力",
+    "ctx": "包54·流程、时间线与因果/令牌高速接力",
     "layout": "full",
-    "use": "令牌高速接力（上一版模板包第 2 号模板）：一个任务令牌穿过、3–4、个有序阶段、全图页",
+    "use": "令牌高速接力（上一版包第 2 号模板）：一个任务令牌穿过、3–4、个有序阶段、全图页",
     "props": {
       "title": "靠 AI 赚钱的路线",
       "subtitle": "先搞懂流量和商业",
@@ -2580,9 +2580,9 @@
   },
   {
     "type": "SignalPathActivation",
-    "ctx": "模板包54·流程、时间线与因果/信号路径激活",
+    "ctx": "包54·流程、时间线与因果/信号路径激活",
     "layout": "full",
-    "use": "信号路径激活（上一版模板包第 3 号模板）：3–4、个语义节点沿曲线路径依次通电、全图页",
+    "use": "信号路径激活（上一版包第 3 号模板）：3–4、个语义节点沿曲线路径依次通电、全图页",
     "props": {
       "title": "靠 AI 赚钱的路线",
       "subtitle": "先搞懂流量和商业",
@@ -2603,9 +2603,9 @@
   },
   {
     "type": "EditorialStateStamp",
-    "ctx": "模板包54·标题、Hook、章节与收束/编辑状态盖章",
+    "ctx": "包54·标题、Hook、章节与收束/编辑状态盖章",
     "layout": "full",
-    "use": "编辑状态盖章（上一版模板包第 4 号模板）：观点建立后以强状态章完成判断收束、全图页",
+    "use": "编辑状态盖章（上一版包第 4 号模板）：观点建立后以强状态章完成判断收束、全图页",
     "props": {
       "title": "一句话生成成片",
       "subtitle": "在强模型面前，剪辑技巧像小儿科",
@@ -2626,9 +2626,9 @@
   },
   {
     "type": "CompletionCheckRail",
-    "ctx": "模板包54·流程、时间线与因果/完成检查轨",
+    "ctx": "包54·流程、时间线与因果/完成检查轨",
     "layout": "full",
-    "use": "完成检查轨（上一版模板包第 5 号模板）：3–4、个真实检查点顺序完成、末项可保留人工审核",
+    "use": "完成检查轨（上一版包第 5 号模板）：3–4、个真实检查点顺序完成、末项可保留人工审核",
     "props": {
       "title": "靠 AI 赚钱的路线",
       "subtitle": "先搞懂流量和商业",
@@ -2649,9 +2649,9 @@
   },
   {
     "type": "TimelineTravel",
-    "ctx": "模板包54·流程、时间线与因果/横向时间轴旅行",
+    "ctx": "包54·流程、时间线与因果/横向时间轴旅行",
     "layout": "full",
-    "use": "横向时间轴旅行（上一版模板包第 6 号模板）：3–5个真实里程碑、加速掠过并急停现在",
+    "use": "横向时间轴旅行（上一版包第 6 号模板）：3–5个真实里程碑、加速掠过并急停现在",
     "props": {
       "title": "靠 AI 赚钱的路线",
       "subtitle": "先搞懂流量和商业",
@@ -2672,9 +2672,9 @@
   },
   {
     "type": "WordRelayFilmstrip",
-    "ctx": "模板包54·素材、录屏与证据/胶片证据与动词接力",
+    "ctx": "包54·素材、录屏与证据/胶片证据与动词接力",
     "layout": "full",
-    "use": "胶片证据与动词接力（上一版模板包第 7 号模板）：一个主体、3–4项能力、左证据右论点",
+    "use": "胶片证据与动词接力（上一版包第 7 号模板）：一个主体、3–4项能力、左证据右论点",
     "props": {
       "title": "一句话出片",
       "subtitle": "真实提示词生成的基础成片",
@@ -2695,9 +2695,9 @@
   },
   {
     "type": "NeonTripleMarquee",
-    "ctx": "模板包54·文字、重点词与观点表达/三行霓虹对向跑马灯",
+    "ctx": "包54·文字、重点词与观点表达/三行霓虹对向跑马灯",
     "layout": "full",
-    "use": "三行霓虹对向跑马灯（上一版模板包第 8 号模板）：三组主题词奇偶反向滚动、一亮两暗轮唱",
+    "use": "三行霓虹对向跑马灯（上一版包第 8 号模板）：三组主题词奇偶反向滚动、一亮两暗轮唱",
     "props": {
       "title": "真正拉开差距的",
       "subtitle": "不是工具，是判断",
@@ -2718,9 +2718,9 @@
   },
   {
     "type": "OdometerDigitRoll",
-    "ctx": "模板包54·数据、比较与判断/机械里程表数字滚动",
+    "ctx": "包54·数据、比较与判断/机械里程表数字滚动",
     "layout": "full",
-    "use": "机械里程表数字滚动（上一版模板包第 9 号模板）：单个真实王牌指标、逐位锁定",
+    "use": "机械里程表数字滚动（上一版包第 9 号模板）：单个真实王牌指标、逐位锁定",
     "props": {
       "title": "潜力发挥到极致",
       "subtitle": "会用 AI 的人",
@@ -2742,9 +2742,9 @@
   },
   {
     "type": "TiltReveal",
-    "ctx": "模板包54·动效与转场/俯仰抬正揭示",
+    "ctx": "包54·动效与转场/俯仰抬正揭示",
     "layout": "full",
-    "use": "俯仰抬正揭示（上一版模板包第 10 号模板）：平躺页面抬正、从窄带到完整单页",
+    "use": "俯仰抬正揭示（上一版包第 10 号模板）：平躺页面抬正、从窄带到完整单页",
     "props": {
       "title": "技术平权",
       "subtitle": "差距前所未有的大",
@@ -2765,9 +2765,9 @@
   },
   {
     "type": "CubeRotate",
-    "ctx": "模板包54·动效与转场/立方体翻页转场",
+    "ctx": "包54·动效与转场/立方体翻页转场",
     "layout": "full",
-    "use": "立方体翻页转场（上一版模板包第 11 号模板）：两个并列页面以相邻立方体面换场、全图页",
+    "use": "立方体翻页转场（上一版包第 11 号模板）：两个并列页面以相邻立方体面换场、全图页",
     "props": {
       "title": "技术平权",
       "subtitle": "差距前所未有的大",
@@ -2788,9 +2788,9 @@
   },
   {
     "type": "PageWaterfallWall",
-    "ctx": "模板包54·素材、录屏与证据/页面瀑布墙",
+    "ctx": "包54·素材、录屏与证据/页面瀑布墙",
     "layout": "full",
-    "use": "页面瀑布墙（上一版模板包第 12 号模板）：重点模板、三列真实页面差速反向循环",
+    "use": "页面瀑布墙（上一版包第 12 号模板）：重点模板、三列真实页面差速反向循环",
     "props": {
       "title": "一句话出片",
       "subtitle": "真实提示词生成的基础成片",
@@ -2811,9 +2811,9 @@
   },
   {
     "type": "GridFlashMosaic",
-    "ctx": "模板包54·卡片、总览与信息布局/面板网格闪现马赛克",
+    "ctx": "包54·卡片、总览与信息布局/面板网格闪现马赛克",
     "layout": "full",
-    "use": "面板网格闪现马赛克（上一版模板包第 13 号模板）：多面板按节拍形成信息墙、全图页",
+    "use": "面板网格闪现马赛克（上一版包第 13 号模板）：多面板按节拍形成信息墙、全图页",
     "props": {
       "title": "真正拉开差距的",
       "subtitle": "不是工具，是判断",
@@ -2834,9 +2834,9 @@
   },
   {
     "type": "MaskingTapeSlap",
-    "ctx": "模板包54·动效与转场/纸胶带拍定卡片",
+    "ctx": "包54·动效与转场/纸胶带拍定卡片",
     "layout": "full",
-    "use": "纸胶带拍定卡片（上一版模板包第 14 号模板）：两条胶带先后拍下、第二拍按死卡片",
+    "use": "纸胶带拍定卡片（上一版包第 14 号模板）：两条胶带先后拍下、第二拍按死卡片",
     "props": {
       "title": "技术平权",
       "subtitle": "差距前所未有的大",
@@ -2857,9 +2857,9 @@
   },
   {
     "type": "PaperPlaneMessenger",
-    "ctx": "模板包54·动效与转场/纸飞机信使转场",
+    "ctx": "包54·动效与转场/纸飞机信使转场",
     "layout": "full",
-    "use": "纸飞机信使转场（上一版模板包第 15 号模板）：发送动作、伴飞、第二场景接管、全图页",
+    "use": "纸飞机信使转场（上一版包第 15 号模板）：发送动作、伴飞、第二场景接管、全图页",
     "props": {
       "title": "技术平权",
       "subtitle": "差距前所未有的大",
@@ -2880,9 +2880,9 @@
   },
   {
     "type": "PillSlotCycle",
-    "ctx": "模板包54·文字、重点词与观点表达/胶囊词槽轮换",
+    "ctx": "包54·文字、重点词与观点表达/胶囊词槽轮换",
     "layout": "full",
-    "use": "胶囊词槽轮换（上一版模板包第 16 号模板）：同一语法位轮换多个短词、全图页",
+    "use": "胶囊词槽轮换（上一版包第 16 号模板）：同一语法位轮换多个短词、全图页",
     "props": {
       "title": "真正拉开差距的",
       "subtitle": "不是工具，是判断",
@@ -2903,9 +2903,9 @@
   },
   {
     "type": "SakugaTimingShift",
-    "ctx": "模板包54·动效与转场/作画节奏突变",
+    "ctx": "包54·动效与转场/作画节奏突变",
     "layout": "full",
-    "use": "作画节奏突变（上一版模板包第 17 号模板）：常速建立、突发高密动作、静止、全图页",
+    "use": "作画节奏突变（上一版包第 17 号模板）：常速建立、突发高密动作、静止、全图页",
     "props": {
       "title": "技术平权",
       "subtitle": "差距前所未有的大",
@@ -2926,9 +2926,9 @@
   },
   {
     "type": "SkeletonReveal",
-    "ctx": "模板包54·素材、录屏与证据/草稿骨架内容三级显影",
+    "ctx": "包54·素材、录屏与证据/草稿骨架内容三级显影",
     "layout": "full",
-    "use": "草稿骨架内容三级显影（上一版模板包第 18 号模板）：重点模板、涂鸦、骨架、真实内容",
+    "use": "草稿骨架内容三级显影（上一版包第 18 号模板）：重点模板、涂鸦、骨架、真实内容",
     "props": {
       "title": "一句话出片",
       "subtitle": "真实提示词生成的基础成片",
@@ -2949,9 +2949,9 @@
   },
   {
     "type": "SplitFlapFlip",
-    "ctx": "模板包54·标题、Hook、章节与收束/翻牌式标题",
+    "ctx": "包54·标题、Hook、章节与收束/翻牌式标题",
     "layout": "full",
-    "use": "翻牌式标题（上一版模板包第 19 号模板）：机场翻牌机械换字、短标题限定",
+    "use": "翻牌式标题（上一版包第 19 号模板）：机场翻牌机械换字、短标题限定",
     "props": {
       "title": "一句话生成成片",
       "subtitle": "在强模型面前，剪辑技巧像小儿科",
@@ -2972,9 +2972,9 @@
   },
   {
     "type": "HashtagToPill",
-    "ctx": "模板包54·文字、重点词与观点表达/话题词胶囊实体化",
+    "ctx": "包54·文字、重点词与观点表达/话题词胶囊实体化",
     "layout": "full",
-    "use": "话题词胶囊实体化（上一版模板包第 20 号模板）：打字、一帧实体化、缩移归位、成品页、全图页",
+    "use": "话题词胶囊实体化（上一版包第 20 号模板）：打字、一帧实体化、缩移归位、成品页、全图页",
     "props": {
       "title": "真正拉开差距的",
       "subtitle": "不是工具，是判断",
@@ -2995,9 +2995,9 @@
   },
   {
     "type": "IconFieldColorize",
-    "ctx": "模板包54·卡片、总览与信息布局/图标原野波纹翻色",
+    "ctx": "包54·卡片、总览与信息布局/图标原野波纹翻色",
     "layout": "full",
-    "use": "图标原野波纹翻色（上一版模板包第 21 号模板）：灰阶功能宇宙、品牌色横带点亮、全图页",
+    "use": "图标原野波纹翻色（上一版包第 21 号模板）：灰阶功能宇宙、品牌色横带点亮、全图页",
     "props": {
       "title": "真正拉开差距的",
       "subtitle": "不是工具，是判断",
@@ -3018,9 +3018,9 @@
   },
   {
     "type": "LineCarryTransition",
-    "ctx": "模板包54·流程、时间线与因果/线条接力转场",
+    "ctx": "包54·流程、时间线与因果/线条接力转场",
     "layout": "full",
-    "use": "线条接力转场（上一版模板包第 22 号模板）：现有进度线连续延伸并围出下一场、全图页",
+    "use": "线条接力转场（上一版包第 22 号模板）：现有进度线连续延伸并围出下一场、全图页",
     "props": {
       "title": "靠 AI 赚钱的路线",
       "subtitle": "先搞懂流量和商业",
@@ -3041,9 +3041,9 @@
   },
   {
     "type": "DrawSvgTrace",
-    "ctx": "模板包54·素材、录屏与证据/SVG 描边圈注",
+    "ctx": "包54·素材、录屏与证据/SVG 描边圈注",
     "layout": "full",
-    "use": "SVG 描边圈注（上一版模板包第 23 号模板）：单一主体沿轮廓画出后交棒、全图页",
+    "use": "SVG 描边圈注（上一版包第 23 号模板）：单一主体沿轮廓画出后交棒、全图页",
     "props": {
       "title": "一句话出片",
       "subtitle": "真实提示词生成的基础成片",
@@ -3064,9 +3064,9 @@
   },
   {
     "type": "NeedleSweepSelftest",
-    "ctx": "模板包54·数据、比较与判断/仪表满弧自检",
+    "ctx": "包54·数据、比较与判断/仪表满弧自检",
     "layout": "full",
-    "use": "仪表满弧自检（上一版模板包第 24 号模板）：指针扫满量程再回落真实读数、全图页",
+    "use": "仪表满弧自检（上一版包第 24 号模板）：指针扫满量程再回落真实读数、全图页",
     "props": {
       "title": "潜力发挥到极致",
       "subtitle": "会用 AI 的人",
@@ -3088,9 +3088,9 @@
   },
   {
     "type": "CommandPaletteSummon",
-    "ctx": "模板包54·素材、录屏与证据/命令面板召唤",
+    "ctx": "包54·素材、录屏与证据/命令面板召唤",
     "layout": "full",
-    "use": "命令面板召唤（上一版模板包第 25 号模板）：快捷命令、搜索、功能收窄、全图页",
+    "use": "命令面板召唤（上一版包第 25 号模板）：快捷命令、搜索、功能收窄、全图页",
     "props": {
       "title": "一句话出片",
       "subtitle": "真实提示词生成的基础成片",
@@ -3111,9 +3111,9 @@
   },
   {
     "type": "DeckDealFlyIn",
-    "ctx": "模板包54·卡片、总览与信息布局/卡牌高速发牌入场",
+    "ctx": "包54·卡片、总览与信息布局/卡牌高速发牌入场",
     "layout": "full",
-    "use": "卡牌高速发牌入场（上一版模板包第 26 号模板）：重点模板、大量内容加速汇入网格",
+    "use": "卡牌高速发牌入场（上一版包第 26 号模板）：重点模板、大量内容加速汇入网格",
     "props": {
       "title": "真正拉开差距的",
       "subtitle": "不是工具，是判断",
@@ -3134,9 +3134,9 @@
   },
   {
     "type": "PanelToCanvas",
-    "ctx": "模板包54·卡片、总览与信息布局/面板内容上画布",
+    "ctx": "包54·卡片、总览与信息布局/面板内容上画布",
     "layout": "full",
-    "use": "面板内容上画布（上一版模板包第 27 号模板）：重点模板、严格三行任务变成三张可视卡片",
+    "use": "面板内容上画布（上一版包第 27 号模板）：重点模板、严格三行任务变成三张可视卡片",
     "props": {
       "title": "真正拉开差距的",
       "subtitle": "不是工具，是判断",
@@ -3157,9 +3157,9 @@
   },
   {
     "type": "CardFlipReveal",
-    "ctx": "模板包54·流程、时间线与因果/卡片翻面揭示",
+    "ctx": "包54·流程、时间线与因果/卡片翻面揭示",
     "layout": "full",
-    "use": "卡片翻面揭示（上一版模板包第 28 号模板）：2–4、组“功能、结果”因果配对、全图页",
+    "use": "卡片翻面揭示（上一版包第 28 号模板）：2–4、组“功能、结果”因果配对、全图页",
     "props": {
       "title": "靠 AI 赚钱的路线",
       "subtitle": "先搞懂流量和商业",
@@ -3180,9 +3180,9 @@
   },
   {
     "type": "NumberedChapter",
-    "ctx": "模板包54·标题、Hook、章节与收束/编号统一章节页",
+    "ctx": "包54·标题、Hook、章节与收束/编号统一章节页",
     "layout": "full",
-    "use": "编号统一章节页（上一版模板包第 29 号模板）：01、02、03、同版式多色章节页",
+    "use": "编号统一章节页（上一版包第 29 号模板）：01、02、03、同版式多色章节页",
     "props": {
       "title": "技巧贬值",
       "subtitle": "第二章",
@@ -3204,9 +3204,9 @@
   },
   {
     "type": "ThreeOptionMatrix",
-    "ctx": "模板包54·数据、比较与判断/三档选项矩阵",
+    "ctx": "包54·数据、比较与判断/三档选项矩阵",
     "layout": "full",
-    "use": "三档选项矩阵（上一版模板包第 30 号模板）：三个并列选项、仅在文案明确推荐时突出",
+    "use": "三档选项矩阵（上一版包第 30 号模板）：三个并列选项、仅在文案明确推荐时突出",
     "props": {
       "title": "潜力发挥到极致",
       "subtitle": "会用 AI 的人",
@@ -3228,9 +3228,9 @@
   },
   {
     "type": "ScreenOperationDemo",
-    "ctx": "模板包54·素材、录屏与证据/操作录屏主导页",
+    "ctx": "包54·素材、录屏与证据/操作录屏主导页",
     "layout": "full",
-    "use": "操作录屏主导页（上一版模板包第 31 号模板）：录屏占主画面、左侧步骤说明",
+    "use": "操作录屏主导页（上一版包第 31 号模板）：录屏占主画面、左侧步骤说明",
     "props": {
       "title": "一句话出片",
       "subtitle": "真实提示词生成的基础成片",
@@ -3251,9 +3251,9 @@
   },
   {
     "type": "DualConceptPair",
-    "ctx": "模板包54·卡片、总览与信息布局/双信息关系页",
+    "ctx": "包54·卡片、总览与信息布局/双信息关系页",
     "layout": "full",
-    "use": "双信息关系页（上一版模板包第 32 号模板）：严格用于两个并列对象、中间人物留空",
+    "use": "双信息关系页（上一版包第 32 号模板）：严格用于两个并列对象、中间人物留空",
     "props": {
       "title": "真正拉开差距的",
       "subtitle": "不是工具，是判断",
@@ -3274,9 +3274,9 @@
   },
   {
     "type": "BackdropHeadline",
-    "ctx": "模板包54·标题、Hook、章节与收束/P0 · 人物身后大字",
+    "ctx": "包54·标题、Hook、章节与收束/P0 · 人物身后大字",
     "layout": "full",
-    "use": "P0 · 人物身后大字（上一版模板包第 33 号模板）：Hook、结论、关键转折、短句限定",
+    "use": "P0 · 人物身后大字（上一版包第 33 号模板）：Hook、结论、关键转折、短句限定",
     "props": {
       "title": "一句话生成成片",
       "subtitle": "在强模型面前，剪辑技巧像小儿科",
@@ -3297,9 +3297,9 @@
   },
   {
     "type": "AdaptiveSteps",
-    "ctx": "模板包54·流程、时间线与因果/P0 · 自适应步骤卡",
+    "ctx": "包54·流程、时间线与因果/P0 · 自适应步骤卡",
     "layout": "full",
-    "use": "P0 · 自适应步骤卡（上一版模板包第 34 号模板）：2–4、步预览、正式接入后按文案数量生成",
+    "use": "P0 · 自适应步骤卡（上一版包第 34 号模板）：2–4、步预览、正式接入后按文案数量生成",
     "props": {
       "title": "靠 AI 赚钱的路线",
       "subtitle": "先搞懂流量和商业",
@@ -3320,9 +3320,9 @@
   },
   {
     "type": "MetricGrowth",
-    "ctx": "模板包54·数据、比较与判断/P0 · 数值增长组件",
+    "ctx": "包54·数据、比较与判断/P0 · 数值增长组件",
     "layout": "full",
-    "use": "P0 · 数值增长组件（上一版模板包第 35 号模板）：真实数值、单位、标签才允许触发、人物页",
+    "use": "P0 · 数值增长组件（上一版包第 35 号模板）：真实数值、单位、标签才允许触发、人物页",
     "props": {
       "title": "潜力发挥到极致",
       "subtitle": "会用 AI 的人",
@@ -3344,9 +3344,9 @@
   },
   {
     "type": "ChapterViewpoint",
-    "ctx": "模板包54·标题、Hook、章节与收束/章节观点页",
+    "ctx": "包54·标题、Hook、章节与收束/章节观点页",
     "layout": "full",
-    "use": "章节观点页（上一版模板包第 36 号模板）：第一、第二、第三、章节、完整标题、全图页",
+    "use": "章节观点页（上一版包第 36 号模板）：第一、第二、第三、章节、完整标题、全图页",
     "props": {
       "title": "技巧贬值",
       "subtitle": "第二章",
@@ -3368,9 +3368,9 @@
   },
   {
     "type": "MetricFocus",
-    "ctx": "模板包54·数据、比较与判断/核心数字动效",
+    "ctx": "包54·数据、比较与判断/核心数字动效",
     "layout": "full",
-    "use": "核心数字动效（上一版模板包第 37 号模板）：数字、数据、结果、人物页",
+    "use": "核心数字动效（上一版包第 37 号模板）：数字、数据、结果、人物页",
     "props": {
       "title": "潜力发挥到极致",
       "subtitle": "会用 AI 的人",
@@ -3392,9 +3392,9 @@
   },
   {
     "type": "CompareSplit",
-    "ctx": "模板包54·数据、比较与判断/左右对比卡",
+    "ctx": "包54·数据、比较与判断/左右对比卡",
     "layout": "full",
-    "use": "左右对比卡（上一版模板包第 38 号模板）：前后、新旧、方案、人物页",
+    "use": "左右对比卡（上一版包第 38 号模板）：前后、新旧、方案、人物页",
     "props": {
       "title": "工具 vs 判断",
       "subtitle": "质量差距不在工具",
@@ -3414,9 +3414,9 @@
   },
   {
     "type": "QuoteLockup",
-    "ctx": "模板包54·文字、重点词与观点表达/金句定格卡",
+    "ctx": "包54·文字、重点词与观点表达/金句定格卡",
     "layout": "full",
-    "use": "金句定格卡（上一版模板包第 39 号模板）：观点、结论、金句、人物页",
+    "use": "金句定格卡（上一版包第 39 号模板）：观点、结论、金句、人物页",
     "props": {
       "title": "AI 的上限",
       "subtitle": "永远取决于使用它的人",
@@ -3437,9 +3437,9 @@
   },
   {
     "type": "FlowThree",
-    "ctx": "模板包54·流程、时间线与因果/三步流程",
+    "ctx": "包54·流程、时间线与因果/三步流程",
     "layout": "full",
-    "use": "三步流程（上一版模板包第 40 号模板）：输入、处理、结果、人物页",
+    "use": "三步流程（上一版包第 40 号模板）：输入、处理、结果、人物页",
     "props": {
       "title": "靠 AI 赚钱的路线",
       "subtitle": "先搞懂流量和商业",
@@ -3460,9 +3460,9 @@
   },
   {
     "type": "VideoWorkflowPipeline",
-    "ctx": "模板包54·流程、时间线与因果/自适应流程图",
+    "ctx": "包54·流程、时间线与因果/自适应流程图",
     "layout": "full",
-    "use": "自适应流程图（上一版模板包第 41 号模板）：仅按当前文案的实际步骤生成、全图页",
+    "use": "自适应流程图（上一版包第 41 号模板）：仅按当前文案的实际步骤生成、全图页",
     "props": {
       "title": "靠 AI 赚钱的路线",
       "subtitle": "先搞懂流量和商业",
@@ -3483,9 +3483,9 @@
   },
   {
     "type": "DataChart",
-    "ctx": "模板包54·数据、比较与判断/数据图表",
+    "ctx": "包54·数据、比较与判断/数据图表",
     "layout": "full",
-    "use": "数据图表（上一版模板包第 42 号模板）：真实数值、比例、趋势、人物页",
+    "use": "数据图表（上一版包第 42 号模板）：真实数值、比例、趋势、人物页",
     "props": {
       "title": "潜力发挥到极致",
       "subtitle": "会用 AI 的人",
@@ -3507,9 +3507,9 @@
   },
   {
     "type": "EvidenceWindow",
-    "ctx": "模板包54·素材、录屏与证据/真实证据窗口",
+    "ctx": "包54·素材、录屏与证据/真实证据窗口",
     "layout": "full",
-    "use": "真实证据窗口（上一版模板包第 43 号模板）：截图、录屏、ROI、证据页",
+    "use": "真实证据窗口（上一版包第 43 号模板）：截图、录屏、ROI、证据页",
     "props": {
       "title": "一句话出片",
       "subtitle": "真实提示词生成的基础成片",
@@ -3530,9 +3530,9 @@
   },
   {
     "type": "RankDashboard",
-    "ctx": "模板包54·数据、比较与判断/指标排名看板",
+    "ctx": "包54·数据、比较与判断/指标排名看板",
     "layout": "full",
-    "use": "指标排名看板（上一版模板包第 44 号模板）：分类排名、横向比较、全图页",
+    "use": "指标排名看板（上一版包第 44 号模板）：分类排名、横向比较、全图页",
     "props": {
       "title": "潜力发挥到极致",
       "subtitle": "会用 AI 的人",
@@ -3554,9 +3554,9 @@
   },
   {
     "type": "CapitalRisk",
-    "ctx": "模板包54·数据、比较与判断/四象限风险图",
+    "ctx": "包54·数据、比较与判断/四象限风险图",
     "layout": "full",
-    "use": "四象限风险图（上一版模板包第 45 号模板）：四项风险、观点矩阵、全图页",
+    "use": "四象限风险图（上一版包第 45 号模板）：四项风险、观点矩阵、全图页",
     "props": {
       "title": "潜力发挥到极致",
       "subtitle": "会用 AI 的人",
@@ -3578,9 +3578,9 @@
   },
   {
     "type": "TitleHero",
-    "ctx": "模板包54·标题、Hook、章节与收束/全屏标题页",
+    "ctx": "包54·标题、Hook、章节与收束/全屏标题页",
     "layout": "full",
-    "use": "全屏标题页（上一版模板包第 46 号模板）：片头、章节、强结论、全图页",
+    "use": "全屏标题页（上一版包第 46 号模板）：片头、章节、强结论、全图页",
     "props": {
       "title": "一句话生成成片",
       "subtitle": "在强模型面前，剪辑技巧像小儿科",
@@ -3601,9 +3601,9 @@
   },
   {
     "type": "KineticEditorial",
-    "ctx": "模板包54·文字、重点词与观点表达/逐词编辑排版",
+    "ctx": "包54·文字、重点词与观点表达/逐词编辑排版",
     "layout": "full",
-    "use": "逐词编辑排版（上一版模板包第 47 号模板）：半句、重点词、逐级建立、人物页",
+    "use": "逐词编辑排版（上一版包第 47 号模板）：半句、重点词、逐级建立、人物页",
     "props": {
       "title": "真正拉开差距的",
       "subtitle": "不是工具，是判断",
@@ -3624,9 +3624,9 @@
   },
   {
     "type": "PunctuationLockup",
-    "ctx": "模板包54·标题、Hook、章节与收束/标点收束标题",
+    "ctx": "包54·标题、Hook、章节与收束/标点收束标题",
     "layout": "full",
-    "use": "标点收束标题（上一版模板包第 48 号模板）：问题、悬念、CTA、全图页",
+    "use": "标点收束标题（上一版包第 48 号模板）：问题、悬念、CTA、全图页",
     "props": {
       "title": "一句话生成成片",
       "subtitle": "在强模型面前，剪辑技巧像小儿科",
@@ -3647,9 +3647,9 @@
   },
   {
     "type": "ZinePresenterQuote",
-    "ctx": "模板包54·风格化代表模板/真人拼贴引语页",
+    "ctx": "包54·风格化代表模板/真人拼贴引语页",
     "layout": "full",
-    "use": "真人拼贴引语页（上一版模板包第 49 号模板）：透明背景、中间人物留空",
+    "use": "真人拼贴引语页（上一版包第 49 号模板）：透明背景、中间人物留空",
     "props": {
       "title": "AI 的上限",
       "subtitle": "永远取决于使用它的人",
@@ -3670,9 +3670,9 @@
   },
   {
     "type": "ZineRisoProcess",
-    "ctx": "模板包54·风格化代表模板/原版印刷流程",
+    "ctx": "包54·风格化代表模板/原版印刷流程",
     "layout": "full",
-    "use": "原版印刷流程（上一版模板包第 50 号模板）：SVG、06、顶部色带、四流程卡",
+    "use": "原版印刷流程（上一版包第 50 号模板）：SVG、06、顶部色带、四流程卡",
     "props": {
       "title": "真正拉开差距的",
       "subtitle": "不是工具，是判断",
@@ -3693,9 +3693,9 @@
   },
   {
     "type": "PeoplesManifesto",
-    "ctx": "模板包54·风格化代表模板/核心宣言页",
+    "ctx": "包54·风格化代表模板/核心宣言页",
     "layout": "full",
-    "use": "核心宣言页（上一版模板包第 51 号模板）：原模板、03、单一核心观点",
+    "use": "核心宣言页（上一版包第 51 号模板）：原模板、03、单一核心观点",
     "props": {
       "title": "AI 的上限",
       "subtitle": "永远取决于使用它的人",
@@ -3716,9 +3716,9 @@
   },
   {
     "type": "BlockHeroPoster",
-    "ctx": "模板包54·风格化代表模板/海报标题页",
+    "ctx": "包54·风格化代表模板/海报标题页",
     "layout": "full",
-    "use": "海报标题页（上一版模板包第 52 号模板）：原模板、01、章节与强结论",
+    "use": "海报标题页（上一版包第 52 号模板）：原模板、01、章节与强结论",
     "props": {
       "title": "真正拉开差距的",
       "subtitle": "不是工具，是判断",
@@ -3739,9 +3739,9 @@
   },
   {
     "type": "BlockShowWork",
-    "ctx": "模板包54·风格化代表模板/作品证据页",
+    "ctx": "包54·风格化代表模板/作品证据页",
     "layout": "full",
-    "use": "作品证据页（上一版模板包第 53 号模板）：原版媒体卡适配、证据页",
+    "use": "作品证据页（上一版包第 53 号模板）：原版媒体卡适配、证据页",
     "props": {
       "title": "真正拉开差距的",
       "subtitle": "不是工具，是判断",
@@ -3762,9 +3762,9 @@
   },
   {
     "type": "BroadsideSplitCompare",
-    "ctx": "模板包54·风格化代表模板/橙黑对比页",
+    "ctx": "包54·风格化代表模板/橙黑对比页",
     "layout": "full",
-    "use": "橙黑对比页（上一版模板包第 54 号模板）：原模板、09、Before、After",
+    "use": "橙黑对比页（上一版包第 54 号模板）：原模板、09、Before、After",
     "props": {
       "title": "工具 vs 判断",
       "subtitle": "质量差距不在工具",
@@ -3827,7 +3827,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/提示词卡",
+    "ctx": " 4.0.1 原生库/提示词卡",
     "use": "可复制 / 操作指令",
     "props": {
       "settings": {
@@ -3846,7 +3846,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/六项 Skill 总览",
+    "ctx": " 4.0.1 原生库/六项 Skill 总览",
     "use": "仅用于明确的六项能力集合",
     "props": {
       "settings": {
@@ -3865,7 +3865,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/创意到视频简笔画",
+    "ctx": " 4.0.1 原生库/创意到视频简笔画",
     "use": "视频创意 → 15秒分镜与提示词 → 生成视频",
     "props": {
       "settings": {
@@ -3884,7 +3884,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/重复岗位自动化接管",
+    "ctx": " 4.0.1 原生库/重复岗位自动化接管",
     "use": "岗位任务 → 自动化资产",
     "props": {
       "settings": {
@@ -3903,7 +3903,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/传统 RPA 脆弱链",
+    "ctx": " 4.0.1 原生库/传统 RPA 脆弱链",
     "use": "依赖项 → 环境变化 → 失效",
     "props": {
       "settings": {
@@ -3922,7 +3922,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/Record 路径差异",
+    "ctx": " 4.0.1 原生库/Record 路径差异",
     "use": "脚本/Prompt 与示范/整理对比",
     "props": {
       "settings": {
@@ -3941,7 +3941,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/六任务观察与封装",
+    "ctx": " 4.0.1 原生库/六任务观察与封装",
     "use": "六类任务 → 观察 → Skill",
     "props": {
       "settings": {
@@ -3960,7 +3960,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/重复劳动替代边界",
+    "ctx": " 4.0.1 原生库/重复劳动替代边界",
     "use": "四类重复行为明确收束",
     "props": {
       "settings": {
@@ -3979,7 +3979,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/传统自动化六项痛点",
+    "ctx": " 4.0.1 原生库/传统自动化六项痛点",
     "use": "ego 专属内容 · 禁止跨项目默认值",
     "props": {
       "settings": {
@@ -3998,7 +3998,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": true,
-    "ctx": "随包 原生库/点击调用与 Token 消耗",
+    "ctx": " 4.0.1 原生库/点击调用与 Token 消耗",
     "use": "可视化因果链 · 中间人物留空",
     "props": {
       "settings": {
@@ -4017,7 +4017,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": true,
-    "ctx": "随包 原生库/Space 双工作区并行",
+    "ctx": " 4.0.1 原生库/Space 双工作区并行",
     "use": "AI 与用户各用各的页面 · 中间人物留空",
     "props": {
       "settings": {
@@ -4036,7 +4036,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/6任务资源对比",
+    "ctx": " 4.0.1 原生库/6任务资源对比",
     "use": "条件 → 两组数据 → 架构结论",
     "props": {
       "settings": {
@@ -4055,7 +4055,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/人工生成五步流程",
+    "ctx": " 4.0.1 原生库/人工生成五步流程",
     "use": "打开 → 创建 → 输入 → 等待 → 下载",
     "props": {
       "settings": {
@@ -4074,7 +4074,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/AI与用户双轨时间线",
+    "ctx": " 4.0.1 原生库/AI与用户双轨时间线",
     "use": "AI持续执行 · 用户继续工作",
     "props": {
       "settings": {
@@ -4093,7 +4093,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/重复劳动转自动化资产",
+    "ctx": " 4.0.1 原生库/重复劳动转自动化资产",
     "use": "操作 → 脚本 / Skill → 长期复用",
     "props": {
       "settings": {
@@ -4112,7 +4112,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/商品评论采集流程",
+    "ctx": " 4.0.1 原生库/商品评论采集流程",
     "use": "商品链接 → 最新100条评论 → CSV",
     "props": {
       "settings": {
@@ -4131,7 +4131,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/Remotion 六章封面",
+    "ctx": " 4.0.1 原生库/Remotion 六章封面",
     "use": "统一组件 · 六套数据 · 真实截图",
     "props": {
       "settings": {
@@ -4150,7 +4150,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/Codex 身份升级",
+    "ctx": " 4.0.1 原生库/Codex 身份升级",
     "use": "写代码工具 → 视频生产系统",
     "props": {
       "settings": {
@@ -4169,7 +4169,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/自适应流程图",
+    "ctx": " 4.0.1 原生库/自适应流程图",
     "use": "仅按当前文案的实际步骤生成",
     "props": {
       "settings": {
@@ -4188,7 +4188,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/多模态官方能力墙",
+    "ctx": " 4.0.1 原生库/多模态官方能力墙",
     "use": "官方项目证据 + 图片 / 视频 / 音频能力",
     "props": {
       "settings": {
@@ -4207,7 +4207,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/数据仪表盘",
+    "ctx": " 4.0.1 原生库/数据仪表盘",
     "use": "真实表格 + 图表 + 结论",
     "props": {
       "settings": {
@@ -4226,7 +4226,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/指标排名看板",
+    "ctx": " 4.0.1 原生库/指标排名看板",
     "use": "分类排名 + 横向比较",
     "props": {
       "settings": {
@@ -4245,7 +4245,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/KPI 指标总览",
+    "ctx": " 4.0.1 原生库/KPI 指标总览",
     "use": "多项指标 + 规模结论",
     "props": {
       "settings": {
@@ -4264,7 +4264,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/纵深证据舞台",
+    "ctx": " 4.0.1 原生库/纵深证据舞台",
     "use": "主证据 + 辅助证据",
     "props": {
       "settings": {
@@ -4283,7 +4283,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/工具操作看板",
+    "ctx": " 4.0.1 原生库/工具操作看板",
     "use": "能力清单 + UI 动作",
     "props": {
       "settings": {
@@ -4302,7 +4302,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/横带切割大字",
+    "ctx": " 4.0.1 原生库/横带切割大字",
     "use": "原有模板 · 大字底层 + 重点词横带",
     "props": {
       "settings": {
@@ -4321,7 +4321,7 @@
     "minDur": 2.8,
     "family": "nana-native",
     "showsPerson": false,
-    "ctx": "随包 原生库/标点收束标题",
+    "ctx": " 4.0.1 原生库/标点收束标题",
     "use": "问题 / 悬念 / CTA",
     "props": {
       "settings": {
@@ -4437,7 +4437,7 @@
     "layout": "full",
     "minDur": 2.2,
     "family": "nana-continuity",
-    "ctx": "使用者 3.x 连续动效/同一组人物、证据和图解按原阶段连续交接，绑定当前素材和源片时钟",
+    "ctx": " 3.x 连续动效/同一组人物、证据和图解按原阶段连续交接，绑定当前素材和源片时钟",
     "use": "同一组人物、证据和图解按原阶段连续交接，绑定当前素材和源片时钟"
   },
   {
@@ -4445,7 +4445,331 @@
     "layout": "overlay",
     "minDur": 2.2,
     "family": "nana-continuity",
-    "ctx": "使用者 3.x 连续动效/沿用原动作阶段，在当前真人底片上叠资料对象或图形",
+    "ctx": " 3.x 连续动效/沿用原动作阶段，在当前真人底片上叠资料对象或图形",
     "use": "沿用原动作阶段，在当前真人底片上叠资料对象或图形"
+  },
+  {
+    "type": "MotionLane_rail",
+    "ctx": "list",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "把并列主题或清单逐个点亮。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_rail",
+    "ctx": "list",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "把并列主题或清单逐个点亮。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_checklist",
+    "ctx": "list",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "逐条确认已经完成的动作。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_checklist",
+    "ctx": "list",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "逐条确认已经完成的动作。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_ribbon",
+    "ctx": "text",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "先给类别，再揭示重点。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_ribbon",
+    "ctx": "text",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "先给类别，再揭示重点。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_word-mask",
+    "ctx": "text",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "长观点拆为两三行，遮罩逐行扫开。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_word-mask",
+    "ctx": "text",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "长观点拆为两三行，遮罩逐行扫开。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_type-line",
+    "ctx": "text",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "显示原文指令或要搜索的短词。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_type-line",
+    "ctx": "text",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "显示原文指令或要搜索的短词。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_compare",
+    "ctx": "relationship",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "并排展示两个选项。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_compare",
+    "ctx": "relationship",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "并排展示两个选项。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_swap",
+    "ctx": "relationship",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "保留同一位置，显示做法或状态变化。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_swap",
+    "ctx": "relationship",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "保留同一位置，显示做法或状态变化。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_verdict",
+    "ctx": "relationship",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "先指出误区，再亮出正确表述。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_verdict",
+    "ctx": "relationship",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "先指出误区，再亮出正确表述。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_flow",
+    "ctx": "process",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "节点随讲解建立，连线逐条接通。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_flow",
+    "ctx": "process",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "节点随讲解建立，连线逐条接通。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_merge",
+    "ctx": "process",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "两至三个来源连接到同一结果。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_merge",
+    "ctx": "process",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "两至三个来源连接到同一结果。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_branch",
+    "ctx": "process",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "一个条件通向两至三个选项。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_branch",
+    "ctx": "process",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "一个条件通向两至三个选项。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_bars",
+    "ctx": "data",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "比较两个到四个有原稿依据的数值。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_bars",
+    "ctx": "data",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "比较两个到四个有原稿依据的数值。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_count",
+    "ctx": "data",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "原稿数字的落点或结果。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_count",
+    "ctx": "data",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "原稿数字的落点或结果。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_timeline",
+    "ctx": "process",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "有顺序的阶段、事件或版本推进。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_timeline",
+    "ctx": "process",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "有顺序的阶段、事件或版本推进。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_focus-box",
+    "ctx": "evidence",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "用四角框住真实资料上的局部。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_focus-box",
+    "ctx": "evidence",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "用四角框住真实资料上的局部。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_scan-line",
+    "ctx": "evidence",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "线条扫向截图需要阅读的一行。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_scan-line",
+    "ctx": "evidence",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "线条扫向截图需要阅读的一行。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_stack-fan",
+    "ctx": "list",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "把并列材料或示例分层铺开。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_stack-fan",
+    "ctx": "list",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "把并列材料或示例分层铺开。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionLane_pin",
+    "ctx": "evidence",
+    "layout": "right",
+    "family": "generic",
+    "minDur": 1,
+    "use": "用引线把一个词与对象局部关联。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
+  },
+  {
+    "type": "MotionPage_pin",
+    "ctx": "evidence",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "用引线把一个词与对象局部关联。用匹配的 elements[].preset 填入绝对时间和坐标。",
+    "props": {}
   }
 ]
