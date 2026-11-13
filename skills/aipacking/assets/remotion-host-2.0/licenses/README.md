@@ -1,5 +1,9 @@
 # Bundled component notices
 
+- [Agent Motion registry](https://agent-motion.com/) original scene components are shipped under [MIT](agent-motion.txt). Component versions are listed in src/motion/native-scenes.json.
+- [SnapCN original scenes](https://github.com/shadcn-labs/snapcn/tree/18b973d7592adf2099a4d5cc2d8970862a4e1172) use the [MIT license](snapcn-native.txt). The local adapter substitutes installed fonts.
+- ShotCraft ListReveal and ResearchCardStackScroll adapt the original [Apache-2.0 source](https://github.com/Vincentwei1021/video-shotcraft/tree/6700db2ba80572ebc777b99d72049679fed9840c), replacing sample content with project inputs.
+
 - [Video ShotCraft](https://github.com/Vincentwei1021/video-shotcraft) is the source of the adapted demo components identified by `external/video-shotcraft/` in `src/m5/templates.generated.js`. The demos have been bundled and adapted for this Remotion workbench. [Apache License 2.0](video-shotcraft.txt).
 - [Magic UI](https://github.com/magicuidesign/magicui) is the source of adapted visual effects. [MIT License](magicui.txt).
 

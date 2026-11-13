@@ -1,0 +1,1064 @@
+[
+  {
+    "id": "AgentMotion_AnimatedCounter",
+    "name": "Animated Counter",
+    "source": "Agent Motion",
+    "revision": "0.3.0",
+    "frames": 120,
+    "width": 1080,
+    "height": 1080,
+    "required": [
+      "value",
+      "label"
+    ],
+    "demo": {
+      "value": 8420,
+      "label": "Active creators",
+      "suffix": "+",
+      "accent": "#c7ff4a",
+      "valueColor": "#f7f7f2",
+      "labelColor": "#c8cac3",
+      "valueSizePercent": 21,
+      "labelSizePercent": 5.5
+    }
+  },
+  {
+    "id": "AgentMotion_AnimatedRouteMap",
+    "name": "Animated Route Map",
+    "source": "Agent Motion",
+    "revision": "0.3.0",
+    "frames": 190,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "points",
+      "links"
+    ],
+    "demo": {
+      "points": [
+        {
+          "id": "new-york",
+          "label": "New York",
+          "latitude": 40.7128,
+          "longitude": -74.006
+        },
+        {
+          "id": "madrid",
+          "label": "Madrid",
+          "latitude": 40.4168,
+          "longitude": -3.7038
+        },
+        {
+          "id": "london",
+          "label": "London",
+          "latitude": 51.5072,
+          "longitude": -0.1276
+        },
+        {
+          "id": "cairo",
+          "label": "Cairo",
+          "latitude": 30.0444,
+          "longitude": 31.2357
+        },
+        {
+          "id": "tokyo",
+          "label": "Tokyo",
+          "latitude": 35.6762,
+          "longitude": 139.6503
+        },
+        {
+          "id": "buenos-aires",
+          "label": "Buenos Aires",
+          "latitude": -34.6037,
+          "longitude": -58.3816
+        },
+        {
+          "id": "nairobi",
+          "label": "Nairobi",
+          "latitude": -1.2921,
+          "longitude": 36.8219
+        },
+        {
+          "id": "oslo",
+          "label": "Oslo",
+          "latitude": 59.9139,
+          "longitude": 10.7522
+        },
+        {
+          "id": "reykjavik",
+          "label": "Reykjavik",
+          "latitude": 64.1466,
+          "longitude": -21.9426
+        },
+        {
+          "id": "riyadh",
+          "label": "Riyadh",
+          "latitude": 24.7136,
+          "longitude": 46.6753
+        },
+        {
+          "id": "athens",
+          "label": "Athens",
+          "latitude": 37.9838,
+          "longitude": 23.7275
+        },
+        {
+          "id": "seoul",
+          "label": "Seoul",
+          "latitude": 37.5665,
+          "longitude": 126.978
+        },
+        {
+          "id": "bangkok",
+          "label": "Bangkok",
+          "latitude": 13.7563,
+          "longitude": 100.5018
+        },
+        {
+          "id": "santiago",
+          "label": "Santiago",
+          "latitude": -33.4489,
+          "longitude": -70.6693
+        },
+        {
+          "id": "lima",
+          "label": "Lima",
+          "latitude": -12.0464,
+          "longitude": -77.0428
+        },
+        {
+          "id": "addis-ababa",
+          "label": "Addis Ababa",
+          "latitude": 8.9806,
+          "longitude": 38.7578
+        },
+        {
+          "id": "cape-town",
+          "label": "Cape Town",
+          "latitude": -33.9249,
+          "longitude": 18.4241
+        }
+      ],
+      "links": [
+        {
+          "from": "new-york",
+          "to": "madrid"
+        },
+        {
+          "from": "madrid",
+          "to": "london"
+        },
+        {
+          "from": "madrid",
+          "to": "cairo"
+        },
+        {
+          "from": "madrid",
+          "to": "tokyo"
+        },
+        {
+          "from": "madrid",
+          "to": "buenos-aires"
+        },
+        {
+          "from": "madrid",
+          "to": "nairobi"
+        },
+        {
+          "from": "london",
+          "to": "oslo"
+        },
+        {
+          "from": "london",
+          "to": "reykjavik"
+        },
+        {
+          "from": "cairo",
+          "to": "riyadh"
+        },
+        {
+          "from": "cairo",
+          "to": "athens"
+        },
+        {
+          "from": "tokyo",
+          "to": "seoul"
+        },
+        {
+          "from": "tokyo",
+          "to": "bangkok"
+        },
+        {
+          "from": "buenos-aires",
+          "to": "santiago"
+        },
+        {
+          "from": "buenos-aires",
+          "to": "lima"
+        },
+        {
+          "from": "nairobi",
+          "to": "addis-ababa"
+        },
+        {
+          "from": "nairobi",
+          "to": "cape-town"
+        }
+      ],
+      "preset": "mono",
+      "dotSize": "medium",
+      "dotJitter": 0.25,
+      "centerLatitude": 18,
+      "centerLongitude": -2,
+      "rotationSpeed": 16,
+      "backsideOpacity": 0.16,
+      "graticuleOpacity": 0.12,
+      "sphereOpacity": 0,
+      "showLabels": true
+    }
+  },
+  {
+    "id": "AgentMotion_ArchitectureDiagram",
+    "name": "Architecture Diagram",
+    "source": "Agent Motion",
+    "revision": "0.2.0",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "nodes",
+      "connections"
+    ],
+    "demo": {
+      "nodes": [
+        {
+          "id": "client",
+          "label": "Web client",
+          "kind": "client",
+          "x": 10,
+          "y": 50
+        },
+        {
+          "id": "api",
+          "label": "Edge API",
+          "kind": "api",
+          "x": 38,
+          "y": 50
+        },
+        {
+          "id": "worker",
+          "label": "Render worker",
+          "kind": "service",
+          "x": 67,
+          "y": 27
+        },
+        {
+          "id": "queue",
+          "label": "Job queue",
+          "kind": "queue",
+          "x": 67,
+          "y": 73
+        },
+        {
+          "id": "db",
+          "label": "Database",
+          "kind": "database",
+          "x": 90,
+          "y": 50
+        }
+      ],
+      "connections": [
+        {
+          "from": "client",
+          "to": "api"
+        },
+        {
+          "from": "api",
+          "to": "worker"
+        },
+        {
+          "from": "api",
+          "to": "queue"
+        },
+        {
+          "from": "worker",
+          "to": "db"
+        },
+        {
+          "from": "queue",
+          "to": "db"
+        }
+      ],
+      "preset": "clean"
+    }
+  },
+  {
+    "id": "AgentMotion_AreaChart",
+    "name": "Area Chart",
+    "source": "Agent Motion",
+    "revision": "0.2.0",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "items"
+    ],
+    "demo": {
+      "items": [
+        {
+          "label": "Jan",
+          "value": 18
+        },
+        {
+          "label": "Feb",
+          "value": 26
+        },
+        {
+          "label": "Mar",
+          "value": 23
+        },
+        {
+          "label": "Apr",
+          "value": 39
+        },
+        {
+          "label": "May",
+          "value": 48
+        },
+        {
+          "label": "Jun",
+          "value": 61
+        }
+      ],
+      "preset": "bold"
+    }
+  },
+  {
+    "id": "AgentMotion_BarChart",
+    "name": "Bar Chart",
+    "source": "Agent Motion",
+    "revision": "0.2.0",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "values",
+      "labels"
+    ],
+    "demo": {
+      "values": [
+        42,
+        68,
+        51,
+        86,
+        73
+      ],
+      "labels": [
+        "Direct",
+        "Social",
+        "Search",
+        "Partner",
+        "Email"
+      ],
+      "preset": "inside"
+    }
+  },
+  {
+    "id": "AgentMotion_BlurFocusList",
+    "name": "Blur Focus List",
+    "source": "Agent Motion",
+    "revision": "0.2.0",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "label",
+      "items"
+    ],
+    "demo": {
+      "label": "Built for",
+      "items": [
+        "speed",
+        "focus",
+        "momentum",
+        "innovation",
+        "execution"
+      ],
+      "preset": "minimal",
+      "paceInFrames": 30,
+      "transitionInFrames": 12,
+      "blurAmount": 10,
+      "loop": false,
+      "showDivider": true
+    }
+  },
+  {
+    "id": "AgentMotion_ChatConversation",
+    "name": "Chat Conversation",
+    "source": "Agent Motion",
+    "revision": "0.9.0",
+    "frames": 150,
+    "width": 1080,
+    "height": 1350,
+    "required": [
+      "contact",
+      "messages"
+    ],
+    "demo": {
+      "contact": "Maya Chen",
+      "messages": [
+        {
+          "text": "Can we make the launch video feel more alive?",
+          "side": "incoming"
+        },
+        {
+          "text": "Already found three components for it.",
+          "side": "outgoing"
+        },
+        {
+          "text": "I can send the first cut in ten minutes.",
+          "side": "outgoing"
+        },
+        {
+          "text": "Perfect — I’ll take a look.",
+          "side": "incoming"
+        }
+      ],
+      "staggerInFrames": 18,
+      "bubbleStyle": "whatsapp",
+      "theme": "light",
+      "contactFontSize": 25,
+      "statusFontSize": 15,
+      "messageFontSize": 22,
+      "composerFontSize": 19,
+      "avatarFontSize": 21
+    }
+  },
+  {
+    "id": "AgentMotion_CodeEditor",
+    "name": "Code Editor",
+    "source": "Agent Motion",
+    "revision": "0.1.0",
+    "frames": 105,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "code"
+    ],
+    "demo": {
+      "code": "const launch = await agentMotion.add('cursor-tour');\n\nrender({\n  component: launch,\n  preset: 'midnight',\n});",
+      "title": "launch.tsx",
+      "language": "TypeScript",
+      "preset": "midnight",
+      "reveal": "lines",
+      "charactersPerFrame": 2,
+      "framesPerLine": 10,
+      "holdDurationInFrames": 45,
+      "highlightLines": [
+        3,
+        4
+      ],
+      "accent": "#c7ff4a"
+    }
+  },
+  {
+    "id": "AgentMotion_CtaCard",
+    "name": "CTA Card",
+    "source": "Agent Motion",
+    "revision": "0.3.0",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "items"
+    ],
+    "demo": {
+      "items": [
+        {
+          "title": "Build your next product video",
+          "detail": "Install editable Remotion components built for coding agents.",
+          "meta": "agent-motion.com"
+        }
+      ],
+      "preset": "launch",
+      "actionLabel": "Get started",
+      "entranceInFrames": 18,
+      "staggerInFrames": 8
+    }
+  },
+  {
+    "id": "AgentMotion_DataTable",
+    "name": "Data Table",
+    "source": "Agent Motion",
+    "revision": "0.3.1",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "columns",
+      "tableData"
+    ],
+    "demo": {
+      "columns": [
+        {
+          "key": "project",
+          "label": "Project",
+          "width": 1.5
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "width": 0.9,
+          "variant": "badge"
+        },
+        {
+          "key": "owner",
+          "label": "Owner",
+          "width": 1
+        },
+        {
+          "key": "progress",
+          "label": "Progress",
+          "width": 0.7,
+          "align": "right"
+        }
+      ],
+      "tableData": [
+        {
+          "project": "Website redesign",
+          "status": "In progress",
+          "owner": "Maya Chen",
+          "progress": "72%"
+        },
+        {
+          "project": "Mobile onboarding",
+          "status": "Ready",
+          "owner": "Alex Morgan",
+          "progress": "100%"
+        },
+        {
+          "project": "Analytics dashboard",
+          "status": "Review",
+          "owner": "Sam Rivera",
+          "progress": "48%"
+        },
+        {
+          "project": "Billing migration",
+          "status": "Planned",
+          "owner": "Noah Williams",
+          "progress": "15%"
+        }
+      ],
+      "preset": "dark",
+      "animationEnabled": true,
+      "entranceInFrames": 20,
+      "staggerInFrames": 7
+    }
+  },
+  {
+    "id": "AgentMotion_DonutChart",
+    "name": "Donut Chart",
+    "source": "Agent Motion",
+    "revision": "0.3.0",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "items"
+    ],
+    "demo": {
+      "items": [
+        {
+          "label": "Organic",
+          "value": 44
+        },
+        {
+          "label": "Paid",
+          "value": 28
+        },
+        {
+          "label": "Partners",
+          "value": 18
+        },
+        {
+          "label": "Other",
+          "value": 10
+        }
+      ],
+      "preset": "dark",
+      "accent": "#8b5cf6",
+      "legendVisible": true,
+      "legendSizePercent": 2.2,
+      "paceInFrames": 12
+    }
+  },
+  {
+    "id": "AgentMotion_FeatureList",
+    "name": "Feature List",
+    "source": "Agent Motion",
+    "revision": "0.2.0",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "title",
+      "features"
+    ],
+    "demo": {
+      "eyebrow": "Why teams switch",
+      "title": "Built for velocity.",
+      "features": [
+        "Discover by intent",
+        "Edit the source",
+        "Render deterministically"
+      ],
+      "accent": "#ff7048"
+    }
+  },
+  {
+    "id": "AgentMotion_OutlineTextEcho",
+    "name": "Outline Text Echo",
+    "source": "Agent Motion",
+    "revision": "0.13.0",
+    "frames": 120,
+    "width": 1080,
+    "height": 1080,
+    "required": [
+      "text"
+    ],
+    "demo": {
+      "text": "5X",
+      "preset": "blue",
+      "horizontalCopiesPerSide": 0,
+      "startFrame": 8,
+      "separationInFrames": 34,
+      "staggerInFrames": 3,
+      "animationEnabled": true
+    }
+  },
+  {
+    "id": "AgentMotion_ProductTimeline",
+    "name": "Product Timeline",
+    "source": "Agent Motion",
+    "revision": "0.1.1",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "title",
+      "milestones"
+    ],
+    "demo": {
+      "title": "A launch in four moves",
+      "milestones": [
+        "Brief",
+        "Compose",
+        "Review",
+        "Publish"
+      ],
+      "accent": "#4ad9ff"
+    }
+  },
+  {
+    "id": "AgentMotion_ProgressRing",
+    "name": "Progress Ring",
+    "source": "Agent Motion",
+    "revision": "0.2.0",
+    "frames": 121,
+    "width": 1080,
+    "height": 1080,
+    "required": [
+      "value",
+      "label"
+    ],
+    "demo": {
+      "value": 78,
+      "label": "Launch readiness",
+      "detail": "All critical checks passed",
+      "accent": "#ffcc33",
+      "textColor": "#ffffff",
+      "progressPerFrame": 1,
+      "holdDurationInFrames": 30
+    }
+  },
+  {
+    "id": "AgentMotion_QuoteHighlight",
+    "name": "Quote Highlight",
+    "source": "Agent Motion",
+    "revision": "0.1.0",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "items"
+    ],
+    "demo": {
+      "title": "Quote Highlight",
+      "items": [
+        {
+          "title": "“Motion should clarify the story, not compete with it.”",
+          "detail": "Agent Motion principles",
+          "meta": "01"
+        }
+      ],
+      "preset": "editorial",
+      "accent": "#f59e0b",
+      "paceInFrames": 14
+    }
+  },
+  {
+    "id": "AgentMotion_TerminalSession",
+    "name": "Terminal Session",
+    "source": "Agent Motion",
+    "revision": "0.2.0",
+    "frames": 129,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "commands",
+      "outputs"
+    ],
+    "demo": {
+      "title": "agent-motion — zsh",
+      "prompt": "studio %",
+      "commands": [
+        "npx @agent-motion/cli search \"product demo\"",
+        "npx @agent-motion/cli add cursor-tour",
+        "npm run render"
+      ],
+      "outputs": [
+        "Found 2 matches: Cursor Tour, Browser Spotlight",
+        "✓ Added Cursor Tour v0.1.0",
+        "✓ Render complete"
+      ],
+      "theme": "dark",
+      "accent": "#67e8f9",
+      "startFrame": 0,
+      "charactersPerFrame": 2.2,
+      "outputCharactersPerFrame": 3,
+      "outputDelayInFrames": 6,
+      "stepGapInFrames": 12,
+      "cursorBlinkInFrames": 8,
+      "fontSize": 30,
+      "autoScroll": true
+    }
+  },
+  {
+    "id": "AgentMotion_TestimonialCard",
+    "name": "Testimonial Card",
+    "source": "Agent Motion",
+    "revision": "0.1.0",
+    "frames": 150,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "items"
+    ],
+    "demo": {
+      "title": "Testimonial Card",
+      "items": [
+        {
+          "title": "“We shipped the launch video in one afternoon.”",
+          "detail": "Maya Chen · Product Designer",
+          "meta": "Northstar Labs"
+        }
+      ],
+      "preset": "editorial",
+      "accent": "#8b5cf6",
+      "paceInFrames": 14
+    }
+  },
+  {
+    "id": "SnapCN_AgentSteps",
+    "name": "AgentSteps",
+    "source": "SnapCN",
+    "revision": "18b973d7592adf2099a4d5cc2d8970862a4e1172",
+    "frames": 160,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "query",
+      "steps",
+      "result"
+    ],
+    "demo": {
+      "query": "Compare source options",
+      "steps": "Read the evidence|Check the dates|Summarize",
+      "result": "Ready to review"
+    }
+  },
+  {
+    "id": "SnapCN_AnswerHighlight",
+    "name": "AnswerHighlight",
+    "source": "SnapCN",
+    "revision": "18b973d7592adf2099a4d5cc2d8970862a4e1172",
+    "frames": 190,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "question",
+      "answer",
+      "statement",
+      "word"
+    ],
+    "demo": {
+      "question": "Where is the evidence?",
+      "answer": "Open the original publication.",
+      "statement": "Read the original source.",
+      "word": "original"
+    }
+  },
+  {
+    "id": "SnapCN_TextBuild",
+    "name": "TextBuild",
+    "source": "SnapCN",
+    "revision": "18b973d7592adf2099a4d5cc2d8970862a4e1172",
+    "frames": 75,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "text"
+    ],
+    "demo": {
+      "text": "Read. Compare. Verify."
+    }
+  },
+  {
+    "id": "SnapCN_TextHighlight",
+    "name": "TextHighlight",
+    "source": "SnapCN",
+    "revision": "18b973d7592adf2099a4d5cc2d8970862a4e1172",
+    "frames": 56,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "highlight"
+    ],
+    "demo": {
+      "before": "Read the ",
+      "highlight": "original source",
+      "after": " first",
+      "preset": "marker"
+    }
+  },
+  {
+    "id": "SnapCN_TextRewrite",
+    "name": "TextRewrite",
+    "source": "SnapCN",
+    "revision": "18b973d7592adf2099a4d5cc2d8970862a4e1172",
+    "frames": 102,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "headline",
+      "keep",
+      "append"
+    ],
+    "demo": {
+      "headline": "Read the short summary",
+      "keep": 0,
+      "append": "Check the original source"
+    }
+  },
+  {
+    "id": "SnapCN_TextSelect",
+    "name": "TextSelect",
+    "source": "SnapCN",
+    "revision": "18b973d7592adf2099a4d5cc2d8970862a4e1172",
+    "frames": 72,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "headline"
+    ],
+    "demo": {
+      "headline": "Read the original source"
+    }
+  },
+  {
+    "id": "SnapCN_TextSwap",
+    "name": "TextSwap",
+    "source": "SnapCN",
+    "revision": "18b973d7592adf2099a4d5cc2d8970862a4e1172",
+    "frames": 90,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "fromText",
+      "toText"
+    ],
+    "demo": {
+      "fromText": "Find the evidence",
+      "toText": "Check the source"
+    }
+  },
+  {
+    "id": "SnapCN_WordGather",
+    "name": "WordGather",
+    "source": "SnapCN",
+    "revision": "18b973d7592adf2099a4d5cc2d8970862a4e1172",
+    "frames": 49,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "text"
+    ],
+    "demo": {
+      "text": "Make the evidence clear"
+    }
+  },
+  {
+    "id": "SnapCN_WordWheel",
+    "name": "WordWheel",
+    "source": "SnapCN",
+    "revision": "18b973d7592adf2099a4d5cc2d8970862a4e1172",
+    "frames": 66,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "headline",
+      "words"
+    ],
+    "demo": {
+      "headline": "Review",
+      "words": "Source, Context, Date, Result"
+    }
+  },
+  {
+    "id": "SnapCN_TitleSweep",
+    "name": "TitleSweep",
+    "source": "SnapCN",
+    "revision": "18b973d7592adf2099a4d5cc2d8970862a4e1172",
+    "frames": 76,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "titles"
+    ],
+    "demo": {
+      "titles": [
+        "Discover",
+        "Compare",
+        "Verify"
+      ]
+    }
+  },
+  {
+    "id": "SnapCN_CheckCycle",
+    "name": "CheckCycle",
+    "source": "SnapCN",
+    "revision": "18b973d7592adf2099a4d5cc2d8970862a4e1172",
+    "frames": 136,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "headline",
+      "words"
+    ],
+    "demo": {
+      "headline": "Review checklist",
+      "words": "Read, Check, Approve"
+    }
+  },
+  {
+    "id": "SnapCN_CountGrid",
+    "name": "CountGrid",
+    "source": "SnapCN",
+    "revision": "18b973d7592adf2099a4d5cc2d8970862a4e1172",
+    "frames": 47,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "from",
+      "to",
+      "noun"
+    ],
+    "demo": {
+      "from": 1,
+      "to": 8,
+      "noun": "sources"
+    }
+  },
+  {
+    "id": "SnapCN_TerminalSimulator",
+    "name": "TerminalSimulator",
+    "source": "SnapCN",
+    "revision": "18b973d7592adf2099a4d5cc2d8970862a4e1172",
+    "frames": 200,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "lines"
+    ],
+    "demo": {
+      "lines": [
+        {
+          "type": "command",
+          "text": "check sources"
+        },
+        {
+          "type": "success",
+          "text": "Sources verified"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ShotCraft_ListReveal",
+    "name": "List Reveal",
+    "source": "ShotCraft",
+    "revision": "6700db2ba80572ebc777b99d72049679fed9840c",
+    "frames": 120,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "title",
+      "subtitle",
+      "items",
+      "kicker"
+    ],
+    "demo": {
+      "title": "Read each step",
+      "subtitle": "Organize the material before the cut.",
+      "items": [
+        "Collect source",
+        "Mark evidence",
+        "Plan motion",
+        "Check preview"
+      ],
+      "kicker": "AIPACKING · WORKFLOW"
+    }
+  },
+  {
+    "id": "ShotCraftExt_ResearchCardStackScroll",
+    "name": "Research Card Stack Scroll",
+    "source": "ShotCraft 扩展批",
+    "revision": "6700db2ba80572ebc777b99d72049679fed9840c",
+    "frames": 144,
+    "width": 1920,
+    "height": 1080,
+    "required": [
+      "items"
+    ],
+    "demo": {
+      "items": [
+        {
+          "title": "Original source",
+          "source": "Documentation"
+        },
+        {
+          "title": "Compare the evidence",
+          "source": "Reference notes"
+        },
+        {
+          "title": "Check the publication date",
+          "source": "Archive record"
+        },
+        {
+          "title": "Record the conclusion",
+          "source": "Review notes"
+        }
+      ]
+    }
+  }
+]

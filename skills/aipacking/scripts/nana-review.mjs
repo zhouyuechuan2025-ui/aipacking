@@ -42,6 +42,7 @@ const text = (s) => typeof s === 'string' && s.trim().length > 0;
 const number = Number.isFinite;
 const equal = (a,b) => number(a) && number(b) && Math.abs(a-b) < 1e-6;
 const renderData = name => json('src/motion/' + name + '.json');
+export const hasNativeScene = (shot) => shot.native != null;
 const note = (s) => String(s).replace(/\|/g, '｜').replace(/\r?\n/g, ' ');
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
@@ -180,11 +181,14 @@ function checkMotionBoard(board, shots, fps) {
       '相邻镜头避免重复实际模板。若同一对象连续变化，说明交接。');
     if (expanded) {
       const used = shots.flatMap(s => s.elements ?? []).filter(e => e.kind === 'semantic' || e.kind === 'motion' || e.animation);
-      const families = new Set(used.map(e => e.kind === 'semantic' ? semantic[e.preset].family : keyframes[e.animation].family));
-      need(used.length > 0 && families.size >= (board.duration >= 30 ? 3 : 1),
+      const families = new Set([
+        ...used.map(e => e.kind === 'semantic' ? semantic[e.preset].family : keyframes[e.animation].family),
+        ...shots.filter(hasNativeScene).map(s => s.type + '/' + (s.native.templateId ?? '')),
+      ]);
+      need(families.size >= (board.duration >= 30 ? 3 : 1),
         '新版须实际使用扩展动效；30 秒以上至少三类不同动作。');
       const sideShots = human.filter(s => !text(s.readingHold));
-      const upgraded = sideShots.filter(s => s.elements?.some(e => e.kind === 'semantic' || e.kind === 'motion' || e.animation));
+      const upgraded = sideShots.filter(s => hasNativeScene(s) || s.elements?.some(e => e.kind === 'semantic' || e.kind === 'motion' || e.animation));
       need(!sideShots.length || upgraded.length >= Math.ceil(sideShots.length / 2),
         '至少一半的普通真人镜头须实际安排新动效元素。');
     }
@@ -198,6 +202,8 @@ function checkMotionBoard(board, shots, fps) {
 function readBoard() {
   const {meta,files} = sources(), b = json('plan/storyboard.json'), seen = new Set();
   const catalog = new Map(json('docs/catalog.json').map((item) => [item.type, item]));
+  const nativeFile = 'src/motion/native-scenes.json';
+  const native = new Map((fs.existsSync(at(nativeFile)) ? json(nativeFile) : []).map(entry => [entry.id,entry]));
   need(equal(b.duration, meta.duration) && Array.isArray(b.shots) && b.shots.length, '分镜必须对应完整源片时长并至少包含一镜。');
   let cursor = 0;
   const shots = [...b.shots].sort((a,b) => a.start - b.start);
@@ -207,6 +213,19 @@ function readBoard() {
     need(s.start - cursor <= .5 + 1e-6, '分镜有超过 0.5 秒未安排：' + s.id); cursor = Math.max(cursor, s.end);
     for (const k of ['quote','purpose','aRoll','bRoll','motion','cue','layout','type']) need(text(s[k]), s.id + ' 缺字段 ' + k);
     need(catalog.has(s.type), s.id + ' 未登记实际模板：' + s.type);
+    const contract = native.get(s.type);
+    if (contract) need(['full','left','right'].includes(s.layout) && s.native && typeof s.native === 'object' && !Array.isArray(s.native)
+      && contract.required.every(key => s.native[key] !== undefined && s.native[key] !== null && s.native[key] !== ''
+        && (!Array.isArray(s.native[key]) || s.native[key].length > 0)),
+      s.id + ' 原版模板须绑定本期参数：' + contract.required.join('、'));
+    if (['NativeRenderedClip','NativeOverlayLayer'].includes(s.type)) {
+      const overlay = s.type === 'NativeOverlayLayer';
+      need((overlay ? s.layout === 'overlay' : s.layout === 'full') && s.native &&
+        (overlay ? ['Overlay Studio','OverlayMotion'] : ['.Motion','Overlay Studio','OverlayMotion']).includes(s.native.sourceProject)
+        && ['media','templateId','sourceRevision'].every(key => text(s.native[key])), s.id + ' 须记录原工程、模板、版本和待渲染媒体路径。');
+    }
+    need(!hasNativeScene(s) || contract || ['NativeRenderedClip','NativeOverlayLayer'].includes(s.type),
+      s.id + ' 的原版模板未登记。');
     need(Array.isArray(s.assets) && s.assets.every((x) => text(x)), s.id + ' assets 必须为字符串清单，没素材写 []。');
   }
   need(b.duration - cursor <= .5 + 1e-6, '分镜漏掉末尾。');
@@ -266,6 +285,8 @@ export function productionCheck() {
   for (const s of shots) {
     const scene = p.scenes.find((x) => x.id === s.id);
     need(scene && s.type === scene.type && s.layout === scene.layout && equal(s.start,scene.start) && equal(s.end,scene.end), '成片分镜偏离已审时间、布局或模板：' + s.id);
+    if (s.native) need(isDeepStrictEqual(s.native, ['NativeRenderedClip','NativeOverlayLayer'].includes(s.type) ? scene.props : scene.props?.native),
+      '原版模板参数与已审分镜不同：' + s.id);
     if ([1,2,3].includes(b.motionVersion)) {
       need(isDeepStrictEqual(scene.camera, s.camera), '运镜与已审分镜不同：' + s.id);
       if (s.type === 'SideBeats') need(isDeepStrictEqual(scene.props, s.side), '侧边编排与已审分镜不同：' + s.id);
@@ -280,6 +301,10 @@ export function productionCheck() {
   for (const scene of p.scenes) {
     const props = scene.props || {};
     const template = scene.type;
+    if (template === 'NativeRenderedClip') need(media(props.media) && /\.mp4$/i.test(props.media),
+      '外部原生模板须绑定原工程生成的本期本地 MP4：' + scene.id);
+    if (template === 'NativeOverlayLayer') need(media(props.media) && /\.mov$/i.test(props.media),
+      '原版叠加层须绑定本期透明 ProRes MOV：' + scene.id);
     const images = (min,max) => Array.isArray(props.images) && props.images.length >= min && props.images.length <= max && props.images.every(media);
     if (template === 'ShotcraftMosaic') need(images(2,12), '拼墙须绑定 2–12 张当前素材：' + scene.id);
     if (template === 'SnapLogoAssemble') need(images(4,12) && media(props.logoSrc) && text(props.brandName)
@@ -323,10 +348,14 @@ function readyStyle() {
     clip => /^review\/previews\/[a-z0-9-]+\/motion(?:-\d+)?\.mp4$/.test(clip) && ready.images.every(image => path.posix.dirname(image) === path.posix.dirname(clip))),
     '新版含运镜时须附同一合成的动态短样。');
   if (b.motionVersion === 3) need(clips.length && Array.isArray(ready.ranges) && ready.ranges.length === clips.length
-    && b.shots.some(s => s.elements?.some(e => (e.kind === 'motion' || e.kind === 'semantic' || e.animation) &&
-      ready.ranges.some(([from,to]) => from <= e.at + 1e-6 && to >= e.at + e.duration - 1e-6))),
+    && hasCompleteMotion(b.shots,ready.ranges),
     '3.0 风格审片至少一段动态短样须看得到完整新增动效。');
   return createHash('sha256').update(ready.production + (ready.ranges ? JSON.stringify(ready.ranges) : '') + hash([...ready.images,...clips])).digest('hex');
+}
+export function hasCompleteMotion(shots,ranges) {
+  const covers = (start,end) => ranges.some(([from,to]) => from <= start + 1e-6 && to >= end - 1e-6);
+  return shots.some(s => (hasNativeScene(s) && covers(s.start,s.end))
+    || s.elements?.some(e => (e.kind === 'motion' || e.kind === 'semantic' || e.animation) && covers(e.at,e.at+e.duration)));
 }
 export function requireStyle() {
   const digest = readyStyle();

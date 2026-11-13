@@ -10,6 +10,7 @@ import { CUSTOM } from './custom';
 import { MOTION_LIBRARY_PAGES, MOTION_LIBRARY_OVERLAYS } from './custom/MotionLibrary';
 import { MotionElements, type MotionElement } from './pages/MotionElements';
 import { SEMANTIC_LANES, SEMANTIC_PAGES } from './motion/semantic-scene';
+import { NATIVE_SCENES, NATIVE_SCENE_LANES, NativeOverlayLayer, NativeRenderedClip } from './motion/NativeScenes';
 import { REPORT_PAGES, REPORT_OVERLAYS } from './pages/report';
 import { REPORT2_PAGES } from './pages/report2';
 import { REPORT3_PAGES } from './pages/report3';
@@ -17,7 +18,7 @@ import { EDITORIAL_PAGES } from './pages/editorial';
 import { EDITORIAL2_PAGES } from './pages/editorial2';
 import { EDITORIAL3_PAGES, EDITORIAL3_OVERLAYS } from './pages/editorial3';
 import { EDITORIAL4_OVERLAYS } from './pages/editorial4';
-export const FULL_PAGES: Record<string, any> = { ...BASE, ...MORE1, ...MORE2, ...MORE3, ...MORE4, ...M5_PAGES, ...REPORT_PAGES, ...REPORT2_PAGES, ...REPORT3_PAGES, ...EDITORIAL_PAGES, ...EDITORIAL2_PAGES, ...EDITORIAL3_PAGES, ...CUSTOM, ...MOTION_LIBRARY_PAGES, ...SEMANTIC_PAGES };
+export const FULL_PAGES: Record<string, any> = { ...BASE, ...MORE1, ...MORE2, ...MORE3, ...MORE4, ...M5_PAGES, ...REPORT_PAGES, ...REPORT2_PAGES, ...REPORT3_PAGES, ...EDITORIAL_PAGES, ...EDITORIAL2_PAGES, ...EDITORIAL3_PAGES, ...CUSTOM, ...MOTION_LIBRARY_PAGES, ...SEMANTIC_PAGES, ...NATIVE_SCENES, NativeRenderedClip };
 import { OVERLAYS as OV0, ProgressNav } from './pages/overlay';
 import { SideBeats } from './pages/SideBeats';
 import { cameraValue, type Camera } from './lib/camera';
@@ -41,7 +42,7 @@ export type Plan = {
   scenes: Scene[];
 };
 type Sub = [number, number, string];
-const OVERLAYS: Record<string, any> = { ...OV0, ...REPORT_OVERLAYS, ...EDITORIAL3_OVERLAYS, ...EDITORIAL4_OVERLAYS, SideBeats, ...MOTION_LIBRARY_OVERLAYS, ...SEMANTIC_LANES };
+const OVERLAYS: Record<string, any> = { ...OV0, ...REPORT_OVERLAYS, ...EDITORIAL3_OVERLAYS, ...EDITORIAL4_OVERLAYS, SideBeats, ...MOTION_LIBRARY_OVERLAYS, ...SEMANTIC_LANES, ...NATIVE_SCENE_LANES, NativeOverlayLayer };
 const TR = 9; // transition frames
 const CYCLE = ['zoom', 'push', 'flip', 'wipe'];
 

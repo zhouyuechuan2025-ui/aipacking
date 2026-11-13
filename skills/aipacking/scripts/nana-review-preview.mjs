@@ -5,7 +5,7 @@ import {randomUUID} from 'node:crypto';
 import {bundle} from '@remotion/bundler';
 import {openBrowser, renderMedia, renderStill, selectComposition} from '@remotion/renderer';
 import {resolvePlan} from '../src/lib/anchors.ts';
-import {productionCheck, styleHash} from './nana-review.mjs';
+import {hasCompleteMotion, productionCheck, styleHash} from './nana-review.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const abs = (...p) => path.join(root,...p);
@@ -33,9 +33,7 @@ try {
     s => !ranges.some(([from,to]) => from <= s.start+.25 && to >= s.end-.25))) {
     fail('请用 --clip 开始秒 结束秒 覆盖每处完整运镜。');
   }
-  if (board.motionVersion === 3 && !board.shots.some(s => s.elements?.some(e =>
-    (e.kind === 'motion' || e.kind === 'semantic' || e.animation) &&
-    ranges.some(([from,to]) => from <= e.at + 1e-6 && to >= e.at + e.duration - 1e-6)))) {
+  if (board.motionVersion === 3 && !hasCompleteMotion(board.shots,ranges)) {
     fail('请用动态短样覆盖至少一个完整新增动效。');
   }
   const dir = 'review/previews/' + production.slice(0,12) + '-' + randomUUID().slice(0,8);

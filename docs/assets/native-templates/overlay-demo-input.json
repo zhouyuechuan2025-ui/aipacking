@@ -1,0 +1,22 @@
+{
+  "theme": "dark",
+  "cards": [
+    {
+      "params": {
+        "bKicker": "转述",
+        "bTitle": "看转引",
+        "bSub": "核对出处",
+        "aKicker": "原始资料",
+        "aTitle": "查原文",
+        "soundEnabled": false,
+        "winner": "a",
+        "aSub": "找到发布页面"
+      },
+      "id": "case",
+      "kind": "versus-card",
+      "start": 0,
+      "end": 3.2
+    }
+  ],
+  "version": 1
+}

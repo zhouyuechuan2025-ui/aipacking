@@ -4771,5 +4771,488 @@
     "minDur": 1,
     "use": "用引线把一个词与对象局部关联。用匹配的 elements[].preset 填入绝对时间和坐标。",
     "props": {}
+  },
+  {
+    "type": "AgentMotion_AnimatedCounter",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Animated Counter，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "value": null,
+        "label": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_AnimatedRouteMap",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Animated Route Map，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "points": null,
+        "links": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_ArchitectureDiagram",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Architecture Diagram，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "nodes": null,
+        "connections": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_AreaChart",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Area Chart，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "items": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_BarChart",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Bar Chart，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "values": null,
+        "labels": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_BlurFocusList",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Blur Focus List，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "label": null,
+        "items": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_ChatConversation",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Chat Conversation，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "contact": null,
+        "messages": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_CodeEditor",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Code Editor，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "code": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_CtaCard",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "CTA Card，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "items": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_DataTable",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Data Table，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "columns": null,
+        "tableData": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_DonutChart",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Donut Chart，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "items": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_FeatureList",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Feature List，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "title": null,
+        "features": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_OutlineTextEcho",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Outline Text Echo，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "text": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_ProductTimeline",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Product Timeline，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "title": null,
+        "milestones": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_ProgressRing",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Progress Ring，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "value": null,
+        "label": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_QuoteHighlight",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Quote Highlight，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "items": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_TerminalSession",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Terminal Session，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "commands": null,
+        "outputs": null
+      }
+    }
+  },
+  {
+    "type": "AgentMotion_TestimonialCard",
+    "ctx": "Agent Motion",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Testimonial Card，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "items": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_AgentSteps",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "AgentSteps，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "query": null,
+        "steps": null,
+        "result": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_AnswerHighlight",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "AnswerHighlight，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "question": null,
+        "answer": null,
+        "statement": null,
+        "word": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_TextBuild",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "TextBuild，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "text": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_TextHighlight",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "TextHighlight，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "highlight": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_TextRewrite",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "TextRewrite，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "headline": null,
+        "keep": null,
+        "append": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_TextSelect",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "TextSelect，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "headline": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_TextSwap",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "TextSwap，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "fromText": null,
+        "toText": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_WordGather",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "WordGather，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "text": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_WordWheel",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "WordWheel，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "headline": null,
+        "words": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_TitleSweep",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "TitleSweep，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "titles": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_CheckCycle",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "CheckCycle，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "headline": null,
+        "words": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_CountGrid",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "CountGrid，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "from": null,
+        "to": null,
+        "noun": null
+      }
+    }
+  },
+  {
+    "type": "SnapCN_TerminalSimulator",
+    "ctx": "SnapCN",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "TerminalSimulator，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "lines": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraft_ListReveal",
+    "ctx": "ShotCraft",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "List Reveal，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "title": null,
+        "subtitle": null,
+        "items": null,
+        "kicker": null
+      }
+    }
+  },
+  {
+    "type": "ShotCraftExt_ResearchCardStackScroll",
+    "ctx": "ShotCraft 扩展批",
+    "layout": "full|left|right",
+    "family": "generic",
+    "minDur": 1.5,
+    "use": "Research Card Stack Scroll，props.native 绑定本期内容。",
+    "props": {
+      "native": {
+        "items": null
+      }
+    }
+  },
+  {
+    "type": "NativeRenderedClip",
+    "ctx": "外部原生模板",
+    "layout": "full",
+    "family": "generic",
+    "minDur": 1,
+    "use": "使用原工程渲染的本期 MP4，按来源和版本登记。",
+    "props": {
+      "media": "native/scene.mp4",
+      "sourceProject": ".Motion",
+      "templateId": "kinetic-tech/B1",
+      "sourceRevision": "0.2.7-open-beta"
+    }
+  },
+  {
+    "type": "NativeOverlayLayer",
+    "ctx": "外部原生模板",
+    "layout": "overlay",
+    "family": "generic",
+    "minDur": 1,
+    "use": "叠入 Overlay Studio 或 OverlayMotion 的原版透明 MOV。",
+    "props": {
+      "media": "native/overlay.mov",
+      "sourceProject": "Overlay Studio",
+      "templateId": "versus-card",
+      "sourceRevision": "1.1.1"
+    }
   }
 ]

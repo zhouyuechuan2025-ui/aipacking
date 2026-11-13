@@ -6,15 +6,21 @@
 
 你不需要自己写代码或逐个调整动画：在 Codex 或支持本地文件、终端操作的 AI Agent 里安装好项目，把 **MP4 视频和对应的 SRT 字幕**交给它，用大白话描述需求即可。AI 先给你看方案，确认后再制作、检查和导出。
 
-## aipacking 3.0
+## aipacking 3.1 · 原版模板
 
-适合给 **16:9 真人口播** 加章节进度、侧边动效和语义图解。3.0 新增 **139 项可调用动效**，包括 Animate.css 的 97 项关键帧、Magic CSS 的 24 项关键帧和 18 项内容动效。侧边标签可以错拍出现，清单可以逐项确认，图解可以分流、汇流，真实证据可用角框和扫线标出阅读位置。
+适合给 **16:9 真人口播** 加章节进度、侧边动效和语义图解。3.1 接入 Agent Motion、SnapCN 和 ShotCraft 原版组件，支持从 .Motion 与 Overlay Studio 的原工程接入实际渲染。逐镜选用真实模板，替换本期素材，并审入场、停留和交接。
 
 先用 HyperFrames 交逐段分镜，经你确认后，再从实际 Remotion 合成里抽 3–5 张预览，并审能看见新增动效和完整运镜的动态短样。你确认预览后，才用同一套分镜和组件导出完整 MP4，保留原声原速。
 
-[下载 3.0 ZIP](downloads/aipacking-3.0.zip?raw=true) · [安装与使用说明](docs/AIPACKING.md) · [完整版源码](skills/aipacking/SKILL.md)
+[下载 3.1 ZIP](downloads/aipacking-3.1.zip?raw=true) · [安装与使用说明](docs/AIPACKING.md) · [原版模板、来源与参数](docs/NATIVE-TEMPLATES.md)
 
-### 最新案例与动效图鉴
+### 原版模板实渲染
+
+![ShotCraft 扩展镜头 · 资料卡叠压](docs/assets/native-templates/ShotCraftExt_ResearchCardStackScroll-middle.png)
+
+[ShotCraft、Agent Motion 与 SnapCN 合辑](docs/assets/native-templates/native-showcase.mp4?raw=true) · [.Motion 原工程](docs/assets/native-templates/motiongit-native-demo.mp4?raw=true) · [Overlay Studio 原版卡](docs/assets/native-templates/overlay-native-demo.mp4?raw=true)
+
+### 辅助动效与流程案例
 
 案例使用公开可复现的合成人物和示例字幕，由 aipacking 3.0 实际渲染。
 
@@ -26,7 +32,7 @@
 | --- | --- |
 | ![从分镜分流到预览与整片](docs/assets/aipacking-3/branch.png) | ![原声和字幕汇到时间轴](docs/assets/aipacking-3/merge.png) |
 
-[播放新版案例 MP4](docs/assets/aipacking-3/case-demo.mp4?raw=true) · [播放全部 139 项动效图鉴 MP4](docs/assets/aipacking-3/motion-gallery.mp4?raw=true) · [按来源查看每项 ID 和使用条件](docs/MOTION-INDEX.md)
+[播放 3.0 辅助动效案例](docs/assets/aipacking-3/case-demo.mp4?raw=true) · [辅助动效图鉴](docs/assets/aipacking-3/motion-gallery.mp4?raw=true) · [辅助预设索引](docs/MOTION-INDEX.md)
 
 ## 能帮你做什么
 
@@ -74,7 +80,7 @@ https://github.com/zhouyuechuan2025-ui/aipacking
 
 ## 基础 CLI 版 v0.6
 
-以下说明适用于仓库根目录的基础版。用 `npm run package-video` 完成基础包装或从 SRT 生成透明 MOV。aipacking 3.0 的动效工作流通过独立作业目录运行，命令见 [使用说明](docs/AIPACKING.md)。
+以下说明适用于仓库根目录的基础版。用 `npm run package-video` 完成基础包装或从 SRT 生成透明 MOV。aipacking 3.1 的动效工作流通过独立作业目录运行，命令见 [使用说明](docs/AIPACKING.md)。
 
 ## 前期素材准备
 

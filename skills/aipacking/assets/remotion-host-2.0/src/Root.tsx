@@ -17,6 +17,7 @@ export const Root: React.FC = () => (
   <>
     {/* 成片：口播视频 + 动效包装 + 必要时重绘字幕 */}
     <Composition id="Final" component={Main as any} durationInFrames={dur} fps={P.meta.fps} width={1920} height={1080}
+      calculateMetadata={({props}: {props:React.ComponentProps<typeof Main>}) => ({fps:props.plan.meta.fps,durationInFrames:Math.max(1,Math.round(props.plan.meta.duration*props.plan.meta.fps))})}
       defaultProps={{ plan: P, subs: subs as any, transparent: false }} />
     {/* 透明包装层：导出 ProRes 4444 MOV，叠在原视频上继续剪 */}
     <Composition id="Overlay" component={Main as any} durationInFrames={dur} fps={P.meta.fps} width={1920} height={1080}

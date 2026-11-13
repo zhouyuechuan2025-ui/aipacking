@@ -1,4 +1,4 @@
-# 模板目录（233 个）
+# 模板目录（268 个）
 
 > 由 `npm run catalog` 从 docs/catalog.json 自动生成，不要手改。props 里的 `at`/`xxxAt` 用来让元素卡在某个词说出口的瞬间：**写原句里的关键词**（如 `"at": "绝望"`），脚本自动换算成秒；示例里省略了 at，元素会按默认节奏依次出现。每页的时长不能短于「最短时长」，否则校验报错。视觉硬规则见 docs/visual-rules.md。
 
@@ -5508,5 +5508,638 @@
  "type": "MotionPage_pin",
  "layout": "full",
  "props": {}
+}
+```
+
+## Agent Motion
+
+### AgentMotion_AnimatedCounter  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Animated Counter，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_AnimatedCounter",
+ "layout": "full",
+ "props": {
+  "native": {
+   "value": null,
+   "label": null
+  }
+ }
+}
+```
+
+### AgentMotion_AnimatedRouteMap  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Animated Route Map，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_AnimatedRouteMap",
+ "layout": "full",
+ "props": {
+  "native": {
+   "points": null,
+   "links": null
+  }
+ }
+}
+```
+
+### AgentMotion_ArchitectureDiagram  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Architecture Diagram，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_ArchitectureDiagram",
+ "layout": "full",
+ "props": {
+  "native": {
+   "nodes": null,
+   "connections": null
+  }
+ }
+}
+```
+
+### AgentMotion_AreaChart  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Area Chart，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_AreaChart",
+ "layout": "full",
+ "props": {
+  "native": {
+   "items": null
+  }
+ }
+}
+```
+
+### AgentMotion_BarChart  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Bar Chart，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_BarChart",
+ "layout": "full",
+ "props": {
+  "native": {
+   "values": null,
+   "labels": null
+  }
+ }
+}
+```
+
+### AgentMotion_BlurFocusList  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Blur Focus List，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_BlurFocusList",
+ "layout": "full",
+ "props": {
+  "native": {
+   "label": null,
+   "items": null
+  }
+ }
+}
+```
+
+### AgentMotion_ChatConversation  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Chat Conversation，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_ChatConversation",
+ "layout": "full",
+ "props": {
+  "native": {
+   "contact": null,
+   "messages": null
+  }
+ }
+}
+```
+
+### AgentMotion_CodeEditor  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Code Editor，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_CodeEditor",
+ "layout": "full",
+ "props": {
+  "native": {
+   "code": null
+  }
+ }
+}
+```
+
+### AgentMotion_CtaCard  `full|left|right`
+- 语境：Agent Motion
+- 何时用：CTA Card，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_CtaCard",
+ "layout": "full",
+ "props": {
+  "native": {
+   "items": null
+  }
+ }
+}
+```
+
+### AgentMotion_DataTable  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Data Table，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_DataTable",
+ "layout": "full",
+ "props": {
+  "native": {
+   "columns": null,
+   "tableData": null
+  }
+ }
+}
+```
+
+### AgentMotion_DonutChart  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Donut Chart，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_DonutChart",
+ "layout": "full",
+ "props": {
+  "native": {
+   "items": null
+  }
+ }
+}
+```
+
+### AgentMotion_FeatureList  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Feature List，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_FeatureList",
+ "layout": "full",
+ "props": {
+  "native": {
+   "title": null,
+   "features": null
+  }
+ }
+}
+```
+
+### AgentMotion_OutlineTextEcho  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Outline Text Echo，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_OutlineTextEcho",
+ "layout": "full",
+ "props": {
+  "native": {
+   "text": null
+  }
+ }
+}
+```
+
+### AgentMotion_ProductTimeline  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Product Timeline，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_ProductTimeline",
+ "layout": "full",
+ "props": {
+  "native": {
+   "title": null,
+   "milestones": null
+  }
+ }
+}
+```
+
+### AgentMotion_ProgressRing  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Progress Ring，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_ProgressRing",
+ "layout": "full",
+ "props": {
+  "native": {
+   "value": null,
+   "label": null
+  }
+ }
+}
+```
+
+### AgentMotion_QuoteHighlight  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Quote Highlight，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_QuoteHighlight",
+ "layout": "full",
+ "props": {
+  "native": {
+   "items": null
+  }
+ }
+}
+```
+
+### AgentMotion_TerminalSession  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Terminal Session，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_TerminalSession",
+ "layout": "full",
+ "props": {
+  "native": {
+   "commands": null,
+   "outputs": null
+  }
+ }
+}
+```
+
+### AgentMotion_TestimonialCard  `full|left|right`
+- 语境：Agent Motion
+- 何时用：Testimonial Card，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "AgentMotion_TestimonialCard",
+ "layout": "full",
+ "props": {
+  "native": {
+   "items": null
+  }
+ }
+}
+```
+
+## SnapCN
+
+### SnapCN_AgentSteps  `full|left|right`
+- 语境：SnapCN
+- 何时用：AgentSteps，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "SnapCN_AgentSteps",
+ "layout": "full",
+ "props": {
+  "native": {
+   "query": null,
+   "steps": null,
+   "result": null
+  }
+ }
+}
+```
+
+### SnapCN_AnswerHighlight  `full|left|right`
+- 语境：SnapCN
+- 何时用：AnswerHighlight，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "SnapCN_AnswerHighlight",
+ "layout": "full",
+ "props": {
+  "native": {
+   "question": null,
+   "answer": null,
+   "statement": null,
+   "word": null
+  }
+ }
+}
+```
+
+### SnapCN_TextBuild  `full|left|right`
+- 语境：SnapCN
+- 何时用：TextBuild，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "SnapCN_TextBuild",
+ "layout": "full",
+ "props": {
+  "native": {
+   "text": null
+  }
+ }
+}
+```
+
+### SnapCN_TextHighlight  `full|left|right`
+- 语境：SnapCN
+- 何时用：TextHighlight，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "SnapCN_TextHighlight",
+ "layout": "full",
+ "props": {
+  "native": {
+   "highlight": null
+  }
+ }
+}
+```
+
+### SnapCN_TextRewrite  `full|left|right`
+- 语境：SnapCN
+- 何时用：TextRewrite，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "SnapCN_TextRewrite",
+ "layout": "full",
+ "props": {
+  "native": {
+   "headline": null,
+   "keep": null,
+   "append": null
+  }
+ }
+}
+```
+
+### SnapCN_TextSelect  `full|left|right`
+- 语境：SnapCN
+- 何时用：TextSelect，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "SnapCN_TextSelect",
+ "layout": "full",
+ "props": {
+  "native": {
+   "headline": null
+  }
+ }
+}
+```
+
+### SnapCN_TextSwap  `full|left|right`
+- 语境：SnapCN
+- 何时用：TextSwap，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "SnapCN_TextSwap",
+ "layout": "full",
+ "props": {
+  "native": {
+   "fromText": null,
+   "toText": null
+  }
+ }
+}
+```
+
+### SnapCN_WordGather  `full|left|right`
+- 语境：SnapCN
+- 何时用：WordGather，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "SnapCN_WordGather",
+ "layout": "full",
+ "props": {
+  "native": {
+   "text": null
+  }
+ }
+}
+```
+
+### SnapCN_WordWheel  `full|left|right`
+- 语境：SnapCN
+- 何时用：WordWheel，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "SnapCN_WordWheel",
+ "layout": "full",
+ "props": {
+  "native": {
+   "headline": null,
+   "words": null
+  }
+ }
+}
+```
+
+### SnapCN_TitleSweep  `full|left|right`
+- 语境：SnapCN
+- 何时用：TitleSweep，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "SnapCN_TitleSweep",
+ "layout": "full",
+ "props": {
+  "native": {
+   "titles": null
+  }
+ }
+}
+```
+
+### SnapCN_CheckCycle  `full|left|right`
+- 语境：SnapCN
+- 何时用：CheckCycle，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "SnapCN_CheckCycle",
+ "layout": "full",
+ "props": {
+  "native": {
+   "headline": null,
+   "words": null
+  }
+ }
+}
+```
+
+### SnapCN_CountGrid  `full|left|right`
+- 语境：SnapCN
+- 何时用：CountGrid，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "SnapCN_CountGrid",
+ "layout": "full",
+ "props": {
+  "native": {
+   "from": null,
+   "to": null,
+   "noun": null
+  }
+ }
+}
+```
+
+### SnapCN_TerminalSimulator  `full|left|right`
+- 语境：SnapCN
+- 何时用：TerminalSimulator，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "SnapCN_TerminalSimulator",
+ "layout": "full",
+ "props": {
+  "native": {
+   "lines": null
+  }
+ }
+}
+```
+
+## ShotCraft
+
+### ShotCraft_ListReveal  `full|left|right`
+- 语境：ShotCraft
+- 何时用：List Reveal，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "ShotCraft_ListReveal",
+ "layout": "full",
+ "props": {
+  "native": {
+   "title": null,
+   "subtitle": null,
+   "items": null,
+   "kicker": null
+  }
+ }
+}
+```
+
+## ShotCraft 扩展批
+
+### ShotCraftExt_ResearchCardStackScroll  `full|left|right`
+- 语境：ShotCraft 扩展批
+- 何时用：Research Card Stack Scroll，props.native 绑定本期内容。
+- 最短时长：1.5 秒
+- 示例：
+```json
+{
+ "type": "ShotCraftExt_ResearchCardStackScroll",
+ "layout": "full",
+ "props": {
+  "native": {
+   "items": null
+  }
+ }
+}
+```
+
+## 外部原生模板
+
+### NativeRenderedClip  `full`
+- 语境：外部原生模板
+- 何时用：使用原工程渲染的本期 MP4，按来源和版本登记。
+- 最短时长：1 秒
+- 示例：
+```json
+{
+ "type": "NativeRenderedClip",
+ "layout": "full",
+ "props": {
+  "media": "native/scene.mp4",
+  "sourceProject": ".Motion",
+  "templateId": "kinetic-tech/B1",
+  "sourceRevision": "0.2.7-open-beta"
+ }
+}
+```
+
+### NativeOverlayLayer  `overlay`
+- 语境：外部原生模板
+- 何时用：叠入 Overlay Studio 或 OverlayMotion 的原版透明 MOV。
+- 最短时长：1 秒
+- 示例：
+```json
+{
+ "type": "NativeOverlayLayer",
+ "layout": "overlay",
+ "props": {
+  "media": "native/overlay.mov",
+  "sourceProject": "Overlay Studio",
+  "templateId": "versus-card",
+  "sourceRevision": "1.1.1"
+ }
 }
 ```

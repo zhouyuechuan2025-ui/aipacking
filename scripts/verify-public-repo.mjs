@@ -5,7 +5,11 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 
 const textExtensions = new Set(['', '.md', '.txt', '.json', '.yaml', '.yml', '.ts', '.tsx', '.js', '.mjs', '.css', '.html', '.gitignore', '.npmrc']);
 const sourceMedia = new Set(['.mp4', '.mov', '.mkv', '.avi', '.webm', '.wav', '.mp3', '.m4a']);
-const syntheticDemos = new Set(['docs/assets/aipacking-3/case-demo.mp4', 'docs/assets/aipacking-3/motion-gallery.mp4']);
+const syntheticDemos = new Set([
+  'docs/assets/aipacking-3/case-demo.mp4', 'docs/assets/aipacking-3/motion-gallery.mp4',
+  'docs/assets/native-templates/native-showcase.mp4', 'docs/assets/native-templates/motiongit-native-demo.mp4',
+  'docs/assets/native-templates/overlay-native-demo.mp4',
+]);
 const directDPath = new RegExp(`\\b${['D', ':', '\\\\'].join('')}`, 'i');
 const userPath = new RegExp(`[A-Z]:${['\\\\', 'Users', '\\\\', '[^\\\\]+', '\\\\'].join('')}`, 'i');
 const nonPublicTerms = [new RegExp(['motion', 'playground'].join('\\s*'), 'i'), new RegExp(['动效', '工作台'].join('\\s*'), 'i')];
