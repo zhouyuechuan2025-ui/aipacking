@@ -1,1 +1,0 @@
-export const loadFont=(...args:any[])=>({fontFamily:'"Inter Tight", "Noto Sans SC", sans-serif',waitUntilDone:()=>Promise.resolve()});

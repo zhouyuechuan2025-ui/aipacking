@@ -1,102 +1,23 @@
 # aipacking
 
-**把口播视频和字幕交给 AI，让它帮你完成画面包装。**
+为 16:9 真人口播 MP4 和同版 SRT 添加画面包装。按台词组织标题、侧边重点、流程图和真实资料，配合人物窗口变化，并在全片显示顶部章节轴。按原片时间线制作，可保留原声和原速。
 
-这是我创建的一套 AI 口播视频包装 Skill，适合知识分享、AI 工具介绍和教程讲解。它会根据你说的内容，设计标题、重点信息、流程图和简笔画，让人物画面与辅助信息配合出现，而不只是给视频加一层字幕。
+[下载 aipacking ZIP](downloads/aipacking.zip?raw=true) · [安装与使用](docs/AIPACKING.md)
 
-你不需要自己写代码或逐个调整动画：在 Codex 或支持本地文件、终端操作的 AI Agent 里安装好项目，把 **MP4 视频和对应的 SRT 字幕**交给它，用大白话描述需求即可。AI 先给你看方案，确认后再制作、检查和导出。
-
-## aipacking
-
-面向 16:9 真人口播。使用原版工作台的 27 个模板、7 个 Tech 组件及连续动效，按台词编排人物、图解和真实资料。顶部章节轴贯穿全片。
-
-[下载 aipacking ZIP](downloads/aipacking.zip?raw=true) · [安装与使用](docs/AIPACKING.md) · [aipacking 模板](docs/TEMPLATES.md) · [3.3 历史模板与样片](docs/NATIVE-TEMPLATES.md)
-
-### aipacking 实渲染示例
-
-以下是合成演示素材的实际渲染。
-
-| 开场与章节轴 | 投入到结果 |
-| --- | --- |
-| ![开场与章节轴](docs/assets/aipacking-demo/opening.jpg) | ![流程图](docs/assets/aipacking-demo/flow.jpg) |
-
-| 资料窗口 | 人物收窗 |
-| --- | --- |
-| ![资料窗口](docs/assets/aipacking-demo/evidence.jpg) | ![人物收窗](docs/assets/aipacking-demo/presenter.jpg) |
-
-[播放收窗与回位](docs/assets/aipacking-demo/preview.mp4?raw=true)
-
-
-<details>
-<summary>3.0 历史合成案例</summary>
-
-### 历史案例
-
-案例使用公开可复现的合成人物和示例字幕，由 aipacking 3.0 实际渲染。
-
-| 开场侧边入场 | 真人同屏逐项勾选 |
-| --- | --- |
-| ![开场侧边标签和逐字输入](docs/assets/aipacking-3/opening.png) | ![同屏核对清单](docs/assets/aipacking-3/side-checklist.png) |
-
-| 全屏分流图 | 同屏汇流 |
-| --- | --- |
-| ![从分镜分流到预览与整片](docs/assets/aipacking-3/branch.png) | ![原声和字幕汇到时间轴](docs/assets/aipacking-3/merge.png) |
-
-[播放 3.0 辅助动效案例](docs/assets/aipacking-3/case-demo.mp4?raw=true) · [辅助动效图鉴](docs/assets/aipacking-3/motion-gallery.mp4?raw=true) · [辅助预设索引](docs/MOTION-INDEX.md)
-
-</details>
-
-## 能帮你做什么
-
-- **突出重点**：把口播里的关键词、要点和流程变成清楚的画面信息。
-- **丰富画面**：用侧边信息、逐步展开的图解和必要的人物窗口变化解释内容，轻推留给关键落点。
-- **统一风格**：选择深色或浅色，让配色、文字和图形保持一致。
-- **交付成片**：按确认的方案输出带包装的 MP4，并检查字幕、遮挡和文件完整性。
-
-保留你的视频、原声和完整字幕，把重点讲得更清楚。动效是为内容服务，不是每句话都塞一个特效。
-
-## 怎么用：复制两段话就可以开始
-
-### 1. 让 AI 帮你安装
-
-在 Codex 或其他具备本地执行能力的 AI Agent 中，新建一个对话，复制下面这段话：
+准备一个兼容 Motion Studio / Remotion 的独立作业工程，以及 Node.js、工程依赖、FFmpeg 和 ffprobe。下载并解压 ZIP 后，可以把下面这段话连同视频、字幕和工程路径一起交给支持本地执行的 Agent：
 
 ```text
-请帮我安装并配置这个 AI 口播视频包装 Skill：
-https://github.com/zhouyuechuan2025-ui/aipacking
-
-先读仓库的 README.md 和 docs/AIPACKING.md。
-把 skills/aipacking 整个目录安装为 Skill，并检查所需依赖。
-不要覆盖我已有的同名项目或 Skill，遇到冲突先告诉我。
-完成后检查是否能调用，并告诉我接下来把视频和字幕放在哪里。
+请读取我解压的 aipacking 包中的 SKILL.md，按包内说明在我的独立作业工程中安装和运行。
+用我提供的 MP4 和同版 SRT 做口播包装，保持原声原速，顶部显示章节轴。
 ```
 
-第一次需要准备运行环境，后面可以复用。同一段安装提示词不代表所有 Agent 都已测试兼容；仅能聊天、不能读取本地文件或运行命令的工具无法直接制作视频。
+## 历史基础 CLI v0.6
 
-### 2. 把 MP4 和 SRT 交给它
-
-把文件添加到对话，或告诉 AI 它们在电脑里的位置，再发：
-
-```text
-请用 $aipacking 处理我提供的真人口播 MP4 和同版 SRT。
-先给我看逐段分镜，标明时间、台词、模板、动效触发词和缺失素材。
-普通口播稳镜头，只在关键落点轻推。用侧边对象变化、真实资料和图解带节奏，顶部显示章节进度。
-分镜确认后，给我看 3–5 张实际 Remotion 预览和完整运镜的动态短样。预览确认后再出全片。
-保留原声原速，避开脸和字幕，示意图与真实截图分清。
-最终需要一个带包装的 MP4，不要覆盖我的原视频。
-```
-
-你也可以补充一句：“用浅色风格”“这段重点展示流程”或“动效少一点，优先保证看得清楚”。不满意的地方直接在对话里提出，继续调整即可。
-
-**交素材 → 确认分镜 → 看实际预览 → 确认后导出。** [查看完整启动提示词](docs/AIPACKING.md)。
-
-## 基础 CLI 版 v0.6
-
-以下说明适用于仓库根目录的基础版。用 `npm run package-video` 完成基础包装或从 SRT 生成透明 MOV。aipacking 的动效工作流通过独立作业目录运行，命令见 [使用说明](docs/AIPACKING.md)。
+以下说明适用于仓库根目录的基础版。用 `npm run package-video` 完成基础包装或从 SRT 生成透明 MOV。aipacking 请使用上方下载包。
 
 ## 前期素材准备
 
-先剪好原片与对应字幕。本 Skill 负责画面包装，**不处理重读、漏读和气口**，不重排讲解，不追加原稿没有的数字、操作步骤或结论。目前支持 **16:9 横屏**，竖屏暂不支持。
+先剪好原片与对应字幕。基础 CLI 负责画面包装，**不处理重读、漏读和气口**，不重排讲解，不追加原稿没有的数字、操作步骤或结论。目前支持 **16:9 横屏**，竖屏暂不支持。
 
 - **视频 + SRT**：默认推荐，直接合成 MP4，检查真人位置与字幕。
 - **只提供 SRT**：按明确的画布尺寸生成透明 MOV，不能据此判断真实人物是否被挡。

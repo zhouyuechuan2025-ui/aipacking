@@ -1,21 +1,9 @@
-Nana AI Video Packaging Skill
+aipacking
 Copyright 2026 Nana AI
 
-This repository contains original orchestration, planning, validation, and
-visual component code released under the MIT License.
-
-Remotion is used as a dependency and has its own license and commercial-use
-terms. Review https://www.remotion.dev/license before commercial use.
-
-HyperFrames is used for aipacking storyboards and is available
-through the basic CLI's optional adapter. It remains subject to its
-upstream license.
-
-aipacking includes adapted Video ShotCraft demos under the Apache License 2.0
-and Magic UI effects, Snapcn components, RenderComp titles, Animate.css
-keyframes and Magic CSS keyframes under the MIT License.
-See skills/aipacking/assets/remotion-host-2.0/licenses/
-for attribution and license texts.
+The repository license applies to original repository code.
+The aipacking download retains its own notices and license files.
+See the relevant terms before redistributing dependencies, fonts, or media.
 
 Names, portraits, logos, trademarks, and third-party media are not granted by
 the MIT License unless a file explicitly states otherwise.

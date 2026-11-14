@@ -1,4 +1,4 @@
 interface:
   display_name: "aipacking"
-  short_description: "Talking-head layouts, source keywords and verified delivery"
-  default_prompt: "Use $aipacking to inspect my MP4 and SRT, prepare Gate A, then package the approved video with titles, side cards, source captions and verified output."
+  short_description: "Package a talking-head MP4 and matching SRT"
+  default_prompt: "Use the aipacking download and follow its SKILL.md to package my MP4 and SRT in a compatible workbench."

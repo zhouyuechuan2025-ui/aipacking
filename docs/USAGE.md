@@ -1,6 +1,6 @@
 # Usage · Basic CLI
 
-This guide covers the root `package-video` CLI. For aipacking 3.2, see the [installation guide and two-review workflow](AIPACKING.md).
+This guide covers the root `package-video` CLI. For aipacking, see the [installation guide](AIPACKING.md).
 
 ## Install
 

@@ -1,7 +1,0 @@
-import assert from'node:assert/strict';import{expandReferenceStages,checkMotionRhythm}from'./check-motion-rhythm.mjs';
-const scene={id:'chain',type:'RefContinuity',start:0,end:7.75,props:{chain:'opening',study:false,sourceCueIds:[1,2],content:{hero:['AI','变现']},stageMap:[{referenceStart:0,referenceEnd:7.75,frames:232.5}]}};
-const r=expandReferenceStages([scene]);assert.deepEqual(r.errors,[]);assert.equal(r.scenes.length,3);assert.equal(r.scenes[0].visual.templateId,'RefContinuity/backstage/hero');assert.equal(r.scenes[1].visual.templateId,'RefContinuity/backstage/tasks');assert.equal(r.scenes[2].visual.templateId,'RefContinuity/backstage/results');
-const clipped=structuredClone(scene);clipped.end=2;clipped.props.stageMap=[{referenceStart:1.5,referenceEnd:3.5,frames:60}];assert.equal(expandReferenceStages([clipped]).scenes.length,1);assert.equal(expandReferenceStages([clipped]).scenes[0].visual.templateId,r.scenes[1].visual.templateId);
-const invalid=structuredClone(scene);invalid.props.stageMap=[{referenceStart:19,referenceEnd:40,frames:232.5}];assert.ok(expandReferenceStages([invalid]).errors.length);
-const duplicate=Array.from({length:3},(_,i)=>({...clipped,id:'renamed-'+i,start:i*2,end:i*2+2}));assert.ok(checkMotionRhythm({meta:{duration:6,fps:30},scenes:duplicate}).errors.some(x=>x.includes('repeats 3 times')));
-console.log('PASS real reference-stage expansion, same-stage clips merged, unmapped intervals blocked, aliases still rejected');

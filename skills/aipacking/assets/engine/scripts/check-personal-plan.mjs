@@ -1,7 +1,0 @@
-import fs from 'node:fs';import path from 'node:path';import{fileURLToPath}from'node:url';
-const root=process.argv[2];if(!root||!path.isAbsolute(root))throw Error('Provide absolute current-job path');
-const skill=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),manifest=JSON.parse(fs.readFileSync(skill+'/assets/personal-templates/manifest.json','utf8'));
-const names=new Set(manifest.templates.map(x=>x.effect)),plan=JSON.parse(fs.readFileSync(root+'/plan/plan.json','utf8'));
-const registry=fs.readFileSync(root+'/src/custom/index.ts','utf8'),registered=/^export const CUSTOM[^=]*=\s*\{([^}]+)\}/m.exec(registry)?.[1]?.split(',').map(x=>x.trim())||[],errors=[];let count=0;
-for(const s of plan.scenes||[]){if(s.type!=='PersonalMotion')continue;count++;const p=s.props||{};if(!registered.includes('PersonalMotion'))errors.push('Missing actual PersonalMotion registration');if(!names.has(p.effect))errors.push(s.id+': unsupported original effect');if(p.study===true)errors.push(s.id+': study mode in production');if(p.contentVerified!==true||!p.content||!Object.keys(p.content).length)errors.push(s.id+': bind and review current-script props');if(!p.sourceCueIds?.length)errors.push(s.id+': missing current transcript binding');if(p.splitPresenter===true)errors.push(s.id+': presenter fragmentation forbidden')}
-if(errors.length){console.error([...new Set(errors)].join('\n'));process.exit(1)}console.log('PASS:',count,'personal-source scenes; prop assertions do not replace rendered-copy/visual review');
