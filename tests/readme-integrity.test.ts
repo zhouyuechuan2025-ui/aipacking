@@ -30,7 +30,7 @@ describe('public README evidence', () => {
     const dir = 'docs/assets/guide/';
     const readme = read('README.md').toString('utf8');
     expect(sha256(read(dir + 'guide.mp4'))).toBe('23752189B20A61A23772BF8B5AD6E71C1A6140CB114D9D0FB4468E000F2A61EC');
-    expect(readme).toContain(`(${dir}guide.mp4)`);
+    expect(readme).toContain(`/${dir}guide.mp4)`);
     for (const name of ['opening', 'tradeoff', 'evidence', 'choices']) {
       expect(existsSync(resolve(root, dir + name + '.jpg'))).toBe(true);
       expect(readme).toContain(`(${dir}${name}.jpg)`);

@@ -2,17 +2,17 @@
 
 为 16:9 真人口播 MP4 和同版 SRT 添加画面包装。按台词组织标题、侧边重点、流程图和真实资料，配合人物窗口变化，并在全片显示顶部章节轴。按原片时间线制作，可保留原声和原速。
 
-[安装与使用](docs/AIPACKING.md) · [Skill 目录](skills/aipacking/) · [观看真人案例](docs/assets/guide/guide.mp4)
+[安装与使用](docs/AIPACKING.md) · [Skill 目录](skills/aipacking/) · [观看真人案例](https://cdn.jsdelivr.net/gh/zhouyuechuan2025-ui/aipacking@main/docs/assets/guide/guide.mp4)
 
 ## 真人案例｜《指南》
 
-[▶ 观看完整成片（54 秒）](docs/assets/guide/guide.mp4) · [下载 MP4](docs/assets/guide/guide.mp4?raw=true)
+[▶ 观看完整成片（54 秒）](https://cdn.jsdelivr.net/gh/zhouyuechuan2025-ui/aipacking@main/docs/assets/guide/guide.mp4) · [下载 MP4](docs/assets/guide/guide.mp4?raw=true)
 
 这是一条真人口播，讲的是如何把《高性价比人生指南》当作一份备选单。aipacking 根据同版字幕编排画面，保留原声原速。顶部章节轴依次标出「认识指南、成本与收益、覆盖范围、证据与用法、备选单」。
 
 | 00:00.77 · 开场收窗 | 00:11.70 · 成本与收益 |
 | --- | --- |
-| [![人物收进左窗，右侧显示指南摘要](docs/assets/guide/opening.jpg)](docs/assets/guide/guide.mp4) | ![钱、时间、精力与寿命、金钱、自由的关系图](docs/assets/guide/tradeoff.jpg) |
+| [![人物收进左窗，右侧显示指南摘要](docs/assets/guide/opening.jpg)](https://cdn.jsdelivr.net/gh/zhouyuechuan2025-ui/aipacking@main/docs/assets/guide/guide.mp4) | ![钱、时间、精力与寿命、金钱、自由的关系图](docs/assets/guide/tradeoff.jpg) |
 | 人物画面让出空间，指南摘要接入右侧。 | 用两个相连的信息区说明「付出什么、换回什么」。 |
 
 | 00:28.93 · 真实资料同屏 | 00:49.33 · 备选单 |
