@@ -1,4 +1,4 @@
-// out/workbench-native.js
+// WorkbenchNative.js
 import selectionPolicy from "./selection-policy.json";
 import { useRef as useRef12 } from "react";
 import { AbsoluteFill as AbsoluteFill37, Img as Img13, staticFile as staticFile11, useCurrentFrame as useCurrentFrame69, useVideoConfig as useVideoConfig25 } from "remotion";

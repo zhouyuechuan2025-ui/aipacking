@@ -16,11 +16,10 @@ const publicDemoMedia = new Set([
   'docs/assets/native-templates-3.2/overlay-cards.mp4',
   'docs/assets/native-templates-3.2/motion-native-scenes.mp4',
   'docs/assets/native-templates-3.3/scene-reel.mp4',
-  'docs/assets/aipacking-demo/preview.mp4',
 ]);
 const templateSource = 'skills/aipacking/assets/remotion-host-2.0/';
 const originalRegistry = 'skills/aipacking/original/aipacking/assets/fusion-source-registry.json';
-const originalRegistrySha256 = '4d50fb38bafef7b4c9cfee4ced57ac50df4b1bff506d090d079eba011dcb907d';
+const originalRegistrySha256 = '2b3f1481eccd6e4997801f1f4c696cf1eec5fb7c86b9f2c852760ebc8d44588b';
 const uiPlaceholderPaths = new Set([
   'docs/NATIVE-TEMPLATES.md', templateSource + 'docs/catalog.json', templateSource + 'src/motion/native-scenes.json',
   'skills/aipacking/original/aipacking/assets/workbench-library/WorkbenchNative.css',

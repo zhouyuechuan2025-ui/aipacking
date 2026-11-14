@@ -51,4 +51,4 @@ aipacking 为剪好的横屏真人口播加上章节轴、重点文字、关系�
 | 内容或动作对不上拍 | 对照 MP4 与 SRT 的几处时间点，复查动效触发词与绝对时间，再渲染出问题的片段。 |
 | 预览里有资料占位图 | 补齐实际截图或录屏，明确区分口播摘要、解释图和真实证据。 |
 
-如需使用历史基础 CLI，见 [独立使用说明](USAGE.md)。aipacking 的全部原始文件随 [Skill 目录](../skills/aipacking/) 安装。
+如需使用历史基础 CLI，见 [独立使用说明](USAGE.md)。完整的 aipacking Skill 随 [Skill 目录](../skills/aipacking/) 安装。

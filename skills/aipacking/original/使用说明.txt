@@ -1,6 +1,6 @@
 aipacking
 
-将aipacking文件夹放入你的Codex Home/skills目录，然后新建会话调用。需要兼容Motion Studio/Remotion工作台、Node.js及工程依赖，导出检查需要FFmpeg。
+从 GitHub 仓库安装完整的 skills/aipacking 目录，然后新建会话调用 $aipacking。需要兼容Motion Studio/Remotion工作台、Node.js及工程依赖，导出检查需要FFmpeg。
 
 让助手先阅读SKILL.md；用scripts/apply-aipacking.mjs安装到独立作业工程。随后按docs/global-timeline.md把WithGlobalTimeline接在主合成最外层，不能仅复制组件就宣布完成。
 

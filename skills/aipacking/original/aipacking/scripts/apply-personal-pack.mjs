@@ -1,1 +1,1 @@
-throw Error('PersonalMotion is not included in this aipacking. Use the aipacking template catalog.');
+throw Error('PersonalMotion is not included in aipacking. Use the bundled template catalog.');

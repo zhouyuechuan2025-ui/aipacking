@@ -8,16 +8,16 @@ const read = (path: string) => readFileSync(resolve(root, path));
 const sha256 = (value: Buffer) => createHash('sha256').update(value).digest('hex').toUpperCase();
 
 describe('public README evidence', () => {
-  it('documents installation from GitHub and preserves the original aipacking files', () => {
+  it('documents installation from GitHub and verifies the bundled package', () => {
     const dir = 'skills/aipacking';
     const readme = read('README.md').toString('utf8');
     expect(readme).toContain('(skills/aipacking/)');
     expect(readme).toContain('(docs/AIPACKING.md)');
-    expect(readme).not.toContain('downloads/aipacking.zip');
+    expect(readme).not.toMatch(/\]\([^)]*\.zip\)/i);
     expect(read(dir + '/SKILL.md').toString('utf8')).toMatch(/^---\nname: aipacking\n/);
 
     const manifest = read(dir + '/original/SHA256SUMS.txt');
-    expect(sha256(manifest)).toBe('2D83FB5E8CAA8FF538B88771AC29B4F68CCE17889A2A10EDCAE476DF29353385');
+    expect(sha256(manifest)).toBe('8B5362614184ECE2DEBCF6886F3F4B1CDAC85B0314779AA85BD78037CD434D7A');
     const lines = manifest.toString('utf8').trim().split(/\r?\n/);
     expect(lines).toHaveLength(153);
     for (const line of lines) {

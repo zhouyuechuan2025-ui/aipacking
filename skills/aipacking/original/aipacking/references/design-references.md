@@ -11,7 +11,7 @@
 |Ordinary Folk / Spline|https://www.ordinaryfolk.co/project/introducing-spline|官方项目页可读，作为空间与材质参考候选；不搬运视频素材|
 |Magic UI|https://github.com/magicuidesign/magicui|检索快照约22.6k stars，MIT；组件化面板、边线、背景设计，可按需查单组件源码。当前增强复用已有工作台 Glass/Stage 的能力，不引入网页运行时|
 |Motion Primitives|https://github.com/ibelick/motion-primitives|检索快照约6.5k stars，MIT；文字/入场结构参考，视频需转换为帧驱动|
-|React Bits|https://github.com/DavidHDev/react-bits|检索快照约48.2k stars；只借鉴设计概念。其 LICENSE.md 为 MIT + Commons Clause，包含组件再分发限制，当前模板包不复制或打包该库组件|
+|React Bits|https://github.com/DavidHDev/react-bits|检索快照约48.2k stars；只借鉴设计概念。其 LICENSE.md 为 MIT + Commons Clause，包含组件再分发限制，本 Skill不复制或打包该库组件|
 |react-bits-video|https://github.com/GordenSun/react-bits-video|检索快照28 stars；是现成技能路线参考，不能描述为最热门；不替换当前 Remotion 流水线，也不引入其禁用的光束/隧道背景|
 |X / damienghader|https://x.com/damienghader/status/2062156647246475290|公开搜索索引包含组件优先的设计讨论；只确认文字摘要，没有读取完整文章或播放附带媒体，不采信效果保证|
 |X / Sourceful|https://x.com/sourceful/status/2021269205685833764|公开搜索索引展示编辑布局、留白与材质的提示词；是提示词示例，不是已证实的产品效果或热门作品|

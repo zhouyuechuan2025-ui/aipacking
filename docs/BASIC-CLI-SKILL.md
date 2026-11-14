@@ -5,7 +5,7 @@ description: Use when packaging center-presenter talking-head video plus SRT int
 
 # Package Talking-Head Video
 
-This document covers the historical `package-video` CLI when explicitly requested. For current aipacking work, use the repository’s `skills/aipacking` skill.
+This document covers the historical `package-video` CLI when explicitly requested. To use aipacking, install the repository’s `skills/aipacking` skill directory.
 
 Package new jobs with three basic layouts (`title`, `card`, `flow`) and two public styles (`dark`, `paper`). Keep one style per video. Composite jobs default to one continuous presenter moving between full-frame and a single editorial window. Preserve caption accuracy, face safety, original voice, and output checks.
 

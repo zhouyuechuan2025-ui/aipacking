@@ -1,6 +1,6 @@
 ---
 name: aipacking
-description: 在兼容的Motion Studio/Remotion工程中，按视频和SRT制作语义动效包装；使用使用者模板目录，始终保留顶部时间轴，验证后交付MP4。
+description: 在兼容的Motion Studio/Remotion工程中，按视频和SRT制作语义动效包装；使用随包模板目录，始终保留顶部时间轴，验证后交付MP4。
 ---
 
 # aipacking
