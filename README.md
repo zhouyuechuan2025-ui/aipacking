@@ -6,7 +6,7 @@
 
 ## 真人案例｜《指南》
 
-[▶ 观看完整成片（54 秒）](https://cdn.jsdelivr.net/gh/zhouyuechuan2025-ui/aipacking@main/docs/assets/guide/guide.mp4) · [下载 MP4](docs/assets/guide/guide.mp4?raw=true)
+[▶ 观看完整成片（54 秒）](https://cdn.jsdelivr.net/gh/zhouyuechuan2025-ui/aipacking@main/docs/assets/guide/guide.mp4)
 
 这是一条真人口播，讲的是如何把《高性价比人生指南》当作一份备选单。aipacking 根据同版字幕编排画面，保留原声原速。顶部章节轴依次标出「认识指南、成本与收益、覆盖范围、证据与用法、备选单」。
 
