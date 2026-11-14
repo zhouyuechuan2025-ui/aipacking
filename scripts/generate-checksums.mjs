@@ -5,14 +5,14 @@ import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
-const output = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard'], {
+const output = execFileSync('git', ['ls-files', '-z', '--cached', '--others', '--exclude-standard'], {
   cwd: root,
   encoding: 'utf8',
   windowsHide: true,
 });
 
 const files = output
-  .split(/\r?\n/)
+  .split('\0')
   .filter(Boolean)
   .filter((path) => path !== 'SHA256SUMS.txt')
   .filter((path) => existsSync(resolve(root, path)))

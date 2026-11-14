@@ -1,0 +1,7 @@
+aipacking
+
+将aipacking文件夹放入你的Codex Home/skills目录，然后新建会话调用。需要兼容Motion Studio/Remotion工作台、Node.js及工程依赖，导出检查需要FFmpeg。
+
+让助手先阅读SKILL.md；用scripts/apply-aipacking.mjs安装到独立作业工程。随后按docs/global-timeline.md把WithGlobalTimeline接在主合成最外层，不能仅复制组件就宣布完成。
+
+保留27个工作台模板、7个Tech组件和非手绘参考库；排除W001–W114（含W026–W046）及原已否决模板，不提供PersonalMotion别名补装。顶部时间轴组件与使用规则均已包含。

@@ -1,0 +1,527 @@
+[
+  {
+    "code": "W118",
+    "id": "prompt",
+    "key": "native--prompt",
+    "cn": "提示词卡",
+    "kind": "workbench"
+  },
+  {
+    "code": "W121",
+    "id": "skillSixGrid",
+    "key": "native--skillSixGrid",
+    "cn": "六项 Skill 总览",
+    "kind": "workbench"
+  },
+  {
+    "code": "W122",
+    "id": "seedanceStoryboard",
+    "key": "native--seedanceStoryboard",
+    "cn": "创意到视频简笔画",
+    "kind": "workbench"
+  },
+  {
+    "code": "W123",
+    "id": "recordWorkforceShift",
+    "key": "native--recordWorkforceShift",
+    "cn": "重复岗位自动化接管",
+    "kind": "workbench"
+  },
+  {
+    "code": "W124",
+    "id": "recordRpaFragility",
+    "key": "native--recordRpaFragility",
+    "cn": "传统 RPA 脆弱链",
+    "kind": "workbench"
+  },
+  {
+    "code": "W125",
+    "id": "recordReplayDifference",
+    "key": "native--recordReplayDifference",
+    "cn": "Record 路径差异",
+    "kind": "workbench"
+  },
+  {
+    "code": "W126",
+    "id": "recordWorkflowCapture",
+    "key": "native--recordWorkflowCapture",
+    "cn": "六任务观察与封装",
+    "kind": "workbench"
+  },
+  {
+    "code": "W127",
+    "id": "recordReplacementBoundary",
+    "key": "native--recordReplacementBoundary",
+    "cn": "重复劳动替代边界",
+    "kind": "workbench"
+  },
+  {
+    "code": "W128",
+    "id": "egoPainGrid",
+    "key": "native--egoPainGrid",
+    "cn": "传统自动化六项痛点",
+    "kind": "workbench"
+  },
+  {
+    "code": "W129",
+    "id": "egoTokenDrain",
+    "key": "native--egoTokenDrain",
+    "cn": "点击调用与 Token 消耗",
+    "kind": "workbench"
+  },
+  {
+    "code": "W130",
+    "id": "egoSpaceParallel",
+    "key": "native--egoSpaceParallel",
+    "cn": "Space 双工作区并行",
+    "kind": "workbench"
+  },
+  {
+    "code": "W131",
+    "id": "egoResourceCompare",
+    "key": "native--egoResourceCompare",
+    "cn": "6任务资源对比",
+    "kind": "workbench"
+  },
+  {
+    "code": "W132",
+    "id": "egoManualWorkflow",
+    "key": "native--egoManualWorkflow",
+    "cn": "人工生成五步流程",
+    "kind": "workbench"
+  },
+  {
+    "code": "W133",
+    "id": "egoParallelTimeline",
+    "key": "native--egoParallelTimeline",
+    "cn": "AI与用户双轨时间线",
+    "kind": "workbench"
+  },
+  {
+    "code": "W134",
+    "id": "egoAutomationAsset",
+    "key": "native--egoAutomationAsset",
+    "cn": "重复劳动转自动化资产",
+    "kind": "workbench"
+  },
+  {
+    "code": "W135",
+    "id": "egoCommentCapture",
+    "key": "native--egoCommentCapture",
+    "cn": "商品评论采集流程",
+    "kind": "workbench"
+  },
+  {
+    "code": "W138",
+    "id": "remotionSkillChapter",
+    "key": "native--remotionSkillChapter",
+    "cn": "Remotion 六章封面",
+    "kind": "workbench"
+  },
+  {
+    "code": "W139",
+    "id": "codexTransformation",
+    "key": "native--codexTransformation",
+    "cn": "Codex 身份升级",
+    "kind": "workbench"
+  },
+  {
+    "code": "W142",
+    "id": "videoWorkflowPipeline",
+    "key": "native--videoWorkflowPipeline",
+    "cn": "自适应流程图",
+    "kind": "workbench"
+  },
+  {
+    "code": "W143",
+    "id": "generativeMediaShowcase",
+    "key": "native--generativeMediaShowcase",
+    "cn": "多模态官方能力墙",
+    "kind": "workbench"
+  },
+  {
+    "code": "W150",
+    "id": "dashboard",
+    "key": "native--dashboard",
+    "cn": "数据仪表盘",
+    "kind": "workbench"
+  },
+  {
+    "code": "W151",
+    "id": "dashboardRank",
+    "key": "native--dashboardRank",
+    "cn": "指标排名看板",
+    "kind": "workbench"
+  },
+  {
+    "code": "W152",
+    "id": "dashboardKpi",
+    "key": "native--dashboardKpi",
+    "cn": "KPI 指标总览",
+    "kind": "workbench"
+  },
+  {
+    "code": "W162",
+    "id": "stage",
+    "key": "native--stage",
+    "cn": "纵深证据舞台",
+    "kind": "workbench"
+  },
+  {
+    "code": "W164",
+    "id": "actions",
+    "key": "native--actions",
+    "cn": "工具操作看板",
+    "kind": "workbench"
+  },
+  {
+    "code": "W167",
+    "id": "ribbon",
+    "key": "native--ribbon",
+    "cn": "横带切割大字",
+    "kind": "workbench"
+  },
+  {
+    "code": "W168",
+    "id": "punctuation",
+    "key": "native--punctuation",
+    "cn": "标点收束标题",
+    "kind": "workbench"
+  },
+  {
+    "code": "R01",
+    "id": "ref01",
+    "key": "reference--ref01",
+    "cn": "人物身后巨字",
+    "kind": "reference"
+  },
+  {
+    "code": "R02",
+    "id": "ref02",
+    "key": "reference--ref02",
+    "cn": "吊牌与任务窗口群",
+    "kind": "reference"
+  },
+  {
+    "code": "R03",
+    "id": "ref03",
+    "key": "reference--ref03",
+    "cn": "任务变成果",
+    "kind": "reference"
+  },
+  {
+    "code": "R04",
+    "id": "ref04",
+    "key": "reference--ref04",
+    "cn": "全屏收进左窗",
+    "kind": "reference"
+  },
+  {
+    "code": "R05",
+    "id": "ref05",
+    "key": "reference--ref05",
+    "cn": "人物与作者身份",
+    "kind": "reference"
+  },
+  {
+    "code": "R06",
+    "id": "ref06",
+    "key": "reference--ref06",
+    "cn": "数据证据加入",
+    "kind": "reference"
+  },
+  {
+    "code": "R07",
+    "id": "ref07",
+    "key": "reference--ref07",
+    "cn": "截图接管全屏",
+    "kind": "reference"
+  },
+  {
+    "code": "R08",
+    "id": "ref08",
+    "key": "reference--ref08",
+    "cn": "逐句标注",
+    "kind": "reference"
+  },
+  {
+    "code": "R09",
+    "id": "ref09",
+    "key": "reference--ref09",
+    "cn": "回到人物并强调",
+    "kind": "reference"
+  },
+  {
+    "code": "R18",
+    "id": "ref18",
+    "key": "reference--ref18",
+    "cn": "原帖与口播",
+    "kind": "reference"
+  },
+  {
+    "code": "R19",
+    "id": "ref19",
+    "key": "reference--ref19",
+    "cn": "四种方法逐个可视化",
+    "kind": "reference"
+  },
+  {
+    "code": "R20",
+    "id": "ref20",
+    "key": "reference--ref20",
+    "cn": "四卡变三层",
+    "kind": "reference"
+  },
+  {
+    "code": "R21",
+    "id": "ref21",
+    "key": "reference--ref21",
+    "cn": "轻包装和点赞收藏",
+    "kind": "reference"
+  },
+  {
+    "code": "R22",
+    "id": "ref22",
+    "key": "reference--ref22",
+    "cn": "正文背景墙",
+    "kind": "reference"
+  },
+  {
+    "code": "R23",
+    "id": "ref23",
+    "key": "reference--ref23",
+    "cn": "Skill预告小卡",
+    "kind": "reference"
+  },
+  {
+    "code": "R24",
+    "id": "ref24",
+    "key": "reference--ref24",
+    "cn": "第一层大卡变页头",
+    "kind": "reference"
+  },
+  {
+    "code": "R25",
+    "id": "ref25",
+    "key": "reference--ref25",
+    "cn": "输入提示词",
+    "kind": "reference"
+  },
+  {
+    "code": "R26",
+    "id": "ref26",
+    "key": "reference--ref26",
+    "cn": "引出维修手册",
+    "kind": "reference"
+  },
+  {
+    "code": "R33",
+    "id": "ref33",
+    "key": "reference--ref33",
+    "cn": "真实口播两侧对照",
+    "kind": "reference"
+  },
+  {
+    "code": "R34",
+    "id": "ref34",
+    "key": "reference--ref34",
+    "cn": "第二层页面变形",
+    "kind": "reference"
+  },
+  {
+    "code": "R35",
+    "id": "ref35",
+    "key": "reference--ref35",
+    "cn": "文字变交互图表",
+    "kind": "reference"
+  },
+  {
+    "code": "R38",
+    "id": "ref38",
+    "key": "reference--ref38",
+    "cn": "仪表盘证据",
+    "kind": "reference"
+  },
+  {
+    "code": "R39",
+    "id": "ref39",
+    "key": "reference--ref39",
+    "cn": "三层比较与喜欢",
+    "kind": "reference"
+  },
+  {
+    "code": "R40",
+    "id": "ref40",
+    "key": "reference--ref40",
+    "cn": "实际报告全屏阅读",
+    "kind": "reference"
+  },
+  {
+    "code": "R41",
+    "id": "ref41",
+    "key": "reference--ref41",
+    "cn": "报告拆成两块",
+    "kind": "reference"
+  },
+  {
+    "code": "R42",
+    "id": "ref42",
+    "key": "reference--ref42",
+    "cn": "第三层视频",
+    "kind": "reference"
+  },
+  {
+    "code": "R45",
+    "id": "ref45",
+    "key": "reference--ref45",
+    "cn": "一图千言与帧数",
+    "kind": "reference"
+  },
+  {
+    "code": "R46",
+    "id": "ref46",
+    "key": "reference--ref46",
+    "cn": "案例列表展开",
+    "kind": "reference"
+  },
+  {
+    "code": "R47",
+    "id": "ref47",
+    "key": "reference--ref47",
+    "cn": "封面与复杂到易懂",
+    "kind": "reference"
+  },
+  {
+    "code": "R48",
+    "id": "ref48",
+    "key": "reference--ref48",
+    "cn": "四格视频展示",
+    "kind": "reference"
+  },
+  {
+    "code": "R49",
+    "id": "ref49",
+    "key": "reference--ref49",
+    "cn": "书堆否定与视频肯定",
+    "kind": "reference"
+  },
+  {
+    "code": "R50",
+    "id": "ref50",
+    "key": "reference--ref50",
+    "cn": "知识深度阶梯",
+    "kind": "reference"
+  },
+  {
+    "code": "R51",
+    "id": "ref51",
+    "key": "reference--ref51",
+    "cn": "轻量结论标签",
+    "kind": "reference"
+  },
+  {
+    "code": "R52",
+    "id": "ref52",
+    "key": "reference--ref52",
+    "cn": "评论区证据链",
+    "kind": "reference"
+  },
+  {
+    "code": "R53",
+    "id": "ref53",
+    "key": "reference--ref53",
+    "cn": "集百家之长收成Skill",
+    "kind": "reference"
+  },
+  {
+    "code": "R54",
+    "id": "ref54",
+    "key": "reference--ref54",
+    "cn": "报告再现",
+    "kind": "reference"
+  },
+  {
+    "code": "R55",
+    "id": "ref55",
+    "key": "reference--ref55",
+    "cn": "GitHub展示",
+    "kind": "reference"
+  },
+  {
+    "code": "R56",
+    "id": "ref56",
+    "key": "reference--ref56",
+    "cn": "四步流程图",
+    "kind": "reference"
+  },
+  {
+    "code": "R57",
+    "id": "ref57",
+    "key": "reference--ref57",
+    "cn": "流程收为侧边产品卡",
+    "kind": "reference"
+  },
+  {
+    "code": "R58",
+    "id": "ref58",
+    "key": "reference--ref58",
+    "cn": "下一期预告",
+    "kind": "reference"
+  },
+  {
+    "code": "R59",
+    "id": "ref59",
+    "key": "reference--ref59",
+    "cn": "收尾关注",
+    "kind": "reference"
+  },
+  {
+    "code": "T01",
+    "id": "TechPresenter",
+    "key": "tech--TechPresenter",
+    "cn": "真人窗口与全屏切换",
+    "kind": "tech"
+  },
+  {
+    "code": "T02",
+    "id": "TechHero",
+    "key": "tech--TechHero",
+    "cn": "科技主视觉",
+    "kind": "tech"
+  },
+  {
+    "code": "T03",
+    "id": "TechBento",
+    "key": "tech--TechBento",
+    "cn": "科技信息分区",
+    "kind": "tech"
+  },
+  {
+    "code": "T04",
+    "id": "TechFlow",
+    "key": "tech--TechFlow",
+    "cn": "科技流程连接",
+    "kind": "tech"
+  },
+  {
+    "code": "T05",
+    "id": "TechImpact",
+    "key": "tech--TechImpact",
+    "cn": "层次冲击与停留",
+    "kind": "tech"
+  },
+  {
+    "code": "T06",
+    "id": "TechCollage",
+    "key": "tech--TechCollage",
+    "cn": "真人与素材拼贴",
+    "kind": "tech"
+  },
+  {
+    "code": "T07",
+    "id": "TechMontage",
+    "key": "tech--TechMontage",
+    "cn": "案例快切与停留",
+    "kind": "tech"
+  }
+]

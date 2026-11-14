@@ -2,7 +2,7 @@ import {existsSync, readFileSync, statSync} from 'node:fs';
 import {describe, expect, it} from 'vitest';
 import {SEMANTIC_STRUCTURES} from '../../packages/core/src/template-contracts';
 
-const skill = readFileSync('SKILL.md', 'utf8');
+const skill = readFileSync('docs/BASIC-CLI-SKILL.md', 'utf8');
 const readme = readFileSync('README.md', 'utf8');
 
 describe('public Skill contract', () => {
@@ -13,7 +13,7 @@ describe('public Skill contract', () => {
   });
 
   it('keeps the trigger-only frontmatter concise', () => {
-    expect(skill).toMatch(/^---\nname: aipacking\ndescription: Use when /);
+    expect(skill).toMatch(/^---\r?\nname: aipacking\r?\ndescription: Use when /);
   });
 
   it('teaches the multicolor center-presenter layout and approval contract', () => {

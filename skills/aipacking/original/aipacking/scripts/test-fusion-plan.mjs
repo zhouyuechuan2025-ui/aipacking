@@ -1,0 +1,2 @@
+import assert from'node:assert/strict';import{checkFusionPlan}from'./check-fusion-plan.mjs';
+const scenes=[{id:'base',type:'TechPresenter',props:{}},{id:'ref',type:'RefContinuity',props:{study:false,theme:'light',sourceCueIds:[1]}}];assert.equal(checkFusionPlan({claimsFusion:true,scenes}).status,'PASS');for(const templateKey of ['native--shotCarousel3D','native--snapPromptZoom'])assert.equal(checkFusionPlan({scenes:[{id:'blocked',type:'WorkbenchNative',props:{templateKey}}]}).status,'FAIL');console.log('PASS aipacking retained fusion and excluded source rejection');

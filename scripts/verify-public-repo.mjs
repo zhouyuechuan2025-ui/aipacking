@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {existsSync, lstatSync, readFileSync} from 'node:fs';
 import {extname, resolve} from 'node:path';
@@ -5,7 +6,8 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 
 const textExtensions = new Set(['', '.md', '.txt', '.json', '.yaml', '.yml', '.ts', '.tsx', '.js', '.mjs', '.css', '.html', '.gitignore', '.npmrc']);
 const sourceMedia = new Set(['.mp4', '.mov', '.mkv', '.avi', '.webm', '.wav', '.mp3', '.m4a']);
-const syntheticDemos = new Set([
+const publicDemoMedia = new Set([
+  'docs/assets/guide/guide.mp4',
   'docs/assets/aipacking-3/case-demo.mp4', 'docs/assets/aipacking-3/motion-gallery.mp4',
   'docs/assets/native-templates/native-showcase.mp4', 'docs/assets/native-templates/motiongit-native-demo.mp4',
   'docs/assets/native-templates/overlay-native-demo.mp4',
@@ -17,9 +19,11 @@ const syntheticDemos = new Set([
   'docs/assets/aipacking-demo/preview.mp4',
 ]);
 const templateSource = 'skills/aipacking/assets/remotion-host-2.0/';
+const originalRegistry = 'skills/aipacking/original/aipacking/assets/fusion-source-registry.json';
+const originalRegistrySha256 = '4d50fb38bafef7b4c9cfee4ced57ac50df4b1bff506d090d079eba011dcb907d';
 const uiPlaceholderPaths = new Set([
   'docs/NATIVE-TEMPLATES.md', templateSource + 'docs/catalog.json', templateSource + 'src/motion/native-scenes.json',
-  'skills/aipacking/assets/engine/assets/workbench-library/WorkbenchNative.css',
+  'skills/aipacking/original/aipacking/assets/workbench-library/WorkbenchNative.css',
   ...[
     'agent/before-after/BeforeAfter.tsx', 'agent/image-carousel/ImageCarousel.tsx',
     'snap/click-type/index.tsx', 'snap/input/index.tsx', 'snap/laptop-frame/index.tsx',
@@ -41,10 +45,15 @@ export const scanEntries = (entries) => {
     const normalized = entry.path.replaceAll('\\', '/');
     const extension = extname(normalized).toLowerCase();
     if (/(^|\/)\.env(?:\.|$)/i.test(normalized) || /\.(?:pem|key|p12|pfx)$/i.test(normalized)) findings.push(`${normalized}: forbidden-file`);
-    if (sourceMedia.has(extension) && !syntheticDemos.has(normalized)) findings.push(`${normalized}: source-media`);
+    if (sourceMedia.has(extension) && !publicDemoMedia.has(normalized)) findings.push(`${normalized}: source-media`);
     if (entry.size > 20 * 1024 * 1024) findings.push(`${normalized}: file-over-20mb`);
     if (entry.text !== null) {
-      if (directDPath.test(entry.text) || userPath.test(entry.text)) findings.push(`${normalized}: absolute-local-path`);
+      // The verified original registry includes build-time provenance paths.
+      const isOriginalRegistry = normalized === originalRegistry &&
+        createHash('sha256').update(entry.text, 'utf8').digest('hex') === originalRegistrySha256;
+      if (!isOriginalRegistry && (directDPath.test(entry.text) || userPath.test(entry.text))) {
+        findings.push(`${normalized}: absolute-local-path`);
+      }
       if (nonPublicTerms.some((pattern) => pattern.test(entry.text))) findings.push(`${normalized}: non-public-term`);
       if (secretPatterns.some((pattern) => pattern.test(entry.text))) findings.push(`${normalized}: possible-secret`);
       const marker = new RegExp(`\\b(?:${['TO' + 'DO', 'T' + 'BD', 'FIX' + 'ME', 'PLACE' + 'HOLDER'].join('|')})\\b`, 'i');
@@ -59,8 +68,8 @@ export const scanEntries = (entries) => {
 };
 
 const collectCandidates = (root) => {
-  const output = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard'], {cwd: root, encoding: 'utf8', windowsHide: true});
-  return output.split(/\r?\n/).filter(Boolean).map((path) => {
+  const output = execFileSync('git', ['ls-files', '-z', '--cached', '--others', '--exclude-standard'], {cwd: root, encoding: 'utf8', windowsHide: true});
+  return output.split('\0').filter(Boolean).map((path) => {
     const absolute = resolve(root, path);
     if (!existsSync(absolute)) return null;
     const stat = lstatSync(absolute);

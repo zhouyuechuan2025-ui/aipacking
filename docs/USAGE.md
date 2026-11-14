@@ -10,7 +10,7 @@ cd aipacking
 npm ci
 ```
 
-Requirements: Node.js 20+, FFmpeg, and ffprobe. The Agent Skill entrypoint is `SKILL.md`.
+Requirements: Node.js 20+, FFmpeg, and ffprobe. The historical Agent workflow is documented in [the basic CLI contract](BASIC-CLI-SKILL.md).
 
 ## Inputs
 

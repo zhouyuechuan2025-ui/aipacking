@@ -1,0 +1,4 @@
+interface:
+  display_name: "aipacking"
+  short_description: "真人口播包装、章节轴与 MP4 导出"
+  default_prompt: "使用 $aipacking 包装我的 MP4 和同版 SRT，按 aipacking 原流程检查工程、制作预览并导出。"

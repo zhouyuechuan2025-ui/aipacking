@@ -1,0 +1,58 @@
+{
+  "version": "3.0.3",
+  "rawEntries": 242,
+  "rawUniqueIds": 197,
+  "includedEntries": 232,
+  "includedUniqueIds": 188,
+  "excludedEntries": 10,
+  "autoEligibleFromOriginal": 214,
+  "manualAdapterReviewRequired": 18,
+  "sourceAndInstalledRepresentativeFrames": 232,
+  "decodedPixelExact": 202,
+  "maxMeanAbsolutePixelDifference": 0.58949,
+  "phaseTests": [
+    {
+      "id": "shotCarousel3D",
+      "reverseSeekMAE": 0.0,
+      "earlyToLateMAE": 18.83076131687243
+    },
+    {
+      "id": "shotFracture",
+      "reverseSeekMAE": 0.0,
+      "earlyToLateMAE": 56.116228137860084
+    },
+    {
+      "id": "shotNeonOrbitDrop",
+      "reverseSeekMAE": 0.0,
+      "earlyToLateMAE": 113.45812757201647
+    },
+    {
+      "id": "shotGridMosaic",
+      "reverseSeekMAE": 0.0,
+      "earlyToLateMAE": 29.384363425925926
+    },
+    {
+      "id": "snapPhoneFrame",
+      "reverseSeekMAE": 0.0,
+      "earlyToLateMAE": 74.29333204732511
+    },
+    {
+      "id": "hero",
+      "reverseSeekMAE": 0.0,
+      "earlyToLateMAE": 1.1392001028806584
+    },
+    {
+      "id": "flow4",
+      "reverseSeekMAE": 0.0,
+      "earlyToLateMAE": 4.0744540895061725
+    },
+    {
+      "id": "shotCardFlock",
+      "reverseSeekMAE": 0.0,
+      "earlyToLateMAE": 6.2090419238683126
+    }
+  ],
+  "validationScope": "Representative stills for all entries; 8 selected multi-phase/reverse-seek checks. Not full-animation or aesthetic approval.",
+  "userAcceptance": "PENDING",
+  "originalSourceHashesUnchanged": true
+}

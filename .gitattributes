@@ -4,3 +4,4 @@
 *.jpeg binary
 *.webp binary
 *.zip binary
+/skills/aipacking/original/** -text !eol whitespace=cr-at-eol

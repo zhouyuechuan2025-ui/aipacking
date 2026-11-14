@@ -1,0 +1,4 @@
+interface:
+  display_name: "aipacking"
+  short_description: "口播视频语义包装，包含全程顶部时间轴与使用者模板库"
+  default_prompt: "使用 $aipacking 包装视频和SRT，使用使用者模板库并全程保留主合成顶部时间轴。"

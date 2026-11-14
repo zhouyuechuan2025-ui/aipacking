@@ -1,0 +1,24 @@
+{
+  "excludedCodes": 114,
+  "checks": 342,
+  "blocked": "PASS",
+  "catalogEntries": 27,
+  "noRawExcludedSourceOrSourceMap": "PASS",
+  "timelineComponentsIncluded": true,
+  "installAndTimeline": {
+    "isolatedInstall": "PASS",
+    "installedFilesMatch": "PASS",
+    "privateSkillUnchanged": "PASS",
+    "timelineFrames": [
+      0,
+      90,
+      179
+    ],
+    "cases": [
+      "native-template",
+      "reference-template",
+      "person-hidden"
+    ],
+    "note": "Rendered stills checked separately; no user footage rendered."
+  }
+}

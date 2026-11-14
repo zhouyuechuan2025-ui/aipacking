@@ -1,5 +1,5 @@
 # aipacking 发布核验
 
-aipacking 的交付文件是 [aipacking.zip](downloads/aipacking.zip?raw=true)。已与验收使用的原始压缩包做字节校验，包内的 153 项清单均通过 SHA-256 检查。
+[GitHub Skill 目录](skills/aipacking/) 包含公开调用入口和已验收的完整原始文件。原始文件可按随附清单核对。
 
-安装所需环境和操作见 [安装与使用](docs/AIPACKING.md)。
+[安装与使用](docs/AIPACKING.md) · [《指南》完整成片](docs/assets/guide/guide.mp4)

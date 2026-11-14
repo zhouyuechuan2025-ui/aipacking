@@ -2,20 +2,53 @@
 
 为 16:9 真人口播 MP4 和同版 SRT 添加画面包装。按台词组织标题、侧边重点、流程图和真实资料，配合人物窗口变化，并在全片显示顶部章节轴。按原片时间线制作，可保留原声和原速。
 
-[下载 aipacking ZIP](downloads/aipacking.zip?raw=true) · [安装与使用](docs/AIPACKING.md)
+[安装与使用](docs/AIPACKING.md) · [Skill 目录](skills/aipacking/) · [观看真人案例](docs/assets/guide/guide.mp4)
 
-准备一个兼容 Motion Studio / Remotion 的独立作业工程，以及 Node.js、工程依赖、FFmpeg 和 ffprobe。下载并解压 ZIP 后，可以把下面这段话连同视频、字幕和工程路径一起交给支持本地执行的 Agent：
+## 真人案例｜《指南》
+
+[▶ 观看完整成片（54 秒）](docs/assets/guide/guide.mp4) · [下载 MP4](docs/assets/guide/guide.mp4?raw=true)
+
+这是一条真人口播，讲的是如何把《高性价比人生指南》当作一份备选单。aipacking 根据同版字幕编排画面，保留原声原速。顶部章节轴依次标出「认识指南、成本与收益、覆盖范围、证据与用法、备选单」。
+
+| 00:00.77 · 开场收窗 | 00:11.70 · 成本与收益 |
+| --- | --- |
+| [![人物收进左窗，右侧显示指南摘要](docs/assets/guide/opening.jpg)](docs/assets/guide/guide.mp4) | ![钱、时间、精力与寿命、金钱、自由的关系图](docs/assets/guide/tradeoff.jpg) |
+| 人物画面让出空间，指南摘要接入右侧。 | 用两个相连的信息区说明「付出什么、换回什么」。 |
+
+| 00:28.93 · 真实资料同屏 | 00:49.33 · 备选单 |
+| --- | --- |
+| ![真实 GitHub 项目页面与口播人物同屏](docs/assets/guide/evidence.jpg) | ![人物左窗与右侧备选单提示](docs/assets/guide/choices.jpg) |
+| 展示真实 GitHub 页面，保留读图时间。 | 口播说到「备选单」时聚焦人物和旁边的结论。 |
+
+以上四张图均截自已确认的 1080p 成片。完整视频更容易看清收窗、轻推、图解入场和转场节奏。
+
+## 用自己的视频跑一次
+
+1. **准备素材。** 先剪好 16:9 横屏口播，导出 MP4 和同一版 UTF-8 SRT。如需在片中展示网页、软件或参考数据，同时准备可核对的截图、录屏或链接。
+2. **从 GitHub 安装并检查工程。** 让支持本地操作的 Agent 从本仓库安装 `skills/aipacking`，安装后在新对话调用 `$aipacking`。准备一个兼容的 Motion Studio / Remotion 独立作业工程，先检查兼容性，再接入顶部章节轴。
+3. **先确定怎么包装。** 让 Agent 通读字幕，按段列出台词、画面重点、人物和资料的位置，以及动效落点。需要先审画面时，可以要求输出实际渲染的截图和短样。
+4. **导出并核对。** 用已确认的分镜导出 MP4，检查首尾、转场、顶部章节轴、脸部与字幕遮挡、音画同步和完整解码。
+
+在 Codex 里，先发这条安装指令：
 
 ```text
-请读取我解压的 aipacking 包中的 SKILL.md，按包内说明在我的独立作业工程中安装和运行。
-用我提供的 MP4 和同版 SRT 做口播包装，保持原声原速，顶部显示章节轴。
+请用 $skill-installer 从 https://github.com/zhouyuechuan2025-ui/aipacking/tree/main/skills/aipacking 安装 aipacking。
 ```
+
+安装后新开对话，把下面这段话连同素材和工程路径发给 Codex：
+
+```text
+请用 $aipacking 和我提供的独立作业工程，包装 MP4 和同版 SRT。先给我逐段分镜，标明时间、台词、人物和资料位置、动效落点及缺失素材。
+我确认分镜后，请给我 3–5 张实渲截图。预览确认后导出完整 MP4，保留原声原速和顶部章节轴，避免挡脸或挡字幕。
+```
+
+[查看兼容要求、安装步骤和故障排查](docs/AIPACKING.md)
 
 ## 历史基础 CLI v0.6
 
-以下说明适用于仓库根目录的基础版。用 `npm run package-video` 完成基础包装或从 SRT 生成透明 MOV。aipacking 请使用上方下载包。
+以下说明适用于仓库根目录的基础版。用 `npm run package-video` 完成基础包装或从 SRT 生成透明 MOV。aipacking 通过上方的 GitHub Skill 目录安装。
 
-## 前期素材准备
+### 前期素材准备
 
 先剪好原片与对应字幕。基础 CLI 负责画面包装，**不处理重读、漏读和气口**，不重排讲解，不追加原稿没有的数字、操作步骤或结论。目前支持 **16:9 横屏**，竖屏暂不支持。
 
@@ -30,7 +63,7 @@
 
 启用真人轻推近时，原视频底部字幕会由当前SRT重绘，保证内容完整，不叠两层字幕。若SRT与原声不同步，先修复输入。
 
-## 给 AI Agent 和开发者的技术说明
+### 给 AI Agent 和开发者的技术说明
 
 普通用户读到这里就可以开始使用了。以下是手动安装、命令和检查细节，供 AI Agent 或开发者参考。
 
@@ -70,7 +103,7 @@ v0.6细化了动效与排版：每页先建立构图，再揭示重点，描线�
 
 </details>
 
-## 检查与限制
+### 检查与限制
 
 <details>
 <summary>展开交付检查与技术边界</summary>
